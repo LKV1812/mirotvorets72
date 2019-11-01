@@ -2,6 +2,7 @@ var gulp         = require('gulp'),
     less         = require('gulp-less'),
     sass         = require('gulp-sass'),
     pug          = require('gulp-pug'),
+    htmlbeautify = require('gulp-html-beautify'),// пакет по настройке красивого вывода HTML
     browserSync  = require('browser-sync'), // Подключаем Browser Sync
     concat       = require('gulp-concat'), // Подключаем gulp-concat (для конкатенации файлов)
     uglify       = require('gulp-uglifyjs'), // Подключаем gulp-uglifyjs (для сжатия JS)
@@ -15,6 +16,7 @@ var gulp         = require('gulp'),
     sourcemaps   = require('gulp-sourcemaps'),
     wait         = require('gulp-wait'),// пакет чтобы поставить ожидание
     plumber      = require('gulp-plumber'),
+    notify       = require('gulp-notify'),
     babel        = require('gulp-babel');
 
 
@@ -24,7 +26,7 @@ var gulp         = require('gulp'),
 //     .pipe(less().on('error', console.error.bind(console))) // Преобразуем less в CSS посредством gulp-less
 //     .pipe(sourcemaps.write())
 //     .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) // Создаем префиксы
-//     .pipe(gulp.dest('dist/vendor/css')) // Выгружаем результата в папку dist/vendor/css
+//     .pipe(gulp.dest('dist/assets/css')) // Выгружаем результата в папку dist/assets/css
 //     .pipe(browserSync.reload({stream: true})); // Обновляем CSS на странице при изменении
 // });
 
@@ -36,16 +38,46 @@ gulp.task('sass', function(){ // Создаем таск Sass
     .pipe(sourcemaps.write())
     .pipe(cssnano()) // Сжимаем
     .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) // Создаем префиксы
-    .pipe(gulp.dest('dist/vendor/css')) // Выгружаем результата в папку dist/vendor/css
+    .pipe(gulp.dest('dist/assets/css')) // Выгружаем результата в папку dist/assets/css
     .pipe(browserSync.reload({stream: true})); // Обновляем CSS на странице при изменении
 });
 
 gulp.task('pug', function(){
-  return gulp.src('src/pug/**/*.pug')// Берем источник
-    .pipe(plumber())
-    .pipe(pug({
-        pretty: true// Преобразуем pug в html посредством gulp-pug и отменяем минфикацию html
+  var options = {
+    "indent_size": 1,
+    "indent_char": "  ",
+    "eol": "\n",
+    "indent_level": 0,
+    "indent_with_tabs": false,
+    "preserve_newlines": true,
+    "max_preserve_newlines": 10,
+    "jslint_happy": false,
+    "space_after_anon_function": false,
+    "brace_style": "collapse",
+    "keep_array_indentation": false,
+    "keep_function_indentation": false,
+    "space_before_conditional": true,
+    "break_chained_methods": false,
+    "eval_code": false,
+    "unescape_strings": false,
+    "wrap_line_length": 0,
+    "wrap_attributes": "auto",
+    "wrap_attributes_indent_size": 4,
+    "end_with_newline": false
+  };
+
+  return gulp.src('src/pug/pages/*.pug')// Берем источник
+    .pipe(plumber({
+      errorHandler: notify.onError(function(err){
+        return {
+          title: 'Pug',
+          sound: false,
+          message: err.message
+        };
+      })
     }))
+    .pipe(pug())
+    .pipe(htmlbeautify(options))
     .pipe(gulp.dest('dist'))// Выгружаем результата в папку dist
     .pipe(browserSync.reload({stream: true})); // Обновляем html на странице при изменении
 });
@@ -57,7 +89,7 @@ gulp.task('js', function () {
    }))
     .pipe(concat('main.js'))// объеденяем все собственные скрипты в одном файле
     .pipe(uglify())// сжимаем
-    .pipe(gulp.dest('dist/vendor/js'))// переносим в продакшен
+    .pipe(gulp.dest('dist/assets/js'))// переносим в продакшен
     .pipe(browserSync.reload({stream: true}));// Обновляем страницу при изменении
 });
 
@@ -97,6 +129,8 @@ gulp.task('build', ['clean', 'img', 'pug', 'sass', 'js'], function() {
     .pipe(gulp.dest('dist/assets'));
   gulp.src('src/libs/**/*')
     .pipe(gulp.dest('dist/vendor/libs'));
+  gulp.src('src/php/**/*') // Переносим assets в котором лежат картинки шрифты и т.п. активы продакшен
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('clear', function () {
