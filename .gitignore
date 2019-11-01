@@ -10,8 +10,6 @@
 *~
 *.sass-cache
 node_modules/
-src/libs/
-dist/
 .tmp/
 
 # OS or Editor folders
