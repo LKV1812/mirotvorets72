@@ -1,4 +1,43 @@
-header
-  | Заголовок
-  nav
-    a(href="#") ссылка
+header.head
+  .head-nav-bg
+    .container.pos-rel
+      ul.head-nav
+        li.head-nav__list
+          a.head-nav__link(href="#") Наши услуги
+        li.head-nav__list
+          a.head-nav__link(href="#") Мы покупаем
+        li.head-nav__list
+          a.head-nav__link(href="#") Цены
+        li.head-nav__list
+          a.head-nav__link(href="#") Наши проекты
+        li.head-nav__list
+          a.head-nav__link.head-nav__link-dropdown(href="#") О компании
+        li.head-nav__list
+          a.head-nav__link(href="#") Блог
+        li.head-nav__list
+          a.head-nav__link(href="#") Контакты
+        li.head-nav__list
+          a.head-nav__link(href="#") Личный кабинет
+        li.head-nav__list
+          a.head-nav__link(href="#") Вопрос - ответ
+      .sticker
+        img(src="assets/img/nav/sticker.png", alt="стикер с логотипом")
+        .sticker__content
+          .logo
+            img(src="assets/img/nav/logo.png", alt="логотип")
+      .lower-nav
+        a(href="#").lower-nav__button расчет стоимости
+          .lower-nav__button-bg
+            img.lower-nav__button-picture(src="assets/img/head-lower-menu/calculator.png", alt="калькулятор")
+
+        a(href="#").lower-nav__button оформить заказ
+          .lower-nav__button-bg.lower-nav__button-bg--silver
+            img.lower-nav__button-picture(src="assets/img/head-lower-menu/paper.png", alt="Лист бумаги")
+
+        a(href="#").lower-nav__button 8 800 600 71 31
+          .lower-nav__button-bg.lower-nav__button-bg--brown
+            img.lower-nav__button-picture(src="assets/img/head-lower-menu/phone.png", alt="Лист бумаги")
+
+        a(href="#").lower-nav__button.lower-nav__button--special экологический десант
+          .lower-nav__button-bg.lower-nav__button-bg--green
+            img.lower-nav__button-picture(src="assets/img/head-lower-menu/bush.png", alt="Лист бумаги")
