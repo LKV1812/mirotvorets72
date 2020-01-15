@@ -1,6 +1,9 @@
 @import '../variables/variables.scss';
 
 .slider-head {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 34px;
   position: relative;
   height: 785px;
   width: 100%;
@@ -84,8 +87,55 @@
 }
 
 .slider-head__buttom {
+  display: flex;
   width: 50%;
   height: 100%;
   display: block;
   background-color: #67af01;
+  text-align: center;
+  align-items: center;
+  transition: 0.3s;
+
+  &::before {
+    display: block;
+    margin-top: calc(50% - 10px);
+    content: "";
+  }
+
+  &--prev::before {
+    content: url("../img/slider/arrow-left.png");
+  }
+
+  &--next::before {
+    content: url("../img/slider/arrow-right.png");
+  }
+
+  &:hover {
+    background-color: #4d8300;
+  }
+
+  &:active {
+    background-color: #4d8300;
+    box-shadow: inset 2px 4px 1px rgba(0, 0, 0, 0.17);
+  }
+}
+
+.partners {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.partners__title {
+  margin-right: 50px;
+  font-family: $textType2;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 17px;
+  color: #612228;
+}
+
+.partners__name {
+  line-height: 0;
+  margin-right: 40px;
 }
