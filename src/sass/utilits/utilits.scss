@@ -1,3 +1,5 @@
+@import '../variables/variables.scss';
+
 .clearfix:after {
   visibility: hidden;
   display: block;
@@ -13,4 +15,21 @@
 .section {
   padding-top: 100px;
   padding-bottom: 60px;
+}
+
+.section__title {
+  margin: 0;
+  padding: 0;
+  color: #612228;
+  font-family: $textType1;
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 0.5;
+  text-transform: uppercase;
+  text-align: center;
+
+  &:after {
+    display: block;
+    content: url("../img/slider/delimiter-large.png");
+  }
 }

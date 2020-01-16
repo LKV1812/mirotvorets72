@@ -7,8 +7,16 @@
   position: relative;
   height: 785px;
   width: 100%;
-  background: url(../img/slider/slider-bg.jpg);
+  background: url("../img/slider/slider-bg.jpg");
   background-repeat: no-repeat;
+  overflow: hidden;
+
+   &::after {
+     position: absolute;
+     bottom: -5px;
+    //  width: 100%;
+     content: url("../img/slider/slider-bg-bottom.png");
+   }
 }
 
 .slider-head__item {
