@@ -1,0 +1,75 @@
+@import '../../variables/variables.scss';
+
+.stages-cooperation-bg {
+  position: relative;
+  height: 350px;
+  background-color: #67af01;
+  background-image: url("../img/index/stages-cooperation/bg.png");
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.stages-cooperation {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stages-cooperation__stage {
+  width: 140px;
+}
+
+.stages-cooperation__picture-wrap {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 100%;
+  line-height: 0;
+  text-align: center;
+}
+
+.stages-cooperation__stage-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  width: 41px;
+  height: 41px;
+  border-radius: 100%;
+  box-shadow: 4px 8px 38px rgba(35, 60, 0, 0.5), 2px 4px 8px rgba(35, 60, 0, 0.5);
+  background-color: #d6251d;
+  color: #fdfbfb;
+  font-family: $textType1;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.stages-cooperation__picture {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.stages-cooperation__picture-wrap-arrow {
+  padding-bottom: 40px;
+}
+
+.stages-cooperation__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  height: 40px;
+  text-align: center;
+  color: #ffffff;
+  font-family: $textType2;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 20px;
+}
