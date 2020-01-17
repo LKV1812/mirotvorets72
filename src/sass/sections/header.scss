@@ -1,8 +1,6 @@
 @import '../variables/variables.scss';
 
 .head-nav-bg {
-  // padding-top: 10px;
-  // padding-bottom: 10px;
   width: 100%;
   background-color: #67af01;
 }
@@ -165,7 +163,8 @@
   &:hover {
     background-color: #4d8300;
     color: #ffffff;
-    box-shadow: 33px 60px 147px rgba(255, 255, 255, 0.67);
+    // box-shadow: 33px 60px 147px rgba(255, 255, 255, 0.67);
+    box-shadow: none;
   }
 
   &:active, &:focus {

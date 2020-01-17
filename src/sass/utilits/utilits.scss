@@ -14,12 +14,13 @@
 
 .section {
   padding-top: 100px;
-  padding-bottom: 60px;
+  padding-bottom: 100px;
 }
 
 .section__title {
   margin: 0;
   padding: 0;
+  margin-bottom: 35px;
   color: #612228;
   font-family: $textType1;
   font-size: 44px;
@@ -30,6 +31,10 @@
 
   &:after {
     display: block;
-    content: url("../img/slider/delimiter-large.png");
+    content: url("../img/index/title-delimiter.png");
   }
+}
+
+.mb-50 {
+  margin-bottom: 50px;
 }

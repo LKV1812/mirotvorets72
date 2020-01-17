@@ -1,0 +1,7 @@
+mixin card-product(imgPath, textAlt, nameProduct, link, startingPrice, finalPrice)
+  .card-product
+    .card-product__top
+      img(src= imgPath, alt= textAlt).card-product__top-img
+    .card-product__name-product #{nameProduct}
+    a(href= link).card-product__button
+      <span class="card-product__button-title"> Цена</span><br> от #{startingPrice}р. до #{finalPrice}р. за кг.
