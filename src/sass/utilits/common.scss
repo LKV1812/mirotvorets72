@@ -1,0 +1,19 @@
+@import '../variables/variables.scss';
+
+.sticker-title {
+  text-align: center;
+  color: #612228;
+  font-family: $textType1;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+.sticker-text {
+  color: #612228;
+  font-family: $textType2;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
