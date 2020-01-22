@@ -10,6 +10,35 @@
   text-transform: uppercase;
 }
 
+.section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  &--order {
+    padding-top: 80px;
+    padding-bottom: 60px;
+    margin-bottom: 600px;
+  }
+}
+
+.section__title {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 35px;
+  color: #612228;
+  font-family: $textType1;
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 0.5;
+  text-transform: uppercase;
+  text-align: center;
+
+  &:after {
+    display: block;
+    content: url("../img/index/title-delimiter.png");
+  }
+}
+
 .sticker-text {
   color: #612228;
   font-family: $textType2;
