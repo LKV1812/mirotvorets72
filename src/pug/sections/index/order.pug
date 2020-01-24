@@ -1,59 +1,64 @@
 section.section.section--order
   .container
     .section__title Форма заявки
+
+    //- применено свойство flex-direction: column-reverse; чтобы при расскрытии перекрывали нижние инпуты
     form#indexGeneralOrder.general-order
       .input-wrap
         .select(tabindex="0")
-          .select__header.error-no-selected
+          .select__options-wrap
+            .select__empty-cutter
+            .select__wrap-only-option.scroll-vertical-small
+              .select__option Утилизация архивов
+              .select__option Хранение архивов
+              .select__option Прием вторсырья
+              .select__option Установка экобоксов
+          .select__header
             span.select-current Выберите услугу
             .select__icon-dropdown
               img(src="assets/img/form/select-dropdown.png", alt="стрелка")
             .error-no-selected__message
               .error-no-selected__message-icon !
               .error-no-selected__message-text Не выбран тип услуги
-          .select__otions-wrap
-            .select__empty-cutter
-            .select__option Утилизация архивов
-            .select__option Хранение архивов
-            .select__option Прием вторсырья
-            .select__option Установка экобоксов
 
         .select(tabindex="0")
-          .select__header.error-no-selected
+          .select__options-wrap
+            .select__empty-cutter
+            .select__wrap-only-option.scroll-vertical-small
+              .select__option Картон
+              .select__option Макулатура (офисная бумага)
+              .select__option Макулатура (книги)
+              .select__option Макулатура (газеты)
+              .select__option Макулатура (журналы)
+              .select__option Макулатура (иное)
+              .select__option Пленка (ПВД)
+              .select__option Пленка (стрейч)
+              .select__option ПЭТ
+              .select__option Масло
+              .select__option Поддоны
+              .select__option Кеги
+              .select__option Стекло
+          .select__header
             span.select-current Выберите тип сырья
             .select__icon-dropdown
               img(src="assets/img/form/select-dropdown.png", alt="стрелка")
             .error-no-selected__message
               .error-no-selected__message-icon !
               .error-no-selected__message-text Не выбран тип сырья
-          .select__otions-wrap
-            .select__empty-cutter
-            .select__option Картон
-            .select__option Макулатура (офисная бумага)
-            .select__option Макулатура (книги)
-            .select__option Макулатура (газеты)
-            .select__option Макулатура (журналы)
-            .select__option Макулатура (иное)
-            .select__option Пленка (ПВД)
-            .select__option Пленка (стрейч)
-            .select__option ПЭТ
-            .select__option Масло
-            .select__option Поддоны
-            .select__option Кеги
-            .select__option Стекло
 
         .select(tabindex="0")
-          .select__header.error-no-selected
+          .select__options-wrap
+            .select__empty-cutter
+            .select__wrap-only-option.scroll-vertical-small
+              .select__option Сложено в коробки
+              .select__option Сложено в мешки
+              .select__option Сложено в стопы и связано
+              .select__option Сложено в стопы, но не связано
+              .select__option Россыпь
+          .select__header
             span.select-current Укажите как сложено
             .select__icon-dropdown
               img(src="assets/img/form/select-dropdown.png", alt="стрелка")
             .error-no-selected__message
               .error-no-selected__message-icon !
               .error-no-selected__message-text Не указано как сложено
-          .select__otions-wrap
-            .select__empty-cutter
-            .select__option Сложено в коробки
-            .select__option Сложено в мешки
-            .select__option Сложено в стопы и связано
-            .select__option Сложено в стопы, но не связано
-            .select__option Россыпь

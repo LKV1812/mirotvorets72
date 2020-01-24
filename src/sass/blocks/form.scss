@@ -1,12 +1,13 @@
 @import '../variables/variables.scss';
 
 .general-order {
-  // display: flex;
-  // justify-content: space-between;
-  // align-items: center;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .input-wrap {
+  width: 100%;
+  margin-bottom: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,11 +22,12 @@
   outline: none;
 }
 
-.select.is-active .select__otions-wrap {
+.select.is-active .select__options-wrap {
   display: block;
 }
 
 .select__header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,7 +48,6 @@
 
 .error-no-selected__message {
   display: none;
-  // display: flex;
   justify-content: flex-start;
   position: absolute;
   left: 0;
@@ -77,8 +78,10 @@
   line-height: 0;
 }
 
-.select__otions-wrap {
+.select__options-wrap {
   display: none;
+  padding-bottom: 15px;
+  padding-right: 15px;
   position: absolute;
   top: 30px;
   left: 0;
@@ -86,15 +89,23 @@
   box-shadow: 1px 10px 46px #d6d6d6;
   border-radius: 0 0 15px 15px;
   background-color: #ffffff;
-  overflow: hidden;
-  z-index: -1;
 }
 
 .select__empty-cutter {
   padding-top: 70px;
 }
 
+.select__wrap-only-option {
+  position: relative;
+  height: 156px;
+  background-color: #ffffff;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
 .select__option {
+  margin-right: 15px;
   padding: 16px 25px 16px 25px;
   cursor: pointer;
   transition: .2s;
