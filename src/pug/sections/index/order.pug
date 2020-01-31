@@ -1,9 +1,23 @@
-section.section.section--order
+include ../../mixins/buttons.pug
+section.section-order
   .container
     .section__title Форма заявки
-
     //- применено свойство flex-direction: column-reverse; чтобы при расскрытии перекрывали нижние инпуты
     form#indexGeneralOrder.general-order
+      .input-wrap.input-wrap--content-center.input-wrap--mb-0
+        +button-input-tipe-a("submit", "#", "отправить заявку")
+
+      .input-wrap.input-wrap--content-center
+        .checkbox-goup
+          span.checkbox-goup__text Засор
+          input(type="checkbox", name="clog")#checkbox.checkbox
+          label(for="checkbox").checkbox-label
+
+      .input-wrap
+        input.input(type="text",name="weight", placeholder="Сколько килограмм")
+        input.input(type="text", name="address", placeholder="Откуда забирать")
+        input.input(type="tel", name="phone", placeholder="Ваш телефон")
+
       .input-wrap
         .select(tabindex="0")
           .select__options-wrap

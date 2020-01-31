@@ -196,10 +196,15 @@
       </div>
     </div>
   </section>
-  <section class="section section--order">
+  <section class="section-order">
     <div class="container">
       <div class="section__title">Форма заявки</div>
       <form class="general-order" id="indexGeneralOrder">
+        <div class="input-wrap input-wrap--content-center input-wrap--mb-0"><input class="button-inpute-type-a" type="submit" name="#" value="отправить заявку" /></div>
+        <div class="input-wrap input-wrap--content-center">
+          <div class="checkbox-goup"><span class="checkbox-goup__text">Засор</span><input class="checkbox" type="checkbox" name="clog" id="checkbox" /><label class="checkbox-label" for="checkbox"></label></div>
+        </div>
+        <div class="input-wrap"><input class="input" type="text" name="weight" placeholder="Сколько килограмм" /><input class="input" type="text" name="address" placeholder="Откуда забирать" /><input class="input" type="tel" name="phone" placeholder="Ваш телефон" /></div>
         <div class="input-wrap">
           <div class="select" tabindex="0">
             <div class="select__options-wrap">
@@ -269,6 +274,65 @@
       </form>
     </div>
   </section>
+  <div class="calculator-full-bg">
+    <section class="section">
+      <div class="container">
+        <div class="section__title">Калькулятор</div>
+        <div class="calculator-full-wrap">
+          <div class="tabs">
+            <div class="tabs__header">
+              <div class="tabs__header-item">Приём сырья</div>
+              <div class="tabs__header-item">Уничтожение документов</div>
+              <div class="tabs__header-item">Хранение документов</div>
+            </div>
+            <div class="tabs__content tabs__content--column-reverse">
+              <div class="tabs__content-row">
+                <div class="range-kg-wrap">
+                  <div class="range-kg__title">Сколько килограмм</div><input class="range-kg" type="range" name="#" min="0" max="10000" value="5000" />
+                </div>
+              </div>
+              <div class="tabs__content-row">
+                <div class="checkbox-goup-type-b">
+                  <div class="checkbox-goup-type-b__title">Тип доставки</div><span class="checkbox-goup-type-b__text checkbox-goup-type-b__text--first-item">Самоподвоз</span>
+                  <div class="checkbox-track"><input class="checkbox-type-b" type="checkbox" name="clog" id="checkboxCalcTypeB" /><label class="checkbox-label-type-b" for="checkboxCalcTypeB"></label></div><span class="checkbox-goup-type-b__text">Транспорт компании "Миротворец"</span>
+                </div>
+              </div>
+              <div class="tabs__content-row">
+                <div class="select" tabindex="0">
+                  <div class="select__options-wrap">
+                    <div class="select__empty-cutter"></div>
+                    <div class="select__wrap-only-option scroll-vertical-small">
+                      <div class="select__option">Картон</div>
+                      <div class="select__option">Макулатура (офисная бумага)</div>
+                      <div class="select__option">Макулатура (книги)</div>
+                      <div class="select__option">Макулатура (газеты)</div>
+                      <div class="select__option">Макулатура (журналы)</div>
+                      <div class="select__option">Макулатура (иное)</div>
+                      <div class="select__option">Пленка (ПВД)</div>
+                      <div class="select__option">Пленка (стрейч)</div>
+                      <div class="select__option">ПЭТ</div>
+                      <div class="select__option">Масло</div>
+                      <div class="select__option">Поддоны</div>
+                      <div class="select__option">Кеги</div>
+                      <div class="select__option">Стекло</div>
+                    </div>
+                  </div>
+                  <div class="select__header"><span class="select-current">Выберите тип сырья</span>
+                    <div class="select__icon-dropdown"><img src="assets/img/form/select-dropdown.png" alt="стрелка" /></div>
+                    <div class="error-no-selected__message">
+                      <div class="error-no-selected__message-icon">!</div>
+                      <div class="error-no-selected__message-text">Не выбран тип сырья</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="checkbox-goup"><span class="checkbox-goup__text">Засор</span><input class="checkbox" type="checkbox" name="clog" id="checkboxCalc" /><label class="checkbox-label" for="checkboxCalc"></label></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
   <script src="vendor/libs/jquery/dist/jquery.min.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
