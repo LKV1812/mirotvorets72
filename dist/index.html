@@ -287,8 +287,13 @@
             </div>
             <div class="tabs__content tabs__content--column-reverse">
               <div class="tabs__content-row">
+                <div class="output-counting-result">Итого: <span>0 ₽</span></div>
+              </div>
+              <div class="tabs__content-row">
                 <div class="range-kg-wrap">
-                  <div class="range-kg__title">Сколько килограмм</div><input class="range-kg" type="range" name="#" min="0" max="10000" value="5000" />
+                  <div class="range-kg__title">Сколько килограмм</div><input class="range-kg" id="calculatorRangeKg" type="range" name="#" min="0" max="5000" value="0" />
+                  <div class="range-kg__output-current-start">0</div>
+                  <div class="range-kg__output-current-value">0</div>
                 </div>
               </div>
               <div class="tabs__content-row">
@@ -301,23 +306,30 @@
                 <div class="select" tabindex="0">
                   <div class="select__options-wrap">
                     <div class="select__empty-cutter"></div>
-                    <div class="select__wrap-only-option scroll-vertical-small">
-                      <div class="select__option">Картон</div>
-                      <div class="select__option">Макулатура (офисная бумага)</div>
-                      <div class="select__option">Макулатура (книги)</div>
-                      <div class="select__option">Макулатура (газеты)</div>
-                      <div class="select__option">Макулатура (журналы)</div>
-                      <div class="select__option">Макулатура (иное)</div>
-                      <div class="select__option">Пленка (ПВД)</div>
-                      <div class="select__option">Пленка (стрейч)</div>
-                      <div class="select__option">ПЭТ</div>
-                      <div class="select__option">Масло</div>
-                      <div class="select__option">Поддоны</div>
-                      <div class="select__option">Кеги</div>
-                      <div class="select__option">Стекло</div>
+                    <div class="select__wrap-only-option scroll-vertical-small" id="typeService">
+                      <div class="select__option" data-cardboard="data-cardboard">Картон</div>
+                      <div class="select__option" data-books="data-books">Макулатура (книги)</div>
+                      <div class="select__option" data-paper="data-paper">Макулатура (офисная бумага)</div>
+                      <div class="select__option" data-newspapers="data-newspapers">Макулатура (газеты)</div>
+                      <div class="select__option" data-magazines="data-magazines">Макулатура (журналы)</div>
+                      <div class="select__option" data-film-pvd="data-film-pvd">Пленка (ПВД)</div>
+                      <div class="select__option" data-film-color-pvd="data-film-color-pvd">Цветная пленка (ПВД)</div>
+                      <div class="select__option" data-film-stretch="data-film-stretch">Пленка (стрейч)</div>
+                      <div class="select__option" data-polyethylene="data-polyethylene">ПЭТ</div>
+                      <div class="select__option" data-oil="data-oil">Масло</div>
+                      <div class="select__option" data-pallets="data-pallets">Поддоны</div>
+                      <div class="select__option" data-kegs="data-kegs">Кеги (ПЭТ)</div>
+                      <div class="select__option" data-canisters="data-canisters">Пластиковые канистры</div>
+                      <div class="select__option" data-aluminum-cans="data-aluminum-cans">Алюминиевые банки</div>
+                      <div class="select__option" data-plastic-box="data-plastic-box">Пластиковые ящики</div>
+                      <div class="select__option" data-polyethylene-pipe="data-polyethylene-pipe">Трубы полиэтиленовые черные</div>
+                      <div class="select__option" data-plastic-containers="data-plastic-containers">Пластиковая тара из под бытовой химии</div>
+                      <div class="select__option" data-glass="data-glass">Стекло листовое прозрачное</div>
+                      <div class="select__option" data-glass-white-brown="data-glass-white-brown">Стекло белое и коричневое (банки, бутылки)</div>
+                      <div class="select__option" data-glass-green="data-glass-green">Стекло зеленое (банки, бутылки)</div>
                     </div>
                   </div>
-                  <div class="select__header"><span class="select-current">Выберите тип сырья</span>
+                  <div class="select__header"><span class="select-current" id="currentTypeService">Выберите тип сырья</span>
                     <div class="select__icon-dropdown"><img src="assets/img/form/select-dropdown.png" alt="стрелка" /></div>
                     <div class="error-no-selected__message">
                       <div class="error-no-selected__message-icon">!</div>

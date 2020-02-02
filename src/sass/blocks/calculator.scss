@@ -1,9 +1,6 @@
 @import '../variables/variables.scss';
 
 .calculator-full-wrap {
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
   width: 582px;
   margin: 0 auto;
 }
@@ -43,7 +40,6 @@
   font-weight: 600;
   color: #67af01;
 
-  // transition: .3s;
   cursor: pointer;
 
   &:hover {
@@ -62,4 +58,96 @@
   justify-content: space-between;
   align-items: center;
   padding-top: 50px;
+}
+
+.range-kg-wrap {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  padding-top: 18px;
+  padding-left: 25px;
+  padding-right: 25px;
+  border: 1px solid #e5e3e0;
+  border-radius: 45px;
+}
+
+.range-kg__title {
+  position: absolute;
+  top: -13px;
+  left: 0;
+  right: 0;
+  font-family: $textType2;
+  font-size: 18px;
+  font-weight: 600;
+  color: #612228;
+  text-align: center;
+}
+
+.range-kg {
+  margin-bottom: 17px;
+  width: 100%;
+  height: 6px;
+  background-color: #dcd9d7;
+  border-radius: 4px;
+  outline: none;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    border-radius: 100%;
+    border: 5px solid #ffffff;
+    background-color: #67af01;
+    box-shadow: 0 10px 26px 0 rgba(214, 201, 183, .73), 0 3px 6px 0 rgba(214, 201, 183, .83);
+    cursor: pointer;
+  }
+
+  &::-moz-range-thumb {
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    border-radius: 100%;
+    border: 5px solid #ffffff;
+    background-color: #67af01;
+    box-shadow: 0 10px 26px 0 rgba(214, 201, 183, .73), 0 3px 6px 0 rgba(214, 201, 183, .83);
+    cursor: pointer;
+  }
+
+  &::-ms-thumb {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    border-radius: 100%;
+    border: 5px solid #ffffff;
+    background-color: #67af01;
+    box-shadow: 0 10px 26px 0 rgba(214, 201, 183, .73), 0 3px 6px 0 rgba(214, 201, 183, .83);
+    cursor: pointer;
+  }
+}
+
+.range-kg__output-current-start {
+  font-family: $textType2;
+  font-size: 12px;
+  font-weight: 400;
+  color: #612228;
+}
+
+.range-kg__output-current-value {
+  position: absolute;
+  right: 34px;
+  bottom: 12px;
+  font-family: $textType2;
+  font-weight: 400;
+  color: #612228;
+}
+
+.output-counting-result {
+  width: 100%;
+  text-align: center;
+  font-family: $textType1;
+  font-size: 44px;
+  color: #612228;
+  text-transform: uppercase;
 }

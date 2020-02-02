@@ -13,8 +13,9 @@
 
    &::after {
      position: absolute;
+     left: 0;
+     right: 0;
      bottom: -5px;
-    //  width: 100%;
      content: url("../img/slider/slider-bg-bottom.png");
    }
 }
@@ -69,9 +70,8 @@
 }
 
 .slider-head__item-picture {
-  // width: 100%;
+  display: block;
   height: 100%;
-
 }
 
 .slider-head__buttom-wrap {

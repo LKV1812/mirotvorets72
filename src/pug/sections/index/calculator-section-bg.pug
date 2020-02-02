@@ -11,9 +11,13 @@
             .tabs__header-item Хранение документов
           .tabs__content.tabs__content--column-reverse
             .tabs__content-row
+              .output-counting-result Итого: <span>0 ₽</span>
+            .tabs__content-row
               .range-kg-wrap
                 .range-kg__title Сколько килограмм
-                input(type="range", name="#" min="0" max="10000" value="5000").range-kg
+                input#calculatorRangeKg(type="range", name="#" min="0" max="5000" value="0").range-kg
+                .range-kg__output-current-start 0
+                .range-kg__output-current-value 0
 
             .tabs__content-row
               .checkbox-goup-type-b
@@ -28,22 +32,29 @@
               .select(tabindex="0")
                 .select__options-wrap
                   .select__empty-cutter
-                  .select__wrap-only-option.scroll-vertical-small
-                    .select__option Картон
-                    .select__option Макулатура (офисная бумага)
-                    .select__option Макулатура (книги)
-                    .select__option Макулатура (газеты)
-                    .select__option Макулатура (журналы)
-                    .select__option Макулатура (иное)
-                    .select__option Пленка (ПВД)
-                    .select__option Пленка (стрейч)
-                    .select__option ПЭТ
-                    .select__option Масло
-                    .select__option Поддоны
-                    .select__option Кеги
-                    .select__option Стекло
+                  #typeService.select__wrap-only-option.scroll-vertical-small
+                    .select__option(data-cardboard) Картон
+                    .select__option(data-books) Макулатура (книги)
+                    .select__option(data-paper) Макулатура (офисная бумага)
+                    .select__option(data-newspapers) Макулатура (газеты)
+                    .select__option(data-magazines) Макулатура (журналы)
+                    .select__option(data-film-pvd) Пленка (ПВД)
+                    .select__option(data-film-color-pvd) Цветная пленка (ПВД)
+                    .select__option(data-film-stretch) Пленка (стрейч)
+                    .select__option(data-polyethylene) ПЭТ
+                    .select__option(data-oil) Масло
+                    .select__option(data-pallets) Поддоны
+                    .select__option(data-kegs) Кеги (ПЭТ)
+                    .select__option(data-canisters) Пластиковые канистры
+                    .select__option(data-aluminum-cans) Алюминиевые банки
+                    .select__option(data-plastic-box) Пластиковые ящики
+                    .select__option(data-polyethylene-pipe) Трубы полиэтиленовые черные
+                    .select__option(data-plastic-containers) Пластиковая тара из под бытовой химии
+                    .select__option(data-glass) Стекло листовое прозрачное
+                    .select__option(data-glass-white-brown) Стекло белое и коричневое (банки, бутылки)
+                    .select__option(data-glass-green) Стекло зеленое (банки, бутылки)
                 .select__header
-                  span.select-current Выберите тип сырья
+                  span#currentTypeService.select-current Выберите тип сырья
                   .select__icon-dropdown
                     img(src="assets/img/form/select-dropdown.png", alt="стрелка")
                   .error-no-selected__message

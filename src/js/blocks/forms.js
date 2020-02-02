@@ -21,6 +21,7 @@
     function selectToggle() {
       this.parentElement.classList.toggle("is-active");
     }
+
     function setSelected() {
       let text = this.innerText,
           select = this.closest(".select"),
