@@ -1,12 +1,19 @@
 (function() {
   "use strict";
 
-  let checkboxCalc = document.getElementById("checkboxCalcTypeB");
-  let rangeKg = document.querySelector('.range-kg');
-  let rangeKgOutputCurrentValue = document.querySelector('.range-kg__output-current-value');
-  let outputCountingResult = document.querySelector('.output-counting-result span');
-  let currentTypeService = document.getElementById('currentTypeService');
+  let trash = document.getElementById('checkboxCalc');
+  let materialsDeliveryType = document.getElementById("materialsDeliveryType");
+  let materialsKg = document.getElementById('materialsKg');
+  let outputCountingResult = document.querySelector('#resultMaterialsCurrency span');
+  let typeMaterials = document.getElementById('typeMaterials');
+  let currentTypeMaterials = document.getElementById('currentTypeMaterials');
 
+  /**
+  * Объект priceMaterials
+  *
+  * свойста объекта Цены на сырье зависят от объема в кг и типа доставки
+  * метод объекта getPriceSelectedTypeMaterials возвращет цену выбранного сырья.   Принимает на воход объем в кг и тип доставки
+  **/
   const priceMaterials = {
     "cardboard": {
       'our-delivery': {
@@ -255,92 +262,69 @@
       }
     },
 
-    getPriceSelectedTypeService(selectedTypeService, typeDelivery, weightKg) {
+    getPriceSelectedTypeMaterials(selectedTypeMaterials, typeDelivery, weightKg) {
       let keyWeightKg = '';
       if (+weightKg < 500) keyWeightKg = '0';
       if (+weightKg >= 500 && +weightKg < 1000) keyWeightKg = '500';
       if (+weightKg >= 1000) keyWeightKg = '1000';
 
-      switch (selectedTypeService) {
-        case 'Картон':
-          return this.cardboard[typeDelivery][keyWeightKg];
-        case 'Макулатура (книги)':
-          return this.books[typeDelivery][keyWeightKg];
-        case 'Макулатура (офисная бумага)':
-          return this.paper[typeDelivery][keyWeightKg];
-        case 'Макулатура (газеты)':
-          return this.newspapers[typeDelivery][keyWeightKg];
-        case 'Макулатура (журналы)':
-          return this.magazines[typeDelivery][keyWeightKg];
-        case 'Макулатура (иное)':
-          return this.cardboard[typeDelivery][keyWeightKg];
-        case 'Пленка (ПВД)':
-          return this['film-pvd'][typeDelivery][keyWeightKg];
-        case 'Цветная пленка (ПВД)':
-          return this['film-color-pvd'][typeDelivery][keyWeightKg];
-        case 'Пленка (стрейч)':
-          return this['film-stretch'][typeDelivery][keyWeightKg];
-        case 'ПЭТ':
-          return this.polyethylene[typeDelivery][keyWeightKg];
-        case 'Масло':
-          return this.polyethylene[typeDelivery][keyWeightKg];
-        case 'Кеги (ПЭТ)':
-          return this.kegs[typeDelivery][keyWeightKg];
-        case 'Пластиковые канистры':
-          return this.canisters[typeDelivery][keyWeightKg];
-        case 'Алюминиевые банки':
-          return this['aluminum-cans'][typeDelivery][keyWeightKg];
-        case 'Пластиковые ящики':
-          return this['plastic-box'][typeDelivery][keyWeightKg];
-        case 'Трубы полиэтиленовые черные':
-          return this['polyethylene-pipe'][typeDelivery][keyWeightKg];
-        case 'Пластиковая тара из под бытовой химии':
-          return this['plastic-containers'][typeDelivery][keyWeightKg];
-        case 'Стекло листовое прозрачное':
-          return this.glass[typeDelivery][keyWeightKg];
-        case 'Стекло белое и коричневое (банки, бутылки)':
-          return this['glass-white-brown'][typeDelivery][keyWeightKg];
-        case 'Стекло зеленое (банки, бутылки)':
-          return this['glass-green'][typeDelivery][keyWeightKg];
-      }
+      return this[selectedTypeMaterials][typeDelivery][keyWeightKg];
     }
   };
 
-  const formatter = new Intl.NumberFormat('ru');
+  // с помощью конструктора будем форматировать выводимые на страницах значения в рублях
+  // const formatter = new Intl.NumberFormat('ru');
   const formatterСurrency = new Intl.NumberFormat("ru", {
     style: 'currency',
     currency: 'RUB'
   });
 
-  rangeKg.addEventListener('input', function() {
-    let selectedTypeService = currentTypeService.innerHTML;
-    let typeDelivery = checkboxCalc.checked ? 'our-delivery' : 'self-delivery';
+  /**
+  * прослушиваем события
+  *
+  * materialsKg - изменения веса в кг
+  * materialsDeliveryType - изменения типа доставки
+  * trash - изменения наличия засора есть/нет
+  * typeMaterials - изменение типа сырья
+  **/
+  materialsKg.addEventListener('input', handlerEnteredData);
+  materialsDeliveryType.addEventListener('change', handlerEnteredData);
+  trash.addEventListener('change', handlerEnteredData);
+  typeMaterials.addEventListener('click', handlerEnteredData);
 
-    rangeKgOutputCurrentValue.innerHTML = formatter.format(this.value) + " кг";
-    outputCountingResult.innerHTML = formatterСurrency.format(this.value);
+  /**
+  * функция handlerEnteredData()
+  *
+  * variables:
+  * selectedTypeMaterials - хранит значени атрибута 'name', в котором значение является ключом объекта priceMaterials типа сырья
+  * typeDelivery - хранит тип досатвки, который также будет педаваться в объект priceMaterials в виде ключа для типа доставки
+  *
+  * Логика:
+  * если в selectedTypeMaterials есть значение атрибута 'name', т.е. тип сырья выбран
+  * запускаем метод объекта priceMaterials.getPriceSelectedTypeMaterials()
+  * в метод передаем парметры: тип сырья, тип доставки, количество кг(в параметрах ключи для объекта priceMaterials{})
+  * возвращает цену выбранного сырья в соответствеии с параметрами переданными в виде ключей
+  * вызвыаем функцию makesCalculationCurrency(), в которую передаем цену и количество кг
+  * полученный рерзультат из функции makesCalculationCurrency() форматируем и выводим на страницу
+  **/
+  function handlerEnteredData() {
+    let selectedTypeMaterials = currentTypeMaterials.getAttribute('name');
+    let typeDelivery = materialsDeliveryType.checked ? 'our-delivery' : 'self-delivery';
 
-    console.log(priceMaterials.getPriceSelectedTypeService(selectedTypeService, typeDelivery, this.value));
-    // calculatesTotalAmount(priceMaterials.getPriceSelectedTypeService(selectedTypeService), +this.value);
-  });
+    if (selectedTypeMaterials) {
+      let price = priceMaterials.getPriceSelectedTypeMaterials(selectedTypeMaterials, typeDelivery, materialsKg.value);
+      outputCountingResult.innerHTML = formatterСurrency.format( makesCalculationCurrency(price, materialsKg.value) );
+    }
+  }
 
-  checkboxCalc.addEventListener('change', function() {
-    let selectedTypeService = currentTypeService.innerHTML;
-    let typeDelivery = checkboxCalc.checked ? 'our-delivery' : 'self-delivery';
-
-    rangeKgOutputCurrentValue.innerHTML = formatter.format(rangeKg.value) + " кг";
-    outputCountingResult.innerHTML = formatterСurrency.format(rangeKg.value);
-
-    console.log(priceMaterials.getPriceSelectedTypeService(selectedTypeService, typeDelivery, rangeKg.value));
-  });
-
-  currentTypeService.addEventListener('click', function() {
-    let selectedTypeService = currentTypeService.innerHTML;
-    let typeDelivery = checkboxCalc.checked ? 'our-delivery' : 'self-delivery';
-
-    rangeKgOutputCurrentValue.innerHTML = formatter.format(rangeKg.value) + " кг";
-    outputCountingResult.innerHTML = formatterСurrency.format(rangeKg.value);
-
-    console.log(priceMaterials.getPriceSelectedTypeService(selectedTypeService, typeDelivery, rangeKg.value));
-  });
+  /**
+  * функция makesCalculationCurrency() возвращает финальный подчсет в рублях
+  *
+  * принимает цену за кг и умножает на количество кг
+  * если выбран засор умножает на коофициент 0.9
+  **/
+  function makesCalculationCurrency(priceMaterials, numberKilograms) {
+    return (trash.checked)? (priceMaterials * numberKilograms) * 0.9 : priceMaterials * numberKilograms;
+  }
 
 }());

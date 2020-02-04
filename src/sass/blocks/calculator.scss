@@ -10,11 +10,15 @@
 }
 
 .tabs__content {
-  display: flex;
+  display: none;
   flex-direction: column;
 
   &--column-reverse{
     flex-direction: column-reverse;
+  }
+
+  &--active {
+    display: flex;
   }
 }
 
@@ -27,7 +31,7 @@
 }
 
 .tabs__header-item {
-  width: 33%;
+  width: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,12 +46,7 @@
 
   cursor: pointer;
 
-  &:hover {
-    background-color: #67af01;
-    color: #ffffff;
-  }
-
-  &:active, &:focus {
+  &--active {
     background-color: #67af01;
     color: #ffffff;
   }
@@ -60,7 +59,7 @@
   padding-top: 50px;
 }
 
-.range-kg-wrap {
+.range-wrap {
   position: relative;
   width: 100%;
   height: 80px;
@@ -71,7 +70,7 @@
   border-radius: 45px;
 }
 
-.range-kg__title {
+.range__title {
   position: absolute;
   top: -13px;
   left: 0;
@@ -83,7 +82,7 @@
   text-align: center;
 }
 
-.range-kg {
+.range {
   margin-bottom: 17px;
   width: 100%;
   height: 6px;
@@ -127,14 +126,14 @@
   }
 }
 
-.range-kg__output-current-start {
+.range__output-current-start {
   font-family: $textType2;
   font-size: 12px;
   font-weight: 400;
   color: #612228;
 }
 
-.range-kg__output-current-value {
+.range__output-current-value {
   position: absolute;
   right: 34px;
   bottom: 12px;
