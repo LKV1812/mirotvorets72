@@ -279,104 +279,133 @@
       <div class="container">
         <div class="section__title">Калькулятор</div>
         <div class="calculator-full-wrap">
-          <div class="tabs">
-            <div class="tabs__header">
-              <div class="tabs__header-item tabs__header-item--active">Приём сырья</div>
-              <div class="tabs__header-item">Покупка поддонов</div>
-              <div class="tabs__header-item">Уничтожение документов</div>
-              <div class="tabs__header-item">Хранение документов</div>
+          <div class="calculator-full-wrap">
+            <div class="tabs">
+              <div class="tabs__header">
+                <div class="tabs__header-item tabs__header-item--active">Приём сырья</div>
+                <div class="tabs__header-item">Покупка поддонов</div>
+                <div class="tabs__header-item">Уничтожение документов</div>
+                <div class="tabs__header-item">Хранение документов</div>
+              </div>
+              <div class="tabs__content tabs__content--column-reverse tabs__content--active">
+                <div class="tabs__content-row">
+                  <div class="output-counting-result" id="resultMaterialsCurrency">Итого: <span>0,00 ₽</span></div>
+                </div>
+                <div class="tabs__content-row">
+                  <div class="range-wrap">
+                    <div class="range__title">Сколько килограмм</div><input class="range" id="materialsKg" type="range" name="#" min="0" max="5000" value="0" />
+                    <div class="range__output-current-start">0</div>
+                    <div class="range__output-current-value">0<span> кг</span></div>
+                  </div>
+                </div>
+                <div class="tabs__content-row">
+                  <div class="checkbox-goup-type-b">
+                    <div class="checkbox-goup-type-b__title">Тип доставки</div><span class="checkbox-goup-type-b__text checkbox-goup-type-b__text--first-item">Самоподвоз</span>
+                    <div class="checkbox-track"><input class="checkbox-type-b" type="checkbox" name="clog" id="materialsDeliveryType" /><label class="checkbox-label-type-b" for="materialsDeliveryType"></label></div><span class="checkbox-goup-type-b__text">Транспорт компании "Миротворец"</span>
+                  </div>
+                </div>
+                <div class="tabs__content-row">
+                  <div class="select" id="typeMaterials" tabindex="0">
+                    <div class="select__options-wrap">
+                      <div class="select__empty-cutter"></div>
+                      <div class="select__wrap-only-option scroll-vertical-small">
+                        <div class="select__option" name="cardboard">Картон</div>
+                        <div class="select__option" name="books">Макулатура (книги)</div>
+                        <div class="select__option" name="paper">Макулатура (офисная бумага)</div>
+                        <div class="select__option" name="newspapers">Макулатура (газеты)</div>
+                        <div class="select__option" name="magazines">Макулатура (журналы)</div>
+                        <div class="select__option" name="film-pvd">Пленка (ПВД)</div>
+                        <div class="select__option" name="film-color-pvd">Цветная пленка (ПВД)</div>
+                        <div class="select__option" name="film-stretch">Пленка (стрейч)</div>
+                        <div class="select__option" name="polyethylene">ПЭТ</div>
+                        <div class="select__option" name="oil">Масло</div>
+                        <div class="select__option" name="paper">Поддоны</div>
+                        <div class="select__option" name="kegs">Кеги (ПЭТ)</div>
+                        <div class="select__option" name="plastic-canisters">Пластиковые канистры</div>
+                        <div class="select__option" name="aluminum-cans">Алюминиевые банки</div>
+                        <div class="select__option" name="plastic-box">Пластиковые ящики</div>
+                        <div class="select__option" name="polyethylene-pipe">Трубы полиэтиленовые черные</div>
+                        <div class="select__option" name="plastic-containers">Пластиковая тара из под бытовой химии</div>
+                        <div class="select__option" name="glass">Стекло листовое прозрачное</div>
+                        <div class="select__option" name="glass-white-brown">Стекло белое и коричневое (банки, бутылки)</div>
+                        <div class="select__option" name="glass-green">Стекло зеленое (банки, бутылки)</div>
+                        <div class="select__option" name="bags">Бэги</div>
+                      </div>
+                    </div>
+                    <div class="select__header"><span class="select-current" id="currentTypeMaterials">Выберите тип сырья</span>
+                      <div class="select__icon-dropdown"><img src="assets/img/form/select-dropdown.png" alt="стрелка" /></div>
+                      <div class="error-no-selected__message">
+                        <div class="error-no-selected__message-icon">!</div>
+                        <div class="error-no-selected__message-text"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="checkbox-goup"><span class="checkbox-goup__text">Засор</span><input class="checkbox" type="checkbox" name="clog" id="checkboxCalc" /><label class="checkbox-label" for="checkboxCalc"></label></div>
+                </div>
+              </div>
+              <div class="tabs__content tabs__content--column-reverse">
+                <div class="tabs__content-row">
+                  <div class="output-counting-result" id="resultPalletsCurrency">Итого: <span>0,00 ₽</span></div>
+                </div>
+                <div class="tabs__content-row">
+                  <div class="range-wrap">
+                    <div class="range__title">Количество штук</div><input class="range" id="palletsRange" type="range" name="#" min="0" max="500" value="0" />
+                    <div class="range__output-current-start">0</div>
+                    <div class="range__output-current-value">0<span> шт</span></div>
+                  </div>
+                </div>
+                <div class="tabs__content-row">
+                  <div class="checkbox-goup-type-b">
+                    <div class="checkbox-goup-type-b__title">Тип доставки</div><span class="checkbox-goup-type-b__text checkbox-goup-type-b__text--first-item">Самоподвоз</span>
+                    <div class="checkbox-track"><input class="checkbox-type-b" type="checkbox" name="clog" id="palletDeliveryType" /><label class="checkbox-label-type-b" for="palletDeliveryType"></label></div><span class="checkbox-goup-type-b__text">Транспорт компании "Миротворец"</span>
+                  </div>
+                </div>
+                <div class="tabs__content-row">
+                  <div class="select" id="palletGrade" tabindex="0">
+                    <div class="select__options-wrap">
+                      <div class="select__empty-cutter"></div>
+                      <div class="select__wrap-only-option scroll-vertical-small">
+                        <div class="select__option" name="first-grade">1 сорт (белый, целый)</div>
+                        <div class="select__option" name="second-grade">2 сорт (серый, целый)</div>
+                        <div class="select__option" name="third-grade">3 сорт (сломано до 3-х деталей)</div>
+                      </div>
+                    </div>
+                    <div class="select__header"><span class="select-current" id="currentPalletGrade">Выберите сорт европоддонов</span>
+                      <div class="select__icon-dropdown"><img src="assets/img/form/select-dropdown.png" alt="стрелка" /></div>
+                      <div class="error-no-selected__message">
+                        <div class="error-no-selected__message-icon">!</div>
+                        <div class="error-no-selected__message-text">Не выбран тип сырья</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="checkbox-goup"><span class="checkbox-goup__text">Epal</span><input class="checkbox" type="checkbox" name="clog" id="epal" /><label class="checkbox-label" for="epal"></label></div>
+                </div>
+              </div>
+              <div class="tabs__content">
+                <div class="tabs__content-row">
+                  <div class="range-wrap">
+                    <div class="range__title">Сколько килограмм</div><input class="range" id="destructionRange" type="range" name="#" min="0" max="5000" value="0" />
+                    <div class="range__output-current-start">0</div>
+                    <div class="range__output-current-value">0<span> кг</span></div>
+                  </div>
+                </div>
+                <div class="tabs__content-row">
+                  <div class="output-counting-result" id="resultDestructionCurrency">Итого: <span>0,00 ₽</span></div>
+                </div>
+              </div>
+              <div class="tabs__content">
+                <div class="tabs__content-row">
+                  <div class="range-wrap">
+                    <div class="range__title">Сколько килограмм</div><input class="range" id="storageRange" type="range" name="#" min="0" max="5000" value="0" />
+                    <div class="range__output-current-start">0</div>
+                    <div class="range__output-current-value">0<span> кг</span></div>
+                  </div>
+                </div>
+                <div class="tabs__content-row">
+                  <div class="output-counting-result" id="resultStorageCurrency">Итого: <span>0,00 ₽</span></div>
+                </div>
+              </div>
             </div>
-            <div class="tabs__content tabs__content--column-reverse tabs__content--active">
-              <div class="tabs__content-row">
-                <div class="output-counting-result" id="resultMaterialsCurrency">Итого: <span>0 ₽</span></div>
-              </div>
-              <div class="tabs__content-row">
-                <div class="range-wrap">
-                  <div class="range__title">Сколько килограмм</div><input class="range" id="materialsKg" type="range" name="#" min="0" max="5000" value="0" />
-                  <div class="range__output-current-start">0</div>
-                  <div class="range__output-current-value">0<span> кг</span></div>
-                </div>
-              </div>
-              <div class="tabs__content-row">
-                <div class="checkbox-goup-type-b">
-                  <div class="checkbox-goup-type-b__title">Тип доставки</div><span class="checkbox-goup-type-b__text checkbox-goup-type-b__text--first-item">Самоподвоз</span>
-                  <div class="checkbox-track"><input class="checkbox-type-b" type="checkbox" name="clog" id="materialsDeliveryType" /><label class="checkbox-label-type-b" for="materialsDeliveryType"></label></div><span class="checkbox-goup-type-b__text">Транспорт компании "Миротворец"</span>
-                </div>
-              </div>
-              <div class="tabs__content-row">
-                <div class="select" id="typeMaterials" tabindex="0">
-                  <div class="select__options-wrap">
-                    <div class="select__empty-cutter"></div>
-                    <div class="select__wrap-only-option scroll-vertical-small">
-                      <div class="select__option" name="cardboard">Картон</div>
-                      <div class="select__option" name="books">Макулатура (книги)</div>
-                      <div class="select__option" name="paper">Макулатура (офисная бумага)</div>
-                      <div class="select__option" name="newspapers">Макулатура (газеты)</div>
-                      <div class="select__option" name="magazines">Макулатура (журналы)</div>
-                      <div class="select__option" name="film-pvd">Пленка (ПВД)</div>
-                      <div class="select__option" name="film-color-pvd">Цветная пленка (ПВД)</div>
-                      <div class="select__option" name="film-stretch">Пленка (стрейч)</div>
-                      <div class="select__option" name="polyethylene">ПЭТ</div>
-                      <div class="select__option" name="oil">Масло</div>
-                      <div class="select__option" name="paper">Поддоны</div>
-                      <div class="select__option" name="kegs">Кеги (ПЭТ)</div>
-                      <div class="select__option" name="canisters">Пластиковые канистры</div>
-                      <div class="select__option" name="aluminum-cans">Алюминиевые банки</div>
-                      <div class="select__option" name="plastic-box">Пластиковые ящики</div>
-                      <div class="select__option" name="polyethylene-pipe">Трубы полиэтиленовые черные</div>
-                      <div class="select__option" name="plastic-containers">Пластиковая тара из под бытовой химии</div>
-                      <div class="select__option" name="glass">Стекло листовое прозрачное</div>
-                      <div class="select__option" name="glass-white-brown">Стекло белое и коричневое (банки, бутылки)</div>
-                      <div class="select__option" name="glass-green">Стекло зеленое (банки, бутылки)</div>
-                    </div>
-                  </div>
-                  <div class="select__header"><span class="select-current" id="currentTypeMaterials">Выберите тип сырья</span>
-                    <div class="select__icon-dropdown"><img src="assets/img/form/select-dropdown.png" alt="стрелка" /></div>
-                    <div class="error-no-selected__message">
-                      <div class="error-no-selected__message-icon">!</div>
-                      <div class="error-no-selected__message-text">Не выбран тип сырья</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="checkbox-goup"><span class="checkbox-goup__text">Засор</span><input class="checkbox" type="checkbox" name="clog" id="checkboxCalc" /><label class="checkbox-label" for="checkboxCalc"></label></div>
-              </div>
-            </div>
-            <div class="tabs__content tabs__content--column-reverse">
-              <div class="tabs__content-row">
-                <div class="range-wrap">
-                  <div class="range__title">Сколько килограмм</div><input class="range" id="palletsRange" type="range" name="#" min="0" max="1000" value="0" />
-                  <div class="range__output-current-start">0</div>
-                  <div class="range__output-current-value">0<span> шт</span></div>
-                </div>
-              </div>
-              <div class="tabs__content-row">
-                <div class="checkbox-goup-type-b">
-                  <div class="checkbox-goup-type-b__title">Тип доставки</div><span class="checkbox-goup-type-b__text checkbox-goup-type-b__text--first-item">Самоподвоз</span>
-                  <div class="checkbox-track"><input class="checkbox-type-b" type="checkbox" name="clog" id="palletDeliveryType" /><label class="checkbox-label-type-b" for="palletDeliveryType"></label></div><span class="checkbox-goup-type-b__text">Транспорт компании "Миротворец"</span>
-                </div>
-              </div>
-              <div class="tabs__content-row">
-                <div class="select" id="palletGrade" tabindex="0">
-                  <div class="select__options-wrap">
-                    <div class="select__empty-cutter"></div>
-                    <div class="select__wrap-only-option scroll-vertical-small">
-                      <div class="select__option" name="cardboard">1 сорт</div>
-                      <div class="select__option" name="books">2 сорт</div>
-                      <div class="select__option" name="paper">3 сорт</div>
-                    </div>
-                  </div>
-                  <div class="select__header"><span class="select-current" id="currentPalletGrade">Выберите сорт поддонов</span>
-                    <div class="select__icon-dropdown"><img src="assets/img/form/select-dropdown.png" alt="стрелка" /></div>
-                    <div class="error-no-selected__message">
-                      <div class="error-no-selected__message-icon">!</div>
-                      <div class="error-no-selected__message-text">Не выбран тип сырья</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="tabs__content">Какой-то контент 2</div>
-            <div class="tabs__content">Какой-то контент 3</div>
           </div>
         </div>
       </div>

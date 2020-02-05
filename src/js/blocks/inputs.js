@@ -38,6 +38,10 @@
     });
 
     select.forEach(item => {
+      // в сообщении об ошибке (не выбран ни один пункт) записываем текст из заголовка select`a
+      let currentText = item.querySelector('.select-current').innerText;
+      item.querySelector('.error-no-selected__message-text').innerText = currentText;
+
       item.addEventListener("blur", outFocus);
     });
 
@@ -51,11 +55,11 @@
 
     function setSelected() {
       let text = this.innerText,
-          attributeName = this.getAttribute("name"),
+          attributeNameValue = this.getAttribute("name"),
           select = this.closest(".select"),
           currentSelect = select.querySelector(".select-current");
 
-      currentSelect.setAttribute('name', attributeName);
+      currentSelect.setAttribute('name', attributeNameValue);
       currentSelect.innerText = text;
 
       select.classList.remove("is-active");
