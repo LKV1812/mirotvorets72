@@ -1,33 +1,23 @@
 (function() {
   'use strict';
-  // коллекция всех табов на сайте
+  /**@param {DOM[]} tabs коллекция всех табов на сайте*/
   let tabs = document.querySelectorAll('.tabs');
 
   /**
   * на все табы вешаем обработчики
   *
-  * в переменной currentIndexActiveItem храним текущий индекс таба и показываемой страницы под ним
-  * tabsHeaderItems коллекция табов
-  * tabsContentItems коллекция страниц для табов
-  * widthTabsHeaderItems ширина табов, расчитывается исходя из количества табов, через forEach присваиваем ширину каждому табу
+  * @param {number} currentIndexActiveItem индекс таба и индекс страницы tab__content (начальное значение 0, что соответсвует перевому, по умолчанию активному табу)
+  * @param {DOM[]} tabsHeaderItems коллекция табов текущего tabs[item]
+  * @param {DOM[]} tabsContentItems коллекция страниц текущего tabs[item]
+  * По клику определяем индекс элемента, на котором произошло событие
+  * Записываем его индекс в переменную currentIndexActiveItem
+  * Делаем активным элемент на котором произошел клик (item[currentIndexActiveItem])
   **/
   tabs.forEach(item => {
     let currentIndexActiveItem = 0;
     let tabsHeaderItems = item.querySelectorAll('.tabs__header-item');
     let tabsContentItems = item.querySelectorAll('.tabs__content');
-    // let widthTabsHeaderItems = (100 / tabsHeaderItems.length) + '%';
 
-    // tabsHeaderItems.forEach(item =>{
-    //   item.style.width = widthTabsHeaderItems;
-    // });
-
-    /**
-    * обработчик слушает событие клик на табе
-    *
-    * если событие происходит не на текущем элементе коллекции, индекс которого хранится в переменной currentIndexActiveItem, текущий таб и его страница делаем не активными
-    * через forEach определм элемент на котором произошло событие, записываем его индекс в переменную currentIndexActiveItem.
-    * таб-item на котором произошло событие, делаем активным и его страницу тоже
-    **/
     item.addEventListener('click', function(event) {
       if (event.target != tabsHeaderItems[currentIndexActiveItem] && event.target.matches('.tabs__header-item')) {
         tabsHeaderItems[currentIndexActiveItem].classList.remove('tabs__header-item--active');

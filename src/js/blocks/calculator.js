@@ -3,6 +3,13 @@
 
   /**
    * Переменные для калькулятора сырья
+   *
+   * @param {DOM} trash засор
+   * @param {DOM} materialsDeliveryType тип доставки
+   * @param {DOM} materialsKg килограммы сырья
+   * @param {DOM} outputCountingResult здесь выводим ссумму в рублях по сырью
+   * @param {DOM} typeMaterials весь родительский select для типа сырья
+   * @param {DOM} currentTypeMaterials выбранный тип сырья
    */
   let trash = document.getElementById('checkboxCalc');
   let materialsDeliveryType = document.getElementById("materialsDeliveryType");
@@ -13,6 +20,13 @@
 
   /**
    * Переменные для калькулятора поддонов
+   *
+   * @param {DOM} checkboxEpal checkbox наличие клейма Epal.
+   * @param {DOM} palletGrade весь родительский select выбора сорта поддонов
+   * @param {DOM} currentPalletGrade выбранный сорт поддонов
+   * @param {DOM} palletDeliveryType тип доставки поддонов
+   * @param {DOM} palletsQuantity количество поддонов
+   * @param {DOM} outputCountingResultCurrencyPallets здесь выводим ссумму в рублях по поддонам
    */
   let checkboxEpal = document.getElementById('epal');
   let palletGrade = document.getElementById('palletGrade');
@@ -22,13 +36,19 @@
   let outputCountingResultCurrencyPallets = document.getElementById('resultPalletsCurrency');
 
   /**
-   * Переменные для калькулятора утилизации
+   * Переменные для калькулятора уничтожения архива
+   *
+   * @param {DOM} destructionKg вес архива для уничтожения в кг
+   * @param {DOM} outputCountingResultCurrencyDestruction здесь выводим ссумму в рублях по уничтожению
    */
   let destructionKg = document.getElementById('destructionRange');
   let outputCountingResultCurrencyDestruction = document.getElementById('resultDestructionCurrency');
 
   /**
-   * Переменные для калькулятора хранения
+   * Переменные для калькулятора уничтожения архива
+   *
+   * @param {DOM} destructionKg вес архива для хранения в кг
+   * @param {DOM} outputCountingResultCurrencyDestruction здесь выводим ссумму в рублях для хранения
    */
   let storageKg = document.getElementById('storageRange');
   let outputCountingResultCurrencyStorage = document.getElementById('resultStorageCurrency');
@@ -36,14 +56,10 @@
   /**
   * priceMaterials{} - прайс на сырье
   *
-  * свойста объекта -> Цены на сырье, зависят от объема в кг и типа доставки
-  * метод объекта getPriceSelectedTypeMaterials возвращет цену выбранного сырья.   Принимает на воход объем в кг и тип доставки
-  *
-  * pricePallets{} - прайс на поддоны
-  *
-  * свойства объекта -> цены на сырье, зависят от сорта, наличия клейма epal, типа доставки
-  * метод объекта getPriceSelectedGradePallet возвращет цену выбранного сырья.   Принимает на воход объем в кг и тип доставки
-  **/
+  * priceMaterials[тип-сырья];
+  * priceMaterials[тип-сырья][тип-доставки];
+  * priceMaterials[тип-сырья][тип-доставки][цена-кг-от-объема];
+  */
   const priceMaterials = {
     "cardboard": {
       'our-delivery': {
@@ -328,6 +344,13 @@
     }
   };
 
+  /**
+  * pricePallets{} - прайс на поддоны
+  *
+  * priceMaterials[сорт-поддонов];
+  * priceMaterials[сорт-поддонов][тип-доставки];
+  * priceMaterials[сорт-поддонов][тип-доставки][наличие-клейма-Epal];
+  */
   const pricePallets = {
     "first-grade": {
       'our-delivery': {
@@ -367,8 +390,11 @@
     }
   };
 
-  // с помощью конструктора будем форматировать выводимые на страницах значения в рублях
-  // const formatter = new Intl.NumberFormat('ru');
+  /**
+   * форматирует число
+   *
+   * @constructor formatterСurrency форматируем итоговое значение в рублях в удобночитаемой формате с разделением на разряды и значек валюты
+   */
   const formatterСurrency = new Intl.NumberFormat("ru", {
     style: 'currency',
     currency: 'RUB'
@@ -382,15 +408,9 @@
   * materialsDeliveryType - изменения типа доставки
   * trash - изменения наличия засора есть/нет
   * typeMaterials - изменение типа сырья
-  *
-  * Калькулятор поддонов:
-  * checkboxEpal - изменение наличия клейма Epal нет/есть
-  * palletGrade - выбор сорта поддонов
-  * palletDeliveryType - изменение типа доставки
-  * palletsQuantity - изменение количества поддонов
   **/
   materialsKg.addEventListener('input', function(){
-    // если тип сыря не выбран, выводим erorr на select`e
+    // если тип сыря не выбран, показываем erorr на select`e
     if (!currentTypeMaterials.getAttribute('name')) showErrorsSelect(currentTypeMaterials);
     handlerEnteredDataMaterials();
   });
@@ -398,38 +418,56 @@
   trash.addEventListener('change', handlerEnteredDataMaterials);
   typeMaterials.addEventListener('click', handlerEnteredDataMaterials);
 
+  /**
+  * Прослушиваем события
+  *
+  * Калькулятор поддонов:
+  * checkboxEpal - изменение наличия клейма Epal нет/есть
+  * palletGrade - выбор сорта поддонов
+  * palletDeliveryType - изменение типа доставки
+  * palletsQuantity - изменение количества поддонов
+  */
   checkboxEpal.addEventListener('change', handlerEnteredDataPallets);
   palletGrade.addEventListener('click', handlerEnteredDataPallets);
   palletDeliveryType.addEventListener('change', handlerEnteredDataPallets);
   palletsQuantity.addEventListener('input', function() {
+    // если не выбран сорт поддонов, показываем erorr на select`e
     if (!currentPalletGrade.getAttribute('name')) showErrorsSelect(currentPalletGrade);
     handlerEnteredDataPallets();
   });
 
+  /**
+  * Прослушиваем события
+  *
+  * Калькулятор уничтожения архива:
+  * При изменении веса запускаем функцию подсчета.
+  * Полученное значение форматируем в удобочитаемое число.
+  */
   destructionKg.addEventListener('input', function() {
     let resultSumCurrency = makesCalculationCurrency(5, this.value);
     outputCountingResultCurrencyDestruction.innerHTML = formatterСurrency.format(resultSumCurrency);
   });
 
+  /**
+  * Прослушиваем события
+  *
+  * Калькулятор хранения архива:
+  * При изменении веса запускаем функцию подсчета.
+  * Полученное значение форматируем в удобочитаемое число.
+  */
   storageKg.addEventListener('input', function() {
     let resultSumCurrency = makesCalculationCurrency(5, this.value);
     outputCountingResultCurrencyStorage.innerHTML = formatterСurrency.format(resultSumCurrency);
   });
 
   /**
-  * функция handlerEnteredDataMaterials()
+  * обрабатываем введенные пользователем данные и передаем их в метод объекта прайса для выборки цены
   *
-  * variables:
-  * selectedTypeMaterials - хранит значени атрибута 'name', в котором значение является ключом объекта priceMaterials типа сырья
-  * typeDelivery - хранит тип досатвки, который также будет педаваться в объект priceMaterials в виде ключа для типа доставки
-  *
-  * Логика:
-  * если в selectedTypeMaterials есть значение атрибута 'name', т.е. тип сырья выбран
-  * запускаем метод объекта priceMaterials.getPriceSelectedTypeMaterials()
-  * в метод передаем парметры: тип сырья, тип доставки, количество кг(в параметрах ключи для объекта priceMaterials{})
-  * возвращает цену выбранного сырья в соответствеии с параметрами переданными в виде ключей
-  * вызвыаем функцию makesCalculationCurrency(), в которую передаем цену и количество кг
-  * полученный рерзультат из функции makesCalculationCurrency() форматируем и выводим на страницу
+  * @param {string} selectedTypeMaterials - значени атрибута 'name', используем как ключ объекта priceMaterials[типа-сырья]
+  * @param {string} typeDelivery - checkbox, используем как ключ объекта priceMaterials[типа-сырья][тип-доставки]
+  * @param {number} price - цена выбранного товара, возвращенная методом priceMaterials.getPriceSelectedTypeMaterials(selectedTypeMaterials, typeDelivery, materialsKg.value)
+  * @param {boolean} trash.checked - если выбран засор price умножаем на 0.9
+  * @param {string} outputCountingResult - выводим результат подсчета на страницу
   **/
   function handlerEnteredDataMaterials() {
     let selectedTypeMaterials = currentTypeMaterials.getAttribute('name');
@@ -437,10 +475,22 @@
 
     if (selectedTypeMaterials) {
       let price = priceMaterials.getPriceSelectedTypeMaterials(selectedTypeMaterials, typeDelivery, materialsKg.value);
+
+      if (trash.checked) price = price * 0.9;
+
       outputCountingResult.innerHTML = formatterСurrency.format( makesCalculationCurrency(price, materialsKg.value) );
     }
   }
 
+  /**
+  * обрабатываем введенные пользователем данные и передаем их в метод объекта прайса для выборки цены
+  *
+  * @param {string} selectedGradePallet - значение атрибута 'name', используем как ключ объекта pricePallets[сорт-поддонов]
+  * @param {string} typeDelivery - checkbox, используем как ключ объекта pricePallets[сорт-поддонов][тип-доставки]
+  * @param {string} presenceStampEpal - checkbox, используем как ключ объекта pricePallets[сорт-поддонов][тип-доставки][наличие-клейма-epal]
+  * @param {number} price - цена выбранного сорта поддонов, возвращенная методом priceMaterials.getPriceSelectedGradePallet(selectedGradePallet, typeDelivery, presenceStampEpal)
+  * @param {string} outputCountingResultCurrencyPallets - выводим результат подсчета на страницу
+  **/
   function handlerEnteredDataPallets() {
     let selectedGradePallet = currentPalletGrade.getAttribute('name');
     let typeDelivery = palletDeliveryType.checked ? 'our-delivery' : 'self-delivery';
@@ -454,21 +504,20 @@
 
   /**
   * Умножает цену товара на количество
-  * Если выбран засор умножает на коофициент 0.9
   *
   * @param {number} priceMaterials цена за единицу товара
   * @param {number} numberKilograms количество
   **/
   function makesCalculationCurrency(priceMaterials, numberKilograms) {
-    return (trash.checked)? (priceMaterials * numberKilograms) * 0.9 : priceMaterials * numberKilograms;
+    return priceMaterials * numberKilograms;
   }
 
   /**
-   * На родительском элементе устанавливается ошибка
+   * На родительском элементе показываем ошибку
    *
    * @param {DOM} currentSelect элемент чьего родителя будем находить
    * При фокусе, если на элементе был error снимаем его
-   * Ставим error на родительский элемент
+   * Показываем error на родительский элемент
    */
   function showErrorsSelect(currentSelect) {
     let parentSelect = currentSelect.closest('.select');

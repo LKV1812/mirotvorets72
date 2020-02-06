@@ -1,0 +1,79 @@
+@import '../../variables/variables.scss';
+
+.about-bg {
+  margin-top: -5px;
+  background-image: url("../img/index/about/about-bg.png");
+  padding-top: 80px;
+  padding-bottom: 70px;
+}
+
+.index-about {
+  display: flex;
+  justify-content: space-around;
+}
+
+.index-about__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.index-about__sticker {
+  width: 470px;
+  padding-left: 35px;
+  padding-right: 35px;
+  margin-bottom: 30px;
+  box-shadow: 0 16px 50px 1px rgba(154, 90, 19, 0.34);
+  box-shadow: 5px 19px 60px 1px rgba(154,90,19,.8);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  text-align: center;
+
+  &--service {
+    height: 288px;
+    background-image: url("../img/index/about/sticker-service.png");
+  }
+
+  &--team {
+    height: 270px;
+    background-image: url("../img/index/about/sticker-team.png");
+  }
+
+  &--improvement {
+    height: 369px;
+    background-image: url("../img/index/about/sticker-improvement.png");
+  }
+
+  &--partners {
+    height: 189px;
+    background-image: url("../img/index/about/sticker-partners.png");
+  }
+}
+
+.index-about__sticker-title {
+  padding-top: 20px;
+  &::after {
+    display: block;
+    margin-top: 9px;
+    content: url('../img/index/about/title-delimiter-about.png');
+  }
+}
+
+.sticker-subtitle {
+  padding-top: 5px;
+  text-align: left;
+  font-family: $textType2;
+  font-size: 16px;
+  font-weight: 600;
+  color: #612228;
+}
+
+.index-about__sticker-text {
+  margin-top: 3px;
+  margin-bottom: 5px;
+  text-align: left;
+  font-family: $textType2;
+  font-size: 14px;
+  line-height: 16px;
+  color: #612228;
+}

@@ -1,14 +1,16 @@
 /**
  * Все обработчики в данной файле реализуют только общее поведение элементов:
- * Стилизация,
- * Поведение,
- * и т.д., и т.п.
+ * Select`ы
+ * Checkbox`ы
+ * Range`ы
+ * Стилизуют
+ * Обрабатывют поведение
+ * Формируют сообщение об ошибке, но не выводят их
  *
  * Не выполняет:
  * передачу значений в другие скрипты,
  * не обрабатывает данные для подсчета чего-либо,
  * не хранит данные,
- * и т.д., и т.п.
  */
 (function() {
   'use strict';
@@ -16,19 +18,16 @@
   /**
    * Обработчик пользовательских селектов
    *
-   * Методом forEach() на каждый item коллекции селектов устанавливаем прослушку addEventListener()
-   *
-   * variables:
-   * select - коллекция всех селектов на сайте
-   * selectHeader - коллекция селектов
-   * selectOption - коллекция тел внутри селектов, с вариантами выбора (option)
+   * @param {DOM[]} select - коллекция всех селектов на сайте
+   * @param {DOM[]} selectHeader - шапки селектов
+   * @param {DOM[]} selectOption - коллекция тел внутри селектов, с вариантами выбора (option)
    *
    * handlers:
    * selectToggle - по клику на селекте активирует его
    * outFocus - при потере фокуса на селекте закрваем его
    * setSelected - по клику на option устанавливает его как выбранный и устанавливает его атрибут [this.name="this.value"]
    */
-  let select = function() {
+  let handlerSelect = function() {
     let select = document.querySelectorAll(".select");
     let selectHeader = document.querySelectorAll(".select__header");
     let selectOption = document.querySelectorAll(".select__option");
@@ -72,7 +71,7 @@
 
   };
 
-  select();
+  handlerSelect();
 
   /**
    * Обработчик checkbox - выбора типа доставки

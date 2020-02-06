@@ -18,6 +18,11 @@
   background-color: #efeef3;
   overflow: hidden;
   line-height: 0;
+
+  &--pallet-bg {
+    background-image: url("../img/cards/pallet.png");
+    background-repeat: round space;
+  }
 }
 
 .card-product__top-img {
