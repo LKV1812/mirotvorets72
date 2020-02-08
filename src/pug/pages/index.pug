@@ -11,3 +11,10 @@ block content
   include ../sections/index/order.pug
   include ../sections/index/calculator-section-bg.pug
   include ../sections/index/about.pug
+  include ../blocks/map.pug
+
+block scripts
+  script(src="vendor/libs/jquery/dist/jquery.min.js")
+  script(src="https://api-maps.yandex.ru/2.1/?apikey=4ce07f9d-d0c5-48da-8c8a-f943b956c1c0&lang=ru_RU"
+    type="text/javascript")
+  script(src="assets/js/main.js")

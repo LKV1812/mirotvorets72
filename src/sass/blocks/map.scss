@@ -1,0 +1,95 @@
+@import '../variables/variables.scss';
+
+.map {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background-color: #f1f1f1;
+}
+
+.map__annotation-mark-wrap {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50px;
+  z-index: 3;
+}
+
+.map__annotation-mark {
+  display: flex;
+  align-items: center;
+  width: 170px;
+  height: 48px;
+  background-color: #ffffff;
+  border-radius: 35px;
+  box-shadow: 0 6px 30px 0 rgba(154, 90, 19, .6);
+
+  &:first-child {
+    margin-right: 20px;
+  }
+}
+
+.map__annotation-mark-bg {
+  display: inline-block;
+  line-height: 0;
+  height: 100%;
+}
+
+.map__annotation-mark-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+
+  font-family: $textType1;
+  color: #612228;
+  font-size: 17px;
+  text-transform: uppercase;
+}
+
+.map__bottom-grass {
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.map__bottom-grass-img {
+  height: 100%;
+}
+
+.map__mark {
+  width: 34px;
+  height: 42px;
+}
+
+.map__mark-ballon-header {
+  font-family: $textType1;
+  color: #612228;
+  font-weight: 400;
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+.map__mark-ballon-content {
+  font-family: $textType2;
+  color: #612228;
+  font-weight: 400;
+  font-size: 17px;
+}
+
+.map__mark-ballon-hint {
+  font-family: $textType2;
+  color: #612228;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.3;
+}

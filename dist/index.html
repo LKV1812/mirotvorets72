@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="vendor/libs/normalize/normalize.css" />
@@ -469,7 +470,21 @@
       </div>
     </div>
   </section>
+  <section class="map" id="map">
+    <div class="map__annotation-mark-wrap">
+      <div class="map__annotation-mark">
+        <div class="map__annotation-mark-bg"><img src="assets/img/map/icon-botton-red.png" alt="красный" /></div>
+        <div class="map__annotation-mark-text">Офис</div>
+      </div>
+      <div class="map__annotation-mark">
+        <div class="map__annotation-mark-bg"><img src="assets/img/map/icon-botton-green.png" alt="зеленый" /></div>
+        <div class="map__annotation-mark-text">Пункт приёма</div>
+      </div>
+    </div>
+    <div class="map__bottom-grass"><img class="map__bottom-grass-img" src="assets/img/map/map-grass-bottom.png" alt="трава" /></div>
+  </section>
   <script src="vendor/libs/jquery/dist/jquery.min.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=4ce07f9d-d0c5-48da-8c8a-f943b956c1c0&amp;lang=ru_RU" type="text/javascript"></script>
   <script src="assets/js/main.js"></script>
 </body>
 
