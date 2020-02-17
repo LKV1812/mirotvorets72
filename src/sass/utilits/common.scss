@@ -23,13 +23,14 @@
   font-family: $textType1;
   font-size: 44px;
   font-weight: 400;
-  line-height: 0.5;
+  line-height: 41px;
   text-transform: uppercase;
   text-align: center;
 
   &:after {
     display: block;
     content: url("../img/index/title-delimiter.png");
+    line-height: 0.5;
   }
 }
 

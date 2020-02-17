@@ -1,0 +1,12 @@
+section.review
+  .container
+    .section__title Мы хотим становиться лучше <br>напишите Ваши пожелания или отзыв
+    form#formReview.form-review
+      .input-wrap.input-wrap--mb-30
+        input.input(type="text",name="user-name", placeholder="Ваше имя")
+        input.input(type="tel", name="user-phone", placeholder="Ваш телефон")
+        input.input(type="email", name="user-email", placeholder="Ваш email")
+      .input-wrap
+        textarea#reviewTextarea.textarea(name="review-message", placeholder="напишите отзыв")
+      .input-wrap.input-wrap--content-center.input-wrap--mb-0
+        +button-input-tipe-a("submit", "send-review", "отправить")
