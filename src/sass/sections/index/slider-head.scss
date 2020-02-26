@@ -63,8 +63,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 560px;
-  height: 640px;
+  width: 635px;
   line-height: 0;
   overflow: hidden;
 }
@@ -150,4 +149,14 @@
 .partners__name {
   line-height: 0;
   margin-right: 40px;
+}
+
+.i {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  background-color: #612228;
+  font-family: $textType1;
+  font-size: 25px;
+  text-align: center;
 }

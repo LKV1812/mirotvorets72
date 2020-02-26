@@ -31,13 +31,6 @@
   &:hover > .pop-up-submenu-footer {
     display: block;
   }
-
-  &:not(:last-child):after {
-    content: url("../img/nav/delimiter-small.png");
-    position: absolute;
-    top: 12px;
-    right: -25px;
-  }
 }
 
 .foot-nav__link {
@@ -125,6 +118,7 @@
   margin-bottom: 5px;
   line-height: 0;
 }
+
 
 .sticker-footer__copyright {
   font-family: $textType2;
