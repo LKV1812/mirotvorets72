@@ -25,6 +25,12 @@
   justify-content: space-between;
 }
 
+.flex-container-vertical-center {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
 .wrap-horizontal-content-center {
   display: flex;
   align-items: center;
@@ -33,6 +39,10 @@
 
 .pt-30 {
   padding-top: 30px;
+}
+
+.mt-35 {
+  margin-top: 35px;
 }
 
 .mb-50 {

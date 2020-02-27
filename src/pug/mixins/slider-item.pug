@@ -1,0 +1,14 @@
+mixin indexHeaderSliderFirstItem()
+  .slider-head__item
+    .container
+      .slider-head__item-title-wrap.slider-head__item-title-wrap--first-item
+        h3.slider-head__item-title сохраним планету живой
+    .slider-head__item-picture-wrap
+      img(class="slider-head__item-picture" src="assets/img/slider/earth.png", alt="земля")
+mixin indexHeaderSliderItem(title, img)
+  .container
+    .index-header-slider-item
+      .slider-head__item-title-wrap
+        h1.slider-head__item-title #{title}
+      .slider-head__item-img-wrap
+        img(src= img, alt= title, class="slider-head__item-img")

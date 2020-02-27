@@ -1,6 +1,8 @@
 $(document).ready(function(){
-  var owl = $('#carouselIndexPade');
-  owl.owlCarousel({
+  var indexHeaderSlider = $('#carouselIndexPade');
+
+  indexHeaderSlider.owlCarousel({
+    autoplay: true,
     loop: true,
       smartSpeed: 1500,
       responsive: {
@@ -14,14 +16,12 @@ $(document).ready(function(){
         },
       }
   });
-  // Go to the next item
+
   $('.slider-head__buttom--next').click(function() {
-    owl.trigger('next.owl.carousel');
+    indexHeaderSlider.trigger('next.owl.carousel');
   });
-  // Go to the previous item
+
   $('.slider-head__buttom--prev').click(function() {
-      // With optional speed parameter
-      // Parameters has to be in square bracket '[]'
-      owl.trigger('prev.owl.carousel', [1500]);
+    indexHeaderSlider.trigger('prev.owl.carousel');
   });
 });

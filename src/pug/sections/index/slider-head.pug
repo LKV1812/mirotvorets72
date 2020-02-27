@@ -1,39 +1,21 @@
-.section
-  #carouselIndexPade.owl-carousel.owl-theme
-    .i Первый слайд
-    .i Второй слайд
-    .i Третий слайд
-    .i Четвертый слайд
-    .i Пятый слайд
-    .i Шестой слайд
-    .i Седьмой слайд
-    .i Восьмой слайд
-    .i Девятый слайд
-    .i Десятый слайд
-.slider-head__buttom-wrap
-    a(href="#").slider-head__buttom.slider-head__buttom--prev
-    a(href="#").slider-head__buttom.slider-head__buttom--next
-      //- .slider-head__item
-      //-   .container
-      //-     .row
-      //-       .col-lg-7
-      //-         .slider-head__item-title-wrap
-      //-           h3.slider-head__item-title сохраним планету живой
-      //-   .slider-head__item-picture-wrap
-      //-     img(class="slider-head__item-picture" src="assets/img/slider/earth.png", alt="земля")
-      //- .slider-head__item
-      //-   .container
-      //-     .row
-      //-       .col-lg-7
-      //-         .slider-head__item-title-wrap
-      //-           h3.slider-head__item-title сохраним планету живой
-      //-   .slider-head__item-picture-wrap
-      //-     img(class="slider-head__item-picture" src="assets/img/slider/earth.png", alt="земля")
+include ../../mixins/slider-item.pug
+
 .slider-head
+  #carouselIndexPade.owl-carousel.owl-theme
+    +indexHeaderSliderFirstItem()
+    +indexHeaderSliderItem("покупаем вторсырье", "assets/img/slider/submaterials.jpg")
+    +indexHeaderSliderItem("устанавливаем экобоксы", "assets/img/slider/eco-box.png")
+    +indexHeaderSliderItem("уничтожаем архивы", "assets/img/slider/destruction.png")
+    +indexHeaderSliderItem("хранение документов", "assets/img/slider/storage.png")
+  .container
+    .slider-controls-row
+      .slider-head__buttom-wrap
+        a(href="#").slider-head__buttom.slider-head__buttom--prev
+        a(href="#").slider-head__buttom.slider-head__buttom--next
+
   .container
     .partners
       .partners__title наши<br>партнеры:
-
       .partners__name
         img(src="assets/img/partners/visa.png" alt="логотип").partners__name-img
 
