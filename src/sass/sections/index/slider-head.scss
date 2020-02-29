@@ -84,7 +84,7 @@
   right: 0;
   width: 300px;
   height: 300px;
-  // border: 3px solid rgb(77, 131, 0);
+  border: 3px solid rgb(77, 131, 0);
   border-radius: 100%;
   box-shadow: -7px 8px 32px 10px rgba(154, 90, 19, 0.6);
   line-height: 0;
@@ -160,6 +160,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &--bottom {
+    padding-top: 0;
+  }
 }
 
 .partners__title {
@@ -176,6 +180,13 @@
 }
 
 .partners__name {
+  height: 60px;
   line-height: 0;
   margin-right: 40px;
+  overflow: hidden;
+}
+
+.partners__name-img {
+  height: 100%;
+  width: auto;
 }

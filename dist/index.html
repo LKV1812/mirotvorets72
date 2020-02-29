@@ -46,7 +46,7 @@
         <div class="sticker">
           <div class="sticker__content"><img class="sticker-logo__picture" src="assets/img/nav/logo.png" alt="логитип" /></div>
         </div>
-        <div class="lower-nav"><a class="lower-nav__button" href="#">расчет стоимости<div class="lower-nav__button-bg"><img class="lower-nav__button-picture" src="assets/img/head-lower-menu/calculator.png" alt="калькулятор" /></div></a><a class="lower-nav__button" href="#">оформить заказ<div class="lower-nav__button-bg lower-nav__button-bg--silver"><img class="lower-nav__button-picture" src="assets/img/head-lower-menu/paper.png" alt="Лист бумаги" /></div></a><a class="lower-nav__button" href="#">8 800 600 71 31<div class="lower-nav__button-bg lower-nav__button-bg--brown"><img class="lower-nav__button-picture" src="assets/img/head-lower-menu/phone.png" alt="Лист бумаги" /></div></a><a class="lower-nav__button lower-nav__button--special" href="#">экологический десант<div class="lower-nav__button-bg lower-nav__button-bg--green"><img class="lower-nav__button-picture" src="assets/img/head-lower-menu/bush.png" alt="Лист бумаги" /></div></a></div>
+        <div class="lower-nav"><a class="lower-nav__button" href="#calculator">расчет стоимости<div class="lower-nav__button-bg"><img class="lower-nav__button-picture" src="assets/img/head-lower-menu/calculator.png" alt="калькулятор" /></div></a><a class="lower-nav__button" href="#order">оформить заказ<div class="lower-nav__button-bg lower-nav__button-bg--silver"><img class="lower-nav__button-picture" src="assets/img/head-lower-menu/paper.png" alt="Лист бумаги" /></div></a><a class="lower-nav__button" href="tel:88006007131">8 800 600 71 31<div class="lower-nav__button-bg lower-nav__button-bg--brown"><img class="lower-nav__button-picture" src="assets/img/head-lower-menu/phone.png" alt="Лист бумаги" /></div></a><a class="lower-nav__button lower-nav__button--special" href="#">экологический десант<div class="lower-nav__button-bg lower-nav__button-bg--green"><img class="lower-nav__button-picture" src="assets/img/head-lower-menu/bush.png" alt="Лист бумаги" /></div></a></div>
       </div>
     </div>
   </header>
@@ -79,6 +79,14 @@
       <div class="container">
         <div class="index-header-slider-item">
           <div class="slider-head__item-title-wrap">
+            <h1 class="slider-head__item-title">продаем контейнеры</h1>
+          </div>
+          <div class="slider-head__item-img-wrap"><img class="slider-head__item-img" src="assets/img/slider/containers.png" alt="продаем контейнеры" /></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="index-header-slider-item">
+          <div class="slider-head__item-title-wrap">
             <h1 class="slider-head__item-title">уничтожаем архивы</h1>
           </div>
           <div class="slider-head__item-img-wrap"><img class="slider-head__item-img" src="assets/img/slider/destruction.png" alt="уничтожаем архивы" /></div>
@@ -101,10 +109,9 @@
     <div class="container">
       <div class="partners">
         <div class="partners__title">наши<br>партнеры:</div>
-        <div class="partners__name"><img class="partners__name-img" src="assets/img/partners/visa.png" alt="логотип" /></div>
-        <div class="partners__name"><img class="partners__name-img" src="assets/img/partners/lenovo.png" alt="логотип" /></div>
-        <div class="partners__name"><img class="partners__name-img" src="assets/img/partners/asus.png" alt="логотип" /></div>
-        <div class="partners__name"><img class="partners__name-img" src="assets/img/partners/aser.png" alt="логотип" /></div>
+        <div class="partners__name"><img class="partners__name-img" src="assets/img/partners/logo-lpm.png" alt="логотип" /></div>
+        <div class="partners__name"><img class="partners__name-img" src="assets/img/partners/logo-pcbk.png" alt="логотип" /></div>
+        <div class="partners__name"><img class="partners__name-img" src="assets/img/partners/logo-zl.png" alt="логотип" /></div>
       </div>
     </div>
   </div>
@@ -247,7 +254,7 @@
       </div>
     </div>
   </section>
-  <section class="section-order">
+  <section class="section-order" id="order">
     <div class="container">
       <div class="section__title">Форма заявки</div>
       <form class="general-order" id="indexGeneralOrder">
@@ -326,7 +333,7 @@
     </div>
   </section>
   <div class="calculator-full-bg">
-    <section class="section">
+    <section class="section" id="calculator">
       <div class="container">
         <div class="section__title">Калькулятор</div>
         <div class="calculator-full-wrap">
@@ -380,7 +387,7 @@
                         <div class="select__option" name="glass">Стекло листовое прозрачное</div>
                         <div class="select__option" name="glass-white-brown">Стекло белое и коричневое (банки, бутылки)</div>
                         <div class="select__option" name="glass-green">Стекло зеленое (банки, бутылки)</div>
-                        <div class="select__option" name="bags">Бэги</div>
+                        <div class="select__option" name="bags">Биг-Бэги (мешок МКР)</div>
                       </div>
                     </div>
                     <div class="select__header"><span class="select-current" id="currentTypeMaterials">Выберите тип сырья</span>
@@ -579,12 +586,11 @@
   </section>
   <section class="partners-bottom">
     <div class="container">
-      <div class="partners">
+      <div class="partners partners--bottom">
         <div class="partners__title partners__title--lighten">наши<br>партнеры:</div>
-        <div class="partners__name"><img class="partners__name-img" src="assets/img/partners/visa-lighten.png" alt="логотип" /></div>
-        <div class="partners__name"><img class="partners__name-img" src="assets/img/partners/lenovo-lighten.png" alt="логотип" /></div>
-        <div class="partners__name"><img class="partners__name-img" src="assets/img/partners/asus-lighten.png" alt="логотип" /></div>
-        <div class="partners__name"><img class="partners__name-img" src="assets/img/partners/aser-lighten.png" alt="логотип" /></div>
+        <div class="partners__name"><img class="partners__name-img" src="assets/img/partners/logo-lpm.png" alt="логотип" /></div>
+        <div class="partners__name"><img class="partners__name-img" src="assets/img/partners/logo-pcbk.png" alt="логотип" /></div>
+        <div class="partners__name"><img class="partners__name-img" src="assets/img/partners/logo-zl.png" alt="логотип" /></div>
       </div>
     </div>
   </section>
