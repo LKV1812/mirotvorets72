@@ -1,5 +1,36 @@
 header.head
   .head-nav-bg
+    .head-nav-mobile
+      a(href="#" id="menu-toggle" class="menu-toggle") меню
+      ul.dropdown-menu-mobile#dropdownMenuMobile
+        li.dropdown-menu-mobile__list
+          a(href="#").dropdown-menu-mobile__link.dropdown-menu-mobile__link-arrow Наши услуги
+          .dropdown-menu-mobile__submenu
+            a(href="#").dropdown-menu-mobile__link Утилизация архивов
+            a(href="#").dropdown-menu-mobile__link Хранение архивов
+            a(href="#").dropdown-menu-mobile__link Установка экобоксов
+            a(href="#").dropdown-menu-mobile__link Приём вторсырья
+        li.dropdown-menu-mobile__list
+          a(href="#").dropdown-menu-mobile__link Мы покупаем
+        li.dropdown-menu-mobile__list
+          a(href="#").dropdown-menu-mobile__link Цены
+        li.dropdown-menu-mobile__list
+          a(href="#").dropdown-menu-mobile__link Наши проекты
+        li.dropdown-menu-mobile__list
+          a(href="#").dropdown-menu-mobile__link.dropdown-menu-mobile__link-arrow О компании
+          .dropdown-menu-mobile__submenu
+            a(href="#").dropdown-menu-mobile__link Вакансии
+            a(href="#").dropdown-menu-mobile__link Партнерам
+            a(href="#").dropdown-menu-mobile__link Наша команда
+            a(href="#").dropdown-menu-mobile__link Отзывы
+        li.dropdown-menu-mobile__list
+          a(href="#").dropdown-menu-mobile__link Блог
+        li.dropdown-menu-mobile__list
+          a(href="#").dropdown-menu-mobile__link Контакты
+        li.dropdown-menu-mobile__list
+          a(href="#").dropdown-menu-mobile__link Личный кабинет
+        li.dropdown-menu-mobile__list
+          a(href="#").dropdown-menu-mobile__link Вопрос - ответ
     .container.pos-rel
       ul.head-nav
         li.head-nav__list
@@ -50,18 +81,14 @@ header.head
         .sticker__content
           img(src="assets/img/nav/logo.png", alt="логитип" class="sticker-logo__picture")
       .lower-nav
-        a(href="#calculator").lower-nav__button расчет стоимости
-          .lower-nav__button-bg
-            img.lower-nav__button-picture(src="assets/img/head-lower-menu/calculator.png", alt="калькулятор")
+        a(href="#calculator" class="lower-nav__button") расчет стоимости
+          .lower-nav__button-bg.lower-nav__button-bg--calculator
 
-        a(href="#order").lower-nav__button оформить заказ
-          .lower-nav__button-bg.lower-nav__button-bg--silver
-            img.lower-nav__button-picture(src="assets/img/head-lower-menu/paper.png", alt="Лист бумаги")
+        a(href="#order" class="lower-nav__button") оформить заказ
+          .lower-nav__button-bg.lower-nav__button-bg--order
 
-        a(href="tel:88006007131").lower-nav__button 8 800 600 71 31
-          .lower-nav__button-bg.lower-nav__button-bg--brown
-            img.lower-nav__button-picture(src="assets/img/head-lower-menu/phone.png", alt="Лист бумаги")
+        a(href="tel:88006007131" class="lower-nav__button") 8 800 600 71 31
+          .lower-nav__button-bg.lower-nav__button-bg--phone
 
-        a(href="#").lower-nav__button.lower-nav__button--special экологический десант
-          .lower-nav__button-bg.lower-nav__button-bg--green
-            img.lower-nav__button-picture(src="assets/img/head-lower-menu/bush.png", alt="Лист бумаги")
+        a(href="#" class="lower-nav__button lower-nav__button--special") эко десант
+          .lower-nav__button-bg.lower-nav__button-bg--bush
