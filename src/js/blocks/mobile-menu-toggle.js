@@ -15,13 +15,15 @@
     dropdownMenuMobile.classList.add('dropdown-menu-mobile--show-menu');
   };
 
-  dropdownMenuMobileLink.forEach( item => {
+  window.onscroll = function() {
+    dropdownMenuMobile.classList.remove('dropdown-menu-mobile--show-menu');
+  };
+
+  dropdownMenuMobileLink.forEach(item => {
     item.addEventListener('click', function() {
       if (this.classList.contains('dropdown-menu-mobile__link-arrow')) return;
       dropdownMenuMobile.classList.remove('dropdown-menu-mobile--show-menu');
     });
   });
-
-
 
 })();

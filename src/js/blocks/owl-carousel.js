@@ -2,7 +2,7 @@ $(document).ready(function(){
   var indexHeaderSlider = $('#carouselIndexPade');
 
   indexHeaderSlider.owlCarousel({
-    autoplay: true,
+    // autoplay: true,
     loop: true,
       smartSpeed: 1500,
       responsive: {
