@@ -15,8 +15,13 @@ body {
 }
 
 .section {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @media (min-width: 768px) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
 }
 
 .section__title {
@@ -25,9 +30,9 @@ body {
   margin-bottom: 35px;
   color: #612228;
   font-family: $textType1;
-  font-size: 44px;
+  font-size: 34px;
   font-weight: 400;
-  line-height: 41px;
+  line-height: 31px;
   text-transform: uppercase;
   text-align: center;
 
@@ -35,6 +40,11 @@ body {
     display: block;
     content: url("../img/index/title-delimiter.png");
     line-height: 0.5;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 44px;
+    line-height: 41px;
   }
 }
 

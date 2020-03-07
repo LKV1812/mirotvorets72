@@ -1,6 +1,7 @@
-mixin card-product(imgPath, textAlt, nameProduct, link, startingPrice, finalPrice)
+mixin card-product(imgPathMobile, imgPath, textAlt, nameProduct, link, startingPrice, finalPrice)
   .card-product
     .card-product__top
+      img(src= imgPathMobile, alt= textAlt).card-product__top-img
       img(src= imgPath, alt= textAlt).card-product__top-img
     .card-product__name-product #{nameProduct}
     a(href= link).card-product__button
