@@ -1,5 +1,9 @@
 @import '../variables/variables.scss';
 
+body {
+  min-width: 300px;
+}
+
 .sticker-title {
   text-align: center;
   color: #612228;
