@@ -3,38 +3,139 @@ section.section.overflow-hidden
     h2.section__title мы покупаем
     .row
       .col-sm-12.col-md-4.col-lg-3
-        +card-product("assets/img/cards/paper-small.png", "assets/img/cards/paper.png", "макулатура", "Макулатура", "#", "4", "7")
+        +card-product(
+          "assets/img/cards/paper-small.png",
+          "assets/img/cards/paper.png",
+          "макулатура", "Макулатура",
+          "#",
+          "paper"
+        )
       .col-sm-12.col-md-4.col-lg-3
-        +card-product("assets/img/cards/cardboard-small.png", "assets/img/cards/cardboard.png", "картон", "Картон", "#", "4", "7")
+        +card-product(
+          "assets/img/cards/cardboard-small.png",
+          "assets/img/cards/cardboard.png",
+          "картон",
+          "Картон",
+          "#",
+          "cardboard"
+        )
       .col-sm-12.col-md-4.col-lg-3
-        +card-product("assets/img/cards/membrane-pvd-small.png", "assets/img/cards/membrane-pvd.png", "пленка ПВД", "Пленка ПВД", "#", "4", "7")
+        +card-product(
+          "assets/img/cards/membrane-pvd-small.png",
+          "assets/img/cards/membrane-pvd.png",
+          "пленка ПВД",
+          "Пленка ПВД",
+          "#",
+          "film-pvd"
+        )
       .col-sm-12.col-md-4.col-lg-3
-        +card-product("assets/img/cards/membrane-stretch-small.png", "assets/img/cards/membrane-stretch.png", "пленка стрейч", "Пленка стрейч", "#", "4", "7")
+        +card-product(
+          "assets/img/cards/membrane-stretch-small.png",
+          "assets/img/cards/membrane-stretch.png",
+          "пленка стрейч",
+          "Пленка стрейч",
+          "#",
+          "film-stretch"
+        )
       .col-sm-12.col-md-4.col-lg-3
-        +card-product("assets/img/cards/plastic-small.png", "assets/img/cards/plastic.png", "ПЭТ", "Отходы пластмасс", "#", "4", "7")
+        +card-product(
+          "assets/img/cards/plastic-small.png",
+          "assets/img/cards/plastic.png",
+          "ПЭТ",
+          "ПЭТ",
+          "#",
+          "polyethylene"
+        )
       .col-sm-12.col-md-4.col-lg-3
-        +card-product("assets/img/cards/aluminum-small.png", "assets/img/cards/aluminum.png", "аллюминиевые банки", "Аллюминиевые банки", "#", "4", "7")
+        +card-product(
+          "assets/img/cards/aluminum-small.png",
+          "assets/img/cards/aluminum.png",
+          "аллюминиевые банки",
+          "Аллюминиевые банки",
+          "#",
+          "aluminum-cans"
+        )
       .col-sm-12.col-md-4.col-lg-3
-        +card-product("assets/img/cards/oil-small.png", "assets/img/cards/oil.png", "Фритюрное масло", "Фритюрное масло", "#", "4", "7")
+        +card-product(
+          "assets/img/cards/oil-small.png",
+          "assets/img/cards/oil.png",
+          "Фритюрное масло", "Фритюрное масло",
+          "#",
+          "oil"
+        )
       .col-sm-12.col-md-4.col-lg-3
-        +card-product("assets/img/cards/glass-small.png", "assets/img/cards/glass.png", "Стекло", "Стекло", "#", "4", "7")
+        +card-product(
+          "assets/img/cards/glass-small.png",
+          "assets/img/cards/glass.png",
+          "Стекло",
+          "Стекло",
+          "#",
+          "glass"
+        )
       .col-sm-12.col-md-4.col-lg-3
-        .card-product
+        .card-product(name="pallet")
           .card-product__top.card-product__top--pallet-bg
           .card-product__name-product Поддоны
           a(href= link).card-product__button
-            <span class="card-product__button-title"> Цена</span><br> от 20р. до 90р. за шт.
+            <span class="card-product__button-title"> Цена</span><br> от <span data-starting-price></span> &#8381 до <span data-final-price></span> &#8381 за кг.
       .col-sm-12.col-md-4.col-lg-3
-        +card-product("assets/img/cards/textile-small.png", "assets/img/cards/textile.png", "Текстиль", "Текстиль", "#", "4", "7")
+        +card-product(
+          "assets/img/cards/textile-small.png",
+          "assets/img/cards/textile.png",
+          "Текстиль",
+          "Текстиль",
+          "#",
+          "textile"
+        )
       .col-sm-12.col-md-4.col-lg-3
-        +card-product("assets/img/cards/canisters-small.png", "assets/img/cards/canisters.png", "Канистры", "Канистры", "#", "4", "7")
+        +card-product(
+          "assets/img/cards/canisters-small.png",
+          "assets/img/cards/canisters.png",
+          "Канистры",
+          "Канистры",
+          "#",
+          "canisters"
+        )
       .col-sm-12.col-md-4.col-lg-3
-        +card-product("assets/img/cards/pet-small.png", "assets/img/cards/pet.png", "Пэт", "Пэт", "#", "4", "7")
+        +card-product(
+          "assets/img/cards/pet-small.png",
+          "assets/img/cards/pet.png",
+          "Бутыль из под воды 19л. (Поликарбонат)",
+          "Бутыль из под воды 19л. (Поликарбонат)",
+          "#",
+          "polyethylene"
+        )
       .col-sm-12.col-md-4.col-lg-3
-        +card-product("assets/img/cards/kegs-small.png", "assets/img/cards/kegs.png", "ПЭТ-кеги", "ПЭТ-кеги", "#", "4", "7")
+        +card-product(
+          "assets/img/cards/kegs-small.png",
+          "assets/img/cards/kegs.png",
+          "ПЭТ-кеги", "ПЭТ-кеги",
+          "#",
+          "kegs"
+        )
       .col-sm-12.col-md-4.col-lg-3
-        +card-product("assets/img/cards/pipes-small.png", "assets/img/cards/pipes.png", "ПНД", "ПНД", "#", "4", "7")
+        +card-product(
+          "assets/img/cards/pipes-small.png",
+          "assets/img/cards/pipes.png",
+          "ПНД",
+          "ПНД",
+          "#",
+          "polyethylene-pipe"
+        )
       .col-sm-12.col-md-4.col-lg-3
-        +card-product("assets/img/cards/bags-small.png", "assets/img/cards/bags.png", "Биг Бэги(МКР)", "Биг Бэги (МКР)", "#", "4", "7")
+        +card-product(
+          "assets/img/cards/bags-small.png",
+          "assets/img/cards/bags.png",
+          "Биг Бэги(МКР)", "Биг Бэги (МКР)",
+          "#",
+          "bags"
+        )
       .col-sm-12.col-md-4.col-lg-3
-        +card-product("assets/img/cards/chemical-containers-small.png", "assets/img/cards/chemical-containers.png", "Тара из под быт. химии", "Тара из под быт. химии", "#", "4", "7")
+        +card-product(
+          "assets/img/cards/chemical-containers-small.png",
+          "assets/img/cards/chemical-containers.png",
+          "Тара из под быт. химии",
+          "Тара из под быт. химии",
+          "#",
+          "plastic-containers"
+        )

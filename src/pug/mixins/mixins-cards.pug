@@ -1,11 +1,12 @@
-mixin card-product(imgPathMobile, imgPath, textAlt, nameProduct, link, startingPrice, finalPrice)
-  .card-product
+mixin card-product(imgPathMobile, imgPath, textAlt, nameProduct, link, priceName)
+  .card-product(name= priceName)
     .card-product__top
       img(src= imgPathMobile, alt= textAlt).card-product__top-img
       img(src= imgPath, alt= textAlt).card-product__top-img
     .card-product__name-product #{nameProduct}
     a(href= link).card-product__button
-      <span class="card-product__button-title"> Цена</span><br> от #{startingPrice}р. до #{finalPrice}р. за кг.
+      <span class="card-product__button-title"> Цена</span><br> от
+      <span data-starting-price></span> &#8381 до <span data-final-price></span> &#8381 за кг.
 
 mixin cards-short-description(imgSrc, imgAlt, date, subtitle, cardText, bottomText)
   .cards-short-description
