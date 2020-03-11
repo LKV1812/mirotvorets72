@@ -2,33 +2,88 @@
 
 .stages-cooperation-bg {
   position: relative;
-  height: 350px;
+  height: 460px;
   background-color: #67af01;
   background-image: url("../img/index/stages-cooperation/bg.png");
   background-repeat: no-repeat;
+  background-size: cover;
   overflow: hidden;
+
+  @media (min-width: 768px) {
+    height: 350px;
+  }
 }
 
 .stages-cooperation {
   height: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
   align-items: center;
+
+  @media (min-width: 400px) {
+    justify-content: space-around;
+  }
+
+  @media(min-width: 768px) {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
 }
 
 .stages-cooperation__stage {
-  width: 140px;
+  width: 100px;
+  @media(min-width: 360px) {
+    width: 140px;
+  }
 }
 
 .stages-cooperation__picture-wrap {
   position: relative;
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
   margin-left: auto;
   margin-right: auto;
   border-radius: 100%;
   line-height: 0;
   text-align: center;
+
+  @media (min-width: 360px) {
+    width: 100px;
+    height: 100px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 120px;
+    height: 120px;
+  }
+
+  &--mobile-small {
+    @media (min-width: 360px) {
+      display: none;
+    }
+  }
+
+  &--mobile {
+    display: none;
+
+    @media (min-width: 360px) {
+      display: block;
+    }
+
+    @media (min-width: 1200px) {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    display: none;
+
+    @media (min-width: 1200px) {
+      display: block;
+    }
+  }
 }
 
 .stages-cooperation__stage-number {
@@ -38,16 +93,22 @@
   position: absolute;
   right: 1px;
   top: 1px;
-  width: 41px;
-  height: 41px;
+  width: 35px;
+  height: 35px;
   border-radius: 100%;
   box-shadow: 4px 8px 38px rgba(35, 60, 0, 0.5), 2px 4px 8px rgba(35, 60, 0, 0.5);
   background-color: #d6251d;
   color: #fdfbfb;
   font-family: $textType1;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 20px;
+
+  @media (min-width: 768px) {
+    width: 41px;
+    height: 41px;
+    font-size: 24px;
+  }
 }
 
 .stages-cooperation__picture {
@@ -58,6 +119,57 @@
 
 .stages-cooperation__picture-wrap-arrow {
   padding-bottom: 40px;
+  line-height: 0;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  &--float-end {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 26%;
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &--float-begin {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 26%;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &--tablet {
+    display: none;
+    @media (min-width: 768px) {
+      display: block;
+    }
+
+    @media (min-width: 992px) {
+      display: none;
+    }
+  }
+
+  &--tablet-and-mobile {
+    display: block;
+    @media (min-width: 992px) {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    display: none;
+    @media (min-width: 992px) {
+      display: block;
+    }
+  }
 }
 
 .stages-cooperation__text {
@@ -69,7 +181,11 @@
   text-align: center;
   color: #ffffff;
   font-family: $textType2;
-  font-size: 17px;
+  font-size: 13px;
   font-weight: 700;
   line-height: 20px;
+
+  @media (min-width: 992px) {
+    font-size: 17px;
+  }
 }
