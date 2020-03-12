@@ -1,28 +1,68 @@
 @import '../../variables/variables.scss';
 
 .for-whom-bg {
-  background-image: url("../img/index/for-whom/for-whom-bg.png");
+  background-image: url("../img/index/for-whom/for-whom-mobile-bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    background-image: url("../img/index/for-whom/for-whom-tablet-bg.jpg");
+  }
+
+  @media (min-width: 1200px) {
+    background-image: url("../img/index/for-whom/for-whom-bg.jpg");
+  }
 }
 
 .for-whom {
   padding-top: 80px;
-  padding-bottom: 80px;
+  padding-bottom: 50px;
+
+  @media (min-width: 1200px) {
+    padding-bottom: 80px;
+  }
 }
 
 .for-whom__sticker {
-  height: 190px;
-  padding-left: 30px;
-  padding-right: 30px;
+  height: 168px;
+  width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
   line-height: 0;
-  box-shadow: 0 16px 50px 1px rgba(154, 90, 19, 0.34);
   box-shadow: 5px 19px 60px 1px rgba(154,90,19,.8);
-  background-image: url("../img/index/for-whom/sticker.png");
+  background-image: url("../img/index/for-whom/sticker-mobile-small.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+
+  @media (min-width: 340px) {
+    height: 180px;
+    width: 300px;
+    background-image: url("../img/index/for-whom/sticker-mobile.png");
+  }
+
+  @media (min-width: 768px) {
+    height: 179px;
+    width: 330px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-image: url("../img/index/for-whom/sticker-tablet.png");
+  }
+
+  @media (min-width: 992px) {
+    height: 190px;
+    width: 350px;
+    background-image: url("../img/index/for-whom/sticker.png");
+  }
+
+  @media (min-width: 1200px) {
+    margin-bottom: 0;
+  }
 }
 
 .for-whom__sticker-title {
