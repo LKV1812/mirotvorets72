@@ -1,8 +1,12 @@
 @import '../variables/variables.scss';
 
 .section-order {
-  padding-top: 80px;
+  padding-top: 60px;
   padding-bottom: 60px;
+
+  @media (min-width: 768px) {
+    padding-top: 80px;
+  }
 }
 
 .general-order {
@@ -12,11 +16,14 @@
 
 .input-wrap {
   width: 100%;
-  margin-bottom: 50px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  overflow: hidden;
+  flex-wrap: wrap;
+
+  @media (min-width: 768px) {
+    justify-content: space-around;
+  }
 
   &--content-center {
     justify-content: center;

@@ -10,6 +10,7 @@
    * @param {DOM} outputCountingResult здесь выводим ссумму в рублях по сырью
    * @param {DOM} typeMaterials весь родительский select для типа сырья
    * @param {DOM} currentTypeMaterials выбранный тип сырья
+   * @method customSelects.showErrorsSelect(); показывает ошибку на select`e, логика работы метода в файле modules/selects.js
    */
   let trash = document.getElementById('checkboxCalc');
   let materialsDeliveryType = document.getElementById("materialsDeliveryType");
@@ -27,6 +28,7 @@
    * @param {DOM} palletDeliveryType тип доставки поддонов
    * @param {DOM} palletsQuantity количество поддонов
    * @param {DOM} outputCountingResultCurrencyPallets здесь выводим ссумму в рублях по поддонам
+   * @method customSelects.showErrorsSelect(); принимает  показывает ошибку на select`e
    */
   let checkboxEpal = document.getElementById('epal');
   let palletGrade = document.getElementById('palletGrade');
@@ -74,7 +76,7 @@
   **/
   materialsKg.addEventListener('input', function(){
     // если тип сыря не выбран, показываем erorr на select`e
-    if (!currentTypeMaterials.getAttribute('name')) showErrorsSelect(currentTypeMaterials);
+    if (!currentTypeMaterials.getAttribute('name')) customSelects.showErrorsSelect(typeMaterials);
     handlerEnteredDataMaterials();
   });
   materialsDeliveryType.addEventListener('change', handlerEnteredDataMaterials);
@@ -95,7 +97,7 @@
   palletDeliveryType.addEventListener('change', handlerEnteredDataPallets);
   palletsQuantity.addEventListener('input', function() {
     // если не выбран сорт поддонов, показываем erorr на select`e
-    if (!currentPalletGrade.getAttribute('name')) showErrorsSelect(currentPalletGrade);
+    if (!currentPalletGrade.getAttribute('name')) customSelects.showErrorsSelect(currentPalletGrade);
     handlerEnteredDataPallets();
   });
 
@@ -182,13 +184,13 @@
    * При фокусе, если на элементе был error снимаем его
    * Показываем error на родительский элемент
    */
-  function showErrorsSelect(currentSelect) {
-    let parentSelect = currentSelect.closest('.select');
-    parentSelect.onfocus = function() {
-      currentSelect.parentElement.classList.remove('error-no-selected');
-      parentSelect.querySelector('.error-no-selected__message').style.display = 'none';
-    };
-    currentSelect.parentElement.classList.add('error-no-selected');
-    parentSelect.querySelector('.error-no-selected__message').style.display = 'flex';
-  }
+  // function showErrorsSelect(currentSelect) {
+  //   let parentSelect = currentSelect.closest('.select');
+  //   parentSelect.onfocus = function() {
+  //     currentSelect.parentElement.classList.remove('error-no-selected');
+  //     parentSelect.querySelector('.error-no-selected__message').style.display = 'none';
+  //   };
+  //   currentSelect.parentElement.classList.add('error-no-selected');
+  //   parentSelect.querySelector('.error-no-selected__message').style.display = 'flex';
+  // }
 }());

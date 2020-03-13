@@ -365,28 +365,23 @@
   <section class="section-order" id="order">
     <div class="container">
       <div class="section__title">Форма заявки</div>
-      <form class="general-order" id="indexGeneralOrder">
-        <div class="input-wrap input-wrap--content-center input-wrap--mb-0"><input class="button-inpute-type-a" type="submit" name="#" value="отправить заявку" /></div>
-        <div class="input-wrap input-wrap--content-center">
-          <div class="checkbox-goup"><span class="checkbox-goup__text">Засор</span><input class="checkbox" type="checkbox" name="clog" id="checkbox" /><label class="checkbox-label" for="checkbox"></label></div>
-        </div>
-        <div class="input-wrap"><input class="input" type="text" name="weight" placeholder="Сколько килограмм" /><input class="input" type="text" name="address" placeholder="Откуда забирать" /><input class="input" type="tel" name="phone" placeholder="Ваш телефон" /></div>
-        <div class="input-wrap">
+      <form id="indexGeneralOrder">
+        <div class="input-wrap input-wrap--mb-0">
           <div class="select" tabindex="0">
             <div class="select__options-wrap">
               <div class="select__empty-cutter"></div>
               <div class="select__wrap-only-option scroll-vertical-small">
-                <div class="select__option">Утилизация архивов</div>
-                <div class="select__option">Хранение архивов</div>
-                <div class="select__option">Прием вторсырья</div>
-                <div class="select__option">Установка экобоксов</div>
+                <div class="select__option" name="destruction-archive">Утилизация архивов</div>
+                <div class="select__option" name="storage-archive">Хранение архивов</div>
+                <div class="select__option" name="buying-materials">Прием вторсырья</div>
+                <div class="select__option" name="buying-materials">Установка экобоксов</div>
               </div>
             </div>
             <div class="select__header"><span class="select-current">Выберите услугу</span>
               <div class="select__icon-dropdown"><img src="assets/img/form/select-dropdown.png" alt="стрелка" /></div>
               <div class="error-no-selected__message">
                 <div class="error-no-selected__message-icon">!</div>
-                <div class="error-no-selected__message-text">Не выбран тип услуги</div>
+                <div class="error-no-selected__message-text"></div>
               </div>
             </div>
           </div>
@@ -394,26 +389,34 @@
             <div class="select__options-wrap">
               <div class="select__empty-cutter"></div>
               <div class="select__wrap-only-option scroll-vertical-small">
-                <div class="select__option">Картон</div>
-                <div class="select__option">Макулатура (офисная бумага)</div>
-                <div class="select__option">Макулатура (книги)</div>
-                <div class="select__option">Макулатура (газеты)</div>
-                <div class="select__option">Макулатура (журналы)</div>
-                <div class="select__option">Макулатура (иное)</div>
-                <div class="select__option">Пленка (ПВД)</div>
-                <div class="select__option">Пленка (стрейч)</div>
-                <div class="select__option">ПЭТ</div>
-                <div class="select__option">Масло</div>
-                <div class="select__option">Поддоны</div>
-                <div class="select__option">Кеги</div>
-                <div class="select__option">Стекло</div>
+                <div class="select__option" name="cardboard">Картон</div>
+                <div class="select__option" name="books">Макулатура (книги)</div>
+                <div class="select__option" name="paper">Макулатура (офисная бумага)</div>
+                <div class="select__option" name="newspapers">Макулатура (газеты)</div>
+                <div class="select__option" name="magazines">Макулатура (журналы)</div>
+                <div class="select__option" name="film-pvd">Пленка (ПВД)</div>
+                <div class="select__option" name="film-color-pvd">Цветная пленка (ПВД)</div>
+                <div class="select__option" name="film-stretch">Пленка (стрейч)</div>
+                <div class="select__option" name="polyethylene">ПЭТ</div>
+                <div class="select__option" name="oil">Масло</div>
+                <div class="select__option" name="paper">Поддоны</div>
+                <div class="select__option" name="kegs">Кеги (ПЭТ)</div>
+                <div class="select__option" name="plastic-canisters">Пластиковые канистры</div>
+                <div class="select__option" name="aluminum-cans">Алюминиевые банки</div>
+                <div class="select__option" name="plastic-box">Пластиковые ящики</div>
+                <div class="select__option" name="polyethylene-pipe">Трубы полиэтиленовые черные</div>
+                <div class="select__option" name="plastic-containers">Пластиковая тара из под бытовой химии</div>
+                <div class="select__option" name="glass">Стекло листовое прозрачное</div>
+                <div class="select__option" name="glass-white-brown">Стекло белое и коричневое (банки, бутылки)</div>
+                <div class="select__option" name="glass-green">Стекло зеленое (банки, бутылки)</div>
+                <div class="select__option" name="bags">Биг-Бэги (мешок МКР)</div>
               </div>
             </div>
             <div class="select__header"><span class="select-current">Выберите тип сырья</span>
               <div class="select__icon-dropdown"><img src="assets/img/form/select-dropdown.png" alt="стрелка" /></div>
               <div class="error-no-selected__message">
                 <div class="error-no-selected__message-icon">!</div>
-                <div class="error-no-selected__message-text">Не выбран тип сырья</div>
+                <div class="error-no-selected__message-text"></div>
               </div>
             </div>
           </div>
@@ -421,21 +424,25 @@
             <div class="select__options-wrap">
               <div class="select__empty-cutter"></div>
               <div class="select__wrap-only-option scroll-vertical-small">
-                <div class="select__option">Сложено в коробки</div>
-                <div class="select__option">Сложено в мешки</div>
-                <div class="select__option">Сложено в стопы и связано</div>
-                <div class="select__option">Сложено в стопы, но не связано</div>
-                <div class="select__option">Россыпь</div>
+                <div class="select__option" name="packed-boxes">Сложено в коробки</div>
+                <div class="select__option" name="packed-bags">Сложено в мешки</div>
+                <div class="select__option" name="packed-bags">Сложено в стопы и связано</div>
+                <div class="select__option" name="roll-stack">Сложено в стопы, но не связано roll up the stack</div>
+                <div class="select__option" name="dont-roll-stack">Россыпь</div>
               </div>
             </div>
             <div class="select__header"><span class="select-current">Укажите как сложено</span>
               <div class="select__icon-dropdown"><img src="assets/img/form/select-dropdown.png" alt="стрелка" /></div>
               <div class="error-no-selected__message">
                 <div class="error-no-selected__message-icon">!</div>
-                <div class="error-no-selected__message-text">Не указано как сложено</div>
+                <div class="error-no-selected__message-text"></div>
               </div>
             </div>
-          </div>
+          </div><input class="input" type="text" name="weight" placeholder="Сколько килограмм" /><input class="input" type="text" name="address" placeholder="Откуда забирать" /><input class="input" type="tel" name="phone" placeholder="Ваш телефон" />
+        </div>
+        <div class="input-wrap input-wrap--content-center">
+          <div class="checkbox-goup mr-tablet-30 mb-mobile-20-desktop-50"><span class="checkbox-goup__text">Засор</span><input class="checkbox" type="checkbox" name="clog" id="checkbox" /><label class="checkbox-label" for="checkbox"></label></div>
+          <div class="break break--mobile-desktop-show"></div><input class="button-inpute-type-a" type="submit" name="#" value="отправить заявку" />
         </div>
       </form>
     </div>

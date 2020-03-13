@@ -38,17 +38,6 @@ input::-webkit-inner-spin-button {
   font-size: 18px;
   font-weight: 400;
   color: #67af01;
-
-  &::before {
-    content: "";
-    width: 48px;
-    height: 6px;
-    position: absolute;
-    left: 18px;
-    top: calc(50% - 3px);
-    background-color: #dcd9d7;
-    border-radius: 4px;
-  }
 }
 
 .checkbox-goup__text {
@@ -60,26 +49,38 @@ input::-webkit-inner-spin-button {
   width: 0;
   height: 0;
 
-  &:checked + .checkbox-label {
-    left: 49px;
+  &:checked + .checkbox-label::before {
+    left: 30px;
     background-color: #67af01;
   }
 }
 
 .checkbox-label {
+  width: 48px;
+  height: 6px;
   position: absolute;
-  top: calc(50% - 15px);
-  left: 10px;
-  display: block;
-  width: 30px;
-  height: 30px;
-  box-sizing: border-box;
-  border-radius: 100%;
-  border: 5px solid #ffffff;
-  background-color: #dbd8d4;
-  box-shadow: 0 10px 26px 0 rgba(214, 201, 183, .73), 0 3px 6px 0 rgba(214, 201, 183, .83);
-  transition: all .3s ease;
+  left: 18px;
+  top: calc(50% - 3px);
+  background-color: #dcd9d7;
+  border-radius: 4px;
   cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 16px);
+    left: -10px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    border-radius: 100%;
+    border: 5px solid #ffffff;
+    background-color: #dbd8d4;
+    box-shadow: 0 10px 26px 0 rgba(214, 201, 183, .73), 0 3px 6px 0 rgba(214, 201, 183, .83);
+    transition: all .3s ease;
+    cursor: pointer;
+  }
 }
 
 .checkbox-goup-type-b {
@@ -153,18 +154,20 @@ input::-webkit-inner-spin-button {
 }
 
 .input {
+  padding: 17px 22px 17px 22px;
+  width: 270px;
+  margin-bottom: 20px;
+  border: 3px solid transparent;
+  background-color: #ffffff;
+  box-shadow: 1px 10px 46px #d6d6d6;
+  border-radius: 30px;
+  box-sizing: border-box;
+
   color: #612228;
   font-family: $textType2;
   font-size: 18px;
   font-weight: 400;
   outline: none;
-
-  padding: 17px 22px 17px 22px;
-  width: 350px;
-  border: 3px solid transparent;
-  background-color: #ffffff;
-  box-shadow: 1px 10px 46px #d6d6d6;
-  border-radius: 30px;
 
   &::-webkit-input-placeholder  {font-family: $textType2; font-size: 18px; font-weight: 400; color: #612228;}
   &::-moz-placeholder           {font-family: $textType2; font-size: 18px; font-weight: 400; color: #612228;}
@@ -179,15 +182,42 @@ input::-webkit-inner-spin-button {
   &:focus::-moz-placeholder          {text-indent: 500px; transition: text-indent 0.5s ease; }
   &:focus:-moz-placeholder           {text-indent: 500px; transition: text-indent 0.5s ease; }
   &:focus:-ms-input-placeholder      {text-indent: 500px; transition: text-indent 0.5s ease; }
+
+  @media (min-width: 340px) {
+    width: 290px;
+  }
+
+  @media (min-width: 768px) {
+    width: 325px;
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: 992px) {
+    width: 350px;
+    margin-bottom: 50px;
+  }
 }
 
 .select {
   position: relative;
+  margin-bottom: 20px;
   color: #612228;
   font-family: $textType2;
   font-size: 18px;
   font-weight: 400;
   outline: none;
+
+  @media (min-width: 768px) {
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: 992px) {
+    margin-bottom: 50px;
+  }
+}
+
+.select.is-active {
+  z-index: 1;
 }
 
 .select.is-active .select__options-wrap {
@@ -201,12 +231,24 @@ input::-webkit-inner-spin-button {
   align-items: center;
 
   padding: 17px 22px 17px 22px;
-  width: 350px;
+  width: 270px;
   border: 3px solid transparent;
   background-color: #ffffff;
   box-shadow: 1px 10px 46px #d6d6d6;
   border-radius: 30px;
   cursor: pointer;
+
+  @media (min-width: 340px) {
+    width: 290px;
+  }
+
+  @media (min-width: 768px) {
+    width: 325px;
+  }
+
+  @media (min-width: 992px) {
+    width: 350px;
+  }
 }
 
 .error-no-selected {
@@ -256,6 +298,7 @@ input::-webkit-inner-spin-button {
   box-shadow: 1px 10px 46px #d6d6d6;
   border-radius: 0 0 15px 15px;
   background-color: #ffffff;
+  // z-index: 1;
 }
 
 .select__empty-cutter {
