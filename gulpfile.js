@@ -145,7 +145,7 @@ gulp.task('build', function(callback) {
   gulp.src('src/libs/**/*')
     .pipe(gulp.dest('dist/vendor/libs'));
   gulp.src('src/php/**/*') // Переносим assets в котором лежат картинки шрифты и т.п. активы продакшен
-  .pipe(gulp.dest('dist'));
+  .pipe(gulp.dest('dist/php'));
 });
 
 gulp.task('clear', function () {

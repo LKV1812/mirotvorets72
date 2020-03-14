@@ -3,9 +3,24 @@ section.review
     .section__title Мы хотим становиться лучше <br>напишите Ваши пожелания или отзыв
     form#formReview.form-review
       .input-wrap.input-wrap--mb-30
-        input.input(type="text",name="user-name", placeholder="Ваше имя")
-        input.input(type="tel", name="user-phone", placeholder="Ваш телефон")
-        input.input(type="email", name="user-email", placeholder="Ваш email")
+        .input-container
+          input.input(type="text",name="user-name", placeholder="Ваше имя")
+          .error-no-selected__message
+            .error-no-selected__message-icon !
+            .error-no-selected__message-text
+
+        .input-container
+          input.input(type="tel", name="user-phone", placeholder="Ваш телефон")
+          .error-no-selected__message
+            .error-no-selected__message-icon !
+            .error-no-selected__message-text
+
+        .input-container
+          input.input(type="email", name="user-email", placeholder="Ваш email")
+          .error-no-selected__message
+            .error-no-selected__message-icon !
+            .error-no-selected__message-text
+
       .input-wrap
         textarea#reviewTextarea.textarea(name="review-message", placeholder="напишите отзыв")
       .input-wrap.input-wrap--content-center.input-wrap--mb-0

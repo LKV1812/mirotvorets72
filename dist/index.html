@@ -365,7 +365,7 @@
   <section class="section-order" id="order">
     <div class="container">
       <div class="section__title">Форма заявки</div>
-      <form id="indexGeneralOrder">
+      <form id="indexGeneralOrder" action="php/form-order.php" method="POST">
         <div class="input-wrap input-wrap--mb-0">
           <div class="select" tabindex="0">
             <div class="select__options-wrap">
@@ -438,7 +438,25 @@
                 <div class="error-no-selected__message-text"></div>
               </div>
             </div>
-          </div><input class="input" type="text" name="weight" placeholder="Сколько килограмм" /><input class="input" type="text" name="address" placeholder="Откуда забирать" /><input class="input" type="tel" name="phone" placeholder="Ваш телефон" />
+          </div>
+          <div class="input-container"><input class="input" type="text" name="weight" placeholder="Сколько килограмм" />
+            <div class="error-no-selected__message">
+              <div class="error-no-selected__message-icon">!</div>
+              <div class="error-no-selected__message-text"></div>
+            </div>
+          </div>
+          <div class="input-container"><input class="input" type="text" name="address" placeholder="Откуда забирать" />
+            <div class="error-no-selected__message">
+              <div class="error-no-selected__message-icon">!</div>
+              <div class="error-no-selected__message-text"></div>
+            </div>
+          </div>
+          <div class="input-container"><input class="input tel-field" type="tel" name="phone" placeholder="Ваш телефон" />
+            <div class="error-no-selected__message">
+              <div class="error-no-selected__message-icon">!</div>
+              <div class="error-no-selected__message-text"></div>
+            </div>
+          </div>
         </div>
         <div class="input-wrap input-wrap--content-center">
           <div class="checkbox-goup mr-tablet-30 mb-mobile-20-desktop-50"><span class="checkbox-goup__text">Засор</span><input class="checkbox" type="checkbox" name="clog" id="checkbox" /><label class="checkbox-label" for="checkbox"></label></div>
@@ -693,7 +711,26 @@
     <div class="container">
       <div class="section__title">Мы хотим становиться лучше <br>напишите Ваши пожелания или отзыв</div>
       <form class="form-review" id="formReview">
-        <div class="input-wrap input-wrap--mb-30"><input class="input" type="text" name="user-name" placeholder="Ваше имя" /><input class="input" type="tel" name="user-phone" placeholder="Ваш телефон" /><input class="input" type="email" name="user-email" placeholder="Ваш email" /></div>
+        <div class="input-wrap input-wrap--mb-30">
+          <div class="input-container"><input class="input" type="text" name="user-name" placeholder="Ваше имя" />
+            <div class="error-no-selected__message">
+              <div class="error-no-selected__message-icon">!</div>
+              <div class="error-no-selected__message-text"></div>
+            </div>
+          </div>
+          <div class="input-container"><input class="input" type="tel" name="user-phone" placeholder="Ваш телефон" />
+            <div class="error-no-selected__message">
+              <div class="error-no-selected__message-icon">!</div>
+              <div class="error-no-selected__message-text"></div>
+            </div>
+          </div>
+          <div class="input-container"><input class="input" type="email" name="user-email" placeholder="Ваш email" />
+            <div class="error-no-selected__message">
+              <div class="error-no-selected__message-icon">!</div>
+              <div class="error-no-selected__message-text"></div>
+            </div>
+          </div>
+        </div>
         <div class="input-wrap"><textarea class="textarea" id="reviewTextarea" name="review-message" placeholder="напишите отзыв"></textarea></div>
         <div class="input-wrap input-wrap--content-center input-wrap--mb-0"><input class="button-inpute-type-a" type="submit" name="send-review" value="отправить" /></div>
       </form>

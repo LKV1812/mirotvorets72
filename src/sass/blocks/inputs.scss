@@ -24,6 +24,11 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
+/*
+*
+* checkbox
+*
+*/
 
 .checkbox-goup {
   position: relative;
@@ -153,10 +158,28 @@ input::-webkit-inner-spin-button {
   cursor: pointer;
 }
 
+/*
+*
+* input
+*
+*/
+
+.input-container {
+  position: relative;
+  margin-bottom: 20px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: 992px) {
+    margin-bottom: 50px;
+  }
+}
+
 .input {
   padding: 17px 22px 17px 22px;
   width: 270px;
-  margin-bottom: 20px;
   border: 3px solid transparent;
   background-color: #ffffff;
   box-shadow: 1px 10px 46px #d6d6d6;
@@ -189,14 +212,18 @@ input::-webkit-inner-spin-button {
 
   @media (min-width: 768px) {
     width: 325px;
-    margin-bottom: 30px;
   }
 
   @media (min-width: 992px) {
     width: 350px;
-    margin-bottom: 50px;
   }
 }
+
+/*
+*
+* select
+*
+*/
 
 .select {
   position: relative;
@@ -261,26 +288,56 @@ input::-webkit-inner-spin-button {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -35px;
+  bottom: -16px;
+
+  @media (min-width: 768px) {
+    bottom: -22px;
+  }
+
+  @media (min-width: 992px) {
+    bottom: -35px;
+  }
 }
 
 .error-no-selected__message-icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 19px;
-  height: 19px;
+  width: 11px;
+  height: 11px;
   margin-right: 10px;
   border-radius: 100%;
   background-color: #da3932;
+  font-size: 10px;
+  line-height: 0;
   color: #ffffff;
+
+  @media (min-width: 768px) {
+    width: 15px;
+    height: 15px;
+    font-size: 14px;
+  }
+
+  @media (min-width: 992px) {
+    width: 19px;
+    height: 19px;
+    font-size: 18px;
+  }
 }
 
 .error-no-selected__message-text {
   color: #d6251d;
   font-family: $textType2;
-  font-size: 18px;
+  font-size: 10px;
   font-weight: 400;
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media (min-width: 992px) {
+    font-size: 18px;
+  }
 }
 
 .select__icon-dropdown {
@@ -298,7 +355,6 @@ input::-webkit-inner-spin-button {
   box-shadow: 1px 10px 46px #d6d6d6;
   border-radius: 0 0 15px 15px;
   background-color: #ffffff;
-  // z-index: 1;
 }
 
 .select__empty-cutter {
@@ -325,6 +381,12 @@ input::-webkit-inner-spin-button {
     color: #ffffff;
   }
 }
+
+/*
+*
+* textarea
+*
+*/
 
 .textarea {
   color: #612228;

@@ -2,7 +2,7 @@ include ../../mixins/buttons.pug
 section.section-order#order
   .container
     .section__title Форма заявки
-    form#indexGeneralOrder
+    form(id="indexGeneralOrder", action="php/form-order.php" method="POST")
       .input-wrap.input-wrap--mb-0
         .select(tabindex="0")
           .select__options-wrap
@@ -70,9 +70,23 @@ section.section-order#order
               .error-no-selected__message-icon !
               .error-no-selected__message-text
 
-        input.input(type="text",name="weight", placeholder="Сколько килограмм")
-        input.input(type="text", name="address", placeholder="Откуда забирать")
-        input.input(type="tel", name="phone", placeholder="Ваш телефон")
+        .input-container
+          input.input(type="text",name="weight", placeholder="Сколько килограмм")
+          .error-no-selected__message
+            .error-no-selected__message-icon !
+            .error-no-selected__message-text
+
+        .input-container
+          input.input(type="text", name="address", placeholder="Откуда забирать")
+          .error-no-selected__message
+            .error-no-selected__message-icon !
+            .error-no-selected__message-text
+
+        .input-container
+          input.input.tel-field(type="tel", name="phone", placeholder="Ваш телефон")
+          .error-no-selected__message
+            .error-no-selected__message-icon !
+            .error-no-selected__message-text
 
       .input-wrap.input-wrap--content-center
         .checkbox-goup.mr-tablet-30.mb-mobile-20-desktop-50
