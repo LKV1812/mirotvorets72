@@ -34,10 +34,6 @@ const customSelects = (function() {
   });
 
   _select.forEach(item => {
-    // в сообщении об ошибке (не выбран ни один пункт) записываем текст из заголовка select`a
-    let currentText = item.querySelector('.select-current').innerText;
-    item.querySelector('.error-no-selected__message-text').innerText = currentText;
-
     item.addEventListener("blur", _outFocus);
   });
 
@@ -49,6 +45,12 @@ const customSelects = (function() {
     this.parentElement.classList.toggle("is-active");
   }
 
+  /**
+   * _setSelected() Устанавливает в select выбранный элемент из option
+   * из option получаем текст и атрибут name
+   * присваиваем полученные значения select`у в .select-current
+   * закрываем выпадющий список
+   */
   function _setSelected() {
     let text = this.innerText,
         attributeNameValue = this.getAttribute("name"),
@@ -61,14 +63,22 @@ const customSelects = (function() {
     select.classList.remove("is-active");
   }
 
+  // При потере фокуса закрываем выпадающий список
   function _outFocus() {
     let thisSelect = this.closest(".select");
     thisSelect.classList.remove("is-active");
   }
 
+  /**
+   * showErrorsSelect() Показывает ошибку на селекте
+   * @param {*} select элемент на котором надо показать ошибку
+   */
   function showErrorsSelect(select) {
     if (select.matches('.select')) {
       let selectHeader = select.querySelector('.select__header');
+      // в сообщении об ошибке (не выбран ни один пункт) записываем текст из заголовка select`a
+      let currentText = select.querySelector('.select-current').innerText;
+      select.querySelector('.error-no-selected__message-text').innerText = currentText;
 
       select.onfocus = function() {
         selectHeader.classList.remove('error-no-selected');
@@ -78,12 +88,27 @@ const customSelects = (function() {
       selectHeader.classList.add('error-no-selected');
       selectHeader.querySelector('.error-no-selected__message').style.display = 'flex';
     } else {
-      console.log('Переданный элемент не .select')
+      console.log('Переданный элемент не .select');
     }
+  }
 
+  /**
+   * hideErrorsSelect() скрывает ошибку на селекте
+   * @param {*} select
+   */
+  function hideErrorsSelect(select) {
+    if (select.matches('.select')) {
+      let selectHeader = select.querySelector('.select__header');
+
+      selectHeader.classList.remove('error-no-selected');
+      selectHeader.querySelector('.error-no-selected__message').style.display = 'none';
+    } else {
+      console.log('Переданный элемент не .select');
+    }
   }
 
   return {
-    showErrorsSelect
+    showErrorsSelect,
+    hideErrorsSelect
   };
 }());

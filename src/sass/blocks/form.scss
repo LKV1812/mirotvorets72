@@ -10,8 +10,7 @@
 }
 
 .general-order {
-  display: flex;
-  flex-direction: column-reverse;
+  position: relative;
 }
 
 .input-wrap {
@@ -36,4 +35,31 @@
   &--mb-0 {
     margin-bottom: 0;
   }
+}
+
+.result-query-success,
+.result-query-error {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  color: #612228;
+  font-family: $textType2;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.show-result-query {
+  display: flex;
+}
+
+.result-query-container__icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
 }

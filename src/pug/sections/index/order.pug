@@ -2,16 +2,21 @@ include ../../mixins/buttons.pug
 section.section-order#order
   .container
     .section__title Форма заявки
-    form(id="indexGeneralOrder", action="php/form-order.php" method="POST")
+    form(id="indexGeneralOrder", action="php/form-order.php" method="POST" class="general-order")
+      input(type="hidden" name="Mirotvorets" value="Заявка с главного сайта mirotvorets72.ru")
+      input(type="hidden" name="form_from" value="mirotvorets72.ru")
+      input(type="hidden" name="admin_email" value="zayavka@mirotvorets72.com")
+      input(type="hidden" name="erasure" value="Форма заявки на главной странице")
       .input-wrap.input-wrap--mb-0
-        .select(tabindex="0")
+        .select(tabindex="0", id="selectedService", data-toggle-mask="hide")
           .select__options-wrap
             .select__empty-cutter
             .select__wrap-only-option.scroll-vertical-small
+              .select__option(name="buying-materials") Прием вторсырья
+              .select__option(name="ecobox") Установка экобоксов
+              .select__option(name="containers") Установка контейнеров
               .select__option(name="destruction-archive") Утилизация архивов
               .select__option(name="storage-archive") Хранение архивов
-              .select__option(name="buying-materials") Прием вторсырья
-              .select__option(name="buying-materials") Установка экобоксов
           .select__header
             span.select-current(name=null) Выберите услугу
             .select__icon-dropdown
@@ -20,7 +25,8 @@ section.section-order#order
               .error-no-selected__message-icon !
               .error-no-selected__message-text
 
-        .select(tabindex="0")
+        .select(tabindex="0", id="buyingMaterials", data-toggle-mask="hide")
+          .mask-hide-field
           .select__options-wrap
             .select__empty-cutter
             .select__wrap-only-option.scroll-vertical-small
@@ -33,6 +39,7 @@ section.section-order#order
               .select__option(name="film-color-pvd") Цветная пленка (ПВД)
               .select__option(name="film-stretch") Пленка (стрейч)
               .select__option(name="polyethylene") ПЭТ
+              .select__option(name="textile") Текстиль
               .select__option(name="oil") Масло
               .select__option(name="paper") Поддоны
               .select__option(name="kegs") Кеги (ПЭТ)
@@ -53,15 +60,17 @@ section.section-order#order
               .error-no-selected__message-icon !
               .error-no-selected__message-text
 
-        .select(tabindex="0")
+        .select(tabindex="0", id="packed", data-toggle-mask="hide")
+          .mask-hide-field
           .select__options-wrap
             .select__empty-cutter
             .select__wrap-only-option.scroll-vertical-small
               .select__option(name="packed-boxes") Сложено в коробки
               .select__option(name="packed-bags") Сложено в мешки
               .select__option(name="packed-bags") Сложено в стопы и связано
-              .select__option(name="roll-stack") Сложено в стопы, но не связано roll up the stack
+              .select__option(name="roll-stack") Сложено в стопы, но не связано
               .select__option(name="dont-roll-stack") Россыпь
+              .select__option(name="other") Другое
           .select__header
             span.select-current(name=null) Укажите как сложено
             .select__icon-dropdown
@@ -71,13 +80,13 @@ section.section-order#order
               .error-no-selected__message-text
 
         .input-container
-          input.input(type="text",name="weight", placeholder="Сколько килограмм")
+          input.input(type="number", name="weight", placeholder="Сколько кг/шт")
           .error-no-selected__message
             .error-no-selected__message-icon !
             .error-no-selected__message-text
 
         .input-container
-          input.input(type="text", name="address", placeholder="Откуда забирать")
+          input.input(type="text", name="address", placeholder="Ваш адрес")
           .error-no-selected__message
             .error-no-selected__message-icon !
             .error-no-selected__message-text
@@ -95,4 +104,12 @@ section.section-order#order
           label(for="checkbox").checkbox-label
 
         .break.break--mobile-desktop-show
-        +button-input-tipe-a("submit", "#", "отправить заявку")
+        +button-input-tipe-a("submit", "send-order", "отправить заявку")
+      .result-query-success
+        .result-query-container__icon
+          include ../../../svg/form/success-query.svg
+        .result-query-container__message Заявка успешно отпарвлена.
+      .result-query-error
+        .result-query-container__icon
+          include ../../../svg/form/error-query.svg
+        .result-query-container__message Заявка не отправлена! Попробуйте ещё раз.
