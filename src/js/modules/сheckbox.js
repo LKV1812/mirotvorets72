@@ -18,7 +18,7 @@ const сheckbox = (function() {
 
   checkboxCalc.forEach(item => {
     let prevTextCheckbox = item.parentNode.previousElementSibling;
-    let nextTextCheckbox = item.parentNode.nextElementSibling;
+    let nextTextCheckbox = item.parentNode.nextElementSibling.querySelector('.checkbox-goup-type-b__text');
 
     item.addEventListener('change', function(){
       if (item.checked) {

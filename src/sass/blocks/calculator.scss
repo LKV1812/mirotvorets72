@@ -1,8 +1,17 @@
 @import '../variables/variables.scss';
 
 .calculator-full-wrap {
-  width: 582px;
-  margin: 0 auto;
+  margin-left: -15px;
+  margin-right: -15px;
+
+  @media (min-width: 576px) {
+    width: 500px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 768px) {
+    width: 582px;
+  }
 }
 
 .tabs {
@@ -25,9 +34,14 @@
 .tabs__header {
   display: flex;
   justify-content: space-between;
-  border: 2px solid #67af01;
-  border-radius: 40px;
+  border-top: 2px solid #67af01;
+  border-bottom: 2px solid #67af01;
   height: 60px;
+
+  @media (min-width: 576px) {
+    border: 2px solid #67af01;
+    border-radius: 40px;
+  }
 }
 
 .tabs__header-item {
@@ -39,12 +53,44 @@
   padding-right: 10px;
   border-radius: 40px;
   text-align: center;
-
-  font-size: 18px;
+  font-size: 10px;
   font-weight: 600;
   color: #67af01;
-
   cursor: pointer;
+
+  &:first-child {
+    border-radius: 0 40px 40px 0;
+    @media (min-width: 576px) {
+      border-radius: 40px;
+    }
+  }
+
+  &:last-child {
+    border-radius: 40px 0 0 40px;
+    @media (min-width: 576px) {
+      border-radius: 40px;
+    }
+  }
+
+  @media (min-width: 340px) {
+    font-size: 12px;
+  }
+
+  @media (min-width: 400px) {
+    font-size: 14px;
+  }
+
+  @media (min-width: 470px) {
+    font-size: 16px;
+  }
+
+  @media (min-width: 576px) {
+    border-radius: 40px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
 
   &--active {
     background-color: #67af01;
@@ -54,9 +100,22 @@
 
 .tabs__content-row {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  padding-top: 50px;
+  padding-top: 20px;
+
+  @media (min-width: 470px) {
+    justify-content: space-between;
+    padding-top: 50px;
+  }
+
+  &:first-child {
+    padding-top: 40px;
+    @media (min-width: 470px) {
+      padding-top: 50px;
+    }
+  }
 }
 
 .range-wrap {
@@ -64,10 +123,17 @@
   width: 100%;
   height: 80px;
   padding-top: 18px;
-  padding-left: 25px;
-  padding-right: 25px;
-  border: 1px solid #e5e3e0;
-  border-radius: 45px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-top: 1px solid #e5e3e0;
+  border-bottom: 1px solid #e5e3e0;
+
+  @media (min-width: 500px) {
+    padding-left: 25px;
+    padding-right: 25px;
+    border: 1px solid #e5e3e0;
+    border-radius: 45px;
+  }
 }
 
 .range__title {
@@ -142,11 +208,30 @@
   color: #612228;
 }
 
+.range__output-current-value-input {
+  max-width: 80px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid #e5e3e0;
+  border-radius: 20px;
+  background-color: inherit;
+  box-shadow: inset 2px 2px 10px 0px hsla(35,27%,78%,.73);
+  font-family: $textType2;
+  font-weight: 400;
+  color: #612228;
+  text-align: center;
+  line-height: 0;
+}
+
 .output-counting-result {
   width: 100%;
   text-align: center;
   font-family: $textType1;
-  font-size: 44px;
+  font-size: 34px;
   color: #612228;
   text-transform: uppercase;
+
+  @media (min-width: 768px) {
+    font-size: 44px;
+  }
 }

@@ -18,12 +18,6 @@ const handlerInputs = (function() {
    */
   const _inputs = document.querySelectorAll('.input');
 
-  _inputs.forEach(item => {
-    // в сообщении об ошибке (не выбран ни один пункт) записываем текст из input
-    let currentText = item.getAttribute('placeholder');
-    let error = item.nextElementSibling;
-    error.querySelector('.error-no-selected__message-text').innerText = currentText;
-  });
   /**
    * showErrorsInput() - показывает ошибку на инпуте
    * Принимает input на котором необходимо показать ошибку
@@ -32,6 +26,8 @@ const handlerInputs = (function() {
   function showErrorsInput(input) {
     if (input.matches('.input')) {
       let error = input.nextElementSibling;
+      let currentText = input.getAttribute('placeholder');
+      error.querySelector('.error-no-selected__message-text').innerText = currentText;
 
       input.onfocus = function() {
         input.classList.remove('error-no-selected');

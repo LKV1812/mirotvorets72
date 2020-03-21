@@ -515,25 +515,9 @@
               <div class="tabs__header-item">Уничтожение документов</div>
               <div class="tabs__header-item">Хранение документов</div>
             </div>
-            <div class="tabs__content tabs__content--column-reverse tabs__content--active">
+            <div class="tabs__content tabs__content--active">
               <div class="tabs__content-row">
-                <div class="output-counting-result" id="resultMaterialsCurrency">Итого: <span>0,00 ₽</span></div>
-              </div>
-              <div class="tabs__content-row">
-                <div class="range-wrap">
-                  <div class="range__title">Сколько килограмм</div><input class="range" id="materialsKg" type="range" name="#" min="0" max="5000" value="0" />
-                  <div class="range__output-current-start">0</div>
-                  <div class="range__output-current-value">0<span> кг</span></div>
-                </div>
-              </div>
-              <div class="tabs__content-row">
-                <div class="checkbox-goup-type-b">
-                  <div class="checkbox-goup-type-b__title">Тип доставки</div><span class="checkbox-goup-type-b__text checkbox-goup-type-b__text--first-item">Самоподвоз</span>
-                  <div class="checkbox-track"><input class="checkbox-type-b" type="checkbox" name="clog" id="materialsDeliveryType" /><label class="checkbox-label-type-b" for="materialsDeliveryType"></label></div><span class="checkbox-goup-type-b__text">Транспорт компании "Миротворец"</span>
-                </div>
-              </div>
-              <div class="tabs__content-row">
-                <div class="select mb-0" id="typeMaterials" tabindex="0">
+                <div class="select select--small-mobile-mb-20-mobile-mb-0" id="typeMaterials" tabindex="0">
                   <div class="select__options-wrap">
                     <div class="select__empty-cutter"></div>
                     <div class="select__wrap-only-option scroll-vertical-small">
@@ -571,26 +555,27 @@
                 </div>
                 <div class="checkbox-goup"><span class="checkbox-goup__text">Засор</span><input class="checkbox" type="checkbox" name="clog" id="checkboxCalc" /><label class="checkbox-label" for="checkboxCalc"></label></div>
               </div>
-            </div>
-            <div class="tabs__content tabs__content--column-reverse">
-              <div class="tabs__content-row">
-                <div class="output-counting-result" id="resultPalletsCurrency">Итого: <span>0,00 ₽</span></div>
-              </div>
-              <div class="tabs__content-row">
-                <div class="range-wrap">
-                  <div class="range__title">Количество штук</div><input class="range" id="palletsRange" type="range" name="#" min="0" max="500" value="0" />
-                  <div class="range__output-current-start">0</div>
-                  <div class="range__output-current-value">0<span> шт</span></div>
-                </div>
-              </div>
               <div class="tabs__content-row">
                 <div class="checkbox-goup-type-b">
                   <div class="checkbox-goup-type-b__title">Тип доставки</div><span class="checkbox-goup-type-b__text checkbox-goup-type-b__text--first-item">Самоподвоз</span>
-                  <div class="checkbox-track"><input class="checkbox-type-b" type="checkbox" name="clog" id="palletDeliveryType" /><label class="checkbox-label-type-b" for="palletDeliveryType"></label></div><span class="checkbox-goup-type-b__text">Транспорт компании "Миротворец"</span>
+                  <div class="checkbox-track"><input class="checkbox-type-b" type="checkbox" name="clog" id="materialsDeliveryType" /><label class="checkbox-label-type-b" for="materialsDeliveryType"></label></div>
+                  <div class="checkbox-goup-type-b__text-wrap"><span class="checkbox-goup-type-b__text">Транспорт компании "Миротворец"</span></div>
                 </div>
               </div>
               <div class="tabs__content-row">
-                <div class="select mb-0" id="palletGrade" tabindex="0">
+                <div class="range-wrap">
+                  <div class="range__title">Сколько килограмм</div><input class="range" id="materialsKg" type="range" name="#" min="0" max="20000" value="0" />
+                  <div class="range__output-current-start">0</div>
+                  <div class="range__output-current-value"><input class="range__output-current-value-input" id="materialsKgInput" type="number" value="0" /><span> кг</span></div>
+                </div>
+              </div>
+              <div class="tabs__content-row">
+                <div class="output-counting-result" id="resultMaterialsCurrency">Итого: <span>0,00 ₽</span></div>
+              </div>
+            </div>
+            <div class="tabs__content">
+              <div class="tabs__content-row">
+                <div class="select select--small-mobile-mb-20-mobile-mb-0" id="palletGrade" tabindex="0">
                   <div class="select__options-wrap">
                     <div class="select__empty-cutter"></div>
                     <div class="select__wrap-only-option scroll-vertical-small">
@@ -603,19 +588,36 @@
                     <div class="select__icon-dropdown"><img src="assets/img/form/select-dropdown.png" alt="стрелка" /></div>
                     <div class="error-no-selected__message">
                       <div class="error-no-selected__message-icon">!</div>
-                      <div class="error-no-selected__message-text">Не выбран тип сырья</div>
+                      <div class="error-no-selected__message-text"></div>
                     </div>
                   </div>
                 </div>
                 <div class="checkbox-goup"><span class="checkbox-goup__text">Epal</span><input class="checkbox" type="checkbox" name="clog" id="epal" /><label class="checkbox-label" for="epal"></label></div>
               </div>
+              <div class="tabs__content-row">
+                <div class="checkbox-goup-type-b">
+                  <div class="checkbox-goup-type-b__title">Тип доставки</div><span class="checkbox-goup-type-b__text checkbox-goup-type-b__text--first-item">Самоподвоз</span>
+                  <div class="checkbox-track"><input class="checkbox-type-b" type="checkbox" name="clog" id="palletDeliveryType" /><label class="checkbox-label-type-b" for="palletDeliveryType"></label></div>
+                  <div class="checkbox-goup-type-b__text-wrap"><span class="checkbox-goup-type-b__text">Транспорт компании "Миротворец"</span></div>
+                </div>
+              </div>
+              <div class="tabs__content-row">
+                <div class="range-wrap">
+                  <div class="range__title">Количество штук</div><input class="range" id="palletsRange" type="range" name="#" min="0" max="5000" value="0" />
+                  <div class="range__output-current-start">0</div>
+                  <div class="range__output-current-value"><input class="range__output-current-value-input" id="palletsRangeInput" type="number" value="0" /><span> шт</span></div>
+                </div>
+              </div>
+              <div class="tabs__content-row">
+                <div class="output-counting-result" id="resultPalletsCurrency">Итого: <span>0,00 ₽</span></div>
+              </div>
             </div>
             <div class="tabs__content">
               <div class="tabs__content-row">
                 <div class="range-wrap">
-                  <div class="range__title">Сколько килограмм</div><input class="range" id="destructionRange" type="range" name="#" min="0" max="5000" value="0" />
+                  <div class="range__title">Сколько килограмм</div><input class="range" id="destructionRange" type="range" name="#" min="0" max="20000" value="0" />
                   <div class="range__output-current-start">0</div>
-                  <div class="range__output-current-value">0<span> кг</span></div>
+                  <div class="range__output-current-value"><input class="range__output-current-value-input" value="0" type="number" /><span> кг</span></div>
                 </div>
               </div>
               <div class="tabs__content-row">
@@ -625,9 +627,9 @@
             <div class="tabs__content">
               <div class="tabs__content-row">
                 <div class="range-wrap">
-                  <div class="range__title">Сколько килограмм</div><input class="range" id="storageRange" type="range" name="#" min="0" max="5000" value="0" />
+                  <div class="range__title">Сколько килограмм</div><input class="range" id="storageRange" type="range" name="#" min="0" max="20000" value="0" />
                   <div class="range__output-current-start">0</div>
-                  <div class="range__output-current-value">0<span> кг</span></div>
+                  <div class="range__output-current-value"><input class="range__output-current-value-input" value="0" type="number" /><span> кг</span></div>
                 </div>
               </div>
               <div class="tabs__content-row">

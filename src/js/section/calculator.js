@@ -15,6 +15,7 @@
   let trash = document.getElementById('checkboxCalc');
   let materialsDeliveryType = document.getElementById("materialsDeliveryType");
   let materialsKg = document.getElementById('materialsKg');
+  let materialsKgInput = document.getElementById('materialsKgInput');
   let outputCountingResult = document.querySelector('#resultMaterialsCurrency span');
   let typeMaterials = document.getElementById('typeMaterials');
   let currentTypeMaterials = document.getElementById('currentTypeMaterials');
@@ -35,6 +36,7 @@
   let currentPalletGrade = document.getElementById('currentPalletGrade');
   let palletDeliveryType = document.getElementById('palletDeliveryType');
   let palletsQuantity = document.getElementById('palletsRange');
+  let palletsRangeInput = document.getElementById('palletsRangeInput');
   let outputCountingResultCurrencyPallets = document.getElementById('resultPalletsCurrency');
 
   /**
@@ -79,6 +81,11 @@
     if (!currentTypeMaterials.getAttribute('name')) customSelects.showErrorsSelect(typeMaterials);
     handlerEnteredDataMaterials();
   });
+  materialsKgInput.addEventListener('input', function() {
+    // если тип сыря не выбран, показываем erorr на select`e
+    if (!currentTypeMaterials.getAttribute('name')) customSelects.showErrorsSelect(typeMaterials);
+    handlerEnteredDataMaterials();
+  });
   materialsDeliveryType.addEventListener('change', handlerEnteredDataMaterials);
   trash.addEventListener('change', handlerEnteredDataMaterials);
   typeMaterials.addEventListener('click', handlerEnteredDataMaterials);
@@ -97,7 +104,12 @@
   palletDeliveryType.addEventListener('change', handlerEnteredDataPallets);
   palletsQuantity.addEventListener('input', function() {
     // если не выбран сорт поддонов, показываем erorr на select`e
-    if (!currentPalletGrade.getAttribute('name')) customSelects.showErrorsSelect(currentPalletGrade);
+    if (!currentPalletGrade.getAttribute('name')) customSelects.showErrorsSelect(palletGrade);
+    handlerEnteredDataPallets();
+  });
+  palletsRangeInput.addEventListener('input', function() {
+    // если не выбран сорт поддонов, показываем erorr на select`e
+    if (!currentPalletGrade.getAttribute('name')) customSelects.showErrorsSelect(palletGrade);
     handlerEnteredDataPallets();
   });
 

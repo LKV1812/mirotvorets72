@@ -5,26 +5,9 @@
       .tabs__header-item Покупка поддонов
       .tabs__header-item Уничтожение документов
       .tabs__header-item Хранение документов
-    .tabs__content.tabs__content--column-reverse.tabs__content--active
+    .tabs__content.tabs__content--active
       .tabs__content-row
-        #resultMaterialsCurrency.output-counting-result Итого: <span>0,00 ₽</span>
-      .tabs__content-row
-        .range-wrap
-          .range__title Сколько килограмм
-          input#materialsKg(type="range", name="#" min="0" max="5000" value="0").range
-          .range__output-current-start 0
-          .range__output-current-value 0
-            span  кг
-      .tabs__content-row
-        .checkbox-goup-type-b
-          .checkbox-goup-type-b__title Тип доставки
-          span.checkbox-goup-type-b__text.checkbox-goup-type-b__text--first-item Самоподвоз
-          .checkbox-track
-            input(type="checkbox", name="clog")#materialsDeliveryType.checkbox-type-b
-            label(for="materialsDeliveryType").checkbox-label-type-b
-          span.checkbox-goup-type-b__text Транспорт компании "Миротворец"
-      .tabs__content-row
-        #typeMaterials.select.mb-0(tabindex="0")
+        #typeMaterials.select.select--small-mobile-mb-20-mobile-mb-0(tabindex="0")
           .select__options-wrap
             .select__empty-cutter
             .select__wrap-only-option.scroll-vertical-small
@@ -61,26 +44,29 @@
           span.checkbox-goup__text Засор
           input(type="checkbox", name="clog")#checkboxCalc.checkbox
           label(for="checkboxCalc").checkbox-label
-    .tabs__content.tabs__content--column-reverse
-      .tabs__content-row
-        #resultPalletsCurrency.output-counting-result Итого: <span>0,00 ₽</span>
-      .tabs__content-row
-        .range-wrap
-          .range__title Количество штук
-          input#palletsRange(type="range", name="#" min="0" max="500" value="0").range
-          .range__output-current-start 0
-          .range__output-current-value 0
-            span  шт
       .tabs__content-row
         .checkbox-goup-type-b
           .checkbox-goup-type-b__title Тип доставки
           span.checkbox-goup-type-b__text.checkbox-goup-type-b__text--first-item Самоподвоз
           .checkbox-track
-            input(type="checkbox", name="clog")#palletDeliveryType.checkbox-type-b
-            label(for="palletDeliveryType").checkbox-label-type-b
-          span.checkbox-goup-type-b__text Транспорт компании "Миротворец"
+            input(type="checkbox", name="clog")#materialsDeliveryType.checkbox-type-b
+            label(for="materialsDeliveryType").checkbox-label-type-b
+          .checkbox-goup-type-b__text-wrap
+            span.checkbox-goup-type-b__text Транспорт компании "Миротворец"
       .tabs__content-row
-        #palletGrade.select.mb-0(tabindex="0")
+        .range-wrap
+          .range__title Сколько килограмм
+          input#materialsKg(type="range", name="#" min="0" max="20000" value="0").range
+          .range__output-current-start 0
+          .range__output-current-value
+            input#materialsKgInput(type="number" class="range__output-current-value-input" value="0")
+            span  кг
+      .tabs__content-row
+        #resultMaterialsCurrency.output-counting-result Итого: <span>0,00 ₽</span>
+
+    .tabs__content
+      .tabs__content-row
+        #palletGrade.select.select--small-mobile-mb-20-mobile-mb-0(tabindex="0")
           .select__options-wrap
             .select__empty-cutter
             .select__wrap-only-option.scroll-vertical-small
@@ -93,28 +79,51 @@
               img(src="assets/img/form/select-dropdown.png", alt="стрелка")
             .error-no-selected__message
               .error-no-selected__message-icon !
-              .error-no-selected__message-text Не выбран тип сырья
+              .error-no-selected__message-text
         .checkbox-goup
           span.checkbox-goup__text Epal
           input(type="checkbox", name="clog")#epal.checkbox
           label(for="epal").checkbox-label
+      .tabs__content-row
+        .checkbox-goup-type-b
+          .checkbox-goup-type-b__title Тип доставки
+          span.checkbox-goup-type-b__text.checkbox-goup-type-b__text--first-item Самоподвоз
+          .checkbox-track
+            input(type="checkbox", name="clog")#palletDeliveryType.checkbox-type-b
+            label(for="palletDeliveryType").checkbox-label-type-b
+          .checkbox-goup-type-b__text-wrap
+            span.checkbox-goup-type-b__text Транспорт компании "Миротворец"
+      .tabs__content-row
+        .range-wrap
+          .range__title Количество штук
+          input#palletsRange(type="range", name="#" min="0" max="5000" value="0").range
+          .range__output-current-start 0
+          .range__output-current-value
+            input#palletsRangeInput(type="number" class="range__output-current-value-input" value="0")
+            span  шт
+      .tabs__content-row
+        #resultPalletsCurrency.output-counting-result Итого: <span>0,00 ₽</span>
+
     .tabs__content
       .tabs__content-row
         .range-wrap
           .range__title Сколько килограмм
-          input#destructionRange(type="range", name="#" min="0" max="5000" value="0").range
+          input#destructionRange(type="range", name="#" min="0" max="20000" value="0").range
           .range__output-current-start 0
-          .range__output-current-value 0
+          .range__output-current-value
+            input(value="0", type="number", class="range__output-current-value-input")
             span  кг
       .tabs__content-row
         #resultDestructionCurrency.output-counting-result Итого: <span>0,00 ₽</span>
+
     .tabs__content
       .tabs__content-row
         .range-wrap
           .range__title Сколько килограмм
-          input#storageRange(type="range", name="#" min="0" max="5000" value="0").range
+          input#storageRange(type="range", name="#" min="0" max="20000" value="0").range
           .range__output-current-start 0
-          .range__output-current-value 0
+          .range__output-current-value
+            input(value="0", type="number", class="range__output-current-value-input")
             span  кг
       .tabs__content-row
         #resultStorageCurrency.output-counting-result Итого: <span>0,00 ₽</span>
