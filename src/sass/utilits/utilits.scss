@@ -35,6 +35,13 @@
   }
 }
 
+.display-none-mobile-tablet {
+  display: none;
+  @media (min-width: 992px) {
+    display: block;
+  }
+}
+
 .flex-container-between {
   display: flex;
   justify-content: space-between;
@@ -102,6 +109,13 @@
 
 .mb-30 {
   margin-bottom: 30px;
+}
+
+.mb-xs-mobile-40 {
+  margin-bottom: 40px;
+  @media (min-width: 578px) {
+    margin-bottom: 0;
+  }
 }
 
 .mb-mobile-20-desktop-50 {

@@ -53,6 +53,14 @@ body {
     font-size: 44px;
     line-height: 41px;
   }
+
+  &--long {
+    font-size: 28px;
+
+    @media (min-width: 768px) {
+      font-size: 44px;
+    }
+  }
 }
 
 .sticker-text {

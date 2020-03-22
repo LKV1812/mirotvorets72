@@ -2,11 +2,16 @@
 
 .cards-short-description {
   position: relative;
-  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
   height: 300px;
   background-color: #fefdfd;
   border-radius: 15px;
   box-shadow: 0 37px 92px rgba(89, 50, 8, .15);
+
+  @media (min-width: 576px) {
+    width: 100%;
+  }
 }
 
 .cards-short-description__head-img-wrap {
@@ -42,9 +47,14 @@
 .cards-short-description__date {
   text-align: left;
   font-family: $textType2;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 16px;
+  line-height: 20px;
   color: #612228;
+
+  @media (min-width: 992px) {
+    font-size: 14px;
+    line-height: 16px;
+  }
 }
 
 .cards-short-description__date {
