@@ -1,7 +1,11 @@
 @import '../variables/variables.scss';
 
-.map {
+.map-wrap {
   position: relative;
+}
+
+.map {
+
   width: 100%;
   height: 600px;
   background-color: #f1f1f1;
@@ -55,7 +59,7 @@
 
 .map__bottom-grass {
   position: absolute;
-  bottom: -12px;
+  bottom: 0;
   left: 0;
   right: 0;
   z-index: 3;
@@ -72,7 +76,8 @@
   height: 42px;
 }
 
-.map__mark-ballon-header {
+.map-info-window-title {
+  margin-top: 0;
   font-family: $textType1;
   color: #612228;
   font-weight: 400;
@@ -80,17 +85,37 @@
   text-transform: uppercase;
 }
 
-.map__mark-ballon-content {
+.map-info-window-text {
   font-family: $textType2;
   color: #612228;
   font-weight: 400;
   font-size: 17px;
+
+  &:last-child {
+    margin-top: -10px;
+  }
 }
 
-.map__mark-ballon-hint {
-  font-family: $textType2;
-  color: #612228;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.3;
-}
+// стили для яндекс карты
+// .map__mark-ballon-header {
+//   font-family: $textType1;
+//   color: #612228;
+//   font-weight: 400;
+//   font-size: 22px;
+//   text-transform: uppercase;
+// }
+
+// .map__mark-ballon-content {
+//   font-family: $textType2;
+//   color: #612228;
+//   font-weight: 400;
+//   font-size: 17px;
+// }
+
+// .map__mark-ballon-hint {
+//   font-family: $textType2;
+//   color: #612228;
+//   font-weight: 400;
+//   font-size: 14px;
+//   line-height: 1.3;
+// }
