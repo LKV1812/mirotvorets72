@@ -1,16 +1,39 @@
 @import '../../variables/variables.scss';
 
 .about-bg {
-  margin-top: -5px;
-  background-image: url("../img/index/about/about-bg.png");
+  margin-top: -10px;
   padding-top: 80px;
   padding-bottom: 70px;
+  background-image: url("../img/index/about/about-bg-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   overflow: hidden;
+
+  @media (min-width: 992px) {
+    background-image: url("../img/index/about/about-bg-tablet.png");
+  }
+
+  @media (min-width: 992px) {
+    margin-top: -5px;
+    background-image: url("../img/index/about/about-bg.png");
+  }
 }
 
 .index-about {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+
+  @media (min-width: 992px) {
+    flex-wrap: nowrap;
+    margin-left: -25px;
+    margin-right: -25px;
+  }
+
+  @media (min-width: 1200px) {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .index-about__column {
@@ -19,7 +42,7 @@
 }
 
 .index-about__sticker {
-  width: 470px;
+  width: 290px;
   padding-left: 35px;
   padding-right: 35px;
   margin-bottom: 30px;
@@ -30,24 +53,74 @@
   background-size: contain;
   text-align: center;
 
+  @media (min-width: 768px) {
+    width: 690px;
+  }
+
+  @media (min-width: 992px) {
+    width: 470px;
+  }
+
   &--service {
-    height: 290px;
-    background-image: url("../img/index/about/sticker-service.png");
+    height: 344px;
+    background-image: url("../img/index/about/sticker-service-mobile.png");
+
+    @media (min-width: 768px) {
+      height: 220px;
+      background-image: url("../img/index/about/sticker-service-tablet.png");
+    }
+
+    @media (min-width: 992px) {
+      height: 290px;
+      background-image: url("../img/index/about/sticker-service.png");
+    }
   }
 
   &--team {
-    height: 270px;
-    background-image: url("../img/index/about/sticker-team.png");
+    height: 312px;
+    background-image: url("../img/index/about/sticker-team-mobile.png");
+
+    @media (min-width: 768px) {
+      height: 220px;
+      background-image: url("../img/index/about/sticker-team-tablet.png");
+    }
+
+    @media (min-width: 992px) {
+      height: 270px;
+      background-image: url("../img/index/about/sticker-team.png");
+    }
   }
 
   &--improvement {
-    height: 371px;
-    background-image: url("../img/index/about/sticker-improvement.png");
+    height: 475px;
+    background-image: url("../img/index/about/sticker-improvement-mobile.png");
+
+    @media (min-width: 768px) {
+      height: 345px;
+      background-image: url("../img/index/about/sticker-improvement-tablet.png");
+    }
+
+    @media (min-width: 992px) {
+      height: 371px;
+      background-image: url("../img/index/about/sticker-improvement.png");
+    }
   }
 
   &--partners {
-    height: 188px;
-    background-image: url("../img/index/about/sticker-partners.png");
+    height: 260px;
+    margin-bottom: 0;
+    background-image: url("../img/index/about/sticker-partners-mobile.png");
+
+    @media (min-width: 768px) {
+      margin-bottom: 30px;
+      height: 210px;
+      background-image: url("../img/index/about/sticker-partners-tablet.png");
+    }
+
+    @media (min-width: 992px) {
+      height: 188px;
+      background-image: url("../img/index/about/sticker-partners.png");
+    }
   }
 }
 
@@ -55,8 +128,11 @@
   padding-top: 20px;
   &::after {
     display: block;
-    margin-top: 9px;
     content: url('../img/index/about/title-delimiter-about.png');
+
+    @media (min-width: 768px) {
+      margin-top: 9px;
+    }
   }
 }
 
@@ -71,10 +147,21 @@
 
 .index-about__sticker-text {
   margin-top: 3px;
-  margin-bottom: 5px;
+  margin-bottom: 0;
   text-align: left;
   font-family: $textType2;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 17px;
   color: #612228;
+
+  @media(min-width: 768px) {
+    margin-bottom: 5px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  @media(min-width: 992px) {
+    font-size: 14px;
+    line-height: 16px;
+  }
 }
