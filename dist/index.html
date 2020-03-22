@@ -749,30 +749,68 @@
   </div>
   <section class="review">
     <div class="container">
-      <div class="section__title">Мы хотим становиться лучше <br>напишите Ваши пожелания или отзыв</div>
-      <form class="form-review" id="formReview">
-        <div class="input-wrap input-wrap--mb-30">
-          <div class="input-container"><input class="input" type="text" name="user-name" placeholder="Ваше имя" />
+      <div class="section__title section__title--long">Мы хотим становиться лучше <br>напишите Ваши пожелания или отзыв</div>
+      <form class="form-review" id="formReview"><input type="hidden" name="Mirotvorets" value="Отзыв оставленный на сайте mirotvorets72.ru" /><input type="hidden" name="form_from" value="mirotvorets72.ru" /><input type="hidden" name="admin_email" value="zayavka@mirotvorets72.com" /><input type="hidden" name="erasure" value="Отзыв написан на главной странице сайта mirotvorets72" />
+        <div class="input-wrap input-wrap--review input-wrap--mb-30 input-wrap--mb-0-mobile">
+          <div class="input-container input-container--review"><input class="input input--review" type="text" name="user-name" placeholder="Ваше имя" />
             <div class="error-no-selected__message">
               <div class="error-no-selected__message-icon">!</div>
               <div class="error-no-selected__message-text"></div>
             </div>
           </div>
-          <div class="input-container"><input class="input" type="tel" name="user-phone" placeholder="Ваш телефон" />
+          <div class="input-container input-container--review"><input class="input input--review tel-field" type="tel" name="user-phone" placeholder="Ваш телефон" />
             <div class="error-no-selected__message">
               <div class="error-no-selected__message-icon">!</div>
               <div class="error-no-selected__message-text"></div>
             </div>
           </div>
-          <div class="input-container"><input class="input" type="email" name="user-email" placeholder="Ваш email" />
+          <div class="input-container input-container--review"><input class="input input--review" type="email" name="user-email" placeholder="Ваш email" required="required" />
             <div class="error-no-selected__message">
               <div class="error-no-selected__message-icon">!</div>
               <div class="error-no-selected__message-text"></div>
             </div>
           </div>
         </div>
-        <div class="input-wrap"><textarea class="textarea" id="reviewTextarea" name="review-message" placeholder="напишите отзыв"></textarea></div>
+        <div class="input-wrap input-wrap--mb-40 input-wrap--pos-relative"><textarea class="textarea" id="reviewTextarea" name="review-message" placeholder="напишите отзыв"></textarea>
+          <div class="error-no-selected__message">
+            <div class="error-no-selected__message-icon">!</div>
+            <div class="error-no-selected__message-text"></div>
+          </div>
+        </div>
         <div class="input-wrap input-wrap--content-center input-wrap--mb-0"><input class="button-inpute-type-a" type="submit" name="send-review" value="отправить" /></div>
+        <div class="result-query-success">
+          <div class="result-query-container__icon">
+            <?xml version="1.0" ?><svg id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <style type="text/css">
+                .st2 {
+                  fill: #41AD49;
+                }
+              </style>
+              <g>
+                <polygon class="st2" points="434.8,49 174.2,309.7 76.8,212.3 0,289.2 174.1,463.3 196.6,440.9 196.6,440.9 511.7,125.8 434.8,49" />
+              </g>
+            </svg>
+          </div>
+          <div class="result-query-container__message">Заявка успешно отпарвлена.</div>
+        </div>
+        <div class="result-query-error">
+          <div class="result-query-container__icon">
+            <?xml version="1.0" ?><svg id="Layer_1" style="enable-background:new 0 0 128 128;" version="1.1" viewBox="0 0 128 128" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <style type="text/css">
+                .st0 {
+                  fill: #C93636;
+                }
+
+                .st1 {
+                  fill: #FFFFFF;
+                }
+              </style>
+              <circle class="st0" cx="64" cy="64" r="64" />
+              <path class="st1" d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+            </svg>
+          </div>
+          <div class="result-query-container__message">Заявка не отправлена! Попробуйте ещё раз.</div>
+        </div>
       </form>
     </div>
   </section>

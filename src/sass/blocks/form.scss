@@ -24,6 +24,22 @@
     justify-content: space-around;
   }
 
+  &--review {
+    @media (min-width: 768px) {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+
+    @media (min-width: 1200px) {
+      justify-content: center;
+    }
+
+  }
+
+  &--pos-relative {
+    position: relative;
+  }
+
   &--content-center {
     justify-content: center;
   }
@@ -32,8 +48,18 @@
     margin-bottom: 30px;
   }
 
+  &--mb-40 {
+    margin-bottom: 40px;
+  }
+
   &--mb-0 {
     margin-bottom: 0;
+  }
+
+  &--mb-0-mobile {
+    @media (max-width: 767px) {
+      margin-bottom: 0;
+    }
   }
 }
 

@@ -1,27 +1,42 @@
 section.review
   .container
-    .section__title Мы хотим становиться лучше <br>напишите Ваши пожелания или отзыв
+    .section__title.section__title--long Мы хотим становиться лучше <br>напишите Ваши пожелания или отзыв
     form#formReview.form-review
-      .input-wrap.input-wrap--mb-30
-        .input-container
-          input.input(type="text",name="user-name", placeholder="Ваше имя")
+      input(type="hidden" name="Mirotvorets" value="Отзыв оставленный на сайте mirotvorets72.ru")
+      input(type="hidden" name="form_from" value="mirotvorets72.ru")
+      input(type="hidden" name="admin_email" value="zayavka@mirotvorets72.com")
+      input(type="hidden" name="erasure" value="Отзыв написан на главной странице сайта mirotvorets72")
+      .input-wrap.input-wrap--review.input-wrap--mb-30.input-wrap--mb-0-mobile
+        .input-container.input-container--review
+          input.input.input--review(type="text", name="user-name", placeholder="Ваше имя")
           .error-no-selected__message
             .error-no-selected__message-icon !
             .error-no-selected__message-text
 
-        .input-container
-          input.input(type="tel", name="user-phone", placeholder="Ваш телефон")
+        .input-container.input-container--review
+          input.input.input--review(type="tel", name="user-phone", class="tel-field" placeholder="Ваш телефон")
           .error-no-selected__message
             .error-no-selected__message-icon !
             .error-no-selected__message-text
 
-        .input-container
-          input.input(type="email", name="user-email", placeholder="Ваш email")
+        .input-container.input-container--review
+          input.input.input--review(type="email", name="user-email", placeholder="Ваш email" required)
           .error-no-selected__message
             .error-no-selected__message-icon !
             .error-no-selected__message-text
 
-      .input-wrap
+      .input-wrap.input-wrap--mb-40.input-wrap--pos-relative
         textarea#reviewTextarea.textarea(name="review-message", placeholder="напишите отзыв")
+        .error-no-selected__message
+          .error-no-selected__message-icon !
+          .error-no-selected__message-text
       .input-wrap.input-wrap--content-center.input-wrap--mb-0
         +button-input-tipe-a("submit", "send-review", "отправить")
+      .result-query-success
+        .result-query-container__icon
+          include ../../../svg/form/success-query.svg
+        .result-query-container__message Заявка успешно отпарвлена.
+      .result-query-error
+        .result-query-container__icon
+          include ../../../svg/form/error-query.svg
+        .result-query-container__message Заявка не отправлена! Попробуйте ещё раз.

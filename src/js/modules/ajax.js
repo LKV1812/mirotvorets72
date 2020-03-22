@@ -90,7 +90,7 @@ const sendFormOrder = (function(){
 
     textarea.forEach(item => {
       let key = item.getAttribute('name');
-      inputSelectAttrNameAll.append(key, item.innerText);
+      inputSelectAttrNameAll.append(key, item.value);
     });
 
     return inputSelectAttrNameAll;

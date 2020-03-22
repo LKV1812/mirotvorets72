@@ -216,6 +216,20 @@ input::-webkit-inner-spin-button {
   @media (min-width: 992px) {
     margin-bottom: 50px;
   }
+
+  &--review {
+    width: 100%;
+    margin-bottom: 20px;
+
+    @media (min-width: 768px) {
+      width: 32%;
+      margin-bottom: 0;
+    }
+
+    @media (min-width: 992px) {
+      margin-bottom: 10px;
+    }
+  }
 }
 
 .input {
@@ -258,6 +272,15 @@ input::-webkit-inner-spin-button {
   @media (min-width: 992px) {
     width: 350px;
   }
+
+  &--review {
+    width: 100%;
+
+    @media (min-width: 1200px) {
+      width: 350px;
+    }
+  }
+
 }
 
 /*

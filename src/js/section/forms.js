@@ -2,6 +2,7 @@ const formOrder = (function(){
   'use strict';
 
   const form = document.getElementById('indexGeneralOrder');
+  const formReview = document.getElementById('formReview');
 
   // select`ы поля выбора, в зависимости от типа услуг будем скрывать или показвыать поля
   const selectedService = form.querySelector('#selectedService');
@@ -10,6 +11,7 @@ const formOrder = (function(){
 
   selectedService.addEventListener('click', toggleMaskField);
   form.addEventListener('submit', sendForm);
+  formReview.addEventListener('submit', sendForm);
 
   /**
    * Отправляет форму через ajax
@@ -40,6 +42,7 @@ const formOrder = (function(){
   function formValidate(form) {
     const selects = form.querySelectorAll('.select');
     const inputs = form.querySelectorAll('.input');
+    const textarea = form.querySelector('.textarea');
     let resultValidate = true;
 
     selects.forEach(item => {
@@ -63,6 +66,14 @@ const formOrder = (function(){
         resultValidate = false;
       }
     });
+
+    if (textarea) {
+      if (textarea.value == '') {
+        // используем модуль modules/textarea.js
+        handlerTextarea.showErrorsTextarea(textarea);
+        resultValidate = false;
+      }
+    }
 
     return resultValidate;
   }
