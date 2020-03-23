@@ -7,9 +7,25 @@ html(lang="ru")
     meta(charset="UTF-8")
     //- отключить обработку жеста масштабирования  для смартфонов
     meta(name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1")
-
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    //- favicon
+    link(rel="shortcut icon", sizes="16x16", href="assets/img/favicon/favicon-16x16.ico", type="image/x-icon")
+    link(rel="shortcut icon", sizes="24x24", href="assets/img/favicon/favicon-24x24.ico", type="image/x-icon")
+    link(rel="shortcut icon", sizes="32x32", href="assets/img/favicon/favicon-32x32.ico", type="image/x-icon")
+    link(rel="shortcut icon", sizes="48x48", href="assets/img/favicon/favicon-48x48.ico", type="image/x-icon")
+    link(rel="shortcut icon", sizes="16x16", href="assets/img/favicon/favicon-16x16.png", type="image/png")
+    link(rel="shortcut icon", sizes="24x24", href="assets/img/favicon/favicon-24x24.png", type="image/png")
+    link(rel="shortcut icon", sizes="32x32", href="assets/img/favicon/favicon-32x32.png", type="image/png")
+    link(rel="shortcut icon", sizes="48x48", href="assets/img/favicon/favicon-48x48.png", type="image/png")
+    link(rel="apple-touch-icon" sizes="16x16" href="assets/img/favicon/favicon-16x16.png")
+    link(rel="apple-touch-icon" sizes="24x24" href="assets/img/favicon/favicon-24x24.png")
+    link(rel="apple-touch-icon" sizes="32x32" href="assets/img/favicon/favicon-32x32.png")
+    link(rel="apple-touch-icon" sizes="48x48" href="assets/img/favicon/favicon-48x48.png")
+    link(rel="apple-touch-icon" sizes="57x57" href="assets/img/favicon/favicon-57x57.png")
+    link(rel="apple-touch-icon" sizes="60x60" href="assets/img/favicon/favicon-60x60.png")
+
+    //- libs
     link(rel="stylesheet", href="vendor/libs/normalize/normalize.css")
     link(rel="stylesheet", href="vendor/libs/bootstrap/dist/css/bootstrap-grid.min.css")
     block link
@@ -17,6 +33,7 @@ html(lang="ru")
     link(rel="stylesheet", href="assets/fonts/hagin/stylesheet.css")
     link(rel="stylesheet", href="assets/css/main.css")
     title #{title}
+
   body(class="bc")
     include ../sections/header.pug
 
