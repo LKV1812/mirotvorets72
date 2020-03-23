@@ -4,6 +4,8 @@ header.head
       a(href="#" id="menu-toggle" class="menu-toggle")
       ul.dropdown-menu-mobile#dropdownMenuMobile
         li.dropdown-menu-mobile__list
+          a(href="index.html").dropdown-menu-mobile__link Главная
+        li.dropdown-menu-mobile__list
           a(href="#").dropdown-menu-mobile__link.dropdown-menu-mobile__link-arrow Наши услуги
           .dropdown-menu-mobile__submenu
             a(href="#").dropdown-menu-mobile__link Утилизация архивов
@@ -95,9 +97,10 @@ header.head
             img(src="assets/img/nav/delimiter-small.png", alt="разделитель")
           li.head-nav__list
             a.head-nav__link(href="#") Вопрос - ответ
-        .sticker
-          .sticker__content
-            img(src="assets/img/nav/logo.png", alt="логитип" class="sticker-logo__picture")
+        a(href="index.html" class="index-page-link")
+          .sticker
+            .sticker__content
+              img(src="assets/img/nav/logo.png", alt="логитип" class="sticker-logo__picture")
         .lower-nav
           a(href="#calculator" class="lower-nav__button") расчет стоимости
             .lower-nav__button-bg.lower-nav__button-bg--calculator

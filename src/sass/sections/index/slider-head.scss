@@ -357,7 +357,18 @@
   }
 
   &--bottom {
+    display: flex;
     padding-top: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @media (min-width: 576px) {
+      justify-content: center;
+    }
+
+    @media (min-width: 768px) {
+      flex-wrap: nowrap;
+    }
   }
 }
 
@@ -375,10 +386,14 @@
 }
 
 .partners__name {
-  height: 60px;
+  height: 40px;
   line-height: 0;
   margin-right: 40px;
   overflow: hidden;
+
+  @media (min-width: 768px) {
+    height: 60px;
+  }
 }
 
 .partners__name-img {
