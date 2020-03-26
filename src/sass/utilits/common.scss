@@ -61,6 +61,10 @@ body {
       font-size: 44px;
     }
   }
+
+  &--line-height-1float2 {
+    line-height: 1.2;
+  }
 }
 
 .sticker-text {
@@ -76,4 +80,17 @@ body {
       font-size: 18px;
     }
   }
+}
+
+.redirect-main {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.redirect-main__link {
+  font-family: $textType2;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #67af01;
+  text-decoration: none;
 }
