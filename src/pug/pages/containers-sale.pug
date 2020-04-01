@@ -1,0 +1,14 @@
+extends ../layouts/main.pug
+
+block variables
+  - var title= "Продажа контейнеров"
+
+block link
+
+block content
+  include ../sections/lower-menu-bg.pug
+  include ../sections/containers-sale/description.pug
+  include ../sections/containers-sale/stages-cooperation.pug
+
+block scripts
+  script(src="assets/js/main.js")
