@@ -1,68 +1,52 @@
-.stages-cooperation-bg
-  .container.full-height
-    .stages-cooperation
+.stages-cooperation-bg.stages-cooperation-bg--containers
+  .container
+    .stages-cooperation__title Как это работает?
+    .stages-cooperation__row
 
-      .stages-cooperation__stage
-        .stages-cooperation__picture-wrap.stages-cooperation__picture-wrap--mobile-small
-          img(src="assets/img/index/stages-cooperation/order-extra-small.png", alt="Деньги").stages-cooperation__picture
-          .stages-cooperation__stage-number 01
-        .stages-cooperation__picture-wrap.stages-cooperation__picture-wrap--mobile
-          img(src="assets/img/index/stages-cooperation/order-small.png", alt="Лист заявки").stages-cooperation__picture
-          .stages-cooperation__stage-number 01
-        .stages-cooperation__picture-wrap.stages-cooperation__picture-wrap--desktop
-          img(src="assets/img/containers-sale/stage-01.png", alt="Лист заявки").stages-cooperation__picture
-          .stages-cooperation__stage-number 01
-        .stages-cooperation__text Вы оформляете заявку
-      .stages-cooperation__picture-wrap-arrow.stages-cooperation__picture-wrap-arrow--tablet-and-mobile
-        img(src="assets/img/index/stages-cooperation/arrow-odd-tablet.png", alt="arrow")
-      .stages-cooperation__picture-wrap-arrow.stages-cooperation__picture-wrap-arrow--desktop
-        img(src="assets/img/index/stages-cooperation/arrow-next.png", alt="arrow")
+      .stages-cooperation__item
+        .stages-cooperation__img-wrap
+          .stages-cooperation__item-number 01
+          img(src="assets/img/containers-sale/stage-01-mobile.png", class="stages-cooperation__img stages-cooperation__img", alt="Деньги")
+          img(src="assets/img/containers-sale/stage-01.png", class="stages-cooperation__img stages-cooperation__img--desktop", alt="Деньги")
+        .stages-cooperation__description Вы приобретаете контейнер
 
-      .stages-cooperation__stage
-        .stages-cooperation__picture-wrap.stages-cooperation__picture-wrap--mobile-small
-          img(src="assets/img/index/stages-cooperation/auto-extra-small.png", alt="Деньги").stages-cooperation__picture
-          .stages-cooperation__stage-number 02
-        .stages-cooperation__picture-wrap.stages-cooperation__picture-wrap--mobile
-          img(src="assets/img/index/stages-cooperation/auto-small.png", alt="Автомобиль").stages-cooperation__picture
-          .stages-cooperation__stage-number 02
-        .stages-cooperation__picture-wrap.stages-cooperation__picture-wrap--desktop
-          img(src="assets/img/containers-sale/stage-02.png", alt="Лист заявки").stages-cooperation__picture
-          .stages-cooperation__stage-number 02
-        .stages-cooperation__text К вам выезжает  машина
+      .stages-cooperation__img-arrow-wrap
+        img(src="assets/img/index/stages-cooperation/arrow-odd-tablet.png", class="stages-cooperation__img-arrow", alt="arrow")
+        img(src="assets/img/index/stages-cooperation/arrow-next.png", class="stages-cooperation__img-arrow stages-cooperation__img-arrow--hidden-mobile", alt="arrow")
+
+      .stages-cooperation__item
+        .stages-cooperation__img-arrow-wrap.stages-cooperation__img-arrow-wrap--float-end
+          img(src="assets/img/index/stages-cooperation/arrow-float-end.png", alt="arrow")
+
+        .stages-cooperation__img-wrap
+          .stages-cooperation__item-number 02
+          img(src="assets/img/containers-sale/stage-02-mobile.png", class="stages-cooperation__img", alt="Деньги")
+          img(src="assets/img/containers-sale/stage-02.png", class="stages-cooperation__img stages-cooperation__img--desktop", alt="Деньги")
+        .stages-cooperation__description Копите сырье
+
+      .stages-cooperation__img-arrow-wrap.stages-cooperation__img-arrow-wrap--hidden-mobile
+        img(src="assets/img/index/stages-cooperation/arrow-even-tablet.png", class="stages-cooperation__img-arrow", alt="arrow")
+        img(src="assets/img/index/stages-cooperation/arrow-next.png", class="stages-cooperation__img-arrow stages-cooperation__img-arrow--hidden-mobile", alt="arrow")
+
       .break.break--mobile-show.mb-40
-      .stages-cooperation__picture-wrap-arrow.stages-cooperation__picture-wrap-arrow--float-end
-        img(src="assets/img/index/stages-cooperation/arrow-float-end.png", alt="arrow")
-      .stages-cooperation__picture-wrap-arrow.stages-cooperation__picture-wrap-arrow--tablet
-        img(src="assets/img/index/stages-cooperation/arrow-even-tablet.png", alt="arrow")
-      .stages-cooperation__picture-wrap-arrow.stages-cooperation__picture-wrap-arrow--desktop
-        img(src="assets/img/index/stages-cooperation/arrow-next.png", alt="arrow")
 
-      .stages-cooperation__stage
-        .stages-cooperation__picture-wrap.stages-cooperation__picture-wrap--mobile-small
-          img(src="assets/img/index/stages-cooperation/libra-extra-small.png", alt="Деньги").stages-cooperation__picture
-          .stages-cooperation__stage-number 03
-        .stages-cooperation__picture-wrap.stages-cooperation__picture-wrap--mobile
-          img(src="assets/img/index/stages-cooperation/libra-small.png", alt="Весы").stages-cooperation__picture
-          .stages-cooperation__stage-number 03
-        .stages-cooperation__picture-wrap.stages-cooperation__picture-wrap--desktop
-          img(src="assets/img/containers-sale/stage-03.png", alt="Лист заявки").stages-cooperation__picture
-          .stages-cooperation__stage-number 03
-        .stages-cooperation__text Взвешивание
-      .stages-cooperation__picture-wrap-arrow.stages-cooperation__picture-wrap-arrow--float-begin
-        img(src="assets/img/index/stages-cooperation/arrow-float-begin.png", alt="arrow")
-      .stages-cooperation__picture-wrap-arrow.stages-cooperation__picture-wrap-arrow--tablet-and-mobile
-        img(src="assets/img/index/stages-cooperation/arrow-odd-tablet.png", alt="arrow")
-      .stages-cooperation__picture-wrap-arrow.stages-cooperation__picture-wrap-arrow--desktop
-        img(src="assets/img/index/stages-cooperation/arrow-next.png", alt="arrow")
+      .stages-cooperation__item
+        .stages-cooperation__img-arrow-wrap.stages-cooperation__img-arrow-wrap--float-begin
+          img(src="assets/img/index/stages-cooperation/arrow-float-begin.png", alt="arrow")
 
-      .stages-cooperation__stage
-        .stages-cooperation__picture-wrap.stages-cooperation__picture-wrap--mobile-small
-          img(src="assets/img/index/stages-cooperation/payment-extra-small.png", alt="Деньги").stages-cooperation__picture
-          .stages-cooperation__stage-number 04
-        .stages-cooperation__picture-wrap.stages-cooperation__picture-wrap--mobile
-          img(src="assets/img/index/stages-cooperation/payment-small.png", alt="Деньги").stages-cooperation__picture
-          .stages-cooperation__stage-number 04
-        .stages-cooperation__picture-wrap.stages-cooperation__picture-wrap--desktop
-          img(src="assets/img/containers-sale/stage-04.png", alt="Лист заявки").stages-cooperation__picture
-          .stages-cooperation__stage-number 04
-        .stages-cooperation__text Мы производим оплату
+        .stages-cooperation__img-wrap
+          .stages-cooperation__item-number 03
+          img(src="assets/img/containers-sale/stage-03-mobile.png", class="stages-cooperation__img", alt="Деньги")
+          img(src="assets/img/containers-sale/stage-03.png", class="stages-cooperation__img stages-cooperation__img--desktop", alt="Деньги")
+        .stages-cooperation__description Оставляете заявку
+
+      .stages-cooperation__img-arrow-wrap
+        img(src="assets/img/index/stages-cooperation/arrow-odd-tablet.png", class="stages-cooperation__img-arrow", alt="arrow")
+        img(src="assets/img/index/stages-cooperation/arrow-next.png", class="stages-cooperation__img-arrow stages-cooperation__img-arrow--hidden-mobile", alt="arrow")
+
+      .stages-cooperation__item
+        .stages-cooperation__img-wrap
+          .stages-cooperation__item-number 04
+          img(src="assets/img/containers-sale/stage-04-mobile.png", class="stages-cooperation__img", alt="Деньги")
+          img(src="assets/img/containers-sale/stage-04.png", class="stages-cooperation__img stages-cooperation__img--desktop", alt="Деньги")
+        .stages-cooperation__description Мы приезжаем, выкупаем накопленное вами сырье

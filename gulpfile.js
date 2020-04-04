@@ -83,13 +83,22 @@ gulp.task('pug', function(){
     .pipe(browserSync.reload({stream: true})); // Обновляем html на странице при изменении
 });
 
+// gulp.task('js', function () {
+//   return gulp.src('src/js/**/*.js')
+//     .pipe(babel({// из es6 в es5
+//       presets: ['env']
+//     }))
+//     .pipe(concat('main.js'))// объеденяем все собственные скрипты в одном файле
+//     .pipe(uglify())// сжимаем
+//     .pipe(gulp.dest('dist/assets/js'))// переносим в продакшен
+//     .pipe(browserSync.reload({stream: true}));// Обновляем страницу при изменении
+// });
+
 gulp.task('js', function () {
   return gulp.src('src/js/**/*.js')
-    .pipe(babel({// из es6 в es5
-      presets: ['env']
-    }))
+    .pipe(sourcemaps.init())
     .pipe(concat('main.js'))// объеденяем все собственные скрипты в одном файле
-    .pipe(uglify())// сжимаем
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('dist/assets/js'))// переносим в продакшен
     .pipe(browserSync.reload({stream: true}));// Обновляем страницу при изменении
 });
