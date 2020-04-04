@@ -26,6 +26,10 @@
 
 .flex-container {
   display: flex;
+
+  &--content-center {
+    justify-content: center;
+  }
 }
 
 .display-none-mobile {

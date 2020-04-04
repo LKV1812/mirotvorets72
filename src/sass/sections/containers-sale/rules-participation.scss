@@ -1,0 +1,86 @@
+@import '../../variables/variables.scss';
+
+.rules-participation {
+  position: relative;
+  margin-top: -5px;
+  padding-top: 50px;
+  padding-bottom: 70px;
+  background-image: url("../img/containers-sale/participation-bg-tablet.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+
+  @media (min-width: 768) {
+    padding-top: 50px;
+    padding-bottom: 70px;
+    background-image: url("../img/containers-sale/participation-bg.png");
+  }
+}
+
+.rules-participation__title {
+  margin-bottom: 25px;
+  text-align: center;
+  font-family: $textType2;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #612228;
+
+  @media (min-width: 768px) {
+    font-size: 28px;
+  }
+}
+
+.rules-participation__sticker-wrap {
+  position: relative;
+}
+
+.rules-participation__sticker {
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  &--desktop {
+    display: none;
+    @media (min-width: 768px) {
+      display: inline;
+    }
+  }
+}
+
+.rules-participation__sticker-text-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 270px;
+  margin: 0 auto;
+  padding-top: 20px;
+
+  @media (min-width: 768px) {
+    width: 490px;
+  }
+}
+
+.custom-marker__list {
+  margin-bottom: 20px;
+  color: #67af01;
+}
+
+.text-short-description {
+  font-family: $textType2;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #612228;
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
+}
+
+.rules-participation__sticker-delimiter-wrap {
+  text-align: center;
+  line-height: 0;
+}
