@@ -224,6 +224,60 @@
       </div>
     </div>
   </section>
+  <section class="section">
+    <div class="container">
+      <div class="section__title">заказать контейнер</div>
+      <form id="orderContainer" action="php/form-order.php" method="post"><input type="hidden" name="Mirotvorets" value="Заявка с главного сайта mirotvorets72.ru" /><input type="hidden" name="form_from" value="mirotvorets72.ru" /><input type="hidden" name="admin_email" value="zayavka@mirotvorets72.com" /><input type="hidden" name="erasure" value="Заявка со страницы контейнеров" />
+        <div class="input-wrap">
+          <div class="input-container"><input class="input" type="text" name="address" placeholder="Ваш адрес" />
+            <div class="error-no-selected__message">
+              <div class="error-no-selected__message-icon">!</div>
+              <div class="error-no-selected__message-text"></div>
+            </div>
+          </div>
+          <div class="input-container"><input class="input tel-field" type="tel" name="phone" placeholder="Ваш телефон" />
+            <div class="error-no-selected__message">
+              <div class="error-no-selected__message-icon">!</div>
+              <div class="error-no-selected__message-text"></div>
+            </div>
+          </div><input class="button-inpute-type-a" type="submit" name="send-order" value="отправить заявку" />
+          <div class="result-query-success">
+            <div class="result-query-container__icon">
+              <?xml version="1.0" ?><svg id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <style type="text/css">
+                  .st2 {
+                    fill: #41AD49;
+                  }
+                </style>
+                <g>
+                  <polygon class="st2" points="434.8,49 174.2,309.7 76.8,212.3 0,289.2 174.1,463.3 196.6,440.9 196.6,440.9 511.7,125.8 434.8,49" />
+                </g>
+              </svg>
+            </div>
+            <div class="result-query-container__message">Заявка успешно отпарвлена.</div>
+          </div>
+          <div class="result-query-error">
+            <div class="result-query-container__icon">
+              <?xml version="1.0" ?><svg id="Layer_1" style="enable-background:new 0 0 128 128;" version="1.1" viewBox="0 0 128 128" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <style type="text/css">
+                  .st0 {
+                    fill: #C93636;
+                  }
+
+                  .st1 {
+                    fill: #FFFFFF;
+                  }
+                </style>
+                <circle class="st0" cx="64" cy="64" r="64" />
+                <path class="st1" d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+              </svg>
+            </div>
+            <div class="result-query-container__message">Заявка не отправлена! Попробуйте ещё раз.</div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
   <nav class="footer-nav-bg">
     <div class="container pos-rel">
       <ul class="foot-nav">

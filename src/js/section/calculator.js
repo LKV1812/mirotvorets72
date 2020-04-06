@@ -196,13 +196,13 @@
    * При фокусе, если на элементе был error снимаем его
    * Показываем error на родительский элемент
    */
-  // function showErrorsSelect(currentSelect) {
-  //   let parentSelect = currentSelect.closest('.select');
-  //   parentSelect.onfocus = function() {
-  //     currentSelect.parentElement.classList.remove('error-no-selected');
-  //     parentSelect.querySelector('.error-no-selected__message').style.display = 'none';
-  //   };
-  //   currentSelect.parentElement.classList.add('error-no-selected');
-  //   parentSelect.querySelector('.error-no-selected__message').style.display = 'flex';
-  // }
+  function showErrorsSelect(currentSelect) {
+    let parentSelect = currentSelect.closest('.select');
+    parentSelect.onfocus = function() {
+      currentSelect.parentElement.classList.remove('error-no-selected');
+      parentSelect.querySelector('.error-no-selected__message').style.display = 'none';
+    };
+    currentSelect.parentElement.classList.add('error-no-selected');
+    parentSelect.querySelector('.error-no-selected__message').style.display = 'flex';
+  }
 }());
