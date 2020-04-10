@@ -1,5 +1,10 @@
 @import '../variables/variables.scss';
 
+input, textarea, select {
+  -webkit-appearance: none;
+  -moz-appearance:textfield;
+}
+
 input[type='number'] {
   -webkit-appearance: none;
   -moz-appearance:textfield;
@@ -16,6 +21,16 @@ input[type='range'] {
 }
 
 input[type='checkbox'] {
+  -webkit-appearance: none;
+  -moz-appearance:textfield;
+}
+
+input[type='tel'] {
+  -webkit-appearance: none;
+  -moz-appearance:textfield;
+}
+
+input[type='email'] {
   -webkit-appearance: none;
   -moz-appearance:textfield;
 }
