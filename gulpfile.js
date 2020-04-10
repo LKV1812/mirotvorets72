@@ -31,8 +31,20 @@ var gulp         = require('gulp'),
 //     .pipe(browserSync.reload({stream: true})); // Обновляем CSS на странице при изменении
 // });
 
+// gulp.task('sass', function(){ // Создаем таск Sass
+//   return gulp.src(['src/sass/**/*.scss', 'src/sass/**/*.sass', '!src/sass/**/_*.sass', '!src/sass/**/_*.scss', '!src/sass/libs.sass']) // Берем источник
+//     .pipe(sourcemaps.init())
+//     .pipe(wait(500))// ставим задержку выполнения тасков, чтобы все sass успели прогрузится иначе могут начаться проблемы с @import sass файлов
+//     .pipe(sass().on("error", notify.onError())) // Преобразуем Sass в CSS посредством gulp-sass
+//     .pipe(cssnano()) // Сжимаем
+//     .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) // Создаем префиксы
+//     .pipe(sourcemaps.write())
+//     .pipe(gulp.dest('dist/assets/css')) // Выгружаем результата в папку dist/assets/css
+//     .pipe(browserSync.reload({stream: true})); // Обновляем CSS на странице при изменении
+// });
+
 gulp.task('sass', function(){ // Создаем таск Sass
-  return gulp.src(['src/sass/**/*.scss', 'src/sass/**/*.sass', '!src/sass/**/_*.sass', '!src/sass/**/_*.scss', '!src/sass/libs.sass']) // Берем источник
+  return gulp.src(['src/sass/main.scss']) // Берем источник
     .pipe(sourcemaps.init())
     .pipe(wait(500))// ставим задержку выполнения тасков, чтобы все sass успели прогрузится иначе могут начаться проблемы с @import sass файлов
     .pipe(sass().on("error", notify.onError())) // Преобразуем Sass в CSS посредством gulp-sass
@@ -94,12 +106,21 @@ gulp.task('pug', function(){
 //     .pipe(browserSync.reload({stream: true}));// Обновляем страницу при изменении
 // });
 
+// gulp.task('js', function () {
+//   return gulp.src('src/js/**/*.js')
+//     .pipe(sourcemaps.init())
+//     .pipe(concat('main.js'))// объеденяем все собственные скрипты в одном файле
+//     .pipe(sourcemaps.write())
+//     .pipe(gulp.dest('dist/assets/js'))// переносим в продакшен
+//     .pipe(browserSync.reload({stream: true}));// Обновляем страницу при изменении
+// });
+
 gulp.task('js', function () {
-  return gulp.src('src/js/**/*.js')
+  return gulp.src(['src/js/**/*.js', '!src/js/*.js'])
     .pipe(sourcemaps.init())
-    .pipe(concat('main.js'))// объеденяем все собственные скрипты в одном файле
+    .pipe(concat('common.js'))// объеденяем все собственные скрипты в одном файле
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('dist/assets/js'))// переносим в продакшен
+    .pipe(gulp.dest('dist/assets/js/common'))// переносим в продакшен
     .pipe(browserSync.reload({stream: true}));// Обновляем страницу при изменении
 });
 
@@ -151,6 +172,9 @@ gulp.task('build', function(callback) {
 
   gulp.src('src/assets/**/*') // Переносим assets в котором лежат картинки шрифты и т.п. активы продакшен
     .pipe(gulp.dest('dist/assets'));
+  gulp.src('src/js/*.js')
+    .pipe(uglify())// сжимаем
+    .pipe(gulp.dest('dist/assets/js'));
   gulp.src('src/libs/**/*')
     .pipe(gulp.dest('dist/vendor/libs'));
   gulp.src('src/php/**/*') // Переносим assets в котором лежат картинки шрифты и т.п. активы продакшен
@@ -177,7 +201,7 @@ gulp.task("build-min", function(){
     .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) // Создаем префиксы
     .pipe(gulp.dest('dist/assets/css')); // Выгружаем результата в папку dist/assets/css
 
-  // gulp.src('src/js/**/*.js')
-  //   .pipe(uglify())// сжимаем
-  //   .pipe(gulp.dest('dist/assets/js'));// переносим в продакшен
+  gulp.src('dist/assets/js/**/*.js')
+    .pipe(uglify())// сжимаем
+    .pipe(gulp.dest('dist/assets/js'));// переносим в продакшен
 });

@@ -1,3 +1,5 @@
+// let hello = "привет от глобального скрипта";
+// export{hello};
 'use strict';
 
   /**
