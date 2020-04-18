@@ -1,4 +1,4 @@
-const sendFormOrder = (function(){
+export const sendFormOrder = (function(){
   'use strict';
 
   // const _formOrder = document.getElementById('indexGeneralOrder');

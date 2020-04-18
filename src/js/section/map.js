@@ -408,6 +408,8 @@ function initMap() {
 		infoWindowSherbakova.open(myMap, markerSherbakova);
 	});
 }
+
+initMap();
 /**
  * Скрипт для яндекс карты
  */

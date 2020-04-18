@@ -6,6 +6,7 @@ var gulp         = require('gulp'),
     browserSync  = require('browser-sync'), // Подключаем Browser Sync
     concat       = require('gulp-concat'), // Подключаем gulp-concat (для конкатенации файлов)
     uglify       = require('gulp-uglifyjs'), // Подключаем gulp-uglifyjs (для сжатия JS)
+    cleanCss     = require('gulp-clean-css'),
     cssnano      = require('gulp-cssnano'), // Подключаем пакет для минификации CSS
     rename       = require('gulp-rename'), // Подключаем библиотеку для переименования файлов
     del          = require('del'), // Подключаем библиотеку для удаления файлов и папок
@@ -28,11 +29,11 @@ let isDev = true;
 let isProd = !isDev;
 
 gulp.task('sass', function(){ // Создаем таск Sass
-  return gulp.src(['src/sass/**/*.scss', 'src/sass/**/*.sass', '!src/sass/**/_*.sass', '!src/sass/**/_*.scss', '!src/sass/libs.sass']) // Берем источник
+  return gulp.src('src/sass/*.scss') // Берем источник
     .pipe(gulpif(isDev, sourcemaps.init()))
     .pipe(wait(500))// ставим задержку выполнения тасков, чтобы все sass успели прогрузится иначе могут начаться проблемы с @import sass файлов
     .pipe(sass().on("error", notify.onError())) // Преобразуем Sass в CSS посредством gulp-sass
-    .pipe(cssnano()) // Сжимаем
+    .pipe(cleanCss({level: 2})) // Сжимаем
     .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) // Создаем префиксы
     .pipe(gulpif(isDev, sourcemaps.write()))
     .pipe(gulp.dest('dist/assets/css')) // Выгружаем результата в папку dist/assets/css
@@ -108,14 +109,16 @@ gulp.task('clean', function() {
 
 gulp.task('img', function() {
   return gulp.src('src/img/**/*') // Берем все изображения из src
-    .pipe(imagemin({  // Сжимаем их с наилучшими настройками с учетом кеширования
+    .pipe(gulpif(isProd, imagemin({  // Сжимаем их с наилучшими настройками с учетом кеширования
+      optimizationLevel: 7,
       interlaced: true,
       progressive: true,
       svgoPlugins: [{removeViewBox: false}],
       use: [pngquant()]
-    }))
+    })))
     .pipe(gulp.dest('dist/assets/img')); // Выгружаем на продакшен
 });
+
 gulp.task('default', function(callback){
   runSequence(
     'build',
@@ -128,7 +131,8 @@ gulp.task('build', function(callback) {
   runSequence(
     'clean',
     'img',
-    ['pug', 'sass', 'js'],
+    'sass',
+    ['pug', 'js'],
     callback
   );
 
@@ -141,5 +145,5 @@ gulp.task('build', function(callback) {
 });
 
 gulp.task('clear', function () {
-  return cache.clearAll();
+  cache.clearAll();
 });

@@ -24,9 +24,4 @@ $(document).ready(function(){
   $('.slider-head__buttom--prev').click(function() {
     indexHeaderSlider.trigger('prev.owl.carousel');
   });
-
-  let sum = (a, b) => a + b;
-
-  let result = 10 + sum(5, 5);
-  console.log(result);
 });

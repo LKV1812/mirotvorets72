@@ -1,2 +1,29 @@
 $textType1 : 'Hagin Caps';
 $textType2 : 'Gilroy';
+
+/*****************
+*
+* color
+*
+*****************/
+
+$mainColorBlocks                     : rgba(103, 175, 1, 1);
+$navBackgroundColor                  : rgba(103, 175, 1, 1);
+$buttonTypeA-Color                   : rgba(103, 175, 1, 1);
+$buttonTypeA-ColorHover              : rgba(77, 131, 0, 1);
+$mainColorText                       : #612228;
+$navLinkTextColor                    : #ffffff;
+$submenuLinkTextColor                : #67af01;
+$submenuLinkTextColorHover           : #ffffff;
+
+
+/*****************
+*
+* box-shadow
+*
+*****************/
+
+$stickerShadow                        : 5px 19px 60px 1px rgba(154,90,19,.8);
+$inputShadow                          : 1px 10px 46px rgba(214, 214, 214,1);
+$buttonShadowTypeA                    : 0 6px 30px 0 rgba(154,90,19,.44);
+$buttonShadowTypeB                    : 0 6px 30px 0 rgba(105,105,105,.64);

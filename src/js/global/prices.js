@@ -7,7 +7,8 @@
   * priceMaterials[тип-сырья][тип-доставки];
   * priceMaterials[тип-сырья][тип-доставки][цена-кг-от-объема];
   */
- const priceMaterials = {
+
+export const priceMaterials = {
   "cardboard": {
     'our-delivery': {
       '0': 1.5,
@@ -403,7 +404,7 @@
 * priceMaterials[сорт-поддонов][тип-доставки];
 * priceMaterials[сорт-поддонов][тип-доставки][наличие-клейма-Epal];
 */
-const pricePallets = {
+export const pricePallets = {
   "first-grade": {
     'our-delivery': {
       'epal': 80,

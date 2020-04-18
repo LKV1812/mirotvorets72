@@ -1,1 +1,11 @@
-import './entry.js';
+import './section/mobile-menu-toggle';
+import './section/owl-carousel';
+import './section/cards-product';
+import './modules/href-viber';
+import './section/forms';
+import './section/map.js';
+import './section/calculator.js';
+import './modules/ranges.js';
+import './modules/сheckbox.js';
+import './modules/tabs.js';
+import './modules/phone-mask.js';

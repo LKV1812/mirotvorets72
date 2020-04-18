@@ -11,7 +11,7 @@
 //  * не хранит данные,
 //  */
 
-const handlerInputs = (function() {
+export const handlerInputs = (function() {
 
   /**
    * @param _inputs - коллекция инпутов
