@@ -1,3 +1,9 @@
+import {customSelects} from '../modules/selects';
+import {handlerInputs} from '../modules/inputs';
+import {handlerTextarea} from '../modules/textarea';
+import {sendFormOrder} from '../modules/ajax';
+
+
 const formOrder = (function(){
   'use strict';
 

@@ -49,9 +49,9 @@
   // Устанавливаем курсор в конец строки в инпуте, если при нажатии кнопки он стоит не в конце
 
 
-    inputsTel.forEach(input => {
-      input.setSelectionRange(input.value.length, input.value.length);
-    });
+    // inputsTel.forEach(input => {
+    //   input.setSelectionRange(input.value.length);
+    // });
   }
 
   //Запуск функции setMask через обработчик событий

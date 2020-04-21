@@ -198,13 +198,15 @@
 
 .footer__phone-link {
   font-family: $textType1;
-  font-size: 17px;
+  font-size: 14px;
+  font-weight: 600;
   line-height: 25px;
   color: #335700;
   text-decoration: none;
 
   @media (min-width: 768px) {
     font-size: 20px;
+    font-weight: 400;
   }
 }
 

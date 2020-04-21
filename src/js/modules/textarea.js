@@ -11,7 +11,7 @@
 //  * не хранит данные,
 //  */
 
-const handlerTextarea = (function() {
+export const handlerTextarea = (function() {
 
   /**
    * @param _textarea - коллекция инпутов

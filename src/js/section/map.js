@@ -17,7 +17,7 @@ function initMap() {
 
 	let myMap = new google.maps.Map(document.getElementById("map"), {
 		center: centerMap,
-    zoom: 12,
+    zoom: 10,
     		// Дополнительные настройки
 
 		// Удалить элементы управления картой
@@ -408,6 +408,8 @@ function initMap() {
 		infoWindowSherbakova.open(myMap, markerSherbakova);
 	});
 }
+
+initMap();
 /**
  * Скрипт для яндекс карты
  */

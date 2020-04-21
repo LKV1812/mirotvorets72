@@ -10,7 +10,7 @@
  * не обрабатывает данные для подсчета чего-либо,
  * не хранит данные,
  */
-const customSelects = (function() {
+export const customSelects = (function() {
   'use strict';
 
   /**

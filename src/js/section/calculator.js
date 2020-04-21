@@ -1,3 +1,6 @@
+import {customSelects} from '../modules/selects';
+import {priceMaterials, pricePallets} from '../global/prices';
+
 (function() {
   "use strict";
 

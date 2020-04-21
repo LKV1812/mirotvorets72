@@ -1,3 +1,5 @@
+import {priceMaterials, pricePallets} from '../global/prices';
+
 (function() {
   'use strict';
 

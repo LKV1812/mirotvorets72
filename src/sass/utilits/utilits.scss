@@ -73,6 +73,12 @@
     }
   }
 
+  &--show-before-width-690 {
+    @media(min-width: 690px) {
+      display: none;
+    }
+  }
+
   &--mobile-show {
     @media(min-width: 768px) {
       display: none;
@@ -88,6 +94,10 @@
     @media(min-width: 992px) {
       display: block;
     }
+  }
+
+  &--height-6 {
+    height: 6px;
   }
 }
 

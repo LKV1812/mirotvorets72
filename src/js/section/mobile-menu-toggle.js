@@ -20,8 +20,11 @@
   };
 
   dropdownMenuMobileLink.forEach(item => {
-    item.addEventListener('click', function() {
-      if (this.classList.contains('dropdown-menu-mobile__link-arrow')) return;
+    item.addEventListener('click', function(e) {
+      if (this.classList.contains('dropdown-menu-mobile__link-arrow')) {
+        e.preventDefault();
+        return;
+      }
       dropdownMenuMobile.classList.remove('dropdown-menu-mobile--show-menu');
     });
   });

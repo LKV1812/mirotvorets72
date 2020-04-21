@@ -129,31 +129,20 @@
 .slider-head__item-title {
   margin: 0;
   padding: 0;
-  padding-bottom: 3px;
   font-family: $textType1;
-  font-size: 22px;
-  line-height: 26px;
+  font-size: 18px;
+  line-height: 1.2;
   font-weight: 400;
   text-transform: uppercase;
   color: #612228;
 
-  @media (min-width: 330px) {
-    font-size: 26px;
-    line-height: 28px;
-  }
-
-  @media (min-width: 380px) {
+  @media (min-width: 576px) {
     font-size: 30px;
-    line-height: 33px;
-  }
-
-  @media (min-width: 435px) {
-    font-size: 37px;
     line-height: 40px;
   }
 
   @media (min-width: 768px) {
-    font-size: 55px;
+    font-size: 46px;
     line-height: 1.17;
   }
 
@@ -357,12 +346,22 @@
   }
 
   &--bottom {
+    .partners__name {
+      height: 30px;
+      margin-right: 0;
+
+      @media (min-width: 768px) {
+        height: 60px;
+        margin-right: 40px;
+      }
+    }
+
     display: flex;
     padding-top: 0;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
 
-    @media (min-width: 576px) {
+    @media (min-width: 768px) {
       justify-content: center;
     }
 
@@ -373,12 +372,15 @@
 }
 
 .partners__title {
-  margin-right: 50px;
   font-family: $textType2;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 16px;
   line-height: 17px;
   color: #612228;
+
+  @media (min-width: 768px) {
+    margin-right: 50px;
+  }
 
   &--lighten {
     color: #beb0b4;

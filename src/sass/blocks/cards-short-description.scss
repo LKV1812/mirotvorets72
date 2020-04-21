@@ -62,7 +62,7 @@
 }
 
 .cards-short-description__text {
-  max-height: 65px;
+  max-height: 63px;
   margin-top: 3px;
   margin-bottom: 5px;
   overflow: hidden;
@@ -89,9 +89,13 @@
   text-decoration: none;
 
   font-family: $textType1;
-  font-size: 20px;
+  font-size: 18px;
   color: #ffffff;
   text-transform: uppercase;
+
+  @media (min-width: 768px) {
+    font-size: 20px;
+  }
 
   &:hover {
     background-color: #4d8300;
