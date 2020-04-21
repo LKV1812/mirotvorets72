@@ -1,8 +1,6 @@
 export const sendFormOrder = (function(){
   'use strict';
 
-  // const _formOrder = document.getElementById('indexGeneralOrder');
-
   // _formOrder.onsubmit = sendRequest;
   /**
    * sendRequest() - отправляет форму
@@ -110,6 +108,5 @@ export const sendFormOrder = (function(){
       form.querySelector('.result-query-error').classList.add('show-result-query');
     }
   }
-
   return {sendRequest};
 })();

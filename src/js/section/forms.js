@@ -4,7 +4,7 @@ import {handlerTextarea} from '../modules/textarea';
 import {sendFormOrder} from '../modules/ajax';
 
 
-const formOrder = (function(){
+const formOrderCommon = (function(){
   'use strict';
 
   const form = document.getElementById('indexGeneralOrder');

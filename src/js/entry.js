@@ -1,15 +1,2 @@
-// import './section/owl-carousel';
-// import './section/cards-product';
-// import './modules/href-viber';
-// import './modules/inputs';
-// // import './modules/phone-mask';
-// import './modules/ranges';
-// // import './modules/selects';
-// // import './modules/textarea';
-// import './modules/сheckbox';
-// import './section/calculator';
-// import './section/forms';
-// import './modules/ajax';
-// import './section/map.js';
-// // import './section/mobile-menu-toggle';
-// // import './section/tabs';
+import './section/mobile-menu-toggle';
+import './modules/href-viber';

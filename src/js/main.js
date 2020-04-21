@@ -1,7 +1,6 @@
-import './section/mobile-menu-toggle';
+import './entry';
 import './section/owl-carousel';
 import './section/cards-product';
-import './modules/href-viber';
 import './section/forms';
 import './section/map.js';
 import './section/calculator.js';

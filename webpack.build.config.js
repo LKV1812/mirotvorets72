@@ -1,7 +1,7 @@
 module.exports = {
   entry: {
     main: './src/js/main.js',
-    some: './src/js/some.js',
+    'containers-sale': './src/js/containers-sale.js',
   },
   output: {
     filename: `[name].js`,

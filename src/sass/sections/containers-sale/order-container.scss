@@ -1,4 +1,7 @@
 @import '../../variables/variables.scss';
+#orderContainer {
+  position: relative;
+}
 
 #orderContainer .input-container {
   @media (min-width: 992px) {

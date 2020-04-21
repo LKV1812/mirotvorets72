@@ -3,7 +3,7 @@ section.section
   .container
     .section__title заказать контейнер
     form(id="orderContainer", action="php/form-order.php", method="post")
-      input(type="hidden" name="Mirotvorets" value="Заявка с главного сайта mirotvorets72.ru")
+      input(type="hidden" name="Mirotvorets" value="Купить контейнер mirotvorets72.ru")
       input(type="hidden" name="form_from" value="mirotvorets72.ru")
       input(type="hidden" name="admin_email" value="zayavka@mirotvorets72.com")
       input(type="hidden" name="erasure" value="Заявка со страницы контейнеров")
@@ -22,11 +22,11 @@ section.section
             .error-no-selected__message-text
 
         +button-input-tipe-a("submit", "send-order", "отправить заявку")
-        .result-query-success
-          .result-query-container__icon
-            include ../../../svg/form/success-query.svg
-          .result-query-container__message Заявка успешно отпарвлена.
-        .result-query-error
-          .result-query-container__icon
-            include ../../../svg/form/error-query.svg
-          .result-query-container__message Заявка не отправлена! Попробуйте ещё раз.
+      .result-query-success
+        .result-query-container__icon
+          include ../../../svg/form/success-query.svg
+        .result-query-container__message Заявка успешно отпарвлена.
+      .result-query-error
+        .result-query-container__icon
+          include ../../../svg/form/error-query.svg
+        .result-query-container__message Заявка не отправлена! Попробуйте ещё раз.

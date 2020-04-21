@@ -76,22 +76,26 @@
 
   @media (min-width: 992px) {
     top: 24%;
-    width: auto;
+    width: 364px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 430px;
   }
 }
 
 .ecostyle-containers__slogan-title {
   color: #67af01;
   font-family: $textType1;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1.2;
 
   @media (min-width: 768px) {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   @media (min-width: 992px) {
-    font-size: 28px;
+    font-size: 25px;
   }
 
   @media (min-width: 1200px) {
@@ -106,17 +110,17 @@
   line-height: 1.2;
 
   @media (min-width: 768px) {
-    font-size: 18px;
     line-height: 1;
   }
 
   @media (min-width: 992px) {
     font-size: 22px;
-    line-height: 1.2;
+    line-height: 1.1;
   }
 
   @media (min-width: 1200px) {
     font-size: 24px;
+    line-height: 1.2;
   }
 }
 
