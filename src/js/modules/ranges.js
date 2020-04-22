@@ -24,7 +24,7 @@ const ranges = (function() {
     let outputCurrentValue = parent.querySelector('.range__output-current-value-input');
 
     item.addEventListener('input', function() {
-      outputCurrentValue.value = this.value
+      outputCurrentValue.value = this.value;
     });
 
     outputCurrentValue.addEventListener('input', function() {

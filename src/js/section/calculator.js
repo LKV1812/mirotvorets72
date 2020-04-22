@@ -1,5 +1,6 @@
 import {customSelects} from '../modules/selects';
 import {priceMaterials, pricePallets} from '../global/prices';
+import '../modules/ranges';
 
 (function() {
   "use strict";
