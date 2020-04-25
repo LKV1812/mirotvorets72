@@ -18,3 +18,45 @@ mixin cards-short-description(imgSrc, imgAlt, date, subtitle, cardText, bottomTe
       .cards-short-description__text #{cardText}
     .cards-short-description__battom-wrap
       a(href="#").cards-short-description__battom-link #{bottomText}
+
+mixin card-product-price(images, title, rowsWeightSelfDelivery, rowsWeightOurDelivery)
+  .price-product-card
+    .price-product-card__img-wrap
+      each img in images
+        img(src= img.src alt= img.alt class= img.class)
+    .price-product-card__body
+      h3.price-product-card__title #{title}
+      .flex-container-between.flex-container-between--flex-wrap-max-width-992
+
+        .price-product-card__item-delivery
+          .price-product-card__item-delivery-title Подвоз вашим транспортом:
+          .border-right-wrap.border-right-wrap--show-desktop
+            each row in rowsWeightSelfDelivery
+              if row.subtitle
+                .price-product-card__item-delivery-row
+                  .text-bold #{row.subtitle}
+              each weight in row.weight
+                .price-product-card__item-delivery-row
+                  .price-product-card__item-delivery-name
+                    .icon-libra-wrap
+                      img(src="assets/img/price/libra.png", alt="грузик")
+                    .text #{weight}
+                  .price-product-card__item-delivery-price
+                    .icon-currency &#8381
+                    .text <span>5</span> р/кг
+
+        .price-product-card__item-delivery
+          .price-product-card__item-delivery-title Подвоз вашим транспортом:
+            each row in rowsWeightOurDelivery
+              if row.subtitle
+                .price-product-card__item-delivery-row
+                  .text-bold #{row.subtitle}
+              each weight in row.weight
+                .price-product-card__item-delivery-row
+                  .price-product-card__item-delivery-name
+                    .icon-libra-wrap
+                      img(src="assets/img/price/libra.png", alt="грузик")
+                    .text #{weight}
+                  .price-product-card__item-delivery-price
+                    .icon-currency &#8381
+                    .text <span>5</span> р/кг

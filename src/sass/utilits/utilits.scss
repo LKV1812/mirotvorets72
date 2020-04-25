@@ -49,6 +49,13 @@
 .flex-container-between {
   display: flex;
   justify-content: space-between;
+
+  &--flex-wrap-max-width-992 {
+    flex-wrap: wrap;
+    @media(min-width: 992px) {
+      flex-wrap: nowrap;
+    }
+  }
 }
 
 .flex-container-vertical-center {

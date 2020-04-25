@@ -4,7 +4,7 @@
   position: relative;
   height: 80px;
   width: 100%;
-  background-color: #67af01;
+  background-color: #f1e3c7;
 
   @media (min-width: 530px) {
     height: 100px;
@@ -12,6 +12,10 @@
 
   @media (min-width: 690px) {
     height: 60px;
+  }
+
+  @media (min-width: 1200px) {
+    background-color: $navBackgroundColor;
   }
 }
 
@@ -39,7 +43,7 @@
   height: 80px;
   width: 100%;
   z-index: 100;
-  background-color: #67af01;
+  background-color: rgba(103, 175, 1, .5);
 
   @media (min-width: 530px) {
     height: 100px;
