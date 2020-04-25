@@ -1,0 +1,124 @@
+@import '../../variables/variables.scss';
+
+.price-product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 255px;
+  margin-top: 30px;
+  border-radius: 15px;
+  box-shadow: $cardShadow;
+  overflow: hidden;
+
+  @media(min-width: 768px) {
+    flex-direction: row;
+    align-items: flex-start;
+    padding-left: 0;
+  }
+}
+
+.price-product-card__img-wrap {
+  align-self: stretch;
+  line-height: 0;
+
+  @media(min-width: 768px) {
+    align-self: flex-start;
+    margin-right: 35px;
+  }
+}
+
+.price-product-card__img {
+  &--show-mobile{
+    width: 100%;
+    display: block;
+    @media(min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &--show-tablet-desktop {
+    display: none;
+    @media(min-width: 768px) {
+      display: block;
+    }
+  }
+}
+
+.price-product-card__body {
+  width: 100%;
+  padding-top: 40px;
+  padding-left: 20px;
+  padding-bottom: 40px;
+  padding-right: 20px;
+
+  @media(min-width: 768px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.price-product-card__title {
+  margin: 0;
+  padding: 0;
+  font-family: $textType1;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: $mainColorText;
+}
+
+.price-product-card__item-delivery {
+  width: 100%;
+  padding-top: 20px;
+
+  @media(min-width: 992px) {
+    width: 46%;
+  }
+
+  &--padding-top-0 {
+    padding-top: 0;
+  }
+}
+
+.price-product-card__item-delivery-title {
+  font-family: $textType2;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 600;
+  color: $colorTextType2;
+
+  @media(min-width: 768px) {
+    font-size: 18px;
+  }
+}
+
+.price-product-card__item-delivery-row {
+  display: flex;
+  width: 100%;
+  padding-top: 8px;
+}
+
+.price-product-card__item-delivery-name {
+  display: flex;
+  width: 75%;
+  padding-right: 20px;
+}
+
+.icon-libra-wrap {
+  margin-right: 10px;
+  padding-top: 3px;
+  line-height: 0;
+}
+
+.price-product-card__item-delivery-price {
+  display: flex;
+}
+
+.icon-currency {
+  margin-right: 10px;
+  font-family: $textType2;
+  font-weight: 700;
+  font-size: 20px;
+  color: #cbcfda;
+}

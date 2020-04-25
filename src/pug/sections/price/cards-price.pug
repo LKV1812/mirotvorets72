@@ -1,0 +1,372 @@
+include ../../mixins/mixins-cards.pug
+.section
+  .container
+    .navigating-source-path
+      .navigating-source-path__item
+        a(href="index.html" class="navigating-source-path__link") Главная &raquo;
+      .navigating-source-path__item
+        p.navigating-source-path__text Цены
+    h1.section__title Цены
+    .icon-libra-wrap
+
+    .tabs
+      .tabs__header.tabs__header--width-three-elements
+        .tabs__header-item.tabs__header-item--active Приём сырья
+        .tabs__header-item Уничтожение документов
+        .tabs__header-item Хранение документов
+      .tabs__content.tabs__content--padding-top-20.tabs__content--active
+        +card-product-price(
+          [
+            {
+              src:"assets/img/price/cardboard-mobile.png",
+              alt: "картон",
+              class: "price-product-card__img price-product-card__img--show-mobile"
+            }, {
+              src:"assets/img/price/cardboard.png",
+              alt: "картон",
+              class: "price-product-card__img price-product-card__img--show-tablet-desktop"
+            }
+          ],
+          "Картон",
+          [
+            {
+              weight: [
+                "До 500 килограмм:",
+                "От 500 килограмм:",
+                "От 1000 килограмм:"
+              ]
+            },
+          ],
+          [
+            {
+              weight: [
+                "До 500 килограмм:",
+                "От 500 килограмм:",
+                "От 1000 килограмм:"
+              ]
+            }
+          ]
+        )
+
+        +card-product-price(
+          [
+            {
+              src:"assets/img/price/paper-mobile.png",
+              alt: "бумага",
+              class: "price-product-card__img price-product-card__img--show-mobile"
+            }, {
+              src:"assets/img/price/paper.png",
+              alt: "бумага",
+              class: "price-product-card__img price-product-card__img--show-tablet-desktop"
+            }
+          ],
+          "Макулатура",
+          [
+            {
+              subtitle: "Офисная бумага (белая, формата А4)",
+              weight: [
+                "До 500 килограмм:",
+                "От 500 килограмм:",
+                "От 1000 килограмм:"
+              ]
+            }, {
+              subtitle: "Книги, журналы, газеты, разные типы макулатуры",
+              weight: [
+                "До 500 килограмм:",
+                "От 500 килограмм:",
+                "От 1000 килограмм:"
+              ]
+            }
+          ],
+          [
+            {
+              subtitle: "Офисная бумага (белая, формата А4)",
+              weight: [
+                "До 500 килограмм:",
+                "От 500 килограмм:",
+                "От 1000 килограмм:"
+              ]
+            }, {
+              subtitle: "Книги, журналы, газеты, разные типы макулатуры",
+              weight: [
+                "До 500 килограмм:",
+                "От 500 килограмм:",
+                "От 1000 килограмм:"
+              ]
+            }
+          ]
+        )
+
+        +card-product-price(
+          [
+            {
+              src:"assets/img/price/film-pvd-mobile.png",
+              alt: "пленка",
+              class: "price-product-card__img price-product-card__img--show-mobile"
+            }, {
+              src:"assets/img/price/film-pvd.png",
+              alt: "пленка",
+              class: "price-product-card__img price-product-card__img--show-tablet-desktop"
+            }
+          ],
+          "Пленка ПВД (прозрачная)",
+          [
+            {
+              weight: [
+                "До 500 килограмм:",
+                "От 500 килограмм:",
+                "От 1000 килограмм:"
+              ]
+            },
+          ],
+          [
+            {
+              weight: [
+                "До 500 килограмм:",
+                "От 500 килограмм:",
+                "От 1000 килограмм:"
+              ]
+            }
+          ]
+        )
+
+        +card-product-price(
+          [
+            {
+              src:"assets/img/price/film-pvd-color-mobile.png",
+              alt: "пленка",
+              class: "price-product-card__img price-product-card__img--show-mobile"
+            }, {
+              src:"assets/img/price/film-pvd-color.png",
+              alt: "пленка",
+              class: "price-product-card__img price-product-card__img--show-tablet-desktop"
+            }
+          ],
+          "Пленка ПВД (цветная)",
+          [
+            {
+              weight: [
+                "До 500 килограмм:",
+                "От 500 килограмм:",
+                "От 1000 килограмм:"
+              ]
+            },
+          ],
+          [
+            {
+              weight: [
+                "До 500 килограмм:",
+                "От 500 килограмм:",
+                "От 1000 килограмм:"
+              ]
+            }
+          ]
+        )
+
+        +card-product-price(
+          [
+            {
+              src:"assets/img/price/film-stretch-mobile.png",
+              alt: "пленка",
+              class: "price-product-card__img price-product-card__img--show-mobile"
+            }, {
+              src:"assets/img/price/film-stretch.png",
+              alt: "пленка",
+              class: "price-product-card__img price-product-card__img--show-tablet-desktop"
+            }
+          ],
+          "Пленка СТРЕЙЧ",
+          [
+            {
+              weight: [
+                "До 500 килограмм:",
+                "От 500 килограмм:",
+                "От 1000 килограмм:"
+              ]
+            },
+          ],
+          [
+            {
+              weight: [
+                "До 500 килограмм:",
+                "От 500 килограмм:",
+                "От 1000 килограмм:"
+              ]
+            }
+          ]
+        )
+
+        +card-product-price(
+          [
+            {
+              src:"assets/img/price/pet-mobile.png",
+              alt: "ПЭТ",
+              class: "price-product-card__img price-product-card__img--show-mobile"
+            }, {
+              src:"assets/img/price/pet.png",
+              alt: "ПЭТ",
+              class: "price-product-card__img price-product-card__img--show-tablet-desktop"
+            }
+          ],
+          "ПЭТ (канистры, бутылки)",
+          [
+            {
+              weight: [
+                "До 500 килограмм:",
+                "От 500 килограмм:",
+                "От 1000 килограмм:"
+              ]
+            },
+          ],
+          [
+            {
+              weight: [
+                "До 500 килограмм:",
+                "От 500 килограмм:",
+                "От 1000 килограмм:"
+              ]
+            }
+          ]
+        )
+
+        +card-product-price(
+          [
+            {
+              src:"assets/img/price/oil-mobile.png",
+              alt: "Масло",
+              class: "price-product-card__img price-product-card__img--show-mobile"
+            }, {
+              src:"assets/img/price/oil.png",
+              alt: "Масло",
+              class: "price-product-card__img price-product-card__img--show-tablet-desktop"
+            }
+          ],
+          "Масло отработанное фритюрное",
+          [
+            {
+              weight: [
+                "До 500 килограмм:",
+                "От 500 килограмм:",
+                "От 1000 килограмм:"
+              ]
+            },
+          ],
+          [
+            {
+              weight: [
+                "До 500 килограмм:",
+                "От 500 килограмм:",
+                "От 1000 килограмм:"
+              ]
+            }
+          ]
+        )
+
+        +card-product-price(
+          [
+            {
+              src:"assets/img/price/pallets-mobile.png",
+              alt: "поддоны",
+              class: "price-product-card__img price-product-card__img--show-mobile"
+            }, {
+              src:"assets/img/price/pallets.png",
+              alt: "поддоны",
+              class: "price-product-card__img price-product-card__img--show-tablet-desktop"
+            }
+          ],
+          "Поддоны",
+          [
+            {
+              weight: [
+                "1-й сорт (белые/новые/целые) с клеймом EPAL:",
+                "1-й сорт (белые/новые/целые) без клейма EPAL:",
+                "2-й сорт (серый/целый) с клеймом EPAL:",
+                "2-й сорт (серый/целый) без клейма EPAL:",
+                "3-й сорт (белые,серые /сломано до трех деталей) с клеймом EPAL:",
+                "3-й сорт (белые,серые /сломано до трех деталей) без клейма EPAL:"
+              ]
+            },
+          ],
+          [
+            {
+              weight: [
+                "1-й сорт (белые/новые/целые) с клеймом EPAL:",
+                "1-й сорт (белые/новые/целые) без клейма EPAL:",
+                "2-й сорт (серый/целый) с клеймом EPAL:",
+                "2-й сорт (серый/целый) без клейма EPAL:",
+                "3-й сорт (белые,серые /сломано до трех деталей) с клеймом EPAL:",
+                "3-й сорт (белые,серые /сломано до трех деталей) без клейма EPAL:"
+              ]
+            }
+          ]
+        )
+
+        +card-product-price(
+          [
+            {
+              src:"assets/img/price/kegs-mobile.png",
+              alt: "кеги",
+              class: "price-product-card__img price-product-card__img--show-mobile"
+            }, {
+              src:"assets/img/price/kegs.png",
+              alt: "кеги",
+              class: "price-product-card__img price-product-card__img--show-tablet-desktop"
+            }
+          ],
+          "Кеги (пивные ПЭТ)",
+          [
+            {
+              weight: [
+                "До 500 килограмм:",
+                "От 500 килограмм:",
+                "От 1000 килограмм:"
+              ]
+            },
+          ],
+          [
+            {
+              weight: [
+                "До 500 килограмм:",
+                "От 500 килограмм:",
+                "От 1000 килограмм:"
+              ]
+            }
+          ]
+        )
+
+        +card-product-price(
+          [
+            {
+              src:"assets/img/price/glass-mobile.png",
+              alt: "кеги",
+              class: "price-product-card__img price-product-card__img--show-mobile"
+            }, {
+              src:"assets/img/price/glass.png",
+              alt: "кеги",
+              class: "price-product-card__img price-product-card__img--show-tablet-desktop"
+            }
+          ],
+          "Стекло (кроме армированного, автостекла)",
+          [
+            {
+              weight: [
+                "До 500 килограмм:",
+                "От 500 килограмм:",
+                "От 1000 килограмм:"
+              ]
+            },
+          ],
+          [
+            {
+              weight: [
+                "До 500 килограмм:",
+                "От 500 килограмм:",
+                "От 1000 килограмм:"
+              ]
+            }
+          ]
+        )
+      .tabs__content
+        .tabs__content-row
+      .tabs__content
+        .tabs__content-row
