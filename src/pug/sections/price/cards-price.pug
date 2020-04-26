@@ -16,6 +16,7 @@ include ../../mixins/mixins-cards.pug
         .tabs__header-item Хранение документов
       .tabs__content.tabs__content--padding-top-20.tabs__content--active
         +card-product-price(
+          "cardboard",
           [
             {
               src:"assets/img/price/cardboard-mobile.png",
@@ -31,24 +32,28 @@ include ../../mixins/mixins-cards.pug
           [
             {
               weight: [
-                "До 500 килограмм:",
-                "От 500 килограмм:",
-                "От 1000 килограмм:"
+                {text: "До 200 килограмм:", 'data-weight': "1", product: 'cardboard'},
+                {text: "От 200 килограмм:", 'data-weight': "201", product: 'cardboard'},
+                {text: "От 500 килограмм:", 'data-weight': "501", product: 'cardboard'},
+                {text: "От 1000 килограмм:", 'data-weight': "1001", product: 'cardboard'}
               ]
             },
           ],
           [
             {
               weight: [
-                "До 500 килограмм:",
-                "От 500 килограмм:",
-                "От 1000 килограмм:"
+                {text: "До 200 килограмм:", 'data-weight': "1", product: 'cardboard'},
+                {text: "От 200 килограмм:", 'data-weight': "201", product: 'cardboard'},
+                {text: "От 500 килограмм:", 'data-weight': "501", product: 'cardboard'},
+                {text: "От 1000 килограмм:", 'data-weight': "1001", product: 'cardboard'}
               ]
             }
-          ]
+          ],
+          "кг"
         )
 
         +card-product-price(
+          "paper",
           [
             {
               src:"assets/img/price/paper-mobile.png",
@@ -65,16 +70,23 @@ include ../../mixins/mixins-cards.pug
             {
               subtitle: "Офисная бумага (белая, формата А4)",
               weight: [
-                "До 500 килограмм:",
-                "От 500 килограмм:",
-                "От 1000 килограмм:"
+                {text: "До 500 килограмм:", 'data-weight': "1", product: 'paper'},
+                {text: "От 500 килограмм:", 'data-weight': "501", product: 'paper'},
+                {text: "От 1000 килограмм:", 'data-weight': "1001", product: 'paper'}
               ]
             }, {
-              subtitle: "Книги, журналы, газеты, разные типы макулатуры",
+              subtitle: "Книги, журналы, разные типы макулатуры",
               weight: [
-                "До 500 килограмм:",
-                "От 500 килограмм:",
-                "От 1000 килограмм:"
+                {text: "До 500 килограмм:", 'data-weight': "1", product: 'books'},
+                {text: "От 500 килограмм:", 'data-weight': "501", product: 'books'},
+                {text: "От 1000 килограмм:", 'data-weight': "1001", product: 'books'}
+              ]
+            }, {
+              subtitle: "Газеты",
+              weight: [
+                {text: "До 500 килограмм:", 'data-weight': "1", product: 'newspapers'},
+                {text: "От 500 килограмм:", 'data-weight': "501", product: 'newspapers'},
+                {text: "От 1000 килограмм:", 'data-weight': "1001", product: 'newspapers'}
               ]
             }
           ],
@@ -82,22 +94,31 @@ include ../../mixins/mixins-cards.pug
             {
               subtitle: "Офисная бумага (белая, формата А4)",
               weight: [
-                "До 500 килограмм:",
-                "От 500 килограмм:",
-                "От 1000 килограмм:"
+                {text: "До 500 килограмм:", 'data-weight': "1", product: 'paper'},
+                {text: "От 500 килограмм:", 'data-weight': "501", product: 'paper'},
+                {text: "От 1000 килограмм:", 'data-weight': "1001", product: 'paper'}
               ]
             }, {
-              subtitle: "Книги, журналы, газеты, разные типы макулатуры",
+              subtitle: "Книги, журналы, разные типы макулатуры",
               weight: [
-                "До 500 килограмм:",
-                "От 500 килограмм:",
-                "От 1000 килограмм:"
+                {text: "До 500 килограмм:", 'data-weight': "1", product: 'books'},
+                {text: "От 500 килограмм:", 'data-weight': "501", product: 'books'},
+                {text: "От 1000 килограмм:", 'data-weight': "1001", product: 'books'}
+              ]
+            }, {
+              subtitle: "Газеты",
+              weight: [
+                {text: "До 500 килограмм:", 'data-weight': "1", product: 'newspapers'},
+                {text: "От 500 килограмм:", 'data-weight': "501", product: 'newspapers'},
+                {text: "От 1000 килограмм:", 'data-weight': "1001", product: 'newspapers'}
               ]
             }
-          ]
+          ],
+          "кг"
         )
 
         +card-product-price(
+          "film-pvd",
           [
             {
               src:"assets/img/price/film-pvd-mobile.png",
@@ -113,24 +134,28 @@ include ../../mixins/mixins-cards.pug
           [
             {
               weight: [
-                "До 500 килограмм:",
-                "От 500 килограмм:",
-                "От 1000 килограмм:"
+                {text: "До 200 килограмм:", 'data-weight': "1", product: 'film-pvd'},
+                {text: "От 200 килограмм:", 'data-weight': "201", product: 'film-pvd'},
+                {text: "От 500 килограмм:", 'data-weight': "501", product: 'film-pvd'},
+                {text: "От 1000 килограмм:", 'data-weight': "1001", product: 'film-pvd'}
               ]
             },
           ],
           [
             {
               weight: [
-                "До 500 килограмм:",
-                "От 500 килограмм:",
-                "От 1000 килограмм:"
+                {text: "До 200 килограмм:", 'data-weight': "1", product: 'film-pvd'},
+                {text: "От 200 килограмм:", 'data-weight': "201", product: 'film-pvd'},
+                {text: "От 500 килограмм:", 'data-weight': "501", product: 'film-pvd'},
+                {text: "От 1000 килограмм:", 'data-weight': "1001", product: 'film-pvd'}
               ]
             }
-          ]
+          ],
+          "кг"
         )
 
         +card-product-price(
+          "film-color-pvd",
           [
             {
               src:"assets/img/price/film-pvd-color-mobile.png",
@@ -146,24 +171,24 @@ include ../../mixins/mixins-cards.pug
           [
             {
               weight: [
-                "До 500 килограмм:",
-                "От 500 килограмм:",
-                "От 1000 килограмм:"
+                {text: "До 500 килограмм:", 'data-weight': "1", product: 'film-color-pvd'},
+                {text: "От 500 килограмм:", 'data-weight': "501", product: 'film-color-pvd'}
               ]
             },
           ],
           [
             {
               weight: [
-                "До 500 килограмм:",
-                "От 500 килограмм:",
-                "От 1000 килограмм:"
+                {text: "До 500 килограмм:", 'data-weight': "1", product: 'film-color-pvd'},
+                {text: "От 500 килограмм:", 'data-weight': "501", product: 'film-color-pvd'},
               ]
             }
-          ]
+          ],
+          "кг"
         )
 
         +card-product-price(
+          "film-stretch",
           [
             {
               src:"assets/img/price/film-stretch-mobile.png",
@@ -179,24 +204,28 @@ include ../../mixins/mixins-cards.pug
           [
             {
               weight: [
-                "До 500 килограмм:",
-                "От 500 килограмм:",
-                "От 1000 килограмм:"
+                {text: "До 200 килограмм:", 'data-weight': "1", product: 'film-stretch'},
+                {text: "От 200 килограмм:", 'data-weight': "201", product: 'film-stretch'},
+                {text: "От 500 килограмм:", 'data-weight': "501", product: 'film-stretch'},
+                {text: "От 1000 килограмм:", 'data-weight': "1001", product: 'film-stretch'}
               ]
             },
           ],
           [
             {
               weight: [
-                "До 500 килограмм:",
-                "От 500 килограмм:",
-                "От 1000 килограмм:"
+                {text: "До 200 килограмм:", 'data-weight': "1", product: 'film-stretch'},
+                {text: "От 200 килограмм:", 'data-weight': "201", product: 'film-stretch'},
+                {text: "От 500 килограмм:", 'data-weight': "501", product: 'film-stretch'},
+                {text: "От 1000 килограмм:", 'data-weight': "1001", product: 'film-stretch'}
               ]
             }
-          ]
+          ],
+          "кг"
         )
 
         +card-product-price(
+          "polyethylene",
           [
             {
               src:"assets/img/price/pet-mobile.png",
@@ -212,24 +241,26 @@ include ../../mixins/mixins-cards.pug
           [
             {
               weight: [
-                "До 500 килограмм:",
-                "От 500 килограмм:",
-                "От 1000 килограмм:"
+                {text: "До 500 килограмм:", 'data-weight': "1", product: 'polyethylene'},
+                {text: "От 500 килограмм:", 'data-weight': "501", product: 'polyethylene'},
+                {text: "От 1000 килограмм:", 'data-weight': "1001", product: 'polyethylene'}
               ]
             },
           ],
           [
             {
               weight: [
-                "До 500 килограмм:",
-                "От 500 килограмм:",
-                "От 1000 килограмм:"
+                {text: "До 500 килограмм:", 'data-weight': "1", product: 'polyethylene'},
+                {text: "От 500 килограмм:", 'data-weight': "501", product: 'polyethylene'},
+                {text: "От 1000 килограмм:", 'data-weight': "1001", product: 'polyethylene'}
               ]
             }
-          ]
+          ],
+          "кг"
         )
 
         +card-product-price(
+          "oil",
           [
             {
               src:"assets/img/price/oil-mobile.png",
@@ -245,24 +276,22 @@ include ../../mixins/mixins-cards.pug
           [
             {
               weight: [
-                "До 500 килограмм:",
-                "От 500 килограмм:",
-                "От 1000 килограмм:"
+                {text: "Любой вес:", 'data-weight': "1", product: 'oil'},
               ]
             },
           ],
           [
             {
               weight: [
-                "До 500 килограмм:",
-                "От 500 килограмм:",
-                "От 1000 килограмм:"
+                {text: "Любой вес:", 'data-weight': "1", product: 'oil'},
               ]
             }
-          ]
+          ],
+          "кг"
         )
 
         +card-product-price(
+          "pallets",
           [
             {
               src:"assets/img/price/pallets-mobile.png",
@@ -278,30 +307,32 @@ include ../../mixins/mixins-cards.pug
           [
             {
               weight: [
-                "1-й сорт (белые/новые/целые) с клеймом EPAL:",
-                "1-й сорт (белые/новые/целые) без клейма EPAL:",
-                "2-й сорт (серый/целый) с клеймом EPAL:",
-                "2-й сорт (серый/целый) без клейма EPAL:",
-                "3-й сорт (белые,серые /сломано до трех деталей) с клеймом EPAL:",
-                "3-й сорт (белые,серые /сломано до трех деталей) без клейма EPAL:"
+                {text: "1-й сорт (белые/новые/целые) с клеймом EPAL:", 'data-weight': "epal", product: 'first-grade'},
+                {text: "1-й сорт (белые/новые/целые) без клейма EPAL:", 'data-weight': "no-epal", product: 'first-grade'},
+                {text: "2-й сорт (серый/целый) с клеймом EPAL:", 'data-weight': "epal", product: 'second-grade'},
+                {text: "2-й сорт (серый/целый) без клейма EPAL:", 'data-weight': "no-epal", product: 'second-grade'},
+                {text: "3-й сорт (белые,серые /сломано до трех деталей) с клеймом EPAL:", 'data-weight': "epal", product: 'third-grade'},
+                {text: "3-й сорт (белые,серые /сломано до трех деталей) без клейма EPAL:", 'data-weight': "no-epal", product: 'third-grade'}
               ]
             },
           ],
           [
             {
               weight: [
-                "1-й сорт (белые/новые/целые) с клеймом EPAL:",
-                "1-й сорт (белые/новые/целые) без клейма EPAL:",
-                "2-й сорт (серый/целый) с клеймом EPAL:",
-                "2-й сорт (серый/целый) без клейма EPAL:",
-                "3-й сорт (белые,серые /сломано до трех деталей) с клеймом EPAL:",
-                "3-й сорт (белые,серые /сломано до трех деталей) без клейма EPAL:"
+                {text: "1-й сорт (белые/новые/целые) с клеймом EPAL:", 'data-weight': "epal", product: 'first-grade'},
+                {text: "1-й сорт (белые/новые/целые) без клейма EPAL:", 'data-weight': "no-epal", product: 'first-grade'},
+                {text: "2-й сорт (серый/целый) с клеймом EPAL:", 'data-weight': "epal", product: 'second-grade'},
+                {text: "2-й сорт (серый/целый) без клейма EPAL:", 'data-weight': "no-epal", product: 'second-grade'},
+                {text: "3-й сорт (белые,серые /сломано до трех деталей) с клеймом EPAL:", 'data-weight': "epal", product: 'third-grade'},
+                {text: "3-й сорт (белые,серые /сломано до трех деталей) без клейма EPAL:", 'data-weight': "no-epal", product: 'third-grade'}
               ]
             }
-          ]
+          ],
+          "шт"
         )
 
         +card-product-price(
+          "kegs",
           [
             {
               src:"assets/img/price/kegs-mobile.png",
@@ -317,54 +348,87 @@ include ../../mixins/mixins-cards.pug
           [
             {
               weight: [
-                "До 500 килограмм:",
-                "От 500 килограмм:",
-                "От 1000 килограмм:"
+                {text: "До 500 килограмм:", 'data-weight': "499", product: 'kegs'},
+                {text: "От 500 килограмм:", 'data-weight': "999", product: 'kegs'},
+                {text: "От 1000 килограмм:", 'data-weight': "1000", product: 'kegs'}
               ]
             },
           ],
           [
             {
               weight: [
-                "До 500 килограмм:",
-                "От 500 килограмм:",
-                "От 1000 килограмм:"
+                {text: "До 500 килограмм:", 'data-weight': "499", product: 'kegs'},
+                {text: "От 500 килограмм:", 'data-weight': "999", product: 'kegs'},
+                {text: "От 1000 килограмм:", 'data-weight': "1000", product: 'kegs'}
               ]
             }
-          ]
+          ],
+          "кг"
         )
 
         +card-product-price(
+          "glass",
           [
             {
               src:"assets/img/price/glass-mobile.png",
-              alt: "кеги",
+              alt: "стекло",
               class: "price-product-card__img price-product-card__img--show-mobile"
             }, {
               src:"assets/img/price/glass.png",
-              alt: "кеги",
+              alt: "стекло",
               class: "price-product-card__img price-product-card__img--show-tablet-desktop"
             }
           ],
           "Стекло (кроме армированного, автостекла)",
           [
             {
+              subtitle: "Стекло листовое прозрачное",
               weight: [
-                "До 500 килограмм:",
-                "От 500 килограмм:",
-                "От 1000 килограмм:"
+                {text: "До 500 килограмм:", 'data-weight': "499", product: 'glass'},
+                {text: "От 500 килограмм:", 'data-weight': "999", product: 'glass'},
+                {text: "От 1000 килограмм:", 'data-weight': "1000", product: 'glass'}
               ]
-            },
+            }, {
+              subtitle: "Стекло белое и коричневое (банки, бутылки)",
+              weight: [
+                {text: "До 500 килограмм:", 'data-weight': "499", product: 'glass-white-brown'},
+                {text: "От 500 килограмм:", 'data-weight': "999", product: 'glass-white-brown'},
+                {text: "От 1000 килограмм:", 'data-weight': "1000", product: 'glass-white-brown'}
+              ]
+            }, {
+              subtitle: "Стекло зеленое (банки, бутылки)",
+              weight: [
+                {text: "До 500 килограмм:", 'data-weight': "499", product: 'glass-green'},
+                {text: "От 500 килограмм:", 'data-weight': "999", product: 'glass-green'},
+                {text: "От 1000 килограмм:", 'data-weight': "1000", product: 'glass-green'}
+              ]
+            }
           ],
           [
             {
+              subtitle: "Стекло листовое прозрачное",
               weight: [
-                "До 500 килограмм:",
-                "От 500 килограмм:",
-                "От 1000 килограмм:"
+                {text: "До 500 килограмм:", 'data-weight': "499", product: 'glass'},
+                {text: "От 500 килограмм:", 'data-weight': "999", product: 'glass'},
+                {text: "От 1000 килограмм:", 'data-weight': "1000", product: 'glass'}
+              ]
+            }, {
+              subtitle: "Стекло белое и коричневое (банки, бутылки)",
+              weight: [
+                {text: "До 500 килограмм:", 'data-weight': "499", product: 'glass-white-brown'},
+                {text: "От 500 килограмм:", 'data-weight': "999", product: 'glass-white-brown'},
+                {text: "От 1000 килограмм:", 'data-weight': "1000", product: 'glass-white-brown'}
+              ]
+            }, {
+              subtitle: "Стекло зеленое (банки, бутылки)",
+              weight: [
+                {text: "До 500 килограмм:", 'data-weight': "499", product: 'glass-green'},
+                {text: "От 500 килограмм:", 'data-weight': "999", product: 'glass-green'},
+                {text: "От 1000 килограмм:", 'data-weight': "1000", product: 'glass-green'}
               ]
             }
-          ]
+          ],
+          "кг"
         )
       .tabs__content
         .tabs__content-row

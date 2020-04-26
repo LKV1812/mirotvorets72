@@ -9,7 +9,6 @@
   * priceMaterials[тип-сырья][тип-доставки];
   * priceMaterials[тип-сырья][тип-доставки][цена-кг-от-объема];
   */
-
 export const priceMaterials = {
   "cardboard": {
     'our-delivery': {

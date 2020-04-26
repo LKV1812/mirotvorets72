@@ -19,8 +19,8 @@ mixin cards-short-description(imgSrc, imgAlt, date, subtitle, cardText, bottomTe
     .cards-short-description__battom-wrap
       a(href="#").cards-short-description__battom-link #{bottomText}
 
-mixin card-product-price(images, title, rowsWeightSelfDelivery, rowsWeightOurDelivery)
-  .price-product-card
+mixin card-product-price(id, images, title, rowsWeightSelfDelivery, rowsWeightOurDelivery, unit)
+  .price-product-card(id= id)
     .price-product-card__img-wrap
       each img in images
         img(src= img.src alt= img.alt class= img.class)
@@ -28,7 +28,7 @@ mixin card-product-price(images, title, rowsWeightSelfDelivery, rowsWeightOurDel
       h3.price-product-card__title #{title}
       .flex-container-between.flex-container-between--flex-wrap-max-width-992
 
-        .price-product-card__item-delivery
+        .price-product-card__item-delivery(data-delivery="self-delivery")
           .price-product-card__item-delivery-title Подвоз вашим транспортом:
           .border-right-wrap.border-right-wrap--show-desktop
             each row in rowsWeightSelfDelivery
@@ -36,27 +36,27 @@ mixin card-product-price(images, title, rowsWeightSelfDelivery, rowsWeightOurDel
                 .price-product-card__item-delivery-row
                   .text-bold #{row.subtitle}
               each weight in row.weight
-                .price-product-card__item-delivery-row
+                .price-product-card__item-delivery-row(data-weight= weight['data-weight'], data-product= weight.product)
                   .price-product-card__item-delivery-name
                     .icon-libra-wrap
                       img(src="assets/img/price/libra.png", alt="грузик")
-                    .text #{weight}
+                    .text #{weight.text}
                   .price-product-card__item-delivery-price
                     .icon-currency &#8381
-                    .text <span>5</span> р/кг
+                    .text <span class="price-product-card__output-price"></span> р/#{unit}
 
-        .price-product-card__item-delivery
-          .price-product-card__item-delivery-title Подвоз вашим транспортом:
+        .price-product-card__item-delivery(data-delivery="our-delivery")
+          .price-product-card__item-delivery-title Транспорт компании "Миротворец":
             each row in rowsWeightOurDelivery
               if row.subtitle
                 .price-product-card__item-delivery-row
                   .text-bold #{row.subtitle}
               each weight in row.weight
-                .price-product-card__item-delivery-row
+                .price-product-card__item-delivery-row(data-weight= weight['data-weight'], data-product= weight.product)
                   .price-product-card__item-delivery-name
                     .icon-libra-wrap
                       img(src="assets/img/price/libra.png", alt="грузик")
-                    .text #{weight}
+                    .text #{weight.text}
                   .price-product-card__item-delivery-price
                     .icon-currency &#8381
-                    .text <span>5</span> р/кг
+                    .text <span class="price-product-card__output-price"></span> р/#{unit}
