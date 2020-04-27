@@ -119,14 +119,14 @@
   align-items: center;
   padding-top: 20px;
 
-  @media (min-width: 470px) {
+  @media (min-width: 486px) {
     justify-content: space-between;
     padding-top: 50px;
   }
 
   &:first-child {
     padding-top: 40px;
-    @media (min-width: 470px) {
+    @media (min-width: 486px) {
       padding-top: 50px;
     }
   }

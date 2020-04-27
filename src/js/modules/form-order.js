@@ -1,15 +1,14 @@
-import {customSelects} from '../modules/selects';
-import {handlerInputs} from '../modules/inputs';
-import {handlerTextarea} from '../modules/textarea';
-import {sendFormOrder} from '../modules/ajax';
-import '../modules/phone-mask';
+import {customSelects} from './selects';
+import {handlerInputs} from './inputs';
+import {handlerTextarea} from './textarea';
+import {sendFormOrder} from './ajax';
+import './phone-mask';
 
 
 const formOrderCommon = (function(){
   'use strict';
 
   const form = document.getElementById('indexGeneralOrder');
-  // const formReview = document.getElementById('formReview');
 
   // select`ы поля выбора, в зависимости от типа услуг будем скрывать или показвыать поля
   const selectedService = form.querySelector('#selectedService');
@@ -18,7 +17,6 @@ const formOrderCommon = (function(){
 
   selectedService.addEventListener('click', toggleMaskField);
   form.addEventListener('submit', sendForm);
-  // formReview.addEventListener('submit', sendForm);
 
   /**
    * Отправляет форму через ajax

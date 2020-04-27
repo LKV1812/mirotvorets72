@@ -1,6 +1,7 @@
 import {customSelects} from '../modules/selects';
 import {priceMaterials, pricePallets} from '../global/prices';
 import '../modules/ranges';
+import '../modules/сheckbox';
 
 (function() {
   "use strict";
@@ -50,6 +51,7 @@ import '../modules/ranges';
    * @param {DOM} outputCountingResultCurrencyDestruction здесь выводим ссумму в рублях по уничтожению
    */
   let destructionKg = document.getElementById('destructionRange');
+  let destructionInput = document.getElementById('destructionInput');
   let outputCountingResultCurrencyDestruction = document.getElementById('resultDestructionCurrency');
 
   /**
@@ -59,6 +61,7 @@ import '../modules/ranges';
    * @param {DOM} outputCountingResultCurrencyDestruction здесь выводим ссумму в рублях для хранения
    */
   let storageKg = document.getElementById('storageRange');
+  let storageInput = document.getElementById('storageInput');
   let outputCountingResultCurrencyStorage = document.getElementById('resultStorageCurrency');
 
   /**
@@ -128,6 +131,10 @@ import '../modules/ranges';
     let resultSumCurrency = makesCalculationCurrency(5, this.value);
     outputCountingResultCurrencyDestruction.innerHTML = formatterСurrency.format(resultSumCurrency);
   });
+  destructionInput.addEventListener('input', function() {
+    let resultSumCurrency = makesCalculationCurrency(5, this.value);
+    outputCountingResultCurrencyDestruction.innerHTML = formatterСurrency.format(resultSumCurrency);
+  });
 
   /**
   * Прослушиваем события
@@ -137,6 +144,10 @@ import '../modules/ranges';
   * Полученное значение форматируем в удобочитаемое число.
   */
   storageKg.addEventListener('input', function() {
+    let resultSumCurrency = makesCalculationCurrency(5, this.value);
+    outputCountingResultCurrencyStorage.innerHTML = formatterСurrency.format(resultSumCurrency);
+  });
+  storageInput.addEventListener('input', function() {
     let resultSumCurrency = makesCalculationCurrency(5, this.value);
     outputCountingResultCurrencyStorage.innerHTML = formatterСurrency.format(resultSumCurrency);
   });
@@ -193,20 +204,4 @@ import '../modules/ranges';
     return priceMaterials * numberKilograms;
   }
 
-  /**
-   * На родительском элементе показываем ошибку
-   *
-   * @param {DOM} currentSelect элемент чьего родителя будем находить
-   * При фокусе, если на элементе был error снимаем его
-   * Показываем error на родительский элемент
-   */
-  function showErrorsSelect(currentSelect) {
-    let parentSelect = currentSelect.closest('.select');
-    parentSelect.onfocus = function() {
-      currentSelect.parentElement.classList.remove('error-no-selected');
-      parentSelect.querySelector('.error-no-selected__message').style.display = 'none';
-    };
-    currentSelect.parentElement.classList.add('error-no-selected');
-    parentSelect.querySelector('.error-no-selected__message').style.display = 'flex';
-  }
 }());

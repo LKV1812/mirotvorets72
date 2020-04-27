@@ -1,13 +1,16 @@
 extends ../layouts/main.pug
 
 block variables
-  - var title= "Продажа контейнеров"
+  - var title= "Цены на прием вторсырья"
 
 block link
 
 block content
   include ../sections/lower-menu-bg.pug
   include ../sections/price/cards-price.pug
+  include ../sections/price/form-order.pug
+  include ../sections/price/calculator.pug
+  include ../sections/price/packing-rules.pug
 
 block scripts
   script(src="assets/js/price-page.js")

@@ -1,0 +1,15 @@
+@import '../../variables/variables.scss';
+
+.packing-rules-bg {
+  background-image: url('../img/price/packing-rules-bg-mobile.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media(min-width: 768px) {
+    background-image: url('../img/price/packing-rules-bg-tablet.png');
+  }
+
+  @media(min-width: 992px) {
+    background-image: url('../img/price/packing-rules-bg.png');
+  }
+}

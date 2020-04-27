@@ -1,7 +1,8 @@
 import './entry';
 import './section/owl-carousel';
 import './section/cards-product';
-import './section/forms';
+import './modules/form-order';
+import './modules/form-review';
 import './section/map.js';
 import './section/calculator.js';
 import './modules/ranges.js';

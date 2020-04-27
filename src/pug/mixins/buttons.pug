@@ -1,2 +1,8 @@
 mixin button-input-tipe-a(type, name, value)
   input.button-inpute-type-a(type= type, name= name value= value)
+
+mixin button-download(href, filename, value)
+  a.button-link-width-auto(href= href, download= filename) #{value}
+
+mixin button-link-width-auto-type-a(href, value)
+  a.button-link-width-auto.button-link-width-auto--type-a(href= href) #{value}
