@@ -430,7 +430,57 @@ include ../../mixins/mixins-cards.pug
           ],
           "кг"
         )
-      .tabs__content
-        .tabs__content-row
-      .tabs__content
-        .tabs__content-row
+      .tabs__content.tabs__content--padding-top-20
+        +card-services-price(
+          "cardboard",
+          [
+            {
+              src:"assets/img/price/destruction-mobile.png",
+              alt: "картон",
+              class: "price-product-card__img price-product-card__img--show-mobile"
+            }, {
+              src:"assets/img/price/destruction.png",
+              alt: "картон",
+              class: "price-product-card__img price-product-card__img--show-tablet-desktop"
+            }
+          ],
+          [
+            'Уничтожение документов',
+            'Оплачивает клиент:'
+          ],
+          [
+            {
+              weight: [
+                {icon: 'shredder', text: "Путем сжигания или шредирования:", 'data-weight': "1", product: 'cardboard'}
+              ]
+            }
+          ],
+          [{number: '5', unit: 'кг'}]
+        )
+      .tabs__content.tabs__content--padding-top-20
+        +card-services-price(
+            "storage",
+            [
+              {
+                src:"assets/img/price/storage-mobile.png",
+                alt: "сейф",
+                class: "price-product-card__img price-product-card__img--show-mobile"
+              }, {
+                src:"assets/img/price/storage.png",
+                alt: "сейф",
+                class: "price-product-card__img price-product-card__img--show-tablet-desktop"
+              }
+            ],
+            [
+              'Хранение архивов',
+              'Оплачивает клиент:'
+            ],
+            [
+              {
+                weight: [
+                  {icon: 'storage', text: "Ответственное хранение документов и архивов:", 'data-weight': "1", product: 'storage'}
+                ]
+              }
+            ],
+            [{number: '5', unit: 'кг'}]
+          )

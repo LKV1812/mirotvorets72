@@ -79,6 +79,10 @@
   &--padding-top-0 {
     padding-top: 0;
   }
+
+  &--full-width {
+    width: 100%;
+  }
 }
 
 .price-product-card__item-delivery-title {
@@ -109,6 +113,11 @@
   margin-right: 10px;
   padding-top: 3px;
   line-height: 0;
+
+  &--svg {
+    height: 20px;
+    fill: #cbcfda;
+  }
 }
 
 .price-product-card__item-delivery-price {
@@ -121,4 +130,9 @@
   font-weight: 700;
   font-size: 20px;
   color: #cbcfda;
+}
+
+.icon-shredder {
+  height: 100%;
+  width: auto;
 }

@@ -16,7 +16,7 @@ import {priceMaterials, pricePallets} from '../global/prices';
   let cardsProduct = document.querySelectorAll('.price-product-card');
 
   cardsProduct.forEach(item => {
-    let itemsDelivery = item.querySelectorAll('.price-product-card__item-delivery');
+    let itemsDelivery = item.querySelectorAll('.price-product-card__item-delivery[data-delivery]');
 
     itemsDelivery.forEach(elemDelivery => {
       let typeDelivery = elemDelivery.getAttribute('data-delivery');

@@ -60,3 +60,32 @@ mixin card-product-price(id, images, title, rowsWeightSelfDelivery, rowsWeightOu
                   .price-product-card__item-delivery-price
                     .icon-currency &#8381
                     .text <span class="price-product-card__output-price"></span> р/#{unit}
+
+mixin card-services-price(id, images, title, rowsWeightSelfDelivery, price)
+  .price-product-card(id= id)
+    .price-product-card__img-wrap
+      each img in images
+        img(src= img.src alt= img.alt class= img.class)
+    .price-product-card__body
+      h3.price-product-card__title #{title[0]}
+      .flex-container-between.flex-container-between--flex-wrap-max-width-992
+
+        .price-product-card__item-delivery.price-product-card__item-delivery--full-width
+          .price-product-card__item-delivery-title #{title[1]}
+            each row in rowsWeightSelfDelivery
+              if row.subtitle
+                .price-product-card__item-delivery-row
+                  .text-bold #{row.subtitle}
+              each weight in row.weight
+                .price-product-card__item-delivery-row
+                  .price-product-card__item-delivery-name
+                    .icon-libra-wrap.icon-libra-wrap--svg
+                      if (weight.icon == 'shredder')
+                        include ../../svg/price/shredder_icon.svg
+                      if (weight.icon == 'storage')
+                        include ../../svg/price/storagebox.svg
+                    .text #{weight.text}
+                  .price-product-card__item-delivery-price
+                    .icon-currency &#8381
+                  each item in price
+                    .text <span>#{item.number}</span> р/#{item.unit}
