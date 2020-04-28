@@ -56,6 +56,20 @@
     padding-left: 0;
     padding-right: 0;
   }
+
+  &--padding-right-20 {
+    @media(min-width: 768px) {
+      padding-right: 20px;
+    }
+  }
+}
+
+.price-product-card__body ul > li.list-marker-color-custom {
+  margin-bottom: 7px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .price-product-card__title {

@@ -48,6 +48,22 @@
   }
 
   &--width-three-elements {
+    .tabs__header-item {
+      width: 32%;
+    }
+    max-width: 600px;
+    margin-left: -15px;
+    margin-right: -15px;
+
+    @media(min-width: 768px) {
+      margin: 0 auto;
+    }
+  }
+
+  &--two-elements {
+    .tabs__header-item {
+      width: 50%;
+    }
     max-width: 600px;
     margin-left: -15px;
     margin-right: -15px;

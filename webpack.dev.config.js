@@ -4,7 +4,8 @@ module.exports = {
   entry: {
     main: './src/js/main.js',
     'containers-sale': './src/js/containers-sale.js',
-    'price-page': './src/js/price-page.js'
+    'price-page': './src/js/price-page.js',
+    'packing-rules': './src/js/packing-rules.js',
   },
   output: {
     filename: `[name].js`,

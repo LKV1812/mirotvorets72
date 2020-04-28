@@ -89,3 +89,19 @@ mixin card-services-price(id, images, title, rowsWeightSelfDelivery, price)
                     .icon-currency &#8381
                   each item in price
                     .text <span>#{item.number}</span> р/#{item.unit}
+
+mixin card-packing-rules(images, title, description, mb)
+  .price-product-card
+    .price-product-card__img-wrap
+      each img in images
+        img(src= img.src alt= img.alt class= img.class)
+    .price-product-card__body.price-product-card__body--padding-right-20
+      h3.price-product-card__title #{title}
+      ul.ul-reset-margin-left
+        each row in description
+          if mb
+            li(class='list-marker-color-custom ' + mb)
+              span.text #{row}
+          else
+            li(class='list-marker-color-custom')
+              span.text #{row}

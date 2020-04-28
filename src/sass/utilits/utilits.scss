@@ -142,6 +142,10 @@
   margin-bottom: 30px;
 }
 
+.mb-20 {
+  margin-bottom: 20px !important;
+}
+
 .mb-xs-30 {
   margin-bottom: 30px;
   @media (min-width: 576px) {
@@ -188,4 +192,15 @@
 
 .mb-50 {
   margin-bottom: 50px;
+}
+
+.ul-reset-margin-left {
+  padding-left: 0;
+  margin-left: 0;
+
+  & li {
+    padding-left: 0;
+    margin-left: 15px;
+
+  }
 }
