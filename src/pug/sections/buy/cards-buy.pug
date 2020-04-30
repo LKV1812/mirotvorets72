@@ -1,0 +1,20 @@
+include ../../mixins/mixins-cards.pug
+include ../../mixins/buttons.pug
+.card-buy-wrap
+  +card-buy(
+    [
+      {src: 'assets/img/buy/cardboard-mobile.jpg', class: '', alt: 'картон'},
+      {src: 'assets/img/buy/cardboard-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'картон'},
+      {src: 'assets/img/buy/cardboard.jpg', class: 'card-buy__img--show-desktop', alt: 'картон'}
+    ],
+    {
+      title: 'картон',
+      subtitle: 'Не должен содержать:',
+      list: ['Влагу', 'Иных предметов']
+    },
+    {
+      calculate: '#',
+      order: '#',
+      data: 'cardboard'
+    }
+  )

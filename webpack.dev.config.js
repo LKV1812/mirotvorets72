@@ -6,6 +6,7 @@ module.exports = {
     'containers-sale': './src/js/containers-sale.js',
     'price-page': './src/js/price-page.js',
     'packing-rules': './src/js/packing-rules.js',
+    buy: './src/js/buy.js',
   },
   output: {
     filename: `[name].js`,

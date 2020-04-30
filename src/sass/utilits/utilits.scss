@@ -108,6 +108,10 @@
   }
 }
 
+.pt-5px {
+  padding-top: 5px;
+}
+
 .pt-30 {
   padding-top: 30px;
 }
@@ -136,6 +140,14 @@
 
 .mb-0 {
   margin-bottom: 0;
+}
+
+.mb-5 {
+  margin-bottom: 5px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
 }
 
 .mb-30 {
@@ -201,6 +213,5 @@
   & li {
     padding-left: 0;
     margin-left: 15px;
-
   }
 }

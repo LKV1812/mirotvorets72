@@ -1,3 +1,5 @@
+include buttons.pug
+
 mixin card-product(imgPathMobile, imgPath, textAlt, nameProduct, link, priceName)
   .card-product(name= priceName)
     .card-product__top
@@ -105,3 +107,25 @@ mixin card-packing-rules(images, title, description, mb)
           else
             li(class='list-marker-color-custom')
               span.text #{row}
+
+mixin card-buy(img, bodyContent, link)
+  .card-buy
+    .card-buy__img-wrap
+      each itemImg in img
+        img(src= itemImg.src, class='card-buy__img ' + itemImg.class, alt= itemImg.alt)
+    .card-buy__body
+      h2.price-product-card__title #{bodyContent.title}
+      .card-buy__subtitle #{bodyContent.subtitle}
+      ul.ul-reset-margin-left
+        each list in bodyContent.list
+          li(class='list-marker-color-custom')
+            span.card-buy__text #{list}
+    .card-buy__footer
+      h3.card-buy__subtitle Цена:
+      ul.ul-reset-margin-left
+        li(class='list-marker-color-custom')
+          span.card-buy__text От #[span.card-buy__output-price-min 4] р. до #[span.card-buy__output-price-max 6] р. за кг.
+          .text-small * более подробно о ценах вы можете #[a(href="#", class="card-buy__link") узнать здесь]
+      .card-buy__button-row
+        a(href= link.calculate class='card-buy__button card-buy__button--type-b' data-name-product= link.data) Расчитать стоимость
+        a(href= link.order class='card-buy__button' data-name-product= link.data) оформить заявку

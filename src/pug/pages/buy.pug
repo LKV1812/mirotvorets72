@@ -1,0 +1,17 @@
+extends ../layouts/main.pug
+
+block variables
+  - var title= "Покупка вторсырья. Покупаем стекло, картон, макулатуру, поддоны, текстиль, пленку"
+
+block link
+block keywords
+  meta(name="keywords" content="Покупаем вторсырье, макулатуру, пластмасс, картон, отработанное масло, аллюминиевые банки, поддоны, полиэтиленовые трубы, стекло, текстиль, биг-бэги")
+block description
+  meta(name="description", content="Прием вторсырья в Тюмени по хорошим ценам. Компнаия Миротворец. Покупаем отходы производства и промышленные отходы по высоким ценам. Макулатура, отходы пластмасс, картон, аллюминиевые банки, поддоны, стекло, текстиль, полиэтиленовые трубы, биг-бэги")
+
+block content
+  include ../sections/lower-menu-bg.pug
+  include ../sections/buy/short-description.pug
+
+block scripts
+  script(src="assets/js/buy.js")
