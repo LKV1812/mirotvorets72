@@ -78,26 +78,40 @@ import {tabs} from './tabs';
    * Выбирает на карточке какого товара произошел клик
    * Переходим по ссылке на калькулятор и подставляем в нем выбранный товар
    * При необходимости переключаем табы в калькуляторе, если например выбранный товар - это поддоны
+   *
+   * При клике по ссылке оформить заказ
+   * Переходим в форму заявки
+   * подставляем выбранный товар и тип услуги покупка вторсырья
    */
   cardsProduct.forEach(card  => {
     let links = card.querySelectorAll('a.card-buy__button');
     let productName = card.getAttribute('data-product-name');
 
     links.forEach(link => {
+
       link.addEventListener('click', function(e) {
         let linkHref = this.getAttribute('href');
-        let forSelect = document.querySelector(`${linkHref} #typeMaterials`);
-        let forSelectPallets = document.querySelector(`${linkHref} #palletGrade`);
 
-        if (card.matches('[data-product-name="pallets"]')) {
-          let tabCalculator = document.getElementById('calculatorProduct');
+        if (linkHref === '#calculator' && card.matches('[data-product-name="pallets"]')) {
+          let forSelectPallets = document.querySelector(`${linkHref} #palletGrade`);
+          let tabCalculator = document.querySelector(`${linkHref} .tabs`);
           tabs.setActiveTab(tabCalculator, 1);
           customSelects.setSelectedProduct('first-grade', forSelectPallets);
           return;
-        } else {
-          let tabCalculator = document.getElementById('calculatorProduct');
+        }
+
+        if (linkHref === '#calculator' && !card.matches('[data-product-name="pallets"]')) {
+          let forSelect = document.querySelector(`${linkHref} #typeMaterials`);
+          let tabCalculator = document.querySelector(`${linkHref} .tabs`);
           tabs.setActiveTab(tabCalculator, 0);
           customSelects.setSelectedProduct(productName, forSelect);
+        }
+
+        if (linkHref === '#formOrder') {
+          let selectedService = document.getElementById('selectedService');
+          let buyingMaterials = document.getElementById('buyingMaterials');
+          customSelects.setSelectedProduct('buying-materials', selectedService);
+          customSelects.setSelectedProduct(productName, buyingMaterials);
         }
       });
     });

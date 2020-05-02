@@ -125,7 +125,7 @@ mixin card-buy(data, img, bodyContent, link)
       ul.ul-reset-margin-left
         li(class='list-marker-color-custom')
           span.card-buy__text От #[span.card-buy__output-price-min] р. до #[span.card-buy__output-price-max] р. за кг.
-          .text-small * более подробно о ценах вы можете #[a(href="#", class="card-buy__link") узнать здесь]
+          .text-small * более подробно о ценах вы можете #[a(href= 'price.html'+link.price, class="card-buy__link" target="_BLANK") узнать здесь]
       .card-buy__button-row
         a(href= link.calculate class='card-buy__button card-buy__button--type-b') Расчитать стоимость
         a(href= link.order class='card-buy__button') оформить заявку
