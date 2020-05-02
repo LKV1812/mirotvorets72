@@ -121,39 +121,6 @@ import '../modules/сheckbox';
   });
 
   /**
-  * Прослушиваем события
-  *
-  * Калькулятор уничтожения архива:
-  * При изменении веса запускаем функцию подсчета.
-  * Полученное значение форматируем в удобочитаемое число.
-  */
-  destructionKg.addEventListener('input', function() {
-    let resultSumCurrency = makesCalculationCurrency(5, this.value);
-    outputCountingResultCurrencyDestruction.innerHTML = formatterСurrency.format(resultSumCurrency);
-  });
-
-  destructionInput.addEventListener('input', function() {
-    let resultSumCurrency = makesCalculationCurrency(5, this.value);
-    outputCountingResultCurrencyDestruction.innerHTML = formatterСurrency.format(resultSumCurrency);
-  });
-
-  /**
-  * Прослушиваем события
-  *
-  * Калькулятор хранения архива:
-  * При изменении веса запускаем функцию подсчета.
-  * Полученное значение форматируем в удобочитаемое число.
-  */
-  storageKg.addEventListener('input', function() {
-    let resultSumCurrency = makesCalculationCurrency(5, this.value);
-    outputCountingResultCurrencyStorage.innerHTML = formatterСurrency.format(resultSumCurrency);
-  });
-  storageInput.addEventListener('input', function() {
-    let resultSumCurrency = makesCalculationCurrency(5, this.value);
-    outputCountingResultCurrencyStorage.innerHTML = formatterСurrency.format(resultSumCurrency);
-  });
-
-  /**
   * обрабатываем введенные пользователем данные и передаем их в метод объекта прайса для выборки цены
   *
   * @param {string} selectedTypeMaterials - значени атрибута 'name', используем как ключ объекта priceMaterials[типа-сырья]

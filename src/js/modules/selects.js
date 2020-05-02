@@ -107,8 +107,23 @@ export const customSelects = (function() {
     }
   }
 
+  let setSelectedProduct = function (productName, forSelect) {
+
+    let selectedOption = forSelect.querySelector(`.select__option[name=${productName}]`);
+    let text = selectedOption.innerText;
+    let attributeNameValue = selectedOption.getAttribute("name");
+    let select = selectedOption.closest(".select");
+    let currentSelect = select.querySelector(".select-current");
+
+    currentSelect.setAttribute('name', attributeNameValue);
+    currentSelect.innerText = text;
+
+    select.classList.remove("is-active");
+  };
+
   return {
     showErrorsSelect,
-    hideErrorsSelect
+    hideErrorsSelect,
+    setSelectedProduct
   };
 }());

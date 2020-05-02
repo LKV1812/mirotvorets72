@@ -2,6 +2,9 @@ include ../../mixins/mixins-cards.pug
 include ../../mixins/buttons.pug
 .card-buy-wrap
   +card-buy(
+    {
+      attr: 'cardboard'
+    },
     [
       {src: 'assets/img/buy/cardboard-mobile.jpg', class: '', alt: 'картон'},
       {src: 'assets/img/buy/cardboard-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'картон'},
@@ -13,8 +16,47 @@ include ../../mixins/buttons.pug
       list: ['Влагу', 'Иных предметов']
     },
     {
-      calculate: '#',
-      order: '#',
-      data: 'cardboard'
+      calculate: '#calculator',
+      order: '#formOrder'
+    }
+  )
+
+  +card-buy(
+    {
+      attr: 'paper'
+    },
+    [
+      {src: 'assets/img/buy/paper-mobile.jpg', class: '', alt: 'бумага'},
+      {src: 'assets/img/buy/paper-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'бумага'},
+      {src: 'assets/img/buy/paper.jpg', class: 'card-buy__img--show-desktop', alt: 'бумага'}
+    ],
+    {
+      title: 'Макулатура',
+      subtitle: 'Принимаем макулатуру разных видов:',
+      list: ['Офисная бумага (белая формата А4 )', 'Книги (корочки убирать не обязательно)', 'Газеты', 'Журналы в том числе глянцевые']
+    },
+    {
+      calculate: '#calculator',
+      order: '#formOrder'
+    }
+  )
+
+  +card-buy(
+    {
+      attr: 'pallets'
+    },
+    [
+      {src: 'assets/img/buy/pallets-mobile.jpg', class: '', alt: 'поддоны'},
+      {src: 'assets/img/buy/pallets-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'поддоны'},
+      {src: 'assets/img/buy/pallets.jpg', class: 'card-buy__img--show-desktop', alt: 'поддоны'}
+    ],
+    {
+      title: 'Поддоны',
+      subtitle: 'Поддоны евростандарт  800*1200 с клеймом EPAL и без',
+      list: ['1-й сорт – белые, новые, целые', '2-й сорт – серые, целые', '3-й сорт – белые, серые, сломано до трех деталей']
+    },
+    {
+      calculate: '#calculator',
+      order: '#formOrder'
     }
   )

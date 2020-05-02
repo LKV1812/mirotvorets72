@@ -1,4 +1,4 @@
-(function() {
+export const tabs = (function() {
   'use strict';
   /**@param {DOM[]} tabs коллекция всех табов на сайте*/
   let tabs = document.querySelectorAll('.tabs');
@@ -13,8 +13,9 @@
   * Записываем его индекс в переменную currentIndexActiveItem
   * Делаем активным элемент на котором произошел клик (item[currentIndexActiveItem])
   **/
+  let currentIndexActiveItem = 0;
+
   tabs.forEach(item => {
-    let currentIndexActiveItem = 0;
     let tabsHeaderItems = item.querySelectorAll('.tabs__header-item');
     let tabsContentItems = item.querySelectorAll('.tabs__content');
 
@@ -33,4 +34,24 @@
       }
     });
   });
+
+  function setActiveTab(tabs, indexTab) {
+    let tabsHeaderItems = tabs.querySelectorAll('.tabs__header-item');
+    let tabsContentItems = tabs.querySelectorAll('.tabs__content');
+
+    if (currentIndexActiveItem != indexTab) {
+      tabsHeaderItems[currentIndexActiveItem].classList.remove('tabs__header-item--active');
+      tabsContentItems[currentIndexActiveItem].classList.remove('tabs__content--active');
+    }
+
+    tabsHeaderItems.forEach((elem, index) => {
+      if (index == indexTab) {
+        currentIndexActiveItem = indexTab;
+        elem.classList.add('tabs__header-item--active');
+        tabsContentItems[currentIndexActiveItem].classList.add('tabs__content--active');
+      }
+    });
+  }
+
+  return{setActiveTab};
 }());

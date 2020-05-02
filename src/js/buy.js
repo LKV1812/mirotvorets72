@@ -1,5 +1,6 @@
 import './entry';
-import './modules/card-price';
+import './modules/cards-buy';
+import './modules/calculator-product';
 import './modules/tabs';
-import './modules/form-order';
-import './section/calculator';
+// import './modules/form-order';
+// import './section/calculator';

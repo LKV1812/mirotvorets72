@@ -1,0 +1,102 @@
+.calculator-full-wrap
+  .tabs#calculatorProduct
+    .tabs__header.tabs__header--two-elements
+      .tabs__header-item.tabs__header-item--active Приём сырья
+      .tabs__header-item Покупка поддонов
+    .tabs__content.tabs__content--active
+      .tabs__content-row
+        #typeMaterials.select.select--small-mobile-mb-20-mobile-mb-0(tabindex="0")
+          .select__options-wrap
+            .select__empty-cutter
+            .select__wrap-only-option.scroll-vertical-small
+              .select__option(name="cardboard") Картон
+              .select__option(name="books") Макулатура (книги)
+              .select__option(name="paper") Макулатура (офисная бумага)
+              .select__option(name="newspapers") Макулатура (газеты)
+              .select__option(name="magazines") Макулатура (журналы)
+              .select__option(name="film-pvd") Пленка (ПВД)
+              .select__option(name="film-color-pvd") Цветная пленка (ПВД)
+              .select__option(name="film-stretch") Пленка (стрейч)
+              .select__option(name="polyethylene") ПЭТ
+              .select__option(name="textile") Текстиль
+              .select__option(name="oil") Масло
+              .select__option(name="kegs") Кеги (ПЭТ)
+              .select__option(name="plastic-canisters") Пластиковые канистры
+              .select__option(name="aluminum-cans") Алюминиевые банки
+              .select__option(name="plastic-box") Пластиковые ящики
+              .select__option(name="polyethylene-pipe") Трубы полиэтиленовые черные
+              .select__option(name="chemical-containers") Пластиковая тара из под бытовой химии
+              .select__option(name="glass") Стекло листовое прозрачное
+              .select__option(name="glass-white-brown") Стекло белое и коричневое (банки, бутылки)
+              .select__option(name="glass-green") Стекло зеленое (банки, бутылки)
+              .select__option(name="bags") Биг-Бэги (мешок МКР)
+          .select__header
+            span#currentTypeMaterials.select-current(name=null) Выберите тип сырья
+            .select__icon-dropdown
+              img(src="assets/img/form/select-dropdown.png", alt="стрелка")
+            .error-no-selected__message
+              .error-no-selected__message-icon !
+              .error-no-selected__message-text
+        .checkbox-goup
+          span.checkbox-goup__text Засор
+          input(type="checkbox", name="clog")#checkboxCalc.checkbox
+          label(for="checkboxCalc").checkbox-label
+      .tabs__content-row
+        .checkbox-goup-type-b
+          .checkbox-goup-type-b__title Тип доставки
+          span.checkbox-goup-type-b__text.checkbox-goup-type-b__text--first-item Самоподвоз
+          .checkbox-track
+            input(type="checkbox", name="clog")#materialsDeliveryType.checkbox-type-b
+            label(for="materialsDeliveryType").checkbox-label-type-b
+          .checkbox-goup-type-b__text-wrap
+            span.checkbox-goup-type-b__text Транспорт компании "Миротворец"
+      .tabs__content-row
+        .range-wrap
+          .range__title Сколько килограмм
+          input#materialsKg(type="range", name="#" min="0" max="20000" value="0").range
+          .range__output-current-start 0
+          .range__output-current-value
+            input#materialsKgInput(type="number" class="range__output-current-value-input" value="0")
+            span  кг
+      .tabs__content-row
+        #resultMaterialsCurrency.output-counting-result Итого: <span>0,00 &#8381;</span>
+
+    .tabs__content
+      .tabs__content-row
+        #palletGrade.select.select--small-mobile-mb-20-mobile-mb-0(tabindex="0")
+          .select__options-wrap
+            .select__empty-cutter
+            .select__wrap-only-option.scroll-vertical-small
+              .select__option(name="first-grade") 1 сорт (белый, целый)
+              .select__option(name="second-grade") 2 сорт (серый, целый)
+              .select__option(name="third-grade") 3 сорт (сломано до 3-х деталей)
+          .select__header
+            span#currentPalletGrade.select-current(name=null) Выберите сорт европоддонов
+            .select__icon-dropdown
+              img(src="assets/img/form/select-dropdown.png", alt="стрелка")
+            .error-no-selected__message
+              .error-no-selected__message-icon !
+              .error-no-selected__message-text
+        .checkbox-goup
+          span.checkbox-goup__text Epal
+          input(type="checkbox", name="clog")#epal.checkbox
+          label(for="epal").checkbox-label
+      .tabs__content-row
+        .checkbox-goup-type-b
+          .checkbox-goup-type-b__title Тип доставки
+          span.checkbox-goup-type-b__text.checkbox-goup-type-b__text--first-item Самоподвоз
+          .checkbox-track
+            input(type="checkbox", name="clog")#palletDeliveryType.checkbox-type-b
+            label(for="palletDeliveryType").checkbox-label-type-b
+          .checkbox-goup-type-b__text-wrap
+            span.checkbox-goup-type-b__text Транспорт компании "Миротворец"
+      .tabs__content-row
+        .range-wrap
+          .range__title Количество штук
+          input#palletsRange(type="range", name="#" min="0" max="5000" value="0").range
+          .range__output-current-start 0
+          .range__output-current-value
+            input#palletsRangeInput(type="number" class="range__output-current-value-input" value="0")
+            span  шт
+      .tabs__content-row
+        #resultPalletsCurrency.output-counting-result Итого: <span>0,00 &#8381;</span>
