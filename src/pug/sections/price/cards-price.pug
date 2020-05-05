@@ -260,6 +260,76 @@ include ../../mixins/mixins-cards.pug
         )
 
         +card-product-price(
+          "plastic-canisters",
+          [
+            {
+              src:"assets/img/price/canisters-mobile.png",
+              alt: "Пластиковые канистры",
+              class: "price-product-card__img price-product-card__img--show-mobile"
+            }, {
+              src:"assets/img/price/canisters.png",
+              alt: "Пластиковые канистры",
+              class: "price-product-card__img price-product-card__img--show-tablet-desktop"
+            }
+          ],
+          "Пластиковые канистры",
+          [
+            {
+              weight: [
+                {text: "До 500 килограмм:", 'data-weight': "1", product: 'plastic-canisters'},
+                {text: "От 500 килограмм:", 'data-weight': "501", product: 'plastic-canisters'},
+                {text: "От 1000 килограмм:", 'data-weight': "1001", product: 'plastic-canisters'}
+              ]
+            },
+          ],
+          [
+            {
+              weight: [
+                {text: "До 500 килограмм:", 'data-weight': "1", product: 'plastic-canisters'},
+                {text: "От 500 килограмм:", 'data-weight': "501", product: 'plastic-canisters'},
+                {text: "От 1000 килограмм:", 'data-weight': "1001", product: 'plastic-canisters'}
+              ]
+            }
+          ],
+          "кг"
+        )
+
+        +card-product-price(
+          "aluminum-cans",
+          [
+            {
+              src:"assets/img/price/aluminum-cans-mobile.png",
+              alt: "Аллюминиевые банки",
+              class: "price-product-card__img price-product-card__img--show-mobile"
+            }, {
+              src:"assets/img/price/aluminum-cans.png",
+              alt: "Аллюминиевые банки",
+              class: "price-product-card__img price-product-card__img--show-tablet-desktop"
+            }
+          ],
+          "Аллюминиевые банки",
+          [
+            {
+              weight: [
+                {text: "До 500 килограмм:", 'data-weight': "1", product: 'aluminum-cans'},
+                {text: "От 500 килограмм:", 'data-weight': "501", product: 'aluminum-cans'},
+                {text: "От 1000 килограмм:", 'data-weight': "1001", product: 'aluminum-cans'}
+              ]
+            },
+          ],
+          [
+            {
+              weight: [
+                {text: "До 500 килограмм:", 'data-weight': "1", product: 'aluminum-cans'},
+                {text: "От 500 килограмм:", 'data-weight': "501", product: 'aluminum-cans'},
+                {text: "От 1000 килограмм:", 'data-weight': "1001", product: 'aluminum-cans'}
+              ]
+            }
+          ],
+          "кг"
+        )
+
+        +card-product-price(
           "oil",
           [
             {
