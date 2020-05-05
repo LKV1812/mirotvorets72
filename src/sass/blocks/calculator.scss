@@ -74,6 +74,13 @@
   }
 }
 
+.calculator-full-wrap {
+  .tabs__header--two-elements {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 .tabs__header-item {
   width: 25%;
   display: flex;
