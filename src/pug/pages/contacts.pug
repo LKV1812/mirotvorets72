@@ -1,0 +1,19 @@
+extends ../layouts/main.pug
+
+block variables
+  - var title= "Контакты Миротворец. Покупаем стекло, картон, макулатуру, поддоны, текстиль, пленку, ПЭТ"
+
+block link
+block keywords
+  meta(name="keywords" content="Контакты Миротворец. Адреса пунктов приёма вторсырья, картон, макулатура, поддоны, стекло, пленка, ПЭТ, пластик, текстиль. Адреса складов, номер телефона, Адрес офиса, Миротворец Тюмень")
+block description
+  meta(name="description", content="Прием вторсырья в Тюмени по хорошим ценам компанией Миротворец. Адреса пунктов приёма вторсырья, отходов производства и промышленных отходов по высоким ценам. Макулатура, отходы пластмасс, картон, аллюминиевые банки, поддоны, стекло, бутылки, текстиль, полиэтиленовые трубы, биг-бэги, отработанное масло, пластиковые канистры, тара из под бытовой химии")
+
+block content
+  include ../sections/lower-menu-bg.pug
+  include ../sections/contacts/info.pug
+  include ../sections/contacts/map.pug
+
+block scripts
+  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjBXKACsJqeOziI6fHNCmWPdLul--G--I" type="text/javascript")
+  script(src="assets/js/contacts.js")
