@@ -1,0 +1,20 @@
+extends ../layouts/main.pug
+
+block variables
+  - var title= "Установка экбоксов для сбора макулатуры. Покупаем макулатуру Миротворец Тюмень."
+
+block link
+block keywords
+  meta(name="keywords" content="Устанавливаем экобоксы для сбора макулатуры. Покупаем макулатуру, пластмасс, картон, отработанное масло, аллюминиевые банки, поддоны, полиэтиленовые трубы, стекло, текстиль, биг-бэги")
+block description
+  meta(name="description", content="Покупаем макулатуру в Тюмени по хорошим ценам. Компнаия Миротворец. Покупаем отходы производства и промышленные отходы по высоким ценам. Макулатура, отходы пластмасс, картон, аллюминиевые банки, поддоны, стекло, бутылки, текстиль, полиэтиленовые трубы, биг-бэги, отработанное масло, пластиковые канистры, тара из под бытовой химии")
+
+block content
+  include ../sections/lower-menu-bg.pug
+  include ../sections/ecobox/description.pug
+  include ../sections/ecobox/rules-participation.pug
+  include ../sections/ecobox/about-ecobox.pug
+  include ../sections/ecobox/order-ecobox.pug
+
+block scripts
+  script(src="assets/js/containers-sale.js")

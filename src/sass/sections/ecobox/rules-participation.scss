@@ -1,0 +1,16 @@
+@import '../../variables/variables.scss';
+
+.ecobox-rules-title {
+  margin-bottom: 0;
+  color: $mainColorText;
+  text-align: center;
+  font-family: $textType1;
+  font-size: 18px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  font-weight: 400;
+
+  @media(min-width: 768px) {
+    font-size: 24px;
+  }
+}
