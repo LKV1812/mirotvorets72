@@ -1,16 +1,16 @@
 include ../../mixins/buttons.pug
 section.section
   .container
-    .section__title заказать контейнер
+    h2.section__title заказать экобокс
     form(id="orderContainer", action="php/form-order.php", method="post")
-      input(type="hidden" name="Mirotvorets" value="Купить контейнер mirotvorets72.ru")
+      input(type="hidden" name="Mirotvorets" value="Купить экобокс mirotvorets72.ru")
       input(type="hidden" name="form_from" value="mirotvorets72.ru")
       input(type="hidden" name="admin_email" value="zayavka@mirotvorets72.com")
-      input(type="hidden" name="erasure" value="Заявка со страницы контейнеров")
+      input(type="hidden" name="erasure" value="Заявка со страницы экобоксы")
 
       .input-wrap
         .input-container
-          input.input(type="text", name="address", placeholder="Ваш адрес")
+          input.input(type="text", name="address", placeholder="Адрес куда установить")
           .error-no-selected__message
             .error-no-selected__message-icon !
             .error-no-selected__message-text
