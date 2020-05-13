@@ -110,13 +110,12 @@
 
     .card-contacts__img-wrap {
       align-self: flex-end;
-      @media(min-width: 992px) {
-        align-self: center;
-      }
     }
 
     .card-contacts__img {
       align-self: center;
+      width: 100%;
+      height: auto;
 
       &:nth-child(1) {
         @media(min-width: 768px) {
