@@ -8,6 +8,7 @@ module.exports = {
     'packing-rules': './src/js/packing-rules.js',
     buy: './src/js/buy.js',
     contacts: './src/js/contacts.js',
+    destruction: './src/js/destruction.js',
   },
   output: {
     filename: `[name].js`,

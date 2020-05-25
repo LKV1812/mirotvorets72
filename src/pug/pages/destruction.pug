@@ -1,0 +1,17 @@
+extends ../layouts/main.pug
+
+block variables
+  - var title= "Уничтожение документов архива в Тюмени компания 'Миротворец'."
+
+block link
+block keywords
+  meta(name="keywords" content="компания 'Миротворец': Уничтожение документов архива в Тюмени, уничтожение документов цены")
+block description
+  meta(name="description", content="Оказание услуг: уничтожение документов в Тюмени, хранение документов, архивов в Тюмени, компания 'Миротворец'")
+
+block content
+  include ../sections/lower-menu-bg.pug
+  include ../sections/destruction/stage.pug
+
+block scripts
+  script(src="assets/js/destruction.js")
