@@ -147,3 +147,102 @@
     }
   }
 }
+
+.procedure-card-wrap {
+  width: 100%;
+
+  @media (min-width: 992px) {
+    width: 960px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 1200px) {
+    width: 1140px;
+    margin: 0 auto;
+  }
+}
+
+.procedure-card {
+  display: flex;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  box-shadow: $cardShadow;
+  overflow: hidden;
+
+  @media(min-width: 768px) {
+    flex-direction: row-reverse;
+  }
+
+  @media(min-width: 992px) {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    border-radius: 15px;
+  }
+}
+
+.procedure-card__description > * + * {
+  margin-top: 15px;
+}
+
+.procedure-card__description > h4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.procedure-card__description {
+  margin-right: 0;
+  padding: 15px 20px;
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    padding: 30px 40px;
+  }
+}
+
+.procedure-card__text-wrap {
+  padding-left: 15px;
+}
+
+.procedure-card__text-wrap > li + li {
+  margin-top: 10px;
+}
+
+.procedure-card__img-wrap {
+  flex-shrink: 0;
+  align-self: center;
+  max-width: 260px;
+  overflow: hidden;
+
+  @media (min-width: 992px) {
+    align-self: flex-end;
+  }
+}
+
+.procedure-card__img {
+  display: block;
+  max-width: 100%;
+
+  &:nth-child(1) {
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &:nth-child(2) {
+    display: none;
+    @media (min-width: 768px) {
+      display: block;
+    }
+    @media (min-width: 992px) {
+      display: none;
+    }
+  }
+
+  &:nth-child(3) {
+    display: none;
+    @media (min-width: 992px) {
+      display: block;
+    }
+  }
+}
