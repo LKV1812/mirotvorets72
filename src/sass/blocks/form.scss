@@ -36,6 +36,29 @@
 
   }
 
+  &--three-elements {
+    flex-direction: column;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @media (min-width: 992px) {
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+
+    @media (min-width: 1200px) {
+      padding-left: 0;
+      padding-right: 0;
+
+      & > .input-container:last-child {
+        margin: 0 auto;
+      }
+    }
+  }
+
   &--pos-relative {
     position: relative;
   }

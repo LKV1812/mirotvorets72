@@ -57,7 +57,7 @@ import '../modules/сheckbox';
   /**
    * Переменные для калькулятора уничтожения архива
    *
-   * @param {DOM} destructionKg вес архива для хранения в кг
+   * @param {DOM} storageKg вес архива для хранения в кг
    * @param {DOM} outputCountingResultCurrencyDestruction здесь выводим ссумму в рублях для хранения
    */
   let storageKg = document.getElementById('storageRange');
