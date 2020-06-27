@@ -2,7 +2,7 @@ include ../../mixins/buttons.pug
 section.section
   .container
     h1.section__title заказать уничтожение архива
-    form(id="orderDestruction", action="php/form-order.php", method="post")
+    form(id="orderDestruction", class="form" action="php/form-order.php", method="post")
       input(type="hidden" name="Mirotvorets" value="Уничтожение архива mirotvorets72.ru")
       input(type="hidden" name="form_from" value="mirotvorets72.ru")
       input(type="hidden" name="admin_email" value="zayavka@mirotvorets72.com")
