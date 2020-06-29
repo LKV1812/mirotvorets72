@@ -1,0 +1,24 @@
+extends ../layouts/main.pug
+
+block variables
+  - var title= "Хранение документов архива в Тюмени компания 'Миротворец'."
+
+block link
+block keywords
+  meta(name="keywords" content="компания 'Миротворец': Хранение документов архива в Тюмени, хранение документов цены")
+block description
+  meta(name="description", content="Оказание услуг: хранение документов в Тюмени, хранение документов, архивов в Тюмени, компания 'Миротворец'")
+
+block content
+  include ../sections/lower-menu-bg.pug
+  include ../sections/storage/stage-storage.pug
+  include ../sections/storage/procedure-transfer-storage.pug
+  include ../sections/storage/video.pug
+  include ../sections/storage/calculator.pug
+  include ../sections/storage/order-storage.pug
+
+block scripts
+  script(src="assets/js/storage.js")
+  script(src="vendor/libs/jquery/dist/jquery.min.js")
+  script
+    include ../../js/video-storage.js

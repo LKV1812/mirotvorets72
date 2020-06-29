@@ -9,6 +9,7 @@ module.exports = {
     buy: './src/js/buy.js',
     contacts: './src/js/contacts.js',
     destruction: './src/js/destruction.js',
+    storage: './src/js/storage.js',
   },
   output: {
     filename: `[name].js`,
