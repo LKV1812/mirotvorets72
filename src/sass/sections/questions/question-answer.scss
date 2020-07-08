@@ -1,0 +1,75 @@
+@import '../../variables/variables.scss';
+
+.question-answer {
+
+}
+
+.dropdown-block {
+  position: relative;
+}
+
+.dropdown-block.is-open .dropdown-block__toggle-icon {
+  transform: rotate(45deg);
+}
+
+.dropdown-block.is-open .dropdown-block__body {
+  // max-height: 10em;
+}
+
+.dropdown-block__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.66em 2.55em;
+  text-decoration: none;
+  background-color: #efeef3;
+  border-radius: 0.5em;
+}
+
+.dropdown-block__toggle-icon {
+  position: relative;
+  flex-shrink: 0;
+  height: 1.55rem;
+  width: 1.55rem;
+  margin-left: 2em;
+  transition: transform 0.3s;
+}
+
+.dropdown-block__toggle-icon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background-color: $colorTextType2;
+}
+
+.dropdown-block__toggle-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  transform: translateY(-50%);
+  background-color: $colorTextType2;
+}
+
+.dropdown-block__body {
+  max-height: 0;
+  transition: 0.7s;
+  overflow-y: hidden;
+}
+
+.dropdown-block__content {
+  padding: 2.2em 2.55em;
+}
+
+.dropdown-block__content > p {
+  margin: 0;
+}
+
+.dropdown-block__content p + p {
+  margin-top: 2.2em;
+}

@@ -8,6 +8,7 @@ module.exports = {
     contacts: './src/js/contacts.js',
     destruction: './src/js/destruction.js',
     storage: './src/js/storage.js',
+    'question-answer': './src/js/question-answer.js',
   },
   output: {
     filename: `[name].js`,
