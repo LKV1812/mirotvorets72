@@ -1,19 +1,21 @@
-@import '../../variables/variables.scss';
+@import '../variables/variables.scss';
 
-.question-answer {
-
-}
+/*
+Стили выпадающего блока
+Разметка находится в миксине в файле mixins/dropdown-block.pug
+Для работы на страницу необходимо подключить js-файл расположенный в './modules/dropdown-block';
+*/
 
 .dropdown-block {
   position: relative;
 }
 
-.dropdown-block.is-open .dropdown-block__toggle-icon {
-  transform: rotate(45deg);
+.dropdown-block + .dropdown-block {
+  margin-top: 1.875em;
 }
 
-.dropdown-block.is-open .dropdown-block__body {
-  // max-height: 10em;
+.dropdown-block.is-open .dropdown-block__toggle-icon {
+  transform: rotate(45deg);
 }
 
 .dropdown-block__header {

@@ -1,0 +1,82 @@
+@import '../../variables/variables.scss';
+
+.question-footer-bg {
+  background-image: url('../img/question/form-bg-mobile.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (min-width: 768px) {
+    background-image: url('../img/question/form-bg-tablet.jpg');
+  }
+
+  @media (min-width: 992px) {
+    background-image: url('../img/question/form-bg.jpg');
+  }
+}
+
+.modal {
+  // display: none;
+}
+
+.modal-backdrop {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  padding-top: 5em;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, .9);
+  z-index: 199;
+}
+
+.modal-body {
+  position: relative;
+
+  &--sticker {
+    width: 100%;
+    height: 33.5em;
+    padding: 2em 4em 12em;
+    background-image: url('../img/form/form-bg-sticker.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.modal-close {
+  height: 1.55rem;
+  width: 1.55rem;
+  background-color: transparent;
+  border: none;
+  transition: transform 0.3s;
+  transform: rotate(45deg);
+
+  &--sticker {
+    position: absolute;
+    top: 1.1em;
+    right: 2.5em;
+  }
+}
+
+.modal-close::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background-color: $colorTextType2;
+}
+
+.modal-close::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  transform: translateY(-50%);
+  background-color: $colorTextType2;
+}

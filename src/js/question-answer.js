@@ -1,6 +1,5 @@
 import './entry';
 import './modules/dropdown-block';
-// import './modules/calculator-storage';
 // import './modules/phone-mask.js';
 // import {formDestruction} from './modules/form-destruction';
 

@@ -32,6 +32,12 @@
   }
 }
 
+.centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .display-none-mobile {
   display: none;
   @media (min-width: 768px) {

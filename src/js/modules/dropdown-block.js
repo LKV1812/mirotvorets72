@@ -1,3 +1,10 @@
+/**
+ * Функция dropdownBlock открывает/закрывает выпадающий блок
+ * Находит на странице все элементы с выпадающим блоком
+ * По клику Открывает/закрывает его путем добаления/обнуления высоты выпадающего блока
+ * Добавляет/убирает css-класс 'is-open'
+ */
+
 export let dropdownBlock = function() {
   let dropdownToggle = document.querySelectorAll('.dropdown-block');
 
