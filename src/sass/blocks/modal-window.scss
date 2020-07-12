@@ -1,0 +1,91 @@
+@import '../variables/variables.scss';
+
+/*
+Стили модального окна
+Модальные окна показываются только при ширине окна >= 992px
+Разметка находится в миксине в файле mixins/modal-window.pug
+
+Для работы в свой скрипт необходимо импортировать объект {...} './modules/modal-window' и петедать в него id элемента, по клику на котором происходит вызов окна и id самого окна, которое неоходимо показывать
+*/
+
+.modal {
+  display: none;
+  position: fixed;
+  padding-top: 5em;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  z-index: -199;
+  transition: opacity 0.3s;
+  outline: none;
+
+  @media (min-width: 992px) {
+    display: block;
+  }
+}
+
+.modal-backdrop {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  padding-top: 5em;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, .9);
+}
+
+.modal-body {
+  position: relative;
+
+  &--sticker {
+    width: 100%;
+    height: 33.5em;
+    padding: 2em 4em 12em;
+    background-image: url('../img/form/form-bg-sticker.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.modal-close {
+  height: 1.55rem;
+  width: 1.55rem;
+  background-color: transparent;
+  border: none;
+  transition: transform 0.3s;
+  transform: rotate(45deg);
+  outline: none;
+  cursor: pointer;
+
+  &--sticker {
+    position: absolute;
+    top: 1.1em;
+    right: 2.5em;
+  }
+}
+
+.modal-close::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background-color: $colorTextType2;
+}
+
+.modal-close::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  transform: translateY(-50%);
+  background-color: $colorTextType2;
+}

@@ -1,0 +1,7 @@
+mixin modal-window(id, modifierBackdrop, modifierBody, modifierCloseButton)
+  div(id= id class='modal')
+    div(class= modifierBackdrop ? 'modal-backdrop ' + modifierBackdrop : 'modal-backdrop')
+      .container
+        div(class= modifierBody ? 'modal-body ' + modifierBody : 'modal-body')
+          button(class= modifierCloseButton ? 'modal-close ' + modifierCloseButton : 'modal-close')
+          block

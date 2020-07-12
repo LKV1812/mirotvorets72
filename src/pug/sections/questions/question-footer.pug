@@ -1,15 +1,12 @@
 include ../../mixins/buttons.pug
+include ../../mixins/modal-window.pug
 section.section.question-footer-bg
   .container
     h2.section__title Не нашли ответ на свой вопрос?
     .centering
-      +button-input-tipe-a('button', 'question', 'задать вопрос')
-.modal
-  .modal-backdrop
-    .container
-      .modal-body.modal-body--sticker
-        button.modal-close.modal-close--sticker
-        .section__title Задать свой вопрос
-        textarea.textarea(name="question__text") Опишите подробнее ваш вопрос
-        .centering.pt-30
-          +button-input-tipe-a('button', 'send-form', 'отправить')
+      +button-input-tipe-a('button', 'ask-question', 'задать вопрос')
++modal-window('question', null, 'modal-body--sticker', 'modal-close--sticker')
+  .section__title Задать свой вопрос
+  textarea.textarea(name="question__text") Опишите подробнее ваш вопрос
+  .centering.pt-30
+    +button-input-tipe-a('button', 'send-question', 'отправить')
