@@ -13,6 +13,7 @@ export const sendFormOrder = (function(){
 
   function sendRequest(e, form) {
     // e.preventDefault();
+    let resultSendRequest = false;
     let _xhttpPost = new XMLHttpRequest();
 
     _xhttpPost.open('POST', 'php/form-order.php', true);
@@ -33,6 +34,8 @@ export const sendFormOrder = (function(){
       let resultQuery = false;
       outputResultToPage(e.target, resultQuery);
     };
+
+    return resultSendRequest;
   }
 
   /**

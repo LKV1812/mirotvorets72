@@ -2,14 +2,12 @@
 
 /*
 Стили модального окна
-Модальные окна показываются только при ширине окна >= 992px
 Разметка находится в миксине в файле mixins/modal-window.pug
 
-Для работы в свой скрипт необходимо импортировать объект {...} './modules/modal-window' и петедать в него id элемента, по клику на котором происходит вызов окна и id самого окна, которое неоходимо показывать
+Для работы в свой скрипт необходимо импортировать объект {callsModalWindow} './modules/modal-window' и петедать в него id элемента, по клику на котором происходит вызов окна и id самого окна, которое неоходимо показывать
 */
 
 .modal {
-  display: none;
   position: fixed;
   padding-top: 5em;
   top: 0;
@@ -20,17 +18,12 @@
   z-index: -199;
   transition: opacity 0.3s;
   outline: none;
-
-  @media (min-width: 992px) {
-    display: block;
-  }
 }
 
 .modal-backdrop {
   display: flex;
   align-items: center;
   position: fixed;
-  padding-top: 5em;
   top: 0;
   right: 0;
   bottom: 0;
@@ -41,13 +34,39 @@
 .modal-body {
   position: relative;
 
-  &--sticker {
+  &--text-bg {
+    textarea, .input {
+      background-color: transparent;
+      font-size: 16px;
+      &::-webkit-input-placeholder {font-size: 16px;}
+      &::-moz-placeholder          {font-size: 16px;}
+      &:-moz-placeholder           {font-size: 16px;}
+      &:-ms-placeholder            {font-size: 16px;}
+
+      @media (min-width: 768px) {
+        &::-webkit-input-placeholder {font-size: 18px;}
+        &::-moz-placeholder          {font-size: 18px;}
+        &:-moz-placeholder           {font-size: 18px;}
+        &:-ms-placeholder            {font-size: 18px;}
+      }
+    }
+
     width: 100%;
-    height: 33.5em;
-    padding: 2em 4em 12em;
-    background-image: url('../img/form/form-bg-sticker.png');
+    padding: 3em 0.5em 4em;
+    border-radius: 1em;
+    box-shadow: 4px 8px 19px -7px rgba(89, 50, 8, .75);
+    background-color: #efeef3;
+    background-image: url('../img/index/calculator/calculator-bg-text.png');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+
+    @media (min-width: 576px) {
+      padding: 3em 1em 4em;
+    }
+
+    @media (min-width: 768px) {
+      padding: 3em 2em 4em;
+    }
   }
 }
 
@@ -61,10 +80,10 @@
   outline: none;
   cursor: pointer;
 
-  &--sticker {
+  &--text-bg {
     position: absolute;
     top: 1.1em;
-    right: 2.5em;
+    right: 1.1em;
   }
 }
 

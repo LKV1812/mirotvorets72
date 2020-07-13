@@ -5,8 +5,37 @@ section.section.question-footer-bg
     h2.section__title Не нашли ответ на свой вопрос?
     .centering
       +button-input-tipe-a('button', 'ask-question', 'задать вопрос')
-+modal-window('question', null, 'modal-body--sticker', 'modal-close--sticker')
++modal-window('question', null, 'modal-body--text-bg', 'modal-close--text-bg')
   .section__title Задать свой вопрос
-  textarea.textarea(name="question__text") Опишите подробнее ваш вопрос
-  .centering.pt-30
-    +button-input-tipe-a('button', 'send-question', 'отправить')
+  form#formQuestion.form-review
+    input(type="hidden" name="Mirotvorets" value="Вопрос заданный на сайте mirotvorets72.ru")
+    input(type="hidden" name="form_from" value="mirotvorets72.ru")
+    input(type="hidden" name="admin_email" value="zayavka@mirotvorets72.com")
+    input(type="hidden" name="erasure" value="Форма вопроса на странице вопрос-ответ")
+    .input-wrap.input-wrap--two-elements
+      .input-container
+        input(class="input", type="text", name="user-name", placeholder="Ваше имя")
+        .error-no-selected__message
+          .error-no-selected__message-icon !
+          .error-no-selected__message-text
+      .input-container
+        input(class="tel-field input", type="tel", name="user-phone", placeholder="Ваш телефон")
+        .error-no-selected__message
+          .error-no-selected__message-icon !
+          .error-no-selected__message-text
+    .input-container
+      textarea.textarea(name="question__text" placeholder="Опишите подробнее ваш вопрос")
+      .error-no-selected__message
+        .error-no-selected__message-icon !
+        .error-no-selected__message-text
+
+    .centering
+      +button-input-tipe-a('submit', 'send-question', 'отправить')
+    .result-query-success
+      .result-query-container__icon
+        include ../../../svg/form/success-query.svg
+      .result-query-container__message Заявка успешно отпарвлена.
+    .result-query-error
+      .result-query-container__icon
+        include ../../../svg/form/error-query.svg
+      .result-query-container__message Заявка не отправлена! Попробуйте ещё раз.

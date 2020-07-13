@@ -37,6 +37,25 @@
 
   }
 
+  &--two-elements {
+    .input-container{
+      width: 100%;
+
+      @media (min-width: 768px) {
+        width: 48%;
+        justify-content: space-between;
+      }
+    }
+
+    .input {
+      width: 100%;
+    }
+
+    @media (min-width: 768px) {
+      justify-content: space-between;
+    }
+  }
+
   &--three-elements {
     flex-direction: column;
 
