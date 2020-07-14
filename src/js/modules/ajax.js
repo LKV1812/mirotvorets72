@@ -27,6 +27,7 @@ export const sendFormOrder = (function(){
       if (this.readyState == 4 && this.status == 200) {
         let resultQuery = this.responseText;
         outputResultToPage(e.target, resultQuery);
+        resultSendRequest = true;
       }
     };
 
