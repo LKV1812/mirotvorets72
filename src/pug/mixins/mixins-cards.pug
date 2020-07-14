@@ -129,3 +129,7 @@ mixin card-buy(data, img, bodyContent, link)
       .card-buy__button-row
         a(href= link.calculate class='card-buy__button card-buy__button--type-b') Расчитать стоимость
         a(href= link.order class='card-buy__button') оформить заявку
+
+mixin card-full-width(cardsModifier)
+  div(class= cardsModifier ? 'card-full-width ' + cardsModifier : 'card-full-width')
+    block

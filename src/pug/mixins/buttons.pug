@@ -6,3 +6,6 @@ mixin button-download(href, filename, value)
 
 mixin button-link-width-auto-type-a(href, value)
   a.button-link-width-auto.button-link-width-auto--type-a(href= href) #{value}
+
+mixin button-card-projects(param)
+  a(href= param.href class= param.addClass ? "button-card " + param.addClass : "button-card ") #{param.text}

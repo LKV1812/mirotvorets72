@@ -1,0 +1,80 @@
+include ../../mixins/mixins-cards.pug
+include ../../mixins/content-card.pug
+include ../../mixins/buttons.pug
+section.section
+  .container
+    .navigating-source-path
+      .navigating-source-path__item
+        a(href="index.html" class="navigating-source-path__link") Главная &raquo;
+      .navigating-source-path__item
+        p.navigating-source-path__text Наши проекты
+    h1.section__title Наши проекты
+
+    .projects
+      +card-full-width()
+        +project-content-card({src: "assets/img/projects/containers.jpg", alt: "containers"
+          },
+          {
+            title: 'ЭкоСтиль - Стиль моей жизни!',
+            desc: [
+              'Сортируй вторсырье и будь в тренде! Проект по раздельному сбору сырья у себя дома. У каждого из нас всегда есть дома - картон, бумага, пластик(ПЭТ), тара из под бытовой химии, стекло, пакетитки полиэтиленовые, все это можно разделять в отдельные тары и сдавать на переработку, улучшая экологию нашего региона!'
+            ]
+          },
+          {
+            imgWrap: 'project-card__img-wrap--projects'
+        })
+          +button-card-projects({
+            href: '#',
+            text: 'Читать далее'
+          })
+
+      +card-full-width()
+        +project-content-card({src: "assets/img/projects/ecobox.jpg", alt: "ecobox"
+          },
+          {
+            title: 'Эко Десант',
+            desc: [
+              'Проект по сбору бумажных отходов. ЭкоБокс - это лучшее, что можно установить у себя в офисе для сбора макулатуры. Устанавливая такой бокс, Вы спасете 24 дерева в год, что очень важно для экологии в будущем!'
+            ]
+          },
+          {
+            imgWrap: 'project-card__img-wrap--projects'
+        })
+          +button-card-projects({
+            href: '#',
+            text: 'Читать далее'
+          })
+
+      +card-full-width()
+        +project-content-card({src: "assets/img/projects/ecopromo.jpg", alt: "ecopromo"
+          },
+          {
+            title: 'Эко Акции',
+            desc: [
+              'Занимаетесь раздельным сбором? Нет возможности увезти на склад? Тогда мы едем к Вам! Наш автомобиль каждую пятницу и субботу ездит по районам города с остановками в 15 минут и выкупает скопленное Вами сырье.'
+            ]
+          },
+          {
+            imgWrap: 'project-card__img-wrap--projects'
+        })
+          +button-card-projects({
+            href: '#',
+            text: 'Читать далее'
+          })
+
+      +card-full-width()
+        +project-content-card({src: "assets/img/projects/ecoyard.jpg", alt: "ecoyard"
+          },
+          {
+            title: 'Эко Двор',
+            desc: [
+              'Проект по раздельному сбору прямо у Вас во дворе. Устанавливаем контейнеры для раздельного сбора стекла, пластика и макулатуры.'
+            ]
+          },
+          {
+            imgWrap: 'project-card__img-wrap--projects'
+        })
+          +button-card-projects({
+            href: '#',
+            text: 'Читать далее'
+          })

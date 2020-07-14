@@ -1,0 +1,9 @@
+mixin project-content-card(img, text, classModifier)
+  div(class= classModifier.imgWrap ? 'project-card__img-wrap ' + classModifier.imgWrap : 'project-card__img-wrap ')
+    img(src= img.src, alt= img.alt)
+  .project-card__body
+    h3.project-card__title #{text.title}
+    .project-card__text-wrap
+      each p in text.desc
+        .text #{p}
+    block
