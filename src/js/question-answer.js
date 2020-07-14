@@ -10,5 +10,6 @@ let buttonOpenModalWindow = document.querySelector('input[name="ask-question"]')
 let modalWindowQuestion = document.getElementById('question');
 callsModalWindow(buttonOpenModalWindow, modalWindowQuestion);
 
+// Передаем форму на обработку
 let formQuestion = document.getElementById('formQuestion');
 handlerFormQuestion(formQuestion, modalWindowQuestion);
