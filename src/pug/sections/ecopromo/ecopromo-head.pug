@@ -1,0 +1,49 @@
+include ../../mixins/mixins-cards.pug
+include ../../mixins/content-card.pug
+include ../../mixins/buttons.pug
+include ../../mixins/pagination.pug
+section.section
+  .container
+    .navigating-source-path
+      .navigating-source-path__item
+        a(href="index.html" class="navigating-source-path__link") Главная &raquo;
+      .navigating-source-path__item
+        p.navigating-source-path__text Эко Акция
+    h1.section__title Эко Акция
+    .ecopromo-description
+      .ecopromo-description__sticker
+        img(class="ecopromo-description__sticker-img adaptive-img" src="assets/img/projects/sticker-mobile.png", alt="sticker")
+        img(class="ecopromo-description__sticker-img adaptive-img" src="assets/img/destruction/sticker-tablet.png", alt="sticker")
+        img(class="ecopromo-description__sticker-img adaptive-img" src="assets/img/destruction/sticker.png", alt="sticker")
+        .ecopromo-description__sticker-auto
+          img(src="assets/img/projects/auto.png", alt="auto")
+        .ecopromo-description__sticker-text.scroll-vertical-small
+          .text
+            | ЭкоСтиль - Стиль моей жизни. Сортируй и будь в тренде! ЭКО-акция - это новшество. Данный проект помогает начать сортировать сырье прямо у себя дома. Важно заметить то, что если у вас нет возможности привезти скопленное сырье в пункты приема, мы с удовольствием приедем в Ваш двор и организуем ЭКО-акцию прямо у Вас во дворе!
+
+    .text.pt-40
+      | Как принять участие в ЭКО-акции? Вам необходимо указать свой адрес и мы внесем его в график маршрутов согласно вашему району. В каждом районе мы бываем раз в месяц. Нами выстаривается маршрут согласно географии города. На каждой точке Экомобиль стоит в течении 15 мин. и осуществляет прием вторичного сырья, согласно прайсу акции 1кг. = 1руб. После всех маршрутов машина отправляется на склад, где сырье сортируется, прессуется и отправляется на завод переработчик.
+
+    .centering
+      +card-full-width('mt-40')
+        +card-content-with-list(
+          {
+            src: "assets/img/projects/flyer.jpg",
+            alt: 'flyer'
+          },
+          {
+            title: 'Перечень принимаемого вторичного сырья:',
+            desc: [
+              'Картон (Упаковки из под лекарст, чая, печенья, лотки из под яиц и т.п.)',
+              'Макулатура (Бумага А4, книги, журналы и т.п.)',
+              'Пластик (ПЭТ бутылки, тара из под бытовой химии, пакет с пакетами, маркировки 1/2/4)',
+              'Стекло (Бутылки, банки, бой стекла и т.п.)',
+              'Одежда и текстиль',
+              'Аллюминиевые баночки из под газировки.'
+            ]
+          },
+          {
+            imgWrap: 'project-card__img-wrap--projects',
+            title: 'ecopromo-description__card-title'
+          }
+        )

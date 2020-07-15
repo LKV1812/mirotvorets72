@@ -71,6 +71,10 @@
   font-weight: 600;
   line-height: 1.2;
   color: $colorTextType2;
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
 }
 
 .project-card__text-wrap {

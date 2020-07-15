@@ -1,0 +1,82 @@
+@import '../../variables/variables.scss';
+
+.ecopromo-description {
+  display: flex;
+  justify-content: center;
+  padding-top: 110px;
+  margin-left: -15px;
+  margin-right: -15px;
+
+  @media(min-width: 768px) {
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 0;
+  }
+}
+
+.ecopromo-description__sticker {
+  position: relative;
+  display: inline-block;
+
+  @media (min-width: 768px) {
+    display: block;
+    width: 100%;
+  }
+}
+
+.ecopromo-description__sticker-img {
+  max-width: 100%;
+  filter: drop-shadow(1px 15px 49px #eae6e1);
+
+  @media (min-width: 768px) {
+    max-width: initial;
+    width: 100%;
+  }
+}
+
+.ecopromo-description__sticker-auto {
+  position: absolute;
+  bottom: 93%;
+  width: 260px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @media(min-width: 768px) {
+    transform: initial;
+    left: auto;
+    width: 50%;
+    bottom: 0;
+    right: -20px;
+  }
+}
+
+.ecopromo-description__sticker-auto > img {
+  display: block;
+  width: 100%;
+}
+
+.ecopromo-description__sticker-text {
+  & > .text {
+    @media(max-width: 768px){font-size: 15px;}
+  }
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 1em 1em 1em 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+
+  @media (min-width: 768px) {
+    width: 50%;
+    padding: 1em 1em 1em 2em;
+  }
+}
+
+.ecopromo-description__card-title {
+  color: $mainColorText;
+  font-weight: 600;
+}

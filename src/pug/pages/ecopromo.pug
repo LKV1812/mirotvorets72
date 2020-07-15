@@ -1,0 +1,17 @@
+extends ../layouts/main.pug
+
+block variables
+  - var title= "Cдать макулатуру, сдать картон, сдать стекло. Экоакция - Миротворец Тюмень"
+
+block link
+block keywords
+  meta(name="keywords" content="Прием вторсырья, прием макулатуры, сдать макулатуру, сдать картон, прием картона, сдать стекло, прием стекла, заказать автомобиль")
+block description
+  meta(name="description", content="Прием вторсырья в Тюмени. Компнаия Миротворец. Выезд автомобиля. Расчет на месте. Макулатура, отходы пластмасс, картон, аллюминиевые банки, поддоны, стекло, текстиль. Подать заявку.")
+
+block content
+  include ../sections/lower-menu-bg.pug
+  include ../sections/ecopromo/ecopromo-head.pug
+
+block scripts
+  script(src="assets/js/projects.js")

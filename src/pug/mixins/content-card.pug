@@ -7,3 +7,14 @@ mixin project-content-card(img, text, classModifier)
       each p in text.desc
         .text #{p}
     block
+
+mixin card-content-with-list(img, text, classModifier)
+  div(class= classModifier.imgWrap ? 'project-card__img-wrap ' + classModifier.imgWrap : 'project-card__img-wrap ')
+    img(src= img.src, alt= img.alt)
+  .project-card__body
+    h3(class= classModifier.title ? 'project-card__title ' + classModifier.title : 'project-card__title ') #{text.title}
+    ul.wrap-list-custom-marker
+      each li in text.desc
+        li(class='list-marker-color-custom')
+          span.text #{li}
+    block
