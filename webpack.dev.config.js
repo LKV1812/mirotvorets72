@@ -11,6 +11,7 @@ module.exports = {
     destruction: './src/js/destruction.js',
     storage: './src/js/storage.js',
     'question-answer': './src/js/question-answer.js',
+    projects: './src/js/projects.js',
   },
   output: {
     filename: `[name].js`,

@@ -1,6 +1,7 @@
 include ../../mixins/mixins-cards.pug
 include ../../mixins/content-card.pug
 include ../../mixins/buttons.pug
+include ../../mixins/pagination.pug
 section.section
   .container
     .navigating-source-path
@@ -78,3 +79,5 @@ section.section
             href: '#',
             text: 'Читать далее'
           })
+
+      +pagination()

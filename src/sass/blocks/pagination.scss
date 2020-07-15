@@ -1,0 +1,46 @@
+@import '../variables/variables.scss';
+/*
+pug - разметка в mixin/pagination.pug
+Либо создайте div.pagination
+За создание элементов внутри div.pagination и преключение элементов отвечает js-код в modules/pagination.js
+*/
+.pagination {
+  display: flex;
+  margin-top: 50px;
+  border-radius: 3em;
+  border: 2px solid $navBackgroundColor;
+  overflow: hidden;
+}
+
+.pagination__item {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 45px;
+  height: 45px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 100%;
+  background-color: transparent;
+  color: $colorTextType2;
+  font-family: $textType2;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  outline: none;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.pagination__item-active {
+  background-color: $navBackgroundColor;
+  color: #fff;
+}
+
+// .pagination__item:hover {
+//   background-color: #ebe7e2;
+//   color: $colorTextType2;
+// }
