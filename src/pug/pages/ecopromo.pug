@@ -12,6 +12,9 @@ block description
 block content
   include ../sections/lower-menu-bg.pug
   include ../sections/ecopromo/ecopromo-head.pug
+  include ../sections/ecopromo/promo-address.pug
 
 block scripts
-  script(src="assets/js/projects.js")
+  script(src="vendor/libs/jquery/dist/jquery.min.js")
+  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjBXKACsJqeOziI6fHNCmWPdLul--G--I" type="text/javascript")
+  script(src="assets/js/ecopromo.js")

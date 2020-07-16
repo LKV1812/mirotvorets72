@@ -1,0 +1,6 @@
+mixin string-with-icon(text, classModifier)
+  each str in text
+    div(class= classModifier ? 'string-with-icon ' + classModifier : 'string-with-icon')
+      .string-with-icon__icon-wrap
+        include ../../svg/clock.svg
+      .text #{str}

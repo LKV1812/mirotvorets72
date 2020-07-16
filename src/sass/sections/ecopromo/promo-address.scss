@@ -1,0 +1,32 @@
+@import '../../variables/variables.scss';
+
+.promo-adress {
+  background-color: rgba(239, 238, 243, 0.522);
+  background-image: url('../img/index/calculator/calculator-bg-text.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.string-with-icon {
+  display: flex;
+}
+.string-with-icon + .string-with-icon {
+  margin-top: 0.5em;
+}
+
+.string-with-icon__icon-wrap {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-right: 0.85em;
+}
+
+.string-with-icon__icon-wrap > svg,
+.string-with-icon__icon-wrap > img {
+  width: 100%;
+  height: 100%;
+}
+
+.string-with-icon + .cards-subtitle {
+  margin-top: 1em;
+}

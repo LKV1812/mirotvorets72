@@ -1,15 +1,11 @@
 mixin dropdown-block(titleHead, modifierHead, modifierContent)
   .dropdown-block
-    if modifierHead
-      a(href="#" class="dropdown-block__header text-bold " + modifierHead) #{titleHead}
-    else
-      a(href="#" class="dropdown-block__header text-bold") #{titleHead}
-        .dropdown-block__toggle-icon
-
-      .dropdown-block__body
-        if modifierContent
-          div(class='dropdown-block__content ' + modifierContent)
-            block
-        else
-          div(class='dropdown-block__content')
-            block
+    a(href="#" class= modifierHead ? "dropdown-block__header text-bold " + modifierHead : "dropdown-block__header text-bold") #{titleHead}
+      .dropdown-block__toggle-icon
+    .dropdown-block__body
+      if modifierContent
+        div(class='dropdown-block__content ' + modifierContent)
+          block
+      else
+        div(class='dropdown-block__content')
+          block

@@ -12,6 +12,7 @@ module.exports = {
     storage: './src/js/storage.js',
     'question-answer': './src/js/question-answer.js',
     projects: './src/js/projects.js',
+    ecopromo: './src/js/ecopromo.js',
   },
   output: {
     filename: `[name].js`,
