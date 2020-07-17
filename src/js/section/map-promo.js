@@ -236,7 +236,7 @@ function initMap() {
 
 	let myMap = new google.maps.Map(document.getElementById("map"), {
 		center: centerMap,
-    zoom: 11,
+    zoom: 12,
     		// Дополнительные настройки
 
 		// Удалить элементы управления картой

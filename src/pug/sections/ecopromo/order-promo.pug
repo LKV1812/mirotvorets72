@@ -1,0 +1,39 @@
+section.section.order-promo
+  .container
+    h2.section__title Заказать проведение Эко-акции по вашему адресу
+    form(id="orderPromo", class="form" action="php/form-order.php", method="post")
+      input(type="hidden" name="Mirotvorets" value="Заявка на проведение ЭкоАкции mirotvorets72.ru")
+      input(type="hidden" name="form_from" value="mirotvorets72.ru")
+      input(type="hidden" name="admin_email" value="zayavka@mirotvorets72.com")
+      input(type="hidden" name="erasure" value="Заявка ЭкоАкция")
+
+      .input-wrap.input-wrap--three-elements
+        .input-container
+          input.input(type="text", name="weight", placeholder="Ваше имя")
+          .error-no-selected__message
+            .error-no-selected__message-icon !
+            .error-no-selected__message-text
+
+        .input-container
+          input.input(type="text", name="address", placeholder="Укажите точный адрес")
+          .error-no-selected__message
+            .error-no-selected__message-icon !
+            .error-no-selected__message-text
+
+        .break.break--tablet-small-desktop-show
+
+        .input-container
+          input.input.tel-field(type="tel", name="phone", placeholder="Ваш телефон")
+          .error-no-selected__message
+            .error-no-selected__message-icon !
+            .error-no-selected__message-text
+        .input-container
+          +button-input-tipe-a("submit", "send-order", "отправить заявку")
+      .result-query-success
+        .result-query-container__icon
+          include ../../../svg/form/success-query.svg
+        .result-query-container__message Заявка успешно отпарвлена.
+      .result-query-error
+        .result-query-container__icon
+          include ../../../svg/form/error-query.svg
+        .result-query-container__message Заявка не отправлена! Попробуйте ещё раз.
