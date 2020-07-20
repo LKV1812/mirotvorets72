@@ -30,6 +30,28 @@
   &--content-center {
     justify-content: center;
   }
+
+  &--mobile-column-tablet-row-between {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &--mobile-column-tablet-row-between {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
 }
 
 .centering {
@@ -138,7 +160,7 @@
 }
 
 .pt-40 {
-  padding-top: 40px;
+  padding-top: 40px !important;
 }
 
 .pt-60 {

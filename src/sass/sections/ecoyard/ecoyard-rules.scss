@@ -1,0 +1,100 @@
+@import '../../variables/variables.scss';
+
+.ecoyard-rules__title-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ecoyard-rules__title {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: $textType1;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  font-weight: 400;
+  color: $mainColorText;
+
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+.ecoyard-rules__flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 992px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.ecoyard-rules__column {
+  @media (min-width: 992px) {
+    width: 49%;
+  }
+}
+
+.ecoyard-rules__img-wrap {
+  position: relative;
+  line-height: 0;
+
+  & > img {
+    width: 100%;
+  }
+}
+
+.ecoyard-rules__sticker-text-wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 2em;
+
+  @media (min-width: 768px) {
+    padding-top: 1em;
+    padding-left: 3em;
+  }
+
+  @media (min-width: 992px) {
+    padding-top: 0;
+    padding-left: 2em;
+  }
+
+  @media (min-width: 1200px) {
+    padding-top: 1em;
+    padding-left: 4em;
+  }
+
+  & ul {
+    margin-bottom: 10px;
+  }
+
+  & .custom-marker__list {
+    margin-bottom: 0;
+  }
+
+  & .custom-marker__list + .custom-marker__list {
+    margin-top: 8px;
+  }
+
+  & .text-short-description {
+    font-size: 0.9rem;
+
+    @media (min-width: 768px) {
+      font-size: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 1.125rem;
+    }
+  }
+}

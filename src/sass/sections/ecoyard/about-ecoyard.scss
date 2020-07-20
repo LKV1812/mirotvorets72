@@ -1,0 +1,139 @@
+@import '../../variables/variables.scss';
+
+.about-ecoyard__ellipse {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 220px;
+  border-radius: 100%;
+  background-color: #77a634;
+  line-height: 0;
+}
+
+.about-ecoeard__img {
+  max-width: 85%;
+}
+
+.about-ecoyard__number {
+  display: flex;
+  position: absolute;
+
+  &--1 {
+    top: -150px;
+    left: -17%;
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 295px;
+
+    @media (min-width: 576px) {
+      top: -136px;
+      left: -55%;
+      width: 500px;
+    }
+
+    @media (min-width: 768px) {
+      left: -80%;
+      width: 600px;
+    }
+
+
+    @media (min-width: 992px) {
+      flex-direction: row;
+      align-items: flex-end;
+      top: -79px;
+      left: 33%;
+      width: 450px;
+    }
+
+    @media (min-width: 1200px) {
+      top: -80px;
+      width: 600px;
+    }
+
+    & > .stage-ellipse {
+      margin-top: 20px;
+
+      @media (min-width: 992px) {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  &--2 {
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 115px;
+    bottom: -122px;
+    right: 61%;
+    text-align: right;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      width: 230px;
+      bottom: 20px;
+      right: 94%;
+      text-align-last: left;
+    }
+
+    @media (min-width: 992px) {
+      width: 310px;
+      bottom: 20px;
+      right: 82%;
+    }
+
+    & > .stage-ellipse {
+      margin-left: 10px;
+      margin-bottom: 10px;
+
+      @media (min-width: 768px) {
+        margin-bottom: 0;
+      }
+
+      @media (min-width: 992px) {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  &--3 {
+    flex-direction: column;
+    top: 72%;
+    left: 73%;
+    width: 100px;
+
+    @media (min-width: 768px) {
+      top: 69%;
+      left: 83%;
+      width: 235px;
+    }
+
+    @media (min-width: 992px) {
+      top: 50%;
+      left: 96%;
+      width: 285px;
+    }
+
+    @media (min-width: 1200px) {
+      flex-direction: row;
+      width: 345px;
+    }
+
+    & > .stage-ellipse {
+      margin-bottom: 20px;
+
+      @media (min-width: 1200px) {
+        margin-right: 20px;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.ecoyard-order-bg {
+  background-color: rgba(239,238,243,.522);
+  background-image: url('../img/index/calculator/calculator-bg-text.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}

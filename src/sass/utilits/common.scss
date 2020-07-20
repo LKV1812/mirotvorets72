@@ -114,6 +114,17 @@ body {
   }
 }
 
+.subtitle {
+  margin-top: 0.65rem;
+  margin-bottom: 0.65rem;
+  font-family: $textType2;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: $mainColorText;
+  text-align: center;
+}
+
 .cards-subtitle {
   font-family: $textType2;
   font-size: 16px;
