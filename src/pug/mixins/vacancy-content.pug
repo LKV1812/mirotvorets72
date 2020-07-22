@@ -1,0 +1,6 @@
+mixin text-column(param)
+  .vacancy-body__text-column
+    .subtitle-small #{param.title}
+    ul.vacancy-body__text-list
+      each list in param.list
+        li #{list}

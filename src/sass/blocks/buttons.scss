@@ -101,3 +101,31 @@
 .button-margin-bottom-30 {
   margin-bottom: 30px;
 }
+
+.button-filter {
+  display: flex;
+  align-items: center;
+  padding: 0.625rem 1.25rem;
+  border-radius: 2rem;
+  font-family: $textType2;
+  font-size: 1.0625rem;
+  line-height: 1.2;
+  font-weight: 400;
+  color: $colorTextType2;
+  text-decoration: none;
+  transition: .3s;
+
+  &.button-filter-active {
+    font-weight: 700;
+    background-color: #f7f6f6;
+    color: #c3c3c3;
+  }
+
+  &:hover {
+    background-color: #f7f6f6;
+  }
+
+  & + .button-filter {
+    margin-top: 0.5rem;
+  }
+}

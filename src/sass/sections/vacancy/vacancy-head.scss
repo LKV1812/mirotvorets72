@@ -1,0 +1,158 @@
+@import '../../variables/variables.scss';
+
+.vacancy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: normal;
+  }
+
+  @media (min-width: 992px) {
+    height: 31em;
+  }
+}
+
+.vacancy .select {
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.filter-aside {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 225px;
+  height: 31em;
+  padding: 1.25em 0.625em;
+  border-radius: 0.9375em;
+  box-shadow: 10px 0 50px rgba(78, 69, 59, 0.13);
+
+  @media (min-width: 992px) {
+    width: 275px;
+    height: 100%;
+    padding: 1.6875em 1.25em;
+  }
+
+  &--vacancy {
+    display: none;
+    @media (min-width: 768px) {
+      display: flex;
+    }
+  }
+}
+
+// данную обертку можно не использовать, нужна если необходимо спозиционировать скролл
+.filter-aside__button-wrap {
+  position: absolute;
+  top: 1.25em;
+  right: 0.625em;
+  bottom: 1.25em;
+  left: 0.625em;
+  display: flex;
+  flex-direction: column;
+  padding-right:  0.625em;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  @media (min-width: 992px) {
+    bottom: 1.25em;
+    left: 1.6875em;
+  }
+
+
+}
+
+.vacancy-body {
+  position: relative;
+  display: flex;
+  flex-shrink: 1;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    padding-left: 1.25em;
+  }
+
+  &::before {
+    display: none;
+
+    @media (min-width: 992px) {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 1.25rem;
+      right: 1rem;
+      bottom: 0;
+      height: 60px;
+      box-shadow: inset 0 -59px 27px -20px rgba(255, 255, 255, .7);
+    }
+  }
+}
+
+.filter-aside + .vacancy-body {
+  @media (min-width: 768px) {
+    margin-left: 1.25em;
+  }
+}
+
+.vacancy-body__title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 1rem;
+  padding-bottom: 0.875rem;
+  background-color: #fff;
+  font-family: $textType1;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: $mainColorText;
+
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+    left: 1.25rem;
+  }
+}
+
+.vacancy-body__text-wrap {
+  height: 100%;
+  width: 100%;
+  padding-top: 3.3em;
+  padding-right: 0;
+  line-height: 1.2;
+
+  @media (min-width: 768px) {
+    padding-right: 1.25em;
+  }
+
+  @media (min-width: 992px) {
+    overflow-y: scroll;
+  }
+}
+
+.vacancy-body__text-column + .vacancy-body__text-column {
+  margin-top: 1.75em;
+}
+
+.vacancy-body__text-list {
+  margin-top: 0;
+  margin: 0;
+  padding-left: 1rem;
+  font-family: $textType2;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: $mainColorText;
+
+  @media (min-width: 768px) {
+    font-size: 1.125rem;
+  }
+
+  & > li + li {
+    margin-top: 0.5rem;
+  }
+}

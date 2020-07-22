@@ -1,0 +1,17 @@
+extends ../layouts/main.pug
+
+block variables
+  - var title= "Вакансии в Тюмени компания 'Миротворец'"
+
+block link
+block keywords
+  meta(name="keywords" content="Работа в Тюмени, стабильная компания 'Миротворец'. Конкурентная, своевременная зарпалта. Обсуждаемый график работы. Карьерный рост")
+block description
+  meta(name="description", content="Работа в Тюмени, стабильная компания 'Миротворец'. Сплоченный коллектив профессионалов. Конкурентная, своевременная зарпалта. Обсуждаемый график работы. Карьерный рост.")
+
+block content
+  include ../sections/lower-menu-bg.pug
+  include ../sections/vacancy/vacancy-head.pug
+
+block scripts
+  script(src="assets/js/vacancy.js")

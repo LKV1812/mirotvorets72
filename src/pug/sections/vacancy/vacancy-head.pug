@@ -1,0 +1,77 @@
+include ../../mixins/buttons.pug
+include ../../mixins/vacancy-content.pug
+include ../../mixins/selects.pug
+section.section
+  .container
+    .navigating-source-path
+      .navigating-source-path__item
+        a(href="index.html" class="navigating-source-path__link") Главная &raquo;
+      .navigating-source-path__item
+        p.navigating-source-path__text Вакансии
+    h1.section__title Вакансии
+    .vacancy
+      +select([
+          {optionText: 'Водитель', data: {'data-vacancy' : 'driver'}},
+          {optionText: 'Механик', data: {'data-vacancy' : 'mechanic'}},
+          {optionText: 'Диспетчер', data: {'data-vacancy' : 'dispatcher'}},
+          {optionText: 'Менеджер', data: {'data-vacancy' : 'manager'}},
+          {optionText: 'Оператор пресса', data: {'data-vacancy' : 'operator'}},
+          {optionText: 'Кладовщик', data: {'data-vacancy' : 'storekeeper'}},
+          {optionText: 'Сортировщик', data: {'data-vacancy' : 'sorter'}},
+          {optionText: 'Грузчик', data: {'data-vacancy' : 'porter'}},
+        ],
+        'mb-60'
+      )
+
+      //- aside show tablet and desktop
+      aside.filter-aside.filter-aside--vacancy
+        .filter-aside__button-wrap.scroll-vertical-small
+          +button-filter('Водитель', 'button-filter-active')
+          +button-filter('Механик')
+          +button-filter('Диспетчер')
+          +button-filter('Менеджер')
+          +button-filter('Оператор пресса')
+          +button-filter('Кладовщик')
+          +button-filter('Сортировщик')
+          +button-filter('Грузчик')
+
+      main.vacancy-body
+        .vacancy-body__title Вакансия «Диспетчер»
+        .vacancy-body__text-wrap.scroll-vertical-small
+          +text-column(
+            {
+              title: 'Обязанности',
+              list: [
+                'Разработка внутренних сервисов компании;',
+                'Участие в ИТ-проектах по изменению текущих сервисов;'
+              ]
+            }
+          )
+
+          +text-column(
+            {
+              title: 'Условия',
+              list: [
+                'Пятидневная рабочая неделя;',
+                'Высокая заработная плата;',
+                'Корпоративное обучение;',
+                'Изучение новых технологий на практике;',
+                'Интересные и сложные задачи;',
+                'Возможность роста и курирования IT проектов.',
+              ]
+            }
+          )
+
+          +text-column(
+            {
+              title: 'Требования',
+              list: [
+                'Написание качественного кода, документирование и покрытие тестами;',
+                'Аналитический ум, умение видеть задачу в целом и в частности;',
+                'Корпоративное обучение;',
+                'Изучение новых технологий на практике;',
+                'Интересные и сложные задачи;',
+                'Возможность роста и курирования IT проектов.',
+              ]
+            }
+          )

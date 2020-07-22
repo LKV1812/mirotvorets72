@@ -131,6 +131,19 @@ body {
   }
 }
 
+.subtitle-small {
+  font-family: $textType2;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: $mainColorText;
+  margin-bottom: 0.85em;
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
+}
+
 .sticker-text {
   color: #612228;
   font-family: $textType2;

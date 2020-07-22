@@ -13,6 +13,7 @@ module.exports = {
     'question-answer': './src/js/question-answer.js',
     projects: './src/js/projects.js',
     ecopromo: './src/js/ecopromo.js',
+    vacancy: './src/js/vacancy.js',
   },
   output: {
     filename: `[name].js`,
