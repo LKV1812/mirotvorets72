@@ -13,3 +13,14 @@ mixin select(param, classModifier)
       .select__icon-dropdown
         img(src="assets/img/form/select-dropdown.png", alt="стрелка")
       block
+
+mixin select-empty(classModifier, currentText)
+  div(class= classModifier ? 'select ' + classModifier : 'select' tabindex="0", id="selectedService", data-toggle-mask="hide")
+    .select__options-wrap
+      .select__empty-cutter
+      .select__wrap-only-option.scroll-vertical-small
+    .select__header
+      span.select-current(name=null) #{currentText}
+      .select__icon-dropdown
+        img(src="assets/img/form/select-dropdown.png", alt="стрелка")
+      block

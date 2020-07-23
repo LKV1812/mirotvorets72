@@ -21,59 +21,14 @@
   }
 }
 
-.filter-aside {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-  width: 225px;
-  height: 31em;
-  padding: 1.25em 0.625em;
-  border-radius: 0.9375em;
-  box-shadow: 10px 0 50px rgba(78, 69, 59, 0.13);
-
-  @media (min-width: 992px) {
-    width: 275px;
-    height: 100%;
-    padding: 1.6875em 1.25em;
-  }
-
-  &--vacancy {
-    display: none;
-    @media (min-width: 768px) {
-      display: flex;
-    }
-  }
-}
-
-// данную обертку можно не использовать, нужна если необходимо спозиционировать скролл
-.filter-aside__button-wrap {
-  position: absolute;
-  top: 1.25em;
-  right: 0.625em;
-  bottom: 1.25em;
-  left: 0.625em;
-  display: flex;
-  flex-direction: column;
-  padding-right:  0.625em;
-  overflow-y: scroll;
-  overflow-x: hidden;
-
-  @media (min-width: 992px) {
-    bottom: 1.25em;
-    left: 1.6875em;
-  }
-
-
-}
-
 .vacancy-body {
   position: relative;
-  display: flex;
+  display: none;
   flex-shrink: 1;
   width: 100%;
 
   @media (min-width: 768px) {
+    margin-left: 1.25em;
     padding-left: 1.25em;
   }
 
@@ -91,11 +46,9 @@
       box-shadow: inset 0 -59px 27px -20px rgba(255, 255, 255, .7);
     }
   }
-}
 
-.filter-aside + .vacancy-body {
-  @media (min-width: 768px) {
-    margin-left: 1.25em;
+  &--is-active {
+    display: flex;
   }
 }
 
