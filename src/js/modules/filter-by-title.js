@@ -6,6 +6,12 @@
  *
  * По клику на кнопку фильтра внутри сайдбара, находит контент с идентичным заголовком.
  */
+const parentFilter = document.querySelector('.vacancy');
+let titles = parentFilter.querySelectorAll('.vacancy-body__title');
+let asideFilter = parentFilter.querySelector('.filter-aside__button-wrap');
+let select = parentFilter.querySelector('.select');
+
+filterByTitle(titles, asideFilter, select);
 
 export function filterByTitle(titles, asideFilter, select) {
   titles.forEach(item => {
