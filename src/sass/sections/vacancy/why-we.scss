@@ -1,0 +1,117 @@
+@import '../../variables/variables.scss';
+
+.why-we-bg {
+  background-image: url('../img/vacancy/vacancy-bg-mobile.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (min-width: 768px) {
+    background-image: url('../img/vacancy/vacancy-bg-tablet.png');
+  }
+
+  @media (min-width: 992px) {
+    background-image: url('../img/vacancy/vacancy-bg.png');
+  }
+}
+
+.why-we {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.why-we__tile {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4.375em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 768px) {
+    width: 50%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-right: 1.25em;
+
+    &:last-child {
+      margin-bottom: 4.375em;
+    }
+  }
+
+  @media (min-width: 992px) {
+    flex-direction: row;
+    align-items: normal;
+  }
+}
+
+.why-we__tile-img-wrap {
+  display: flex;
+  align-items: flex-end;
+  height: 8.75em;
+  max-width: 8.1875em;
+  flex-shrink: 0;
+  line-height: 0;
+
+  & > img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.why-we__tile-text-wrap {
+  width: 100%;
+  text-align: left;
+  font-family: $textType2;
+  line-height: 1.2;
+  color: #fff;
+
+  @media (min-width: 768px) {
+    width: initial;
+  }
+
+  @media (min-width: 992px) {
+    padding-left: 0.625em;
+  }
+}
+
+.why-we__tile-subtitle {
+  margin-top: 0.9375rem;
+  margin-bottom: 0.9375rem;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    text-align: left;
+  }
+}
+
+.why-we__tile-text {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-size: 0.875rem;
+  font-weight: 400;
+
+  & > li {
+    display: flex;
+  }
+
+  & > li::before {
+    display: block;
+    content: '-';
+    margin-right: 0.3125rem;
+  }
+
+  & > li + li {
+    margin-top: 0.5rem;
+  }
+}
