@@ -13,3 +13,8 @@ mixin button-card-projects(param)
 mixin button-filter(text, classModifier)
   a(class= classModifier ? "button-filter " + classModifier : "button-filter" href="#") #{text}
     block
+
+mixin button-file(name, text)
+  .button-file-group
+    input(class="button-file" id="buttonFile" type="file", name= name)
+    label(for="buttonFile") #{text}

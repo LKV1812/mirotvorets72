@@ -1,0 +1,70 @@
+include ../../mixins/buttons.pug
+section.section#responseSection
+  .container
+    .section__title Форма отклика
+    form(id="responseForm", action="php/form-order.php" method="POST" class="general-order")
+      input(type="hidden" name="Mirotvorets" value="Отклик со страницы вакансии mirotvorets72.ru")
+      input(type="hidden" name="form_from" value="mirotvorets72.ru")
+      input(type="hidden" name="admin_email" value="zayavka@mirotvorets72.com")
+      input(type="hidden" name="erasure" value="Форма отклика на вакансию")
+      .input-wrap.input-wrap--two-elements
+        .input-container
+          input.input(type="text", name="full-name", placeholder="ФИО")
+          .error-no-selected__message
+            .error-no-selected__message-icon !
+            .error-no-selected__message-text
+
+        .input-container
+          input.input(type="text", name="profession", placeholder="Должность, на которую претендуете")
+          .error-no-selected__message
+            .error-no-selected__message-icon !
+            .error-no-selected__message-text
+
+      .input-wrap.input-wrap--from-three-to-two.input-wrap--mb-0
+        .input-container
+          .select(tabindex="0", id="professionalLevel", data-toggle-mask="hide")
+            .select__options-wrap
+              .select__empty-cutter
+              .select__wrap-only-option.scroll-vertical-small
+                .select__option(name="entry-level") менее года
+                .select__option(name="second-level") от 1 года до 3-х лет
+                .select__option(name="third-level") от 3-х до 5-ти лет
+                .select__option(name="advanced-level") более 5-ти лет
+            .select__header
+              span.select-current(name=null) Опыт работы
+              .select__icon-dropdown
+                img(src="assets/img/form/select-dropdown.png", alt="стрелка")
+              .error-no-selected__message
+                .error-no-selected__message-icon !
+                .error-no-selected__message-text
+
+        .input-container
+          input.input.tel-field(type="tel", name="phone", placeholder="Ваш телефон")
+          .error-no-selected__message
+            .error-no-selected__message-icon !
+            .error-no-selected__message-text
+
+        .input-container
+          input.input.input--review(type="email", name="user-email", placeholder="Ваш email" required)
+          .error-no-selected__message
+            .error-no-selected__message-icon !
+            .error-no-selected__message-text
+
+      .input-wrap.input-wrap--mb-40.input-wrap--pos-relative
+        textarea(id="responseTextarea" class="textarea" name="response-message", placeholder="Расскажите о себе")
+        .error-no-selected__message
+          .error-no-selected__message-icon !
+          .error-no-selected__message-text
+
+      .response-button-wrap
+        //- +button-file('file', 'прикрепить резюме')
+        +button-input-tipe-a("submit", "send-response", "отправить")
+
+      .result-query-success
+        .result-query-container__icon
+          include ../../../svg/form/success-query.svg
+        .result-query-container__message Ваш отклик успешно отпарвлена.
+      .result-query-error
+        .result-query-container__icon
+          include ../../../svg/form/error-query.svg
+        .result-query-container__message Ваш отклик не отправлен! Попробуйте ещё раз.
