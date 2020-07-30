@@ -37,6 +37,18 @@
 
   }
 
+  &--one-elements {
+    .input-container {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .input,
+    .select {
+      width: 100%;
+    }
+  }
+
   &--two-elements {
     .input-container{
       width: 100%;

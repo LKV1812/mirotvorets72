@@ -160,6 +160,14 @@ body {
   }
 }
 
+.text-small {
+  font-family: $textType2;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: $mainColorText;
+}
+
 .sticker-text {
   color: #612228;
   font-family: $textType2;

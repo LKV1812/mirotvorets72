@@ -12,6 +12,7 @@ module.exports = {
     projects: './src/js/projects.js',
     ecopromo: './src/js/ecopromo.js',
     vacancy: './src/js/vacancy.js',
+    reviews: './src/js/reviews.js',
   },
   output: {
     filename: `[name].js`,
