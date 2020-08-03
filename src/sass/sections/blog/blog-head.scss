@@ -1,0 +1,52 @@
+@import '../../variables/variables.scss';
+
+.blog-head-bg {
+  width: 100%;
+}
+
+.blog-head__img-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.blog-head__img-wrap > img {
+  width: 100%;
+
+  &:nth-child(1) {
+    display: block;
+    @media (min-width: 576px) {
+      display: none;
+    }
+  }
+
+  &:nth-child(2) {
+    display: none;
+    @media (min-width: 576px) {
+      display: block;
+    }
+    @media (min-width: 1200px) {
+      display: none;
+    }
+  }
+
+  &:nth-child(3) {
+    display: none;
+    @media (min-width: 1200px) {
+      display: block;
+    }
+  }
+}
+
+.blog-head__source-path {
+  position: absolute;
+  top: 200px;
+  width: 100%;
+
+  @media (min-width: 530px) {
+    top: 270px;
+  }
+
+  @media (min-width: 1200px) {
+    top: 185px;
+  }
+}
