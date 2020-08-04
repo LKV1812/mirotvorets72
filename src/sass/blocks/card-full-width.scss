@@ -23,6 +23,13 @@
     max-width: initial;
     flex-direction: row;
   }
+
+  &--blog {
+
+    @media (min-width: 768px) {
+      padding: 1.875em;
+    }
+  }
 }
 
 .project-card__img-wrap {
