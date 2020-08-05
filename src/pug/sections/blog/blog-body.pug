@@ -5,24 +5,38 @@ section.container
   .blog-section
     .blog-body
       +card-full-width('card-full-width--blog')
-        .blog-card__img-wrap
-          img(src="assets/img/index/news/news-card-picture-one.jpg", alt="пресс")
-        .blog-card__description
-          .text-small.blog-card__date 12.03.2020
-          h3.blog-card__title Мы стремимся быть ближе
-          .blog-card__text-wrap
-            .text Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto tempore deleniti veniam provident exercitationem molestiae laborum quae, at animi neque quibusdam a sunt aliquam, atque porro voluptatum? Nesciunt, cumque dicta!
-          .blog-card__interactions
-            .blog-card__button-wrap
-              a(href="#" class="cards-short-description__battom-link") Читать далее
-            .blog-card__views
-              .blog-card__views-icon
-                include ../../../img/blog/eye.svg
-                span.text-small 17
-            .blog-card__network
-              a(href="#" class="blog-card__network-link blog-card__network-link--facebook")
-              a(href="#" class="blog-card__network-link blog-card__network-link--vk")
-              a(href="#" class="blog-card__network-link blog-card__network-link--instagram")
+        +content-blog(
+            '12.03.2020',
+            'Мы стремимся быть ближе',
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto tempore deleniti veniam provident exercitationem molestiae laborum quae, at animi neque quibusdam a sunt aliquam, atque porro voluptatum? Nesciunt, cumque dicta!'
+          )
 
+      +card-full-width('card-full-width--blog')
+        +content-blog(
+            '12.03.2020',
+            'Мы стремимся быть ближе',
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto tempore deleniti veniam provident exercitationem molestiae laborum quae, at animi neque quibusdam a sunt aliquam, atque porro voluptatum? Nesciunt, cumque dicta!'
+          )
 
-    //- aside.filter-aside.filter-aside--blog
+      +card-full-width('card-full-width--blog')
+        +content-blog(
+            '12.03.2020',
+            'Мы стремимся быть ближе',
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto tempore deleniti veniam provident exercitationem molestiae laborum quae, at animi neque quibusdam a sunt aliquam, atque porro voluptatum? Nesciunt, cumque dicta!'
+          )
+
+    aside.filter-aside.filter-aside--blog
+      +button-filter('Экология', 'button-filter--blog')
+        .count-write-theme 15
+      +button-filter('Новости', 'button-filter--blog')
+        .count-write-theme 16
+      +button-filter('Сбор вторсырья', 'button-filter--blog')
+        .count-write-theme 3
+      +button-filter('Акции', 'button-filter--blog')
+        .count-write-theme 996
+      +button-filter('Мероприятия', 'button-filter--blog')
+        .count-write-theme 88
+      +button-filter('Наш город', 'button-filter--blog')
+        .count-write-theme 88
+      +button-filter('О жизни в компании', 'button-filter--blog')
+        .count-write-theme 88
