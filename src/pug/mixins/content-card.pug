@@ -19,9 +19,9 @@ mixin card-content-with-list(img, text, classModifier)
           span.text #{li}
     block
 
-mixin content-blog(date, title, text)
+mixin content-blog(img, date, title, text)
   .blog-card__img-wrap
-    img(src="assets/img/index/news/news-card-picture-one.jpg", alt="пресс")
+    img(src= img.src, alt= img.alt)
   .blog-card__description
     .text-small.blog-card__date #{date}
     h3.blog-card__title #{title}

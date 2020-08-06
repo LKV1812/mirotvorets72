@@ -5,6 +5,7 @@
   flex-direction: column-reverse;
   margin-left: -15px;
   margin-right: -15px;
+  padding-top: 3.125em;
   padding-bottom: 5em;
 
   @media (min-width: 576px) {
@@ -34,6 +35,8 @@
   flex-shrink: 0;
   width: 100%;
   padding-top: 75%;
+  background: rgb(239,238,243);
+  background: linear-gradient(225deg, rgba(239,238,243,1) 0%, rgba(192,197,209,1) 14%, rgba(238,243,241,1) 67%, rgba(192,197,209,1) 89%);
   overflow: hidden;
 
   @media (min-width: 768px) {
@@ -45,10 +48,10 @@
   & > img {
     position: absolute;
     display: block;
-    left: 0;
+    left: 50%;
     top: 0;
-    width: 100%;
     height: 100%;
+    transform: translateX(-50%);
   }
 }
 
