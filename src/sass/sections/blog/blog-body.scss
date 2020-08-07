@@ -75,6 +75,7 @@
   display: flex;
   flex-direction: column;
   padding: 1em;
+  flex-grow: 1;
 
   @media (min-width: 768px) {
     padding: 0;
@@ -146,6 +147,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   text-decoration: none;
+  cursor: pointer;
 
   @media (min-width: 992px) {
     width: 1.5rem;
