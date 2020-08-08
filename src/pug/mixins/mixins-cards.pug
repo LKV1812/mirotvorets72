@@ -10,7 +10,7 @@ mixin card-product(imgPathMobile, imgPath, textAlt, nameProduct, link, priceName
       <span class="card-product__button-title"> Цена</span><br> от
       <span data-starting-price></span> &#8381 до <span data-final-price></span> &#8381 за кг.
 
-mixin cards-short-description(imgSrc, imgAlt, date, subtitle, cardText, bottomText)
+mixin cards-short-description(imgSrc, imgAlt, date, subtitle, cardText, link, bottomText)
   .cards-short-description
     .cards-short-description__head-img-wrap
       img(src= imgSrc, alt= imgAlt).cards-short-description__head-img
@@ -19,7 +19,7 @@ mixin cards-short-description(imgSrc, imgAlt, date, subtitle, cardText, bottomTe
       .cards-short-description__subtitle #{subtitle}
       .cards-short-description__text #{cardText}
     .cards-short-description__battom-wrap
-      a(href="#").cards-short-description__battom-link #{bottomText}
+      a(href= link target='_BLANK').cards-short-description__battom-link #{bottomText}
 
 mixin card-product-price(id, images, title, rowsWeightSelfDelivery, rowsWeightOurDelivery, unit)
   .price-product-card(id= id)
