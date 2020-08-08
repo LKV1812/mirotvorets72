@@ -19,7 +19,7 @@ mixin card-content-with-list(img, text, classModifier)
           span.text #{li}
     block
 
-mixin content-blog(img, date, title, text, url)
+mixin content-blog(img, date, title, text, link, url)
   .blog-card__img-wrap
     img(src= img.src, alt= img.alt)
   .blog-card__description
@@ -29,11 +29,10 @@ mixin content-blog(img, date, title, text, url)
       .text #{text}
     .blog-card__interactions
       .blog-card__button-wrap
-        a(href="#" class="cards-short-description__battom-link") Читать далее
-      .blog-card__views
-        .blog-card__views-icon
-          include ../../img/blog/eye.svg
-          span.text-small 17
+        a(href= link class="cards-short-description__battom-link" target='_BLANK') Читать далее
+      .blog-card__views-icon
+        include ../../img/blog/eye.svg
+        span.text-small 17
       .blog-card__network
         a(onclick='Share.facebook(\'' + url + '\', \'' + title + '\', \'' + img.src + '\', \'' + text + '\')' class="blog-card__network-link blog-card__network-link--facebook" data-title="Опубликовать статью в Facebook")
 

@@ -1,0 +1,17 @@
+extends ../layouts/main.pug
+
+block variables
+  - var title= "Пункт приема вторсырья в Тюмени. Сдать текстиль, сдать одежду в Тюмени"
+
+block link
+block keywords
+  meta(name="keywords" content="Сдать текстиль в Тюмени. Сдать одежду в Тюмени. Пункты приема одежды в Тюмени. Пункты приема текстиля в Тюмени. Компания Миротворец.")
+block description
+  meta(name="description", content="Как сдать текстиль, одежду, постельное бельё в Тюмени. Пункты приема одежды, текстиля, постельного белья в Тюмени. Взвешивание и расчет сразу. Компания 'Миротворец' Тюмень")
+
+block content
+  include ../sections/lower-menu-bg.pug
+  include ../sections/news/news-2.pug
+
+block scripts
+  script(src="assets/js/blog.js")

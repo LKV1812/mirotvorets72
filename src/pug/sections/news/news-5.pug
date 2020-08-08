@@ -1,0 +1,15 @@
+include ../../mixins/news.pug
+include ../../mixins/share-network.pug
++mews(
+    'ЭКО Акция',
+    'ЭКО Акция',
+    {src: 'assets/img/blog/news/promo.jpg', alt: 'promo'},
+    ['ЭКО Акция']
+  )
+
+  +share-network(
+      'https://mirotvorets72.ru/news_5.html',
+      'ЭКО Акция',
+      'assets/img/blog/news/promo.jpg',
+      'ЭКО Акция'
+    )

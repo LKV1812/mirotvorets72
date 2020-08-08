@@ -1,0 +1,15 @@
+include ../../mixins/news.pug
+include ../../mixins/share-network.pug
++mews(
+    'Разделяй вместе с нами!',
+    'Разделяй вместе с нами!',
+    {src: 'assets/img/blog/news/containers.jpg', alt: 'containers'},
+    ['Давайте сделаем наш город чище. Как сдать сырье?']
+  )
+
+  +share-network(
+      'https://mirotvorets72.ru/news_7.html',
+      'Разделяй вместе с нами!',
+      'assets/img/blog/news/containers.jpg',
+      'Давайте сделаем наш город чище. Как сдать сырье?'
+    )
