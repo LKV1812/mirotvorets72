@@ -18,3 +18,23 @@ mixin card-content-with-list(img, text, classModifier)
         li(class='list-marker-color-custom')
           span.text #{li}
     block
+
+mixin content-blog(img, date, title, text, link, url)
+  .blog-card__img-wrap
+    img(src= img.src, alt= img.alt)
+  .blog-card__description
+    .text-small.blog-card__date #{date}
+    h3.blog-card__title #{title}
+    .blog-card__text-wrap
+      .text #{text}
+    .blog-card__interactions
+      .blog-card__button-wrap
+        a(href= link class="cards-short-description__battom-link" target='_BLANK') Читать далее
+      .blog-card__views-icon
+        include ../../img/blog/eye.svg
+        span.text-small 17
+      .blog-card__network
+        a(onclick='Share.facebook(\'' + url + '\', \'' + title + '\', \'' + img.src + '\', \'' + text + '\')' class="blog-card__network-link blog-card__network-link--facebook" data-title="Опубликовать статью в Facebook")
+
+        a(onclick='Share.vk(\'' + url + '\', \'' + title + '\', \'' + img.src + '\', \'' + text + '\')' class="blog-card__network-link blog-card__network-link--vk" data-title="Опубликовать статью в ВКонтакте")
+        //- a(onclick="Share.instagram(#{url}, #{title}, #{img.src}, #{text})" class="blog-card__network-link blog-card__network-link--instagram" data-title="Опубликовать статью в Instagram")

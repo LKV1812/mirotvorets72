@@ -1,0 +1,17 @@
+extends ../layouts/main.pug
+
+block variables
+  - var title= "Новости экологии. Страны с самым чистым воздухом"
+
+block link
+block keywords
+  meta(name="keywords" content="Страны с самым чистым воздухом")
+block description
+  meta(name="description", content="Новости экологии. Страны с самым чистым воздухом")
+
+block content
+  include ../sections/lower-menu-bg.pug
+  include ../sections/news/news-4.pug
+
+block scripts
+  script(src="assets/js/blog.js")

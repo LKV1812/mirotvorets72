@@ -1,0 +1,15 @@
+include ../../mixins/news.pug
+include ../../mixins/share-network.pug
++mews(
+    'Пункты приёма вторсырья',
+    'Пункты приёма вторсырья',
+    {src: 'assets/img/blog/news/map.jpg', alt: 'map'},
+    ['Друзья, открыты все пункты приема вторсырья. Режим работы:']
+  )
+
+  +share-network(
+      'https://mirotvorets72.ru/news_6.html',
+      'Пункты приёма вторсырья',
+      'assets/img/blog/news/map.jpg',
+      'Друзья, открыты все пункты приема вторсырья. Режим работы:'
+    )

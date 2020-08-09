@@ -1,0 +1,42 @@
+@import '../../variables/variables.scss';
+
+.reviews {
+  padding: 2em 1em;
+  margin-left: -15px;
+  margin-right: -15px;
+
+  @media (min-width: 576px) {
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0.625em;
+    padding: 2.25em;
+  }
+
+  &:nth-child(odd) {
+    background-color: #efeef3;
+  }
+
+  .subtitle-small {
+    margin-bottom: 0;
+  }
+}
+
+.reviews-button-wrap {
+  margin-top: 2em;
+
+  @media (min-width: 576px) {
+    margin-top: 2.25em;
+  }
+}
+
+.text-small + .subtitle-small {
+  margin-top: 0.3375rem;
+}
+
+.subtitle-small + .text {
+  margin-top: 0.3375rem;
+}
+
+.text + .text {
+  margin-top: 0.3375rem;
+}

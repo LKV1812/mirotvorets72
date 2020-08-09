@@ -325,6 +325,21 @@ export const priceMaterials = {
     },
   },
 
+  "bushing": {
+    'our-delivery': {
+      '0': 3,
+      '200': 3,
+      '500': 3,
+      '1000': 3,
+    },
+    'self-delivery': {
+      '0': 3.5,
+      '200': 3.5,
+      '500': 3.5,
+      '1000': 3.5,
+    },
+  },
+
   getPriceSelectedTypeMaterials(selectedTypeMaterials, typeDelivery, weightKg) {
     let keyWeightKg = '';
     if (+weightKg < 200) keyWeightKg = '0';
