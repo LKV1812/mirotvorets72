@@ -48,15 +48,11 @@
   }
 
   &--is-active {
-    display: flex;
+    display: block;
   }
 }
 
 .vacancy-body__title {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 1rem;
   padding-bottom: 0.875rem;
   background-color: #fff;
   font-family: $textType1;
@@ -67,14 +63,20 @@
 
   @media (min-width: 768px) {
     font-size: 1.5rem;
+  }
+
+  @media (min-width: 992px) {
+    position: absolute;
+    top: 0;
     left: 1.25rem;
+    right: 1rem;
   }
 }
 
 .vacancy-body__text-wrap {
   height: 100%;
   width: 100%;
-  padding-top: 3.3em;
+  padding-top: 0.5em;
   padding-right: 0;
   line-height: 1.2;
 
@@ -83,6 +85,7 @@
   }
 
   @media (min-width: 992px) {
+    padding-top: 3.3em;
     overflow-y: scroll;
   }
 }
