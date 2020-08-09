@@ -500,6 +500,41 @@ include ../../mixins/mixins-cards.pug
           ],
           "кг"
         )
+
+        +card-product-price(
+          "bushing",
+          [
+            {
+              src:"assets/img/cards/bushing-price-mobile.jpg",
+              alt: "втулки",
+              class: "price-product-card__img price-product-card__img--show-mobile"
+            }, {
+              src:"assets/img/cards/bushing-mobile.jpg",
+              alt: "втулки",
+              class: "price-product-card__img price-product-card__img--show-tablet-desktop"
+            }
+          ],
+          "Картонные втулки",
+          [
+            {
+              weight: [
+                {text: "До 500 килограмм:", 'data-weight': "499", product: 'bushing'},
+                {text: "От 500 килограмм:", 'data-weight': "999", product: 'bushing'},
+                {text: "От 1000 килограмм:", 'data-weight': "1000", product: 'bushing'}
+              ]
+            },
+          ],
+          [
+            {
+              weight: [
+                {text: "До 500 килограмм:", 'data-weight': "499", product: 'bushing'},
+                {text: "От 500 килограмм:", 'data-weight': "999", product: 'bushing'},
+                {text: "От 1000 килограмм:", 'data-weight': "1000", product: 'bushing'}
+              ]
+            }
+          ],
+          "кг"
+        )
       .tabs__content.tabs__content--padding-top-20
         +card-services-price(
           "cardboard",
