@@ -40,7 +40,6 @@ section.section
             'картон',
             [
               'Принимаем картон гофрированный, упаковочный.',
-              'Не принимаем картоновые трубы.',
               'Картон не должен содержать излишней влаги, засора и других предметов не относящихся к картону.'
             ]
           )
@@ -198,6 +197,91 @@ section.section
             ]
           )
 
+          +card-packing-rules(
+            [{
+              src:"assets/img/price/textile-mobile.jpg",
+              alt: "Текстиль и одежда",
+              class: "price-product-card__img price-product-card__img--show-mobile"
+            }, {
+              src:"assets/img/price/textile.jpg",
+              alt: "Текстиль и одежда",
+              class: "price-product-card__img price-product-card__img--show-tablet-desktop"
+            }],
+            'Текстиль и одежда',
+            [
+              'Ткани из полотна и хлопка, шерсти, полушерсти, полусинтетики, брезент, войлок, синтепон.',
+              'Не принимаем, ткани пропитанные полиэтиленом и резиной, болонь, кожзам.'
+            ]
+          )
+
+          +card-packing-rules(
+            [{
+              src:"assets/img/price/chemical-mobile.jpg",
+              alt: "Тара из-под бытовой химии",
+              class: "price-product-card__img price-product-card__img--show-mobile"
+            }, {
+              src:"assets/img/price/chemical.jpg",
+              alt: "Тара из-под бытовой химии",
+              class: "price-product-card__img price-product-card__img--show-tablet-desktop"
+            }],
+            'Тара из-под бытовой химии',
+            [
+              'Не должны содержать химию или воду, засор и другие предметы, не относящиеся к таре.',
+            ]
+          )
+
+          +card-packing-rules(
+            [{
+              src:"assets/img/price/bags-mobile.jpg",
+              alt: "bags",
+              class: "price-product-card__img price-product-card__img--show-mobile"
+            }, {
+              src:"assets/img/price/bags.jpg",
+              alt: "bags",
+              class: "price-product-card__img price-product-card__img--show-tablet-desktop"
+            }],
+            'Мешки МКР (биг-беги)',
+            [
+              'Мешки б/у как целые, так и рваные, резанные, от различных сыпучих материалов. Мешки не должны содержать полиэтиленового вкладыша.',
+              'Не принимаем биг-бэги из-под цемента, зерна, строительного мусора.',
+            ]
+          )
+
+          +card-packing-rules(
+            [{
+              src:"assets/img/price/pipe-mobile.jpg",
+              alt: "pipe",
+              class: "price-product-card__img price-product-card__img--show-mobile"
+            }, {
+              src:"assets/img/price/pipe.jpg",
+              alt: "pipe",
+              class: "price-product-card__img price-product-card__img--show-tablet-desktop"
+            }],
+            'Трубы ПНД',
+            [
+              'Покупаем остатки ПНД трубы, черной водопроводной пластмассовой трубы с синей полосой.',
+              'Отходы труб должны быть сухими и чистыми.',
+              'Длина обрезков трубы при сдаче на переработку не должна превышать 1,5 метра.',
+            ]
+          )
+
+          +card-packing-rules(
+            [{
+              src:"assets/img/cards/bushing-price-mobile.jpg",
+              alt: "bushing",
+              class: "price-product-card__img price-product-card__img--show-mobile"
+            }, {
+              src:"assets/img/cards/bushing-mobile.jpg",
+              alt: "bushing",
+              class: "price-product-card__img price-product-card__img--show-tablet-desktop"
+            }],
+            'Картонные втулки из-под пленки',
+            [
+              'Втулки должны быть длиной 520мм., а внутренний диаметр 50мм.',
+              'Должны быть сухие, чистые, недеформированные, желательно аккуратно упакованные.',
+            ]
+          )
+
       .tabs__content.tabs__content--padding-top-20
         +card-packing-rules(
             [{
@@ -290,9 +374,57 @@ section.section
               alt: "ПЭТ",
               class: "price-product-card__img price-product-card__img--show-tablet-desktop"
             }],
-            'ПЭТ бутылки, пластиковые канистры, пивные кеги, алюминиевые банки:',
+            'ПЭТ бутылки, пластиковые канистры, пивные кеги, алюминиевые банки, тара из-под бытовой химии',
             [
               'Должны быть сложены в мешки или коробки, или биг-беги. Либо запрессованы в тюки, и связаны металлической проволокой или веревкой.'
+            ]
+          )
+
+        +card-packing-rules(
+            [{
+              src:"assets/img/price/textile-mobile.jpg",
+              alt: "Текстиль и Одежда",
+              class: "price-product-card__img price-product-card__img--show-mobile"
+            }, {
+              src:"assets/img/price/textile.jpg",
+              alt: "Текстиль и Одежда",
+              class: "price-product-card__img price-product-card__img--show-tablet-desktop"
+            }],
+            'Текстиль и Одежда',
+            [
+              'Должны быть чистыми, без запаха, аккуратно упакованными в коробки либо пакеты.'
+            ]
+          )
+
+        +card-packing-rules(
+            [{
+              src:"assets/img/price/bags-mobile.jpg",
+              alt: "Биг-бэги",
+              class: "price-product-card__img price-product-card__img--show-mobile"
+            }, {
+              src:"assets/img/price/bags.jpg",
+              alt: "Биг-бэги",
+              class: "price-product-card__img price-product-card__img--show-tablet-desktop"
+            }],
+            'Мешки МКР (Биг-бэг)',
+            [
+              'Прессованные биг-бэги в брикеты весом от 100 кг.'
+            ]
+          )
+
+        +card-packing-rules(
+            [{
+              src:"assets/img/price/pipe-mobile.jpg",
+              alt: "pipe",
+              class: "price-product-card__img price-product-card__img--show-mobile"
+            }, {
+              src:"assets/img/price/pipe.jpg",
+              alt: "pipe",
+              class: "price-product-card__img price-product-card__img--show-tablet-desktop"
+            }],
+            'Трубы ПНД',
+            [
+              'Сдаваемый материал должен быть порезан на куски не более 1,5 метров в длину.'
             ]
           )
 
