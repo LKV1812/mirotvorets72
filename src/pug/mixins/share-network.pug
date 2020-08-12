@@ -1,6 +1,6 @@
-mixin share-network(url, title, img, text)
+mixin share-network(url, title, img, text, classMod)
   .blog-card__network
-    a(onclick='Share.facebook(\'' + url + '\', \'' + title + '\', \'' + img.src + '\', \'' + text + '\')' class="blog-card__network-link blog-card__network-link--facebook" data-title="Опубликовать статью в Facebook")
+    a(onclick='Share.facebook(\'' + url + '\', \'' + title + '\', \'' + img.src + '\', \'' + text + '\')' class= classMod ? "blog-card__network-link blog-card__network-link--facebook " + classMod : "blog-card__network-link blog-card__network-link--facebook" data-title="Опубликовать статью в Facebook")
 
-    a(onclick='Share.vk(\'' + url + '\', \'' + title + '\', \'' + img.src + '\', \'' + text + '\')' class="blog-card__network-link blog-card__network-link--vk" data-title="Опубликовать статью в ВКонтакте")
+    a(onclick='Share.vk(\'' + url + '\', \'' + title + '\', \'' + img.src + '\', \'' + text + '\')' class= classMod ? "blog-card__network-link blog-card__network-link--vk " + classMod : "blog-card__network-link blog-card__network-link--vk" data-title="Опубликовать статью в ВКонтакте")
     //- a(onclick="Share.instagram(#{url}, #{title}, #{img.src}, #{text})" class="blog-card__network-link blog-card__network-link--instagram" data-title="Опубликовать статью в Instagram")

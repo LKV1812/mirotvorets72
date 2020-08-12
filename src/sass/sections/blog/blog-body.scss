@@ -191,6 +191,10 @@
       line-height: 1.2;
       color: $mainColorText;
     }
+    &--news:hover::before {
+      right: initial;
+      left: 0;
+    }
 
     &:hover::after {
       content: '';
