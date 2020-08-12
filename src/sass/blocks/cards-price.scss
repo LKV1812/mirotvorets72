@@ -21,11 +21,20 @@
 .price-product-card__img-wrap {
   flex-shrink: 0;
   align-self: stretch;
-  line-height: 0;
-  overflow: hidden;
   clip-path: circle(170% at 50% -353%);
+  // border: 2px solid red;
+  // border-bottom-left-radius: 57% 62%;
+  // border-bottom-right-radius: 57% 62%;
+  overflow: hidden;
+  line-height: 0;
 
   @media(min-width: 768px) {
+    // height: 292px;
+    // border-bottom-left-radius: 0;
+    // border-top-right-radius: 50% 44%;
+    // border-bottom-right-radius: 100% 57%;
+    background-color: #cbcfda;
+    width: 9.75em;
     clip-path: circle(66% at 0 44%);
     align-self: flex-start;
     margin-right: 35px;
