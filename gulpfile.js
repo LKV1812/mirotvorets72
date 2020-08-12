@@ -25,7 +25,7 @@ var gulp         = require('gulp'),
     webpackDevConfig = require('./webpack.dev.config.js'),
     webpackBuildConfig = require('./webpack.build.config.js');
 
-let isDev = true;
+let isDev = false;
 let isProd = !isDev;
 
 gulp.task('sass', function(){ // Создаем таск Sass
