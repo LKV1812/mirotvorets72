@@ -1,8 +1,19 @@
-const images = document.querySelectorAll('.news-body__img>img');
+export function setHeightImgWrap(images, imgWrapSelector) {
+  images.forEach(img => {
+    img.style.opacity = 0;
 
-images.forEach(img => {
-  img.onload = function() {
-    let imgWrap = this.closest('.news-body__img');
-    imgWrap.style.height = this.clientHeight + 'px';
-  };
-});
+    if (img && img.complete) {
+      showImage(img);
+    }
+
+    img.onload = function() {
+      showImage(img);
+    };
+  });
+
+  function showImage(img) {
+    let imgWrap = img.closest(imgWrapSelector);
+    imgWrap.style.height = img.clientHeight + 'px';
+    img.style.opacity = 1;
+  }
+}
