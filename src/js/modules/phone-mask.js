@@ -1,4 +1,6 @@
-(function() {
+phoneMask();
+
+export function phoneMask() {
   'use strict';
 
   //Задаем инпут
@@ -63,4 +65,4 @@
   });
 
 
-})();
+};

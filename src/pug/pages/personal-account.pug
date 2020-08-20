@@ -1,0 +1,20 @@
+extends ../layouts/main.pug
+
+block variables
+  - var title= "Личный кабинет вход. Личный кабинет регистрация. Прием вторсырья в Тюмени. Миротворец Тюмень. Оставить заявку онлайн."
+
+block link
+block keywords
+  meta(name="keywords" content="Личный кабинет вход. Личный кабинет регистрация. Миротворец Тюмень. Оставить заявку онлайн. Прием вторсырья, прием макулатуры, сдать макулатуру, сдать картон, прием картона, сдать стекло, прием стекла, оставить заявку онлайн.")
+block description
+  meta(name="description", content="Личный кабинет вход. Личный кабинет регистрация. Миротворец Тюмень. Оставить заявку онлайн. Прием вторсырья в Тюмени по хорошим ценам. Правила упаковки вторсырья. Компнаия Миротворец. Покупаем отходы производства и промышленные отходы по высоким ценам. Макулатура, отходы пластмасс, картон, аллюминиевые банки, поддоны, стекло, текстиль")
+
+block content
+  include ../sections/lower-menu-bg.pug
+  include ../sections/personal-account/account-head.pug
+  include ../sections/personal-account/user.pug
+
+block scripts
+  script(src="vendor/libs/jquery/dist/jquery.min.js")
+  script(src="vendor/libs/owlcarousel2/dist/owl.carousel.min.js")
+  script(src="assets/js/personal-account.js")

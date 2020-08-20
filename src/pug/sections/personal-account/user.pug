@@ -1,0 +1,19 @@
+include ../../mixins/mixins-cards.pug
+include ../../mixins/content-card.pug
+include ../../mixins/buttons.pug
+
+section.container.user
+  +card-full-width('uses-card')
+    .user-data
+      .user-avatar
+        img(src="assets/img/personal-account/avatar.png", alt="фото пользователя")
+        .icon-edit.icon-edit--photo
+          include ../../../img/personal-account/pen.svg
+      .user-data__body
+        .user-data__body-row
+          .user-data__output Login199111111nljlkjljljlkjljljljlkjljlkjlkj
+        .user-data__body-row
+          .user-data__output Андрей Миротворцев
+        .user-data__body-row
+          .user-data__output(data-phone) +7 999 678 84 30
+    .user-buttons

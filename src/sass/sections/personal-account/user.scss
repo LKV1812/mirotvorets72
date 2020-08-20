@@ -1,0 +1,137 @@
+@import '../../variables/variables.scss';
+
+.uses-card {
+  padding: 1.875em;
+  max-width: initial;
+  width: initial;
+  border-radius: 0;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 1em;
+
+  @media (min-width: 576px) {
+    width: initial;
+    border-radius: 0.85em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 1.875em;
+  }
+}
+
+.user-data {
+  display: flex;
+}
+
+.user-avatar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6.25em;
+  height: 6.25em;
+  margin-right: 0.625em;
+  border-radius: 0.3125em;
+  background: linear-gradient(225deg,#efeef3 0,#c0c5d1 14%,#eef3f1 67%,#c0c5d1 89%);
+  line-height: 0;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.user-avatar > img {
+  display: block;
+}
+
+.icon-edit {
+  padding: 0.625em;
+  width: 1.875em;
+  height: 1.875em;
+  border-radius: 0.625em;
+  transition: .2s;
+
+  @media (min-width: 992px) {
+    padding: 0.3125em;
+    width: 1.25em;
+    height: 1.25em;
+  }
+
+  &--photo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    opacity: 0;
+  }
+}
+
+.user-avatar:hover > .icon-edit {
+  opacity: 1;
+}
+
+.icon-edit > svg {
+  width: 100%;
+  height: 100%;
+  fill: #a48d90;
+}
+
+.user-data__body {
+  width: 8.75rem;
+  flex-shrink: 0;
+
+  @media (min-width: 768px) {
+    width: 10.625rem;
+  }
+}
+
+.user-data__body-row {
+  background-color: transparent;
+}
+
+.user-data__body-row + .user-data__body-row {
+  margin-top: 0.625em;
+}
+
+.user-data__output,
+.user-data__enter {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15625rem 0.3125rem;
+  border-radius: 0.15625rem;
+  background-color: transparent;
+  font-family: $textType2;
+  font-size: 1rem;
+  font-weight: 400;
+  color: $mainColorText;
+  line-height: 1.2;
+  transition: .3s;
+
+  @media (min-width: 768px) {
+    font-size: 1.125rem;
+  }
+}
+
+.user-data__output {
+  min-height: calc(1.075rem + 00.3125rem);
+  width: 100%;
+  overflow-wrap: break-word;
+  // overflow: hidden;
+
+  @media (min-width: 768px) {
+    min-height: calc(1.2rem + 00.3125rem);
+  }
+}
+
+.user-data__enter {
+  height: 100%;
+  width: calc(100% + 0.625rem);
+  margin: -0.15625rem -0.3125rem;
+  border: none;
+
+  &:active, &:focus {
+    box-shadow: 0 2px 20px rgba(206, 194, 170, .7);
+    outline: none;
+  }
+}
+
+.user-buttons {
+
+}
