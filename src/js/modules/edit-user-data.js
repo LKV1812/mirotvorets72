@@ -1,33 +1,45 @@
 import {phoneMask} from './phone-mask';
-let currentElemntsData = document.querySelectorAll('.user-data__output');
-
-currentElemntsData.forEach(item => {
-  item.addEventListener('click', function() {
-    editUserData(this, 'user-data__enter');
-  });
-});
 
 export function editUserData(currentElement, inputClass) {
   let input = document.createElement('input');
-  input.setAttribute('class', inputClass);
-  input.value = currentElement.innerText;
+  let currentText = currentElement.innerText;
+  input.value = currentText;
+  input.style.width = currentElement.clientWidth + 'px';
   currentElement.innerText = '';
   currentElement.appendChild(input);
 
-  if (currentElement.hasAttribute('data-phone')) {
+  if ( currentElement.hasAttribute('data-phone') ) {
     input.className = 'tel-field ' + inputClass;
     phoneMask();
+  } else {
+    input.className = inputClass;
   }
 
   input.focus();
+  input.addEventListener('click', function(e) {
+    e.stopPropagation();
+  });
 
   input.addEventListener('blur', function() {
-    outputData(currentElement, this);
+    checkEnteredData(this) ? outputData(currentElement, this) : currentElement.innerText = currentText;
   });
+}
+
+export function checkEnteredData(input) {
+  let checkResult = true;
+
+  if (input.value.length < 1) {
+    checkResult = false;
+  }
+
+  if (input.matches('.tel-field') && input.value.length != 18) {
+    checkResult = false;
+  }
+
+  return checkResult;
 }
 
 export function outputData(itemToOutput, itemRemove) {
   let outputText = itemRemove.value;
-  itemRemove.remove();
   itemToOutput.innerText = outputText;
 }

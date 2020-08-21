@@ -1,5 +1,8 @@
-mixin button-input-tipe-a(type, name, value)
-  input.button-inpute-type-a(type= type, name= name value= value)
+mixin button-input-tipe-a(type, name, value, modifaer)
+  input(class= modifaer ? 'button-inpute-type-a ' + modifaer : 'button-inpute-type-a' type= type, name= name value= value)
+
+mixin button-input-tipe-b(type, name, value, modifaer)
+  input(class= modifaer ? 'button-inpute-type-b ' + modifaer : 'button-inpute-type-b' type= type, name= name value= value)
 
 mixin button-download(href, filename, value)
   a.button-link-width-auto(href= href, download= filename) #{value}
