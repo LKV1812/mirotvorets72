@@ -2,7 +2,7 @@
 
 .uses-card {
   justify-content: space-between;
-  padding: 1.875em;
+  padding: 1.25em 0.9375em;
   max-width: initial;
   width: initial;
   border-radius: 0;
@@ -12,6 +12,7 @@
 
   @media (min-width: 576px) {
     width: initial;
+    padding: 1.875em;
     border-radius: 0.85em;
     margin-left: 0;
     margin-right: 0;
@@ -21,7 +22,17 @@
 
 .user-data {
   display: flex;
-  max-width: 50%;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+
+  @media (min-width: 576px) {
+    flex-direction: row;
+  }
+
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+    margin-right: 3.75rem;
+  }
 }
 
 .user-avatar {
@@ -32,14 +43,21 @@
   width: 6.25em;
   height: 6.25em;
   margin-right: 0.625em;
+  margin-bottom: 0.625em;
   border-radius: 0.3125em;
   background: linear-gradient(225deg,#efeef3 0,#c0c5d1 14%,#eef3f1 67%,#c0c5d1 89%);
   line-height: 0;
   overflow: hidden;
   cursor: pointer;
+
+  @media (min-width: 576px) {
+    margin-bottom: 0;
+  }
 }
 
 .user-avatar > img {
+  height: 100%;
+  width: auto;
   display: block;
 }
 
@@ -178,11 +196,34 @@
 
 .user-buttons {
   display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  @media(min-width: 768px) {
+    width: initial;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media(min-width: 992px) {
+    flex-direction: row;
+  }
 }
 
 .user-buttons > input + input {
-  margin-left: 1.5rem;
+  margin-left: 0.625rem;
+
+  @media (min-width: 768px) {
+    margin-left: 0;
+    margin-top: 0.625rem;
+  }
+
+  @media (min-width: 992px) {
+    margin-top: 0;
+    margin-left: 1.5rem;
+  }
 }
 
 .button-logout {
@@ -192,5 +233,20 @@
   flex: 0 0;
   height: initial;
   width: initial;
-  padding: 0.75rem 1.125rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+
+  @media(min-width: 576px) {
+    padding: 0.625rem 0.9375rem;
+    font-size: 1rem;
+  }
+
+  @media(min-width: 768px) {
+    font-size: 1.125rem;
+  }
+
+  @media(min-width: 992px) {
+    padding: 0.75rem 1.125rem;
+    font-size: 1.25rem;
+  }
 }

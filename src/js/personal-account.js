@@ -1,5 +1,6 @@
 import './entry';
-import './section/owl-carousel';
+import './modules/stretches-height-rows';
+// import './section/carousel-personal-account';
 import {editUserData} from './modules/edit-user-data';
 
 let currentElemntsData = document.querySelectorAll('.user-data__output');

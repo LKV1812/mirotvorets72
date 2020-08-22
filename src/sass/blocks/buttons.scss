@@ -40,14 +40,14 @@
   align-items: center;
   flex: 0 0;
   padding: 0;
-  padding: 0.75rem 1.125rem;
+  padding: 0.5rem 0.75rem;
   background-color: $buttonTypeB-Color;
   border: none;
   border-radius: 30px;
   box-shadow: $buttonShadowTypeC;
   color: $buttonTypeB-TextColor;
   font-family: $textType1;
-  font-size: 22px;
+  font-size: 0.875rem;
   text-decoration: none;
   transition: .3s;
   cursor: pointer;
@@ -62,12 +62,18 @@
     box-shadow: $buttonShadowInsetTypeB;
   }
 
-  @media(min-width: 992px) {
-    font-size: 23px;
+  @media(min-width: 576px) {
+    padding: 0.625rem 0.9375rem;
+    font-size: 1rem;
   }
 
-  @media(min-width: 1200px) {
-    font-size: 25px;
+  @media(min-width: 768px) {
+    font-size: 1.125rem;
+  }
+
+  @media(min-width: 992px) {
+    padding: 0.75rem 1.125rem;
+    font-size: 1.25rem;
   }
 }
 
