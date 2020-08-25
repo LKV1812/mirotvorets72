@@ -15,4 +15,4 @@ mixin indexHeaderSliderItem(title, img)
       .slider-head__item-title-wrap
         h1.slider-head__item-title #{title}
       .slider-head__item-img-wrap
-        img(src= img, alt= title, class="slider-head__item-img")
+        img(data-src= img, alt= title, class="owl-lazy slider-head__item-img")

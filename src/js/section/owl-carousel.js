@@ -7,6 +7,7 @@ $(document).ready(function(){
     loop: true,
     autoplaySpeed: 1500,
     dragEndSpeed: 500,
+    lazyLoad: true,
     responsive: {
       0:{
           items:1,

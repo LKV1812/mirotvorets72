@@ -1,6 +1,6 @@
 import './entry';
 import './modules/stretches-height-rows';
-// import './section/carousel-personal-account';
+import './section/carousel-personal-account';
 import {editUserData} from './modules/edit-user-data';
 
 let currentElemntsData = document.querySelectorAll('.user-data__output');
