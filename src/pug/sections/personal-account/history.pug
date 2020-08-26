@@ -2,7 +2,7 @@ include ../../mixins/mixins-cards.pug
 include ../../mixins/content-card.pug
 include ../../mixins/buttons.pug
 
-section.container
+section.container.section-history
   .history
     .history-row.history-row__colored-bg
       h2.history-row__title прием вторсырья
@@ -37,4 +37,72 @@ section.container
           .history-row.text 940 рублей
           .history-row.history-row__colored-bg.text 200 рублей
     .history-body__row-show-mobile
-      //- .history-body__owl-dots-container
+    .history-total
+      .history-total__appellation
+        .text-medium Общий итог выплаченной суммы клиенту
+      .history-total__sum
+        .text-medium 1 500 рублей
+    .history-footer
+      .history-footer__implementer
+        .history-footer__implementer-item
+          .text-medium Фамилия диспетчера принявшего заказ:
+          .text Телегин Виктор Степанович
+        .history-footer__implementer-item
+          .text-medium Фамилия водителя выполнившего заявку:
+          .text Перевозов Дмитрий Владимирович
+      .history-footer__status
+        .text-medium Статус заявки:
+        .text-special Выполнена:
+        .text 17.06.2019 10:30
+
+  .history
+    .history-row.history-row__colored-bg
+      h2.history-row__title прием вторсырья
+      .history-row__date
+        .text-medium Дата оформления:
+        .text 17.06.2019 10:30
+    .history-body
+      .history-appellation
+        .history-row.text-medium Вид сырья:
+        .history-row.history-row__colored-bg.text Бумага
+        .history-row.text Картон
+        .history-row.history-row__colored-bg.text Стеклобой
+      #carouselHistoryData.owl-carousel.owl-theme
+        .history-data
+          .history-row
+            .text-medium Кг ориентировочно
+            .text (заявлено клиентом)
+          .history-row.history-row__colored-bg.text 50
+          .history-row.text 100
+          .history-row.history-row__colored-bg.text 100
+        .history-data
+          .history-row
+            .text-medium Килограмм фактически
+            .text (фактическое количество забранное)
+          .history-row.history-row__colored-bg.text 60
+          .history-row.text 130
+          .history-row.history-row__colored-bg.text 100
+        .history-data
+          .history-row
+            .text-medium Денег выплачено клиенту
+          .history-row.history-row__colored-bg.text 360 рублей
+          .history-row.text 940 рублей
+          .history-row.history-row__colored-bg.text 200 рублей
+    .history-body__row-show-mobile
+    .history-total
+      .history-total__appellation
+        .text-medium Общий итог выплаченной суммы клиенту
+      .history-total__sum
+        .text-medium 1 500 рублей
+    .history-footer
+      .history-footer__implementer
+        .history-footer__implementer-item
+          .text-medium Фамилия диспетчера принявшего заказ:
+          .text Телегин Виктор Степанович
+        .history-footer__implementer-item
+          .text-medium Фамилия водителя выполнившего заявку:
+          .text Перевозов Дмитрий Владимирович
+      .history-footer__status
+        .text-medium Статус заявки:
+        .text-special Выполнена:
+        .text 17.06.2019 10:30

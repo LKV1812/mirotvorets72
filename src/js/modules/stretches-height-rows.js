@@ -1,15 +1,23 @@
-let rowsLength = document.querySelectorAll(`.history-appellation > .history-row`).length;
+let userHistoryOrders = document.querySelectorAll('.history');
 
-for (let i = 1; i <= rowsLength; i++) {
-  let rowAppellation = document.querySelector(`.history-appellation > .history-row:nth-child(${i})`);
-  let rowsData = document.querySelectorAll(`.history-data > .history-row:nth-child(${i})`);
-  let rowsHeight = [];
+userHistoryOrders.forEach(order => {
+  setHeightRows(order);
+});
 
-  rowsData.forEach(row => rowsHeight.push(row.clientHeight));
-  rowsHeight.push(rowAppellation.clientHeight);
+function setHeightRows(elem) {
+  let rowsLength = elem.querySelectorAll(`.history-appellation > .history-row`).length;
 
-  let maxHeight = Math.max(...rowsHeight);
+  for (let i = 1; i <= rowsLength; i++) {
+    let rowAppellation = elem.querySelector(`.history-appellation > .history-row:nth-child(${i})`);
+    let rowsData = elem.querySelectorAll(`.history-data > .history-row:nth-child(${i})`);
+    let rowsHeight = [];
 
-  rowAppellation.style.height = maxHeight + 'px';
-  rowsData.forEach(row => row.style.height = maxHeight + 'px');
+    rowsData.forEach(row => rowsHeight.push(row.clientHeight));
+    rowsHeight.push(rowAppellation.clientHeight);
+
+    let maxHeight = Math.max(...rowsHeight);
+
+    rowAppellation.style.height = maxHeight + 'px';
+    rowsData.forEach(row => row.style.height = maxHeight + 'px');
+  }
 }

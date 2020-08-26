@@ -35,7 +35,8 @@ body {
   }
 }
 
-.text-medium {
+.text-medium,
+.text-special {
   color: $mainColorText;
   font-family: $textType2;
   font-size: 16px;
@@ -45,6 +46,10 @@ body {
   @media(min-width: 768px) {
     font-size: 18px;
   }
+}
+
+.text-special {
+  color: $colorTextType2;
 }
 
 .text-bold {

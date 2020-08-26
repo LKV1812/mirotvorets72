@@ -2,6 +2,7 @@ import './entry';
 import './modules/stretches-height-rows';
 import './section/carousel-personal-account';
 import {editUserData} from './modules/edit-user-data';
+import './modules/form-order';
 
 let currentElemntsData = document.querySelectorAll('.user-data__output');
 let buttonEdit = document.querySelectorAll('.icon-edit');

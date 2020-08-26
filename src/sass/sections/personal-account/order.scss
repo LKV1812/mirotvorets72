@@ -1,0 +1,16 @@
+@import '../../variables/variables.scss';
+
+.user-order-bg {
+  background-image: url('../img/personal-account/order-bg-mobile.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @media (min-width: 768px) {
+    background-image: url('../img/personal-account/order-bg-tablet.jpg');
+  }
+
+  @media (min-width: 992px) {
+    background-image: url('../img/personal-account/order-bg.jpg');
+  }
+}
