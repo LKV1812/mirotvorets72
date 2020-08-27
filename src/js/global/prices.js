@@ -13,9 +13,9 @@ export const priceMaterials = {
   "cardboard": {
     'our-delivery': {
       '0': 4.5,
-      '200': 5,
-      '500': 5.5,
-      '1000': 5.5,
+      '200': 5.5,
+      '500': 6,
+      '1000': 6,
     },
     'self-delivery': {
       '0': 7,
