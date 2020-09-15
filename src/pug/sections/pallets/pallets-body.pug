@@ -1,0 +1,21 @@
+include ../../mixins/mixins-cards.pug
+include ../../mixins/buttons.pug
+section.section
+  .container
+    .navigating-source-path
+      .navigating-source-path__item
+        a(href="index.html" class="navigating-source-path__link") Главная &raquo;
+      .navigating-source-path__item
+        p.navigating-source-path__text Продажа поддонов
+    h1.section__title Продажа поддонов
+    .pallets-head
+      .pallets-head__img-pallets
+        img(src="assets/img/pallets/pallets-head.png", alt="sticker")
+      .pallets-head__sticker
+        img(src="assets/img/pallets/sticker.png", alt="sticker")
+        .pallets-head__sticker-text
+          h2.pallets-head__sticker-title Поддоны
+          h3.pallets-head__sticker-subtitle - купить поддоны.
+
+
+    //- mixin card-full-width()

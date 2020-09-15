@@ -1,0 +1,125 @@
+@import '../../variables/variables.scss';
+
+.pallets-head {
+  position: relative;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.pallets-head__sticker {
+  position: relative;
+  line-height: 0;
+  padding: 30px;
+  // // background-color: #efeef3;
+  // background-color: rgba(255, 255, 255, 1);
+  // box-shadow: $cardShadow;
+  text-align: center;
+  overflow: hidden;
+
+  @media(min-width: 576px) {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    box-shadow: none;
+    text-align: left;
+    overflow: visible;
+    margin-left: -6rem;
+  }
+
+  @media(min-width: 768px) {
+    margin-left: -3rem;
+  }
+
+  @media(min-width: 992px) {
+    margin-left: 0;
+  }
+
+  & > img {
+    display: none;
+    @media (min-width: 576px) {
+      display: block;
+      max-width: 100%;
+    }
+  }
+}
+
+.pallets-head__sticker-text {
+
+  @media (min-width: 576px) {
+    position: absolute;
+    right: 5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    right: initial;
+    margin-top: -1rem;
+    left: 11rem;
+  }
+
+  @media (min-width: 768px) {
+    left: 13rem;
+  }
+
+  @media (min-width: 992px) {
+    left: 14rem;
+  }
+
+  @media (min-width: 1200px) {
+    left: 18rem;
+  }
+}
+
+.pallets-head__sticker-title,
+.pallets-head__sticker-subtitle {
+  margin: 0;
+  font-family: $textType1;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.pallets-head__sticker-title {
+  font-size: 2rem;
+  color: $colorTextType2;
+  text-transform: uppercase;
+
+  @media (min-width: 992px) {
+    font-size: 2.75rem;
+  }
+}
+
+.pallets-head__sticker-subtitle {
+  font-size: 1.125rem;
+  color: $mainColorText;
+
+  @media (min-width: 992px) {
+    font-size: 1.5rem;
+  }
+}
+
+
+.pallets-head__img-pallets {
+  width: 19rem;
+  max-width: 100%;
+  margin: 0 auto;
+  line-height: 0;
+
+  @media (min-width: 576px) {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    z-index: 1;
+  }
+
+  @media (min-width: 768px) {
+    width: 25rem;
+  }
+
+  @media (min-width: 992px) {
+    right: 5em;
+    width: initial;
+  }
+
+  & > img {
+    max-width: 100%;
+  }
+}

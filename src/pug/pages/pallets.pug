@@ -1,0 +1,17 @@
+extends ../layouts/main.pug
+
+block variables
+  - var title= "Продажа поддонов. Купить поддоны в Тюмени. Продажа европоддонов в Тюмени"
+
+block link
+block keywords
+  meta(name="keywords" content="Продажа поддонов, продажа европоддонов, продажа цены, продажа поддонов Тюмень. Купить поддоны в Тюмени, купить европоддоны.")
+block description
+  meta(name="description", content="Компания Миротворец Тюмень здесь выможете купить поддоны, купить европоддны, 1 сорт, 2 сорт, 3 сорт. Продажа поддонов, продажа европоддонов по низким ценам. Продажа поддонов, продажа европоддонов.")
+
+block content
+  include ../sections/lower-menu-bg.pug
+  include ../sections/pallets/pallets-body.pug
+
+block scripts
+  script(src="assets/js/pallets.js")
