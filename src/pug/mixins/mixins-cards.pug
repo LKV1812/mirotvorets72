@@ -133,3 +133,18 @@ mixin card-buy(data, img, bodyContent, link)
 mixin card-full-width(cardsModifier)
   div(class= cardsModifier ? 'card-full-width ' + cardsModifier : 'card-full-width')
     block
+
+mixin pallets-cards-content(img, text)
+  .pallets-cards__img
+    .pallets-cards__img-wrap
+      img(src= img.src, alt= img.alt)
+  .pallets-cards__text
+    each row in text
+      p.text #{row}
+  .pallets-cards__interaction
+    .pallets-cards-calc__output-sum 1 000 Р.
+    .pallets-cards-calc
+      .pallets-cards-calc__plus +
+      input(class="pallets-cards-calc__amount" type="number" value="0")
+      .pallets-cards-calc__minus -
+    +button-link-type-a('#', 'заказать', 'pallets-cards__interaction-button')

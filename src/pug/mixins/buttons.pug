@@ -18,3 +18,6 @@ mixin button-file(name, text)
   .button-file-group
     input(class="button-file" id="buttonFile" type="file", name= name)
     label(for="buttonFile") #{text}
+
+mixin button-link-type-a(link, text, classModifier)
+  a(href= link class= classModifier ? "button-link-type-a " + classModifier : "button-link-type-a") #{text}
