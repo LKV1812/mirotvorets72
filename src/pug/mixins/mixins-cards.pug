@@ -139,7 +139,8 @@ mixin pallets-cards-content(img, text)
     .pallets-cards__img-wrap
       img(src= img.src, alt= img.alt)
   .pallets-cards__text
-    each row in text
+    h4.text-bold #{text.subtitle}
+    each row in text.desc
       p.text #{row}
   .pallets-cards__interaction
     .pallets-cards-calc__output-sum 1 000 Р.

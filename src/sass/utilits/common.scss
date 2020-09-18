@@ -48,6 +48,8 @@ body {
 }
 
 .text-bold {
+  margin: 0;
+  margin-bottom: 8px;
   color: $mainColorText;
   font-family: $textType2;
   font-size: 16px;
