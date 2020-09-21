@@ -2,18 +2,30 @@
 
 .basket {
   position: fixed;
-  top: 250px;
-  right: 30px;
-  width: 75px;
-  height: 75px;
-  padding: 5px;
+  top: 195px;
+  right: 5px;
+  width: 60px;
+  height: 60px;
+  padding: 8px;
   border-radius: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #77a634;
   box-shadow: 0 0 47px rgba(175, 175, 175, .9);
-  z-index: 1;
+  z-index: 9;
+
+  @media (min-width: 768px) {
+    width: 75px;
+    height: 75px;
+    padding: 5px;
+    top: 250px;
+    right: 30px;
+  }
+
+  & > svg {
+    width: 90%;
+  }
 }
 
 .basket__number {
@@ -24,16 +36,22 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 35px;
-  height: 35px;
+  width: 28px;
+  height: 28px;
   padding: 5px;
   border-radius: 100%;
   background-color: #d6251d;
   font-family: $textType2;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 12px;
   line-height: 1.2;
   color: #ffffff;
+
+  @media (min-width: 768px) {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
 }
 
 .pallets-head {
@@ -213,8 +231,8 @@
   @media (min-width: 768px) {
     justify-content: flex-end;
     width: initial;
-    border-top-right-radius: 86% 100%;
-    border-bottom-right-radius: 86% 100%;
+    border-top-right-radius: 66% 100%;
+    border-bottom-right-radius: 66% 100%;
     overflow: hidden;
   }
 
@@ -222,12 +240,13 @@
     max-width: 100%;
 
     @media (min-width: 768px) {
+      margin-right: -25%;
       max-height: 100%;
-      max-width: 12.5rem;
+      max-width: 15rem;
     }
 
     @media(min-width: 992px) {
-      max-width: initial;
+      max-width: 21.875rem;
     }
   }
 }
