@@ -1,59 +1,5 @@
 @import '../../variables/variables.scss';
 
-.basket {
-  position: fixed;
-  top: 195px;
-  right: 5px;
-  width: 60px;
-  height: 60px;
-  padding: 8px;
-  border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #77a634;
-  box-shadow: 0 0 47px rgba(175, 175, 175, .9);
-  z-index: 9;
-
-  @media (min-width: 768px) {
-    width: 75px;
-    height: 75px;
-    padding: 5px;
-    top: 250px;
-    right: 30px;
-  }
-
-  & > svg {
-    width: 90%;
-  }
-}
-
-.basket__number {
-  position: absolute;
-  right: 0;
-  top: -15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 28px;
-  height: 28px;
-  padding: 5px;
-  border-radius: 100%;
-  background-color: #d6251d;
-  font-family: $textType2;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.2;
-  color: #ffffff;
-
-  @media (min-width: 768px) {
-    width: 35px;
-    height: 35px;
-    font-size: 16px;
-  }
-}
-
 .pallets-head {
   position: relative;
   margin-left: -15px;

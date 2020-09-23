@@ -1,8 +1,51 @@
 include ../../mixins/mixins-cards.pug
 include ../../mixins/buttons.pug
+include ../../mixins/modal-window.pug
 section.section
   .container
-    .basket
+    +modal-window('palletsBasket', null, 'modal-body--text-bg', 'modal-close--pos-right')
+      .basket-container.scroll-vertical-small
+
+        .row-in-basket
+          .row-in-basket__content
+            .row-in-basket__img
+              img(src="assets/img/pallets/epal-1.png", alt="pallets")
+            .row-in-basket__body
+              .row-in-basket__order-management-mobile-dots
+                include ../../../img/pallets/product-menu-dots.svg
+              .row-in-basket__body-order
+                .text-bold С клеймом EPAL размером 800*1200мм.
+                .text 3-й сорт - белые/серые/
+                .text сломанные до трех деталей
+              .row-in-basket__order-management
+                a(href="#").row-in-basket__delete-order-item удалить
+          .row-in-basket__interaction
+            .row-in-basket-calc
+              .row-in-basket-calc__plus +
+              input(class="row-in-basket-calc__amount" type="number" value="0")
+              .row-in-basket-calc__minus -
+            .row-in-basket-calc__output-sum 1 000 Р.
+
+        .row-in-basket
+          .row-in-basket__content
+            .row-in-basket__img
+              img(src="assets/img/pallets/noepal-1.png", alt="pallets")
+            .row-in-basket__body
+              .row-in-basket__order-management-mobile-dots
+                include ../../../img/pallets/product-menu-dots.svg
+              .row-in-basket__body-order
+                .text-bold С клеймом EPAL размером 800*1200мм.
+                .text 1-й сорт - белые/целые
+              .row-in-basket__order-management
+                a(href="#").row-in-basket__delete-order-item удалить
+          .row-in-basket__interaction
+            .row-in-basket-calc
+              .row-in-basket-calc__plus +
+              input(class="row-in-basket-calc__amount" type="number" value="0")
+              .row-in-basket-calc__minus -
+            .row-in-basket-calc__output-sum 1 000 Р.
+
+    a(href="#").basket
       .basket__number 8888
       include ../../../img/pallets/basket.svg
     .navigating-source-path
@@ -98,9 +141,8 @@ section.section
           alt: 'pallets'
         },
         {
-          subtitle: 'Без клейма EPAL размером 800*1200мм.',
+          subtitle: 'Размером 1000*1200мм.',
           desc: [
-            'Размером 1000*1200мм.',
             'Разносортные',
           ]
         }

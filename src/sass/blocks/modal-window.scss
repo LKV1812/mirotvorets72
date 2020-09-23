@@ -14,6 +14,8 @@
   right: 0;
   bottom: 0;
   left: 0;
+  opacity: 1;
+  z-index: 199;
   opacity: 0;
   z-index: -199;
   transition: opacity 0.3s;
@@ -33,6 +35,7 @@
 
 .modal-body {
   position: relative;
+  overflow: hidden;
 
   &--text-bg {
     textarea, .input {
@@ -79,6 +82,14 @@
   transform: rotate(45deg);
   outline: none;
   cursor: pointer;
+
+  &--pos-right {
+    position: absolute;
+    top: 1.1em;
+    right: 1.1em;
+    margin: 0;
+    padding: 0;
+  }
 
   &--text-bg {
     position: absolute;
