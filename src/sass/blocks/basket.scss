@@ -75,8 +75,57 @@
   }
 
   @media (min-width: 992px) {
-    flex-direction: row;
     padding: 1.5em;
+  }
+
+  &--send-basket {
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5em;
+    border-bottom: none;
+
+    & .button-inpute-type-a {
+      width: initial;
+      height: initial;
+      padding: 0.625rem 1rem;
+      font-size: 1rem;
+
+      @media (min-width: 768px) {
+        padding: 0.75rem 1.25rem;
+        font-size: 1.125rem;
+      }
+
+      @media (min-width: 768px) {
+        padding: 0.875rem 1.5rem;
+        font-size: 1.25rem;
+      }
+    }
+
+    & .input {
+      width: initial;
+      height: initial;
+      padding: 0.625rem 1rem;
+
+      @media (min-width: 768px) {
+        padding: 0.75rem 1.25rem;
+      }
+
+      @media (min-width: 992px) {
+        padding: 0.875rem 1.5rem;
+      }
+    }
+
+    & .input-container {
+      @media (min-width: 992px) {
+        margin-bottom: 40px;
+      }
+    }
+
+    & .error-no-selected__message {
+      @media (min-width: 992px) {
+        bottom: -25px;
+      }
+    }
   }
 }
 
@@ -260,4 +309,22 @@
 
 .row-in-basket-calc__minus {
   margin-left: 0.625rem;
+}
+
+.row-in-basket__total {
+  flex: 1 0 auto;
+  & > .text-bold:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.row-in-basket__input-wrap {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  margin-top: 1.5em;
+
+  @media (min-width: 768px) {
+    margin-top: 0;
+  }
 }

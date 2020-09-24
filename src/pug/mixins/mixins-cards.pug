@@ -134,7 +134,7 @@ mixin card-full-width(cardsModifier)
   div(class= cardsModifier ? 'card-full-width ' + cardsModifier : 'card-full-width')
     block
 
-mixin pallets-cards-content(img, text)
+mixin pallets-cards-content(img, text, dataGrade)
   .pallets-cards__img
     .pallets-cards__img-wrap
       img(src= img.src, alt= img.alt)
@@ -142,8 +142,8 @@ mixin pallets-cards-content(img, text)
     h4.text-bold #{text.subtitle}
     each row in text.desc
       p.text #{row}
-  .pallets-cards__interaction
-    .pallets-cards-calc__output-sum 1 000 Р.
+  div(class='pallets-cards__interaction' data-grade= dataGrade data-product="pallets")
+    .pallets-cards-calc__output-sum <span class="pallets-cards-calc__output-sum" data-sum>1 000</span> Р.
     .pallets-cards-calc
       .pallets-cards-calc__plus +
       input(class="pallets-cards-calc__amount" type="number" value="0")

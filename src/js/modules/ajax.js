@@ -59,7 +59,6 @@ export const sendFormOrder = (function(){
 
     let inputSelectAttrNameAll = new FormData();
 
-
     inputs.forEach(item => {
       if (!item.matches('[type="hidden"]')) return;
 
