@@ -9,7 +9,7 @@ section.section
         input(type="hidden" name="form_from" value="mirotvorets72.ru")
         input(type="hidden" name="admin_email" value="zayavka@mirotvorets72.com")
         input(type="hidden" name="erasure" value="Продажа поддонов")
-        .basket-container.scroll-vertical-small
+        #basketPallets.basket-container.scroll-vertical-small
           .row-in-basket
             .row-in-basket__content
               .row-in-basket__img
@@ -23,13 +23,34 @@ section.section
                   .text сломанные до трех деталей
                 .row-in-basket__order-management
                   a(href="#").row-in-basket__delete-order-item удалить
-            .row-in-basket__interaction
+            div(class="row-in-basket__interaction" data-grade="first-grade-epal" data-product="pallets")
               .row-in-basket-calc
                 .row-in-basket-calc__plus +
                 input(type="hidden" name="grade" value="С клеймом EPAL: 1-й сорт")
                 input(class="row-in-basket-calc__amount" type="number" name="order-volume" value="0")
                 .row-in-basket-calc__minus -
-              .row-in-basket-calc__output-sum 1 000 Р.
+              .row-in-basket-calc__output-sum <span class="row-in-basket-calc__output-sum" data-sum>1 000</span> Р.
+
+          .row-in-basket
+            .row-in-basket__content
+              .row-in-basket__img
+                img(src="assets/img/pallets/epal-1.png", alt="pallets")
+              .row-in-basket__body
+                .row-in-basket__order-management-mobile-dots
+                  include ../../../img/pallets/product-menu-dots.svg
+                .row-in-basket__body-order
+                  .text-bold С клеймом EPAL размером 800*1200мм.
+                  .text 3-й сорт - белые/серые/
+                  .text сломанные до трех деталей
+                .row-in-basket__order-management
+                  a(href="#").row-in-basket__delete-order-item удалить
+            div(class="row-in-basket__interaction" data-grade="first-grade-epal" data-product="pallets")
+              .row-in-basket-calc
+                .row-in-basket-calc__plus +
+                input(type="hidden" name="grade" value="С клеймом EPAL: 1-й сорт")
+                input(class="row-in-basket-calc__amount" type="number" name="order-volume" value="0")
+                .row-in-basket-calc__minus -
+              .row-in-basket-calc__output-sum <span class="row-in-basket-calc__output-sum" data-sum>1 000</span> Р.
 
           .row-in-basket.row-in-basket--send-basket
             .row-in-basket__total

@@ -1,16 +1,41 @@
 import {priceSale} from '../global/prices-sale';
 
-export function calculatorSale() {
-  let productInteraction = document.querySelector('.pallets-cards__interaction');
-  let productName = productInteraction.getAttribute('data-product');
-  let productDataAttr = productInteraction.getAttribute('data-grade');
-  let price = priceSale.getPriceSelectedGradePallet(productName, productDataAttr);
-  let inputAmount = productInteraction.querySelector('.pallets-cards-calc__amount');
-  let outputSum = productInteraction.querySelector('.pallets-cards-calc__output-sum [data-sum]');
+/**
+ * calculatorSale - считает общую стоимось товара
+ * @param {object} elem - элемент на котором должен производиться подсчет
+ */
 
-  outputSum.innerText = inputAmount.value * price;
+export function calculatorSale(elem) {
+  let price = priceSale.getPriceSelectedGradePallet(elem.productName, elem.productType);
+  let currentValueInput = elem.inputAmount.value;
 
-  inputAmount.addEventListener('input', () => outputSum.innerText = inputAmount.value * price);
+  elem.outputSum.innerText = elem.inputAmount.value * price;
+
+  elem.inputAmount.addEventListener('focus', () => {
+    elem.inputAmount.value = "";
+  });
+
+  elem.inputAmount.addEventListener('blur', () => {
+    if (elem.inputAmount.value == "") {
+      elem.inputAmount.value = currentValueInput;
+    }
+  });
+
+  elem.inputAmount.addEventListener('input', () => {
+    elem.inputAmount.value = +(elem.inputAmount.value) < 0 ? 0 : elem.inputAmount.value;
+    elem.outputSum.innerText = elem.inputAmount.value * price;
+    currentValueInput = elem.inputAmount.value == "" ? 0 : elem.inputAmount.value;
+  });
+
+  elem.plus.addEventListener('click', () => {
+    elem.inputAmount.value = +(elem.inputAmount.value) + 1;
+    elem.outputSum.innerText = elem.inputAmount.value * price;
+    currentValueInput = elem.inputAmount.value;
+  });
+
+  elem.minus.addEventListener('click', () => {
+    elem.inputAmount.value = ( +(elem.inputAmount.value) - 1 ) < 0 ? 0 : elem.inputAmount.value - 1;
+    elem.outputSum.innerText = elem.inputAmount.value * price;
+    currentValueInput = elem.inputAmount.value;
+  });
 }
-
-calculatorSale()
