@@ -1,8 +1,10 @@
 import './entry';
 import './modules/basket';
 import {callsModalWindow} from './modules/modal-window';
+import {addProductInBasket, calculatesTotalAmountProductCurrency} from './modules/basket';
 import {formFull} from './modules/form-full';
 import {calculatorSale} from './modules/calculator-sale';
+calculatesTotalAmountProductCurrency();
 
 // Вызов модуля модального окна
 let buttonOpenModalWindow = document.querySelector('.basket');
@@ -25,21 +27,54 @@ pallets.forEach(item => {
   calculatorSale(palletInteraction);
 });
 
-let rowsInBasket = document.querySelectorAll('.row-in-basket__interaction');
+// По клику на кнопку "Добавить в корзину" добавляем товар в корзину и запускаем на нем калькулятор в корзине
+let allButtonsAddProductInBasket = document.querySelectorAll('.pallets-cards__interaction-button');
+let basketPallets = document.getElementById('basketPallets');
 
-rowsInBasket.forEach(row => {
-  let rowInBasketInteraction = {
-    productName: row.getAttribute('data-product'),
-    productType: row.getAttribute('data-grade'),
-    inputAmount: row.querySelector('.row-in-basket-calc__amount'),
-    outputSum: row.querySelector('.row-in-basket-calc__output-sum [data-sum]'),
-    plus: row.querySelector('.row-in-basket-calc__plus'),
-    minus: row.querySelector('.row-in-basket-calc__minus')
-  };
+allButtonsAddProductInBasket.forEach(buttonAddProduct => {
+  buttonAddProduct.addEventListener('click', (e) => {
+    e.preventDefault();
+    let productCard = e.target.closest('.pallets-cards');
+    let descriptionProductElements = productCard.querySelectorAll('.pallets-cards__text>p.text');
+    let descriptionProduct = [];
 
-  calculatorSale(rowInBasketInteraction);
+    for (let text of descriptionProductElements) {
+      descriptionProduct.push(text.innerText);
+    }
+
+    let productData = {
+      img: {
+        src: productCard.querySelector('.pallets-cards__img-wrap>img').getAttribute('src'),
+        alt: productCard.querySelector('.pallets-cards__img-wrap>img').getAttribute('alt')
+      },
+      description: {
+        title: productCard.querySelector('.pallets-cards__text>h4.text-bold').innerText,
+        text: descriptionProduct
+      },
+      data: {
+        name: productCard.querySelector('.pallets-cards__interaction').getAttribute('data-product'),
+        type: productCard.querySelector('.pallets-cards__interaction').getAttribute('data-grade'),
+        inputAttrName: "grade",
+        inputValue: productCard.querySelector('.pallets-cards__text>h4.text-bold').innerText,
+        amountValue: Number(productCard.querySelector('input.pallets-cards-calc__amount').value),
+      }
+    };
+
+    let addedLineToBasket = addProductInBasket(basketPallets, productData);
+
+    let rowInBasketInteraction = {
+      productName: addedLineToBasket.querySelector('.row-in-basket__interaction').getAttribute('data-product'),
+      productType: addedLineToBasket.querySelector('.row-in-basket__interaction').getAttribute('data-grade'),
+      inputAmount: addedLineToBasket.querySelector('.row-in-basket-calc__amount'),
+      outputSum: addedLineToBasket.querySelector('.row-in-basket-calc__output-sum [data-sum]'),
+      plus: addedLineToBasket.querySelector('.row-in-basket-calc__plus'),
+      minus: addedLineToBasket.querySelector('.row-in-basket-calc__minus')
+    };
+    calculatorSale(rowInBasketInteraction);
+    calculatesTotalAmountProductCurrency();
+  });
 });
 
-// Вызов формы заказа
-let basketForm = document.getElementById('basketForm');
-formFull(basketForm);
+// // Вызов формы заказа
+// let basketForm = document.getElementById('basketForm');
+// formFull(basketForm);
