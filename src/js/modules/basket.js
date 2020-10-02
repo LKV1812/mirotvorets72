@@ -1,6 +1,15 @@
+/**
+ * addProductInBasket() - Принимает два параметра. Добавляет элемент в корзину. Возвращает вставленный элемент
+ * @param {DOM} basket - Куда будем втавлять элемент
+ * @param {object} productData - Данные для вставляемого элемента
+ */
+
+let _position = 0; // переменная наращивается при каждом вызове addProductInBasket() и добавляется к name у инпутов, чтобы при передаче в $_POST не затирались элементы и каждый имел уникальный ключ
+
 export function addProductInBasket(basket, productData) {
   let newProduct = document.createElement('div');
   newProduct.className = 'row-in-basket';
+  _position += 1;
 
   let productTextAllRow = '';
   for (let text of productData.description.text) {
@@ -67,54 +76,81 @@ export function addProductInBasket(basket, productData) {
     <div class="row-in-basket__interaction" data-grade=${productData.data.type} data-product=${productData.data.name}>
       <div class="row-in-basket-calc">
         <div class="row-in-basket-calc__plus">+</div>
-        <input type="hidden" name=${productData.data.inputAttrName} value=${productData.data.inputValue}/>
-        <input class="row-in-basket-calc__amount" type="number" name="order-volume" value=${productData.data.amountValue} />
+        <input type="hidden" name='${productData.data.type} (pos ${_position})' value='${(productData.data.inputValue)}' />
+        <input class="row-in-basket-calc__amount" type="number" name="order-volume (pos ${_position})" value='${productData.data.amountValue}' />
         <div class="row-in-basket-calc__minus">-</div>
       </div>
       <div class="row-in-basket-calc__output-sum"><span class="row-in-basket-calc__output-sum" data-sum>0</span> руб.</div>
     </div>`;
   basket.prepend(newProduct);
+  mobileShowDelete(newProduct);
 
   return newProduct;
 }
 
-export function calculatesTotalAmountProductCurrency() {
-  let basketPallets = document.getElementById('basketPallets');
-  let sumCurrencyAllitems = basketPallets.querySelectorAll('.row-in-basket-calc__output-sum [data-sum]');
-  let outputTotalSumProduct = document.querySelector('[data-basket="product"]');
-  let outputTotalSumCurrency = document.querySelector('[data-basket="currency"]');
-  let totalSumProduct = 0;
-  let totalSumCurrency = 0;
 
-  console.log(basketPallets)
 
-  if (sumCurrencyAllitems) {
-    sumCurrencyAllitems.forEach(sumCurrency => {
-      let parent = sumCurrency.closest('.row-in-basket');
-      let siblingAmount = parent.querySelector('.row-in-basket-calc__amount');
-      let currentAmountValue = Number(siblingAmount.value);
-      let currentSumCurrency = Number(sumCurrency.innerText);
-      totalSumProduct += Number(siblingAmount.value);
-      totalSumCurrency += Number(currentSumCurrency);
+let _totalSumProduct = 0;
+let _totalSumCurrency = 0;
 
-      let observer = new MutationObserver(mutations => {
-        mutations.forEach(mutation => {
-          if (mutation.target.matches('.row-in-basket-calc__output-sum [data-sum]')) {
-            totalSumProduct += Number(siblingAmount.value) - currentAmountValue;
-            currentAmountValue = Number(siblingAmount.value);
-            outputTotalSumProduct.innerText = totalSumProduct;
+/**
+ * calculatesTotalAmountProductCurrency() - Принимает один параметр. Считает общее количество товара и общую стоимость. Выводить подсчеты внизу корзины. Включает наблюдателя за изменениями, при изменениях данных в корзине, запускает повторный подсчет
+ * @param {object} productData - Объект с даннми для их подсчета и вывода
+ */
+export function calculatesTotalAmountProductCurrency(productData) {
+  let sumCurrency = productData.sumCurrency;
+  let outputTotalSumProduct = productData.outputTotalSumProduct;
+  let outputTotalSumCurrency = productData.outputTotalSumCurrency;
+  let currentAmountValue = Number(productData.amountSumProduct.value);
+  let currentSumCurrency = Number(sumCurrency.innerText);
 
-            totalSumCurrency += Number(sumCurrency.innerText) - currentSumCurrency;
-            currentSumCurrency = Number(sumCurrency.innerText);
-            outputTotalSumCurrency.innerText = totalSumCurrency;
-          }
-        });
-      });
+  _totalSumProduct += currentAmountValue;
+  _totalSumCurrency += Number(currentSumCurrency);
+  outputTotalSumProduct.innerText = _totalSumProduct;
+  outputTotalSumCurrency.innerText = _totalSumCurrency;
+  productData.iconBasket.innerText = _totalSumProduct;
 
-      observer.observe(sumCurrency, {
-        childList: true,
-        subtree: true,
-      });
+  let observer = new MutationObserver(mutations => {
+    mutations.forEach(mutation => {
+      if (mutation.target == productData.observeElement) {
+        _totalSumProduct += Number(productData.amountSumProduct.value) - currentAmountValue;
+        currentAmountValue = Number(productData.amountSumProduct.value);
+        outputTotalSumProduct.innerText = _totalSumProduct;
+        productData.iconBasket.innerText = _totalSumProduct;
+
+        _totalSumCurrency += Number(sumCurrency.innerText) - currentSumCurrency;
+        currentSumCurrency = Number(sumCurrency.innerText);
+        outputTotalSumCurrency.innerText = _totalSumCurrency;
+      }
     });
-  }
+  });
+
+  observer.observe(sumCurrency, {
+    childList: true,
+    subtree: true,
+  });
+
+  productData.deleteButton.addEventListener('click', () => {
+    _totalSumProduct -= currentAmountValue;
+    outputTotalSumProduct.innerText = _totalSumProduct;
+    productData.iconBasket.innerText = _totalSumProduct;
+
+    _totalSumCurrency -= currentSumCurrency;
+    outputTotalSumCurrency.innerText = _totalSumCurrency;
+    observer.disconnect();
+    deletesProduct(productData.cardProduct);
+  });
+}
+
+export function deletesProduct(product) {
+  product.remove();
+}
+
+// показывает на мобильных кнопку "удалить"
+function mobileShowDelete(productCard) {
+  let managmentDotts = productCard.querySelector('.row-in-basket__order-management-mobile-dots');
+
+  managmentDotts.addEventListener('click', () => {
+    productCard.querySelector('.row-in-basket__order-management').classList.toggle('row-in-basket__order-management--is-active');
+  });
 }

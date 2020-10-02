@@ -197,7 +197,7 @@
 .row-in-basket__order-management {
   display: none;
   position: absolute;
-  top: 0;
+  top: 1.875em;
   right: 0;
   padding: 1em;
   background-color: #ffffff;
@@ -210,6 +210,10 @@
     background-color: transparent;
     box-shadow: none;
     margin-top: 1em;
+  }
+
+  &--is-active {
+    display: block;
   }
 }
 

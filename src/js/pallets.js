@@ -4,7 +4,6 @@ import {callsModalWindow} from './modules/modal-window';
 import {addProductInBasket, calculatesTotalAmountProductCurrency} from './modules/basket';
 import {formFull} from './modules/form-full';
 import {calculatorSale} from './modules/calculator-sale';
-calculatesTotalAmountProductCurrency();
 
 // Вызов модуля модального окна
 let buttonOpenModalWindow = document.querySelector('.basket');
@@ -32,6 +31,9 @@ let allButtonsAddProductInBasket = document.querySelectorAll('.pallets-cards__in
 let basketPallets = document.getElementById('basketPallets');
 
 allButtonsAddProductInBasket.forEach(buttonAddProduct => {
+  // фиксируем текущую ширину кнопки, чтобы она не меняла размер при изменении текста в ней
+  buttonAddProduct.style.width = buttonAddProduct.offsetWidth + 1 + 'px';
+
   buttonAddProduct.addEventListener('click', (e) => {
     e.preventDefault();
     let productCard = e.target.closest('.pallets-cards');
@@ -54,7 +56,6 @@ allButtonsAddProductInBasket.forEach(buttonAddProduct => {
       data: {
         name: productCard.querySelector('.pallets-cards__interaction').getAttribute('data-product'),
         type: productCard.querySelector('.pallets-cards__interaction').getAttribute('data-grade'),
-        inputAttrName: "grade",
         inputValue: productCard.querySelector('.pallets-cards__text>h4.text-bold').innerText,
         amountValue: Number(productCard.querySelector('input.pallets-cards-calc__amount').value),
       }
@@ -70,11 +71,36 @@ allButtonsAddProductInBasket.forEach(buttonAddProduct => {
       plus: addedLineToBasket.querySelector('.row-in-basket-calc__plus'),
       minus: addedLineToBasket.querySelector('.row-in-basket-calc__minus')
     };
+
+    let palletData = {
+      cardProduct: addedLineToBasket,
+      sumCurrency: addedLineToBasket.querySelector('.row-in-basket-calc__output-sum [data-sum]'),
+      amountSumProduct: addedLineToBasket.querySelector('.row-in-basket-calc__amount'),
+      outputTotalSumProduct: document.querySelector('[data-basket="product"]'),
+      outputTotalSumCurrency: document.querySelector('[data-basket="currency"]'),
+      observeElement: addedLineToBasket.querySelector('.row-in-basket-calc__output-sum [data-sum]'),
+      iconBasket: document.querySelector('.basket__number'),
+      deleteButton: addedLineToBasket.querySelector('a.row-in-basket__delete-order-item')
+    };
+
     calculatorSale(rowInBasketInteraction);
-    calculatesTotalAmountProductCurrency();
+    calculatesTotalAmountProductCurrency(palletData);
+
+    buttonAddProduct.innerHTML = `&#x2714`;
+    setTimeout(() => buttonAddProduct.innerText = 'добавлено', 1000);
+
+    let plus = productCard.querySelector('.pallets-cards-calc__plus');
+    let minus = productCard.querySelector('.pallets-cards-calc__minus');
+    let siblingAmount = productCard.querySelector('input.pallets-cards-calc__amount');
+
+    if (buttonAddProduct.innerText != 'добавить в корзину') {
+      plus.addEventListener('click', () => buttonAddProduct.innerText = 'добавить в корзину');
+      minus.addEventListener('click', () => buttonAddProduct.innerText = 'добавить в корзину');
+      siblingAmount.addEventListener('input', () => buttonAddProduct.innerText = 'добавить в корзину');
+    }
   });
 });
 
-// // Вызов формы заказа
-// let basketForm = document.getElementById('basketForm');
-// formFull(basketForm);
+// Вызов формы заказа
+let basketForm = document.getElementById('basketForm');
+formFull(basketForm);

@@ -59,14 +59,6 @@ export const sendFormOrder = (function(){
 
     let inputSelectAttrNameAll = new FormData();
 
-    inputs.forEach(item => {
-      if (!item.matches('[type="hidden"]')) return;
-
-      let key = item.getAttribute('name');
-
-      inputSelectAttrNameAll.append(key, item.value);
-    });
-
     currentSelect.forEach(item => {
       if (!item.hasAttribute('name')) return;
       let key = item.getAttribute('name');
@@ -74,15 +66,14 @@ export const sendFormOrder = (function(){
     });
 
     inputs.forEach(item => {
-      if (item.matches('[type="hidden"]')) return;
-
       let key = item.getAttribute('name');
 
-      if (item.matches('[type="checkbox"]') && item.matches('[type="checkbox"]').checked) {
+      if (item.matches('[type="checkbox"]') && item.checked) {
         inputSelectAttrNameAll.append(key, 'С засором');
-      } else if(item.matches('[type="checkbox"]') && !item.matches('[type="checkbox"]').checked) {
+      } else if(item.matches('[type="checkbox"]') && !item.checked) {
         inputSelectAttrNameAll.append(key, 'Без засора');
-      } else if (key == 'weight') {
+      } else if (key == 'weight' || ~key.indexOf('volume')
+      ) {
         inputSelectAttrNameAll.append(key, `${item.value} кг/шт`);
       } else {
         inputSelectAttrNameAll.append(key, item.value);
@@ -93,6 +84,10 @@ export const sendFormOrder = (function(){
       let key = item.getAttribute('name');
       inputSelectAttrNameAll.append(key, item.value);
     });
+
+    for (let [name, value] of inputSelectAttrNameAll) {
+      console.log(name, ' => ', value)
+    }
 
     return inputSelectAttrNameAll;
   }
