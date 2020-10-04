@@ -85,10 +85,6 @@ export const sendFormOrder = (function(){
       inputSelectAttrNameAll.append(key, item.value);
     });
 
-    for (let [name, value] of inputSelectAttrNameAll) {
-      console.log(name, ' => ', value)
-    }
-
     return inputSelectAttrNameAll;
   }
 
