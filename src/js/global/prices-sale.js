@@ -1,11 +1,11 @@
 export const priceSale = {
   'pallets': {
-    "first-grade-epal": 150,
-    "first-grade-noepal": 120,
-    "second-grade-epal": 110,
-    "second-grade-noepal": 100,
-    "third-grade-epal": 90,
-    "different-grade": 80,
+    "first-grade-epal": 300,
+    "first-grade-noepal": 160,
+    "second-grade-epal": 280,
+    "second-grade-noepal": 140,
+    "third-grade-epal": 240,
+    "different-grade": 220,
 
   },
 
