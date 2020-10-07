@@ -16,6 +16,7 @@ module.exports = {
     vacancy: './src/js/vacancy.js',
     reviews: './src/js/reviews.js',
     blog: './src/js/blog.js',
+    pallets: './src/js/pallets.js',
   },
   output: {
     filename: `[name].js`,

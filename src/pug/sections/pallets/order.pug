@@ -1,0 +1,113 @@
+//- include ../../mixins/mixins-cards.pug
+//- include ../../mixins/buttons.pug
+//- .section-gray-bg
+//-   section.section-order#formOrder
+//-     .container
+//-       .section__title Корзина
+//-       form(id="indexGeneralOrder", action="php/form-order.php" method="POST" class="general-order")
+//-         input(type="hidden" name="Mirotvorets" value="Заявка с главного сайта mirotvorets72.ru")
+//-         input(type="hidden" name="form_from" value="mirotvorets72.ru")
+//-         input(type="hidden" name="admin_email" value="zayavka@mirotvorets72.com")
+//-         input(type="hidden" name="erasure" value="Завка на покупку поддонов")
+//-         .input-wrap.input-wrap--mb-0
+//-           .select(tabindex="0", id="selectedService", data-toggle-mask="hide")
+//-             .select__options-wrap
+//-               .select__empty-cutter
+//-               .select__wrap-only-option.scroll-vertical-small
+//-                 .select__option(name="buying-materials") Прием вторсырья
+//-                 .select__option(name="ecobox") Установка экобоксов
+//-                 .select__option(name="containers") Установка контейнеров
+//-                 .select__option(name="destruction-archive") Утилизация архивов
+//-                 .select__option(name="storage-archive") Хранение архивов
+//-             .select__header
+//-               span.select-current(name=null) Выберите услугу
+//-               .select__icon-dropdown
+//-                 img(src="assets/img/form/select-dropdown.png", alt="стрелка")
+//-               .error-no-selected__message
+//-                 .error-no-selected__message-icon !
+//-                 .error-no-selected__message-text
+
+//-           .select(tabindex="0", id="buyingMaterials", data-toggle-mask="hide")
+//-             .mask-hide-field
+//-             .select__options-wrap
+//-               .select__empty-cutter
+//-               .select__wrap-only-option.scroll-vertical-small
+//-                 .select__option(name="cardboard") Картон
+//-                 .select__option(name="books") Макулатура (книги)
+//-                 .select__option(name="paper") Макулатура (офисная бумага)
+//-                 .select__option(name="newspapers") Макулатура (газеты)
+//-                 .select__option(name="magazines") Макулатура (журналы)
+//-                 .select__option(name="film-pvd") Пленка (ПВД)
+//-                 .select__option(name="film-color-pvd") Цветная пленка (ПВД)
+//-                 .select__option(name="film-stretch") Пленка (стрейч)
+//-                 .select__option(name="polyethylene") ПЭТ
+//-                 .select__option(name="textile") Текстиль
+//-                 .select__option(name="oil") Масло
+//-                 .select__option(name="pallets") Поддоны
+//-                 .select__option(name="kegs") Кеги (ПЭТ)
+//-                 .select__option(name="plastic-canisters") Пластиковые канистры
+//-                 .select__option(name="aluminum-cans") Алюминиевые банки
+//-                 .select__option(name="plastic-box") Пластиковые ящики
+//-                 .select__option(name="polyethylene-pipe") Трубы полиэтиленовые черные
+//-                 .select__option(name="chemical-containers") Пластиковая тара из под бытовой химии
+//-                 .select__option(name="glass") Стекло листовое прозрачное
+//-                 .select__option(name="glass-white-brown") Стекло белое и коричневое (банки, бутылки)
+//-                 .select__option(name="glass-green") Стекло зеленое (банки, бутылки)
+//-                 .select__option(name="bags") Биг-Бэги (мешок МКР)
+//-                 .select__option(name="bushing") Картонные втулки
+//-             .select__header
+//-               span.select-current(name=null) Выберите тип сырья
+//-               .select__icon-dropdown
+//-                 img(src="assets/img/form/select-dropdown.png", alt="стрелка")
+//-               .error-no-selected__message
+//-                 .error-no-selected__message-icon !
+//-                 .error-no-selected__message-text
+
+//-           .select(tabindex="0", id="packed", data-toggle-mask="hide")
+//-             .mask-hide-field
+//-             .select__options-wrap
+//-               .select__empty-cutter
+//-               .select__wrap-only-option.scroll-vertical-small
+//-                 .select__option(name="packed-boxes") Сложено в коробки
+//-                 .select__option(name="packed-bags") Сложено в мешки
+//-                 .select__option(name="packed-bags") Сложено в стопы и связано
+//-                 .select__option(name="roll-stack") Сложено в стопы, но не связано
+//-                 .select__option(name="dont-roll-stack") Россыпь
+//-                 .select__option(name="other") Другое
+//-             .select__header
+//-               span.select-current(name=null) Укажите как сложено
+//-               .select__icon-dropdown
+//-                 img(src="assets/img/form/select-dropdown.png", alt="стрелка")
+//-               .error-no-selected__message
+//-                 .error-no-selected__message-icon !
+//-                 .error-no-selected__message-text
+
+//-           .input-container
+//-             input.input(type="number", name="weight", placeholder="Сколько кг/шт")
+//-             .error-no-selected__message
+//-               .error-no-selected__message-icon !
+//-               .error-no-selected__message-text
+
+//-           .input-container
+//-             input.input(type="text", name="address", placeholder="Ваш адрес")
+//-             .error-no-selected__message
+//-               .error-no-selected__message-icon !
+//-               .error-no-selected__message-text
+
+//-           .input-container
+//-             input.input.tel-field(type="tel", name="phone", placeholder="Ваш телефон")
+//-             .error-no-selected__message
+//-               .error-no-selected__message-icon !
+//-               .error-no-selected__message-text
+
+//-         .input-wrap.input-wrap--content-center
+//-           .break.break--mobile-desktop-show
+//-           +button-input-tipe-a("submit", "send-order", "отправить заявку")
+//-         .result-query-success
+//-           .result-query-container__icon
+//-             include ../../../svg/form/success-query.svg
+//-           .result-query-container__message Заявка успешно отпарвлена.
+//-         .result-query-error
+//-           .result-query-container__icon
+//-             include ../../../svg/form/error-query.svg
+//-           .result-query-container__message Заявка не отправлена! Попробуйте ещё раз.
