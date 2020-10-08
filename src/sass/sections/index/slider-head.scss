@@ -272,6 +272,17 @@
   @media (min-width: 992px) {
     display: block;
   }
+
+  &--awards {
+    margin-top: 35px;
+    margin-bottom: 27px;
+    width: initial;
+
+    @media (min-width: 992px) {
+      // display: inline-block;
+      display: block;
+    }
+  }
 }
 
 .slider-head__buttom-wrap {
@@ -314,6 +325,14 @@
   }
 
   &--next::before {
+    content: url("../img/slider/arrow-right.png");
+  }
+
+  &--awards-prev::before {
+    content: url("../img/slider/arrow-left.png");
+  }
+
+  &--awards-next::before {
     content: url("../img/slider/arrow-right.png");
   }
 
