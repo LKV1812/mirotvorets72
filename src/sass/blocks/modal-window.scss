@@ -37,6 +37,19 @@
   position: relative;
   overflow: hidden;
 
+  &--photo-gallery {
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    padding: 3em 1em;
+    border-radius: 1em;
+    box-shadow: 4px 8px 19px -7px rgba(89, 50, 8, .75);
+    background-color: #efeef3;
+    background-image: url('../img/index/calculator/calculator-bg-text.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
   &--text-bg {
     textarea, .input {
       background-color: transparent;

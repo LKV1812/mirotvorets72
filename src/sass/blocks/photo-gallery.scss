@@ -1,0 +1,38 @@
+@import '../variables/variables.scss';
+
+.photo-gallery {
+  display: flex;
+  justify-content: center;
+  height: 75vh;
+  max-width: 100%;
+  overflow: hidden;
+
+  & > img {
+    max-height: 100%;
+    width: auto;
+    max-width: 100%;
+    transition: opacity 0.2s;
+  }
+}
+
+.photo-gallery__count-photo {
+  position: absolute;
+  left: 0;
+  bottom: 14px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-family: $textType1;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: $mainColorText;
+}
+
+span[data-current-photo] {
+  margin-right: 5px;
+}
+
+span[data-length-photo] {
+  margin-left: 5px;
+}
