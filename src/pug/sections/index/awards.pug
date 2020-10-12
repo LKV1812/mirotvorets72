@@ -3,7 +3,10 @@ include ../../mixins/buttons.pug
 include ../../mixins/modal-window.pug
 section.section.awards
   +modal-window('photoGalerry', null, 'modal-body--photo-gallery', 'modal-close--pos-right')
-    .photo-gallery
+    .photo-gallery-slider
+      div(class="photo-gallery-btn-next" data-btn-callery="prev") &#8249;
+      .photo-gallery
+      div(class="photo-gallery-btn-prev" data-btn-callery="next") &#8250;
     .photo-gallery__count-photo #[span(data-current-photo) 2] из #[span(data-length-photo) 5]
   .container.awards-slider-wrap
     .section__title наши достижения

@@ -1,5 +1,10 @@
 @import '../variables/variables.scss';
 
+.photo-gallery-slider {
+  display: flex;
+  align-items: center;
+}
+
 .photo-gallery {
   display: flex;
   justify-content: center;
@@ -13,6 +18,27 @@
     max-width: 100%;
     transition: opacity 0.2s;
   }
+}
+
+.photo-gallery-btn-next,
+.photo-gallery-btn-prev {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background-color: rgba(0, 0, 0, 0.5);
+
+  font-size: 80px;
+  color: $mainColorText;
+  // color: $colorTextType2;
+  cursor: pointer;
+}
+
+.photo-gallery-btn-next {
+  padding: 0px 10px 10px 0;
+}
+
+.photo-gallery-btn-prev {
+  padding: 0px 0px 10px 10px;
 }
 
 .photo-gallery__count-photo {

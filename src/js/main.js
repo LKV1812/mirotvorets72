@@ -16,11 +16,15 @@ let modalPhotoGallery = document.getElementById('photoGalerry');
 let galleryContainer = modalPhotoGallery.querySelector('.photo-gallery');
 let parentPhoto = document.getElementById('awards-carousel');
 let photoCollection = parentPhoto.querySelectorAll('img');
+let navButton = {
+  next: modalPhotoGallery.querySelector('[data-btn-callery="next"]'),
+  prev: modalPhotoGallery.querySelector('[data-btn-callery="prev"]'),
+};
 
 photoCollection.forEach((item, index) => {
   callsModalWindow(item, modalPhotoGallery);
 
   item.addEventListener('click', (e) => {
-    openPhotoGallery(photoCollection, index, galleryContainer, modalPhotoGallery);
+    openPhotoGallery(photoCollection, index, galleryContainer, modalPhotoGallery, navButton);
   });
 });
