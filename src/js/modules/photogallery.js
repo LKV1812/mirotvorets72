@@ -1,20 +1,19 @@
-export function openPhotoGallery(originalPhotoCollection, trgetIndex, wrapPhoto, modalWindow, navButton) {
-  let outputCurrentIndex = modalWindow.querySelector('span[data-current-photo]');
-  let outputLengthIndex = modalWindow.querySelector('span[data-length-photo]');
-  let closeGallery = modalWindow.querySelector('.modal-close');
-  let firstImg;
-  let lastImg;
+export function openPhotoGallery(galleryData) {
+  let outputCurrentIndex = galleryData.modalWindow.querySelector('span[data-current-photo]');
+  let outputLengthIndex = galleryData.modalWindow.querySelector('span[data-length-photo]');
+  let closeGallery = galleryData.modalWindow.querySelector('.modal-close');
+
   let photoGallery = [];
   let indexActivePhoto;
 
-  originalPhotoCollection.forEach((item, index) => {
+  galleryData.originalPhotoCollection.forEach((item, index) => {
     let img = new Image();
     img.src = item.src;
     img.setAttribute('alt', item.getAttribute('alt'));
-    wrapPhoto.append(img);
+    galleryData.wrapPhoto.append(img);
     photoGallery.push(img);
 
-    if (item != originalPhotoCollection[trgetIndex]) {
+    if (item != galleryData.originalPhotoCollection[galleryData.trgetIndex]) {
       img.style.display = 'none';
       img.style.opacity = '0';
       return;
@@ -24,13 +23,48 @@ export function openPhotoGallery(originalPhotoCollection, trgetIndex, wrapPhoto,
     outputCurrentIndex.innerText = index + 1;
   });
 
-  outputLengthIndex.innerText = originalPhotoCollection.length;
+  outputLengthIndex.innerText = galleryData.originalPhotoCollection.length;
+
+  let posX;
+  galleryData.wrapPhoto.addEventListener('touchstart', (e) => {
+    posX = e.changedTouches[0].pageX;
+  });
+
+  galleryData.wrapPhoto.addEventListener('touchend', (e) => {
+    if (e.changedTouches[0].pageX > posX + 100) {
+      posX = e.changedTouches[0].pageX;
+      flipsToTheNextPhoto();
+    }
+
+    if (e.changedTouches[0].pageX < posX - 100) {
+      posX = e.changedTouches[0].pageX;
+      flipsToThePrevPhoto();
+    }
+  });
+
+  document.addEventListener('keydown', function(event) {
+    if (event.code == 'ArrowRight') {
+      flipsToTheNextPhoto();
+    } else if (event.code == 'ArrowLeft') {
+      flipsToThePrevPhoto();
+    } else {
+      return;
+    }
+  });
+
+  galleryData.wrapPhoto.addEventListener('click', flipsToTheNextPhoto);
+  closeGallery.addEventListener('click', () => galleryData.wrapPhoto.innerHTML = '', true);
+  galleryData.btnNext.addEventListener('click', flipsToTheNextPhoto);
+  galleryData.btnPrev.addEventListener('click', flipsToThePrevPhoto);
 
   function activeSlide(oldIndex, newActive) {
     photoGallery[oldIndex].style.opacity = '0';
-    photoGallery[oldIndex].style.display = 'none';
 
-    photoGallery[newActive].style.display = 'block';
+    setTimeout(() => {
+      photoGallery[oldIndex].style.display = 'none';
+      photoGallery[newActive].style.display = 'block';
+    }, 200);
+
     photoGallery[newActive].style.opacity = '1';
 
     outputCurrentIndex.innerText = newActive + 1;
@@ -53,81 +87,4 @@ export function openPhotoGallery(originalPhotoCollection, trgetIndex, wrapPhoto,
       activeSlide(indexActivePhoto, --indexActivePhoto);
     }
   }
-
-  let posX;
-  wrapPhoto.addEventListener('touchstart', (e) => {
-    posX = e.changedTouches[0].pageX;
-    // console.log(e.changedTouches[0].pageX)
-    // console.log(e)
-  });
-
-  wrapPhoto.addEventListener('touchmove', (e) => {
-    if (e.changedTouches[0].pageX > posX + 150) {
-      posX = e.changedTouches[0].pageX;
-      flipsToTheNextPhoto();
-    }
-
-    if (e.changedTouches[0].pageX < posX - 150) {
-      posX = e.changedTouches[0].pageX;
-      flipsToThePrevPhoto();
-    }
-  });
-
-  wrapPhoto.addEventListener('click', flipsToTheNextPhoto);
-  closeGallery.addEventListener('click', () => {wrapPhoto.innerHTML = '';}, true);
-  navButton.next.addEventListener('click', flipsToTheNextPhoto);
-  navButton.prev.addEventListener('click', flipsToThePrevPhoto);
-
-
-  // outputCurrentIndex.innerText = Number(trgetIndex) + 1;
-  // outputLengthIndex.innerText = photoCollection.length;
-
-  // photoCollection.forEach((item, index) => {
-  //   let img = new Image();
-  //   img.src = item.src;
-  //   img.setAttribute('alt', item.getAttribute('alt'));
-  //   wrapPhoto.append(img);
-
-  //   if (index == 0) firstImg = img;
-  //   if (index == Number(photoCollection.length) - 1) lastImg = img;
-
-  //   if (item != photoCollection[trgetIndex]) {
-  //     img.style.display = 'none';
-  //     img.style.opacity = '0';
-  //     return;
-  //   }
-
-  //   let accessAction = true;
-  //   img.addEventListener('click', () => {
-  //     if (accessAction) flipsToTheNextPhoto(img, Number(index) + 1);
-  //   }, true);
-
-  //   function flipsToTheNextPhoto(img, index) {
-  //     accessAction = false;
-  //     let count = Number(index) + 1;
-  //     img.style.opacity = '0';
-  //     img.style.display = 'none';
-
-  //     if (img == lastImg) {
-  //       count = 1;
-  //       outputCurrentIndex.innerText = count;
-  //       firstImg.style.display = 'block';
-  //       firstImg.style.opacity = '1';
-
-  //       firstImg.addEventListener('click', () => {
-  //         flipsToTheNextPhoto(firstImg, count);
-  //       }, true);
-  //     } else {
-  //       outputCurrentIndex.innerText = count;
-  //       img.nextElementSibling.style.display = 'block';
-  //       img.nextElementSibling.style.opacity = '1';
-
-  //       img.nextElementSibling.addEventListener('click', () => {
-  //         flipsToTheNextPhoto(img.nextElementSibling, count);
-  //       }, true);
-  //     }
-
-  //     accessAction = true;
-  //   }
-  // });
 }

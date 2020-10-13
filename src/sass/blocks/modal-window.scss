@@ -38,6 +38,7 @@
   overflow: hidden;
 
   &--photo-gallery {
+    max-width: 100%;
     left: 50%;
     transform: translateX(-50%);
     display: inline-block;

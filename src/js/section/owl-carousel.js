@@ -1,3 +1,5 @@
+import {callsModalWindow} from '../modules/modal-window';
+
 $(document).ready(function(){
   var indexHeaderSlider = $('#carouselIndexPade');
 
@@ -34,9 +36,7 @@ $(document).ready(function(){
   var awardsCarousel = $('#awards-carousel');
 
   awardsCarousel.owlCarousel({
-    // center: true,
     loop: true,
-    // dots: true,
     margin: 30,
     dotsContainer: '.awards-carousel__dots-container',
 
@@ -50,33 +50,23 @@ $(document).ready(function(){
         stagePadding: 90,
       },
       400: {
-        items: 2,
-        stagePadding: 40,
+        items: 1,
+        stagePadding: 110,
       },
       450: {
-        items: 2,
-        stagePadding: 60,
+        items: 1,
+        stagePadding: 130,
       },
       500: {
-        items: 2,
-        stagePadding: 80,
+        items: 1,
+        stagePadding: 150,
       },
       576: {
         items: 2,
-        stagePadding: 70,
-      },
-      768: {
-        items: 2,
-        stagePadding: 100,
       },
       992: {
         items: 3,
-        stagePadding: 90,
       },
-      1200: {
-        items: 3,
-        stagePadding: 130,
-      }
     }
   });
 
@@ -88,5 +78,12 @@ $(document).ready(function(){
   $('.slider-head__buttom--awards-prev').click(function(e) {
     e.preventDefault();
     awardsCarousel.trigger('prev.owl.carousel', [300]);
+  });
+
+  // на слайды навешиваем вызов модвального окна с галлерей, в которой будут выводиться фотографии
+  let modalPhotoGallery = document.getElementById('photoGalerry');
+  let slides = document.getElementById('awards-carousel').querySelectorAll('.owl-item');
+  slides.forEach(slide => {
+    callsModalWindow(slide, modalPhotoGallery);
   });
 });

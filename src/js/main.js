@@ -1,3 +1,4 @@
+// вызов прослушки вызова модального окна для фотогаллереи подключена в файле owl-carousel.js так как необходимо чтобы слайдер полностью прогрузился, чтоб на его слайды навешать прослушку клика.
 import './entry';
 import './section/owl-carousel';
 import './section/cards-product';
@@ -9,22 +10,25 @@ import './modules/ranges.js';
 import './modules/сheckbox.js';
 import './modules/tabs.js';
 import './modules/phone-mask.js';
-import {callsModalWindow} from './modules/modal-window.js';
 import {openPhotoGallery} from './modules/photogallery.js';
 
 let modalPhotoGallery = document.getElementById('photoGalerry');
 let galleryContainer = modalPhotoGallery.querySelector('.photo-gallery');
 let parentPhoto = document.getElementById('awards-carousel');
 let photoCollection = parentPhoto.querySelectorAll('img');
-let navButton = {
-  next: modalPhotoGallery.querySelector('[data-btn-callery="next"]'),
-  prev: modalPhotoGallery.querySelector('[data-btn-callery="prev"]'),
-};
 
-photoCollection.forEach((item, index) => {
-  callsModalWindow(item, modalPhotoGallery);
 
-  item.addEventListener('click', (e) => {
-    openPhotoGallery(photoCollection, index, galleryContainer, modalPhotoGallery, navButton);
+parentPhoto.addEventListener('click', (e) => {
+  photoCollection.forEach( (itemImg, index) => {
+    if (e.target.src == itemImg.src) {
+      openPhotoGallery({
+        originalPhotoCollection: photoCollection,
+        trgetIndex: index,
+        wrapPhoto: galleryContainer,
+        modalWindow: modalPhotoGallery,
+        btnNext: modalPhotoGallery.querySelector('[data-btn-callery="next"]'),
+        btnPrev: modalPhotoGallery.querySelector('[data-btn-callery="prev"]'),
+      });
+    }
   });
 });

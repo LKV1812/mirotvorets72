@@ -6,31 +6,40 @@
 }
 
 .photo-gallery {
+  max-height: 75vh;
   display: flex;
   justify-content: center;
-  height: 75vh;
-  max-width: 100%;
   overflow: hidden;
 
+  @media (min-width: 576px) {
+    height: 75vh;
+  }
+
   & > img {
-    max-height: 100%;
-    width: auto;
-    max-width: 100%;
+    width: 100%;
+    height: auto;
     transition: opacity 0.2s;
+
+    @media (min-width: 576px) {
+      height: 100%;
+      width: auto;
+    }
   }
 }
 
 .photo-gallery-btn-next,
 .photo-gallery-btn-prev {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  // background-color: rgba(0, 0, 0, 0.5);
-
+  display: none;
   font-size: 80px;
   color: $mainColorText;
-  // color: $colorTextType2;
   cursor: pointer;
+
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
 }
 
 .photo-gallery-btn-next {
