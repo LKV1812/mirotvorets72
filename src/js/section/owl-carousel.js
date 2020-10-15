@@ -1,5 +1,3 @@
-import {callsModalWindow} from '../modules/modal-window';
-
 $(document).ready(function(){
   var indexHeaderSlider = $('#carouselIndexPade');
 
@@ -78,12 +76,5 @@ $(document).ready(function(){
   $('.slider-head__buttom--awards-prev').click(function(e) {
     e.preventDefault();
     awardsCarousel.trigger('prev.owl.carousel', [300]);
-  });
-
-  // на слайды навешиваем вызов модвального окна с галлерей, в которой будут выводиться фотографии
-  let modalPhotoGallery = document.getElementById('photoGalerry');
-  let slides = document.getElementById('awards-carousel').querySelectorAll('.owl-item');
-  slides.forEach(slide => {
-    callsModalWindow(slide, modalPhotoGallery);
   });
 });

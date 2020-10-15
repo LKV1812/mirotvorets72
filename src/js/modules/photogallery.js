@@ -31,12 +31,12 @@ export function openPhotoGallery(galleryData) {
   });
 
   galleryData.wrapPhoto.addEventListener('touchend', (e) => {
-    if (e.changedTouches[0].pageX > posX + 100) {
+    if (e.changedTouches[0].pageX > posX + 20) {
       posX = e.changedTouches[0].pageX;
       flipsToTheNextPhoto();
     }
 
-    if (e.changedTouches[0].pageX < posX - 100) {
+    if (e.changedTouches[0].pageX < posX - 20) {
       posX = e.changedTouches[0].pageX;
       flipsToThePrevPhoto();
     }

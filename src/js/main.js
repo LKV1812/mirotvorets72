@@ -10,6 +10,7 @@ import './modules/ranges.js';
 import './modules/сheckbox.js';
 import './modules/tabs.js';
 import './modules/phone-mask.js';
+import {callsModalWindow} from './modules/modal-window';
 import {openPhotoGallery} from './modules/photogallery.js';
 
 let modalPhotoGallery = document.getElementById('photoGalerry');
@@ -17,6 +18,7 @@ let galleryContainer = modalPhotoGallery.querySelector('.photo-gallery');
 let parentPhoto = document.getElementById('awards-carousel');
 let photoCollection = parentPhoto.querySelectorAll('img');
 
+callsModalWindow(parentPhoto, modalPhotoGallery, 'img');
 
 parentPhoto.addEventListener('click', (e) => {
   photoCollection.forEach( (itemImg, index) => {

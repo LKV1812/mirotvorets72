@@ -6,6 +6,9 @@
 
 Для работы в свой скрипт необходимо импортировать объект {callsModalWindow} './modules/modal-window' и петедать в него id элемента, по клику на котором происходит вызов окна и id самого окна, которое неоходимо показывать
 */
+body.no-scroll {
+  overflow: hidden;
+}
 
 .modal {
   position: fixed;
