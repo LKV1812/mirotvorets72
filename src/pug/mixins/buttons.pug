@@ -9,3 +9,15 @@ mixin button-link-width-auto-type-a(href, value)
 
 mixin button-card-projects(param)
   a(href= param.href class= param.addClass ? "button-card " + param.addClass : "button-card ") #{param.text}
+
+mixin button-filter(text, classModifier)
+  a(class= classModifier ? "button-filter " + classModifier : "button-filter" href="#") #{text}
+    block
+
+mixin button-file(name, text)
+  .button-file-group
+    input(class="button-file" id="buttonFile" type="file", name= name)
+    label(for="buttonFile") #{text}
+
+mixin button-link-type-a(link, text, classModifier)
+  a(href= link class= classModifier ? "button-link-type-a " + classModifier : "button-link-type-a") #{text}

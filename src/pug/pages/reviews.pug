@@ -1,0 +1,17 @@
+extends ../layouts/main.pug
+
+block variables
+  - var title= "Отзывы клиентов о компании 'Миротворец' Тюмень. Сбор вторсырья отзывы."
+
+block link
+block keywords
+  meta(name="keywords" content="Отзывы о компании по сбору вторсырья. Сдать стекло, макулатуру, картон, масло, канистры, аккумуляторы, пленку, поддоны отзывы.")
+block description
+  meta(name="description", content="Отзывы клиентов о компании 'Миротворец' Тюмень. Отзывы о компании по сбору вторсырья в Тюмени. Сдать стекло, макулатуру, картон, масло, канистры, аккумуляторы, пленку, поддоны отзывы.")
+
+block content
+  include ../sections/lower-menu-bg.pug
+  include ../sections/reviews/reviews-body.pug
+
+block scripts
+  script(src="assets/js/reviews.js")

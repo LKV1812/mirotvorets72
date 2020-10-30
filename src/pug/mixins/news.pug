@@ -1,0 +1,23 @@
+mixin mews(source, title, img, text)
+  section.section.pb-0.stretch-height
+    .container
+      .navigating-source-path
+        .navigating-source-path__item
+          a(href="index.html" class="navigating-source-path__link") Главная &raquo;
+        .navigating-source-path__item
+          a(href="blog.html" class="navigating-source-path__link") Блог &raquo;
+        .navigating-source-path__item
+          p.navigating-source-path__text #{source}
+      h1.section__title #{title}
+  section.news-body
+    .container.clearfix
+      .news-body__img
+        img(src= img.src, alt= img.alt)
+      each p in text
+        p.text #{p}
+  section.container
+    .news-interactions
+      .blog-card__views-icon.mr-30
+        include ../../img/blog/eye.svg
+        span.text-small 17
+      block

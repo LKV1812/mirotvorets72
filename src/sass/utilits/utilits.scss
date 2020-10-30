@@ -175,6 +175,10 @@
   padding-bottom: 0;
 }
 
+.mt-30 {
+  margin-top: 30px;
+}
+
 .mt-35 {
   margin-top: 35px;
 }
@@ -188,7 +192,11 @@
 }
 
 .mr-20 {
-  margin-right: 20px;
+  margin-right: 20px !important;
+}
+
+.mr-30 {
+  margin-right: 30px;
 }
 
 .mr-tablet-30 {
@@ -214,7 +222,7 @@
 }
 
 .mb-30 {
-  margin-bottom: 30px;
+  margin-bottom: 30px !important;
 }
 
 .mb-20 {
@@ -262,11 +270,15 @@
 }
 
 .mb-40 {
-  margin-bottom: 40px;
+  margin-bottom: 40px !important;
 }
 
 .mb-50 {
-  margin-bottom: 50px;
+  margin-bottom: 50px !important;
+}
+
+.mb-60 {
+  margin-bottom: 60px !important;
 }
 
 .ul-reset-margin-left {

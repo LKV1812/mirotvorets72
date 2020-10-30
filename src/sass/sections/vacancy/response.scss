@@ -1,0 +1,14 @@
+@import '../../variables/variables.scss';
+
+.response-button-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    align-items: normal;
+    justify-content: center;
+    flex-direction: row;
+  }
+}

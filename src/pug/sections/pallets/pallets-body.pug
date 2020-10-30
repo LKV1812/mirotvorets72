@@ -1,0 +1,143 @@
+include ../../mixins/mixins-cards.pug
+include ../../mixins/buttons.pug
+include ../../mixins/modal-window.pug
+section.section
+  .container
+    +modal-window('palletsBasket', null, 'modal-body--text-bg', 'modal-close--pos-right')
+      form(id="basketForm", class="form" action="php/form-order.php", method="post")
+        input(type="hidden" name="Mirotvorets" value="Заявка на покупку поддонов mirotvorets72.ru")
+        input(type="hidden" name="form_from" value="mirotvorets72.ru")
+        input(type="hidden" name="admin_email" value="zayavka@mirotvorets72.com")
+        input(type="hidden" name="erasure" value="Продажа поддонов")
+        #basketPallets.basket-container.scroll-vertical-small
+          .row-in-basket.row-in-basket--send-basket
+            .row-in-basket__total
+              .text-bold В корзине товара: <span class="text-bold" data-basket="product">0</span> шт.
+              .text-bold На сумму: <span class="text-bold" data-basket="currency">0</span> руб.
+            .row-in-basket__input-wrap
+              .input-container
+                input.input.tel-field(type="tel", name="phone", placeholder="Ваш телефон")
+                .error-no-selected__message
+                  .error-no-selected__message-icon !
+                  .error-no-selected__message-text
+              +button-input-tipe-a('submit', 'send-basket', 'Отправить заказ')
+
+          .result-query-success
+            .result-query-container__icon
+              include ../../../svg/form/success-query.svg
+            .result-query-container__message Заявка успешно отпарвлена.
+          .result-query-error
+            .result-query-container__icon
+              include ../../../svg/form/error-query.svg
+            .result-query-container__message Заявка не отправлена! Попробуйте ещё раз.
+
+    a(href="#").basket
+      .basket__number 0
+      include ../../../img/pallets/basket.svg
+    .navigating-source-path
+      .navigating-source-path__item
+        a(href="index.html" class="navigating-source-path__link") Главная &raquo;
+      .navigating-source-path__item
+        p.navigating-source-path__text Продажа поддонов
+    h1.section__title Продажа поддонов
+    .pallets-head
+      .pallets-head__img-pallets
+        img(src="assets/img/pallets/pallets-head.png", alt="sticker")
+      .pallets-head__sticker
+        img(src="assets/img/pallets/sticker.png", alt="sticker")
+        .pallets-head__sticker-text
+          h2.pallets-head__sticker-title Поддоны
+          h3.pallets-head__sticker-subtitle - купить поддоны.
+
+    +card-full-width('pallets-cards')
+      +pallets-cards-content(
+        {
+          src: 'assets/img/pallets/epal-1.png',
+          alt: 'pallets'
+        },
+        {
+          subtitle: '1-й сорт: с клеймом EPAL размером 800*1200мм.',
+          desc: [
+            'белые/целые'
+          ]
+        },
+        'first-grade-epal'
+      )
+
+    +card-full-width('pallets-cards')
+      +pallets-cards-content(
+        {
+          src: 'assets/img/pallets/epal-2.png',
+          alt: 'pallets'
+        },
+        {
+          subtitle: '2-й сорт: с клеймом EPAL размером 800*1200мм.',
+          desc: [
+            'серые/целые'
+          ]
+        },
+        "second-grade-epal"
+      )
+
+    +card-full-width('pallets-cards')
+      +pallets-cards-content(
+        {
+          src: 'assets/img/pallets/epal-3.png',
+          alt: 'pallets'
+        },
+        {
+          subtitle: '3-й сорт: с клеймом EPAL размером 800*1200мм.',
+          desc: [
+            'тёмно-серые',
+            'Целые'
+          ]
+        },
+        "third-grade-epal"
+      )
+
+    +card-full-width('pallets-cards')
+      +pallets-cards-content(
+        {
+          src: 'assets/img/pallets/noepal-1.png',
+          alt: 'pallets'
+        },
+        {
+          subtitle: '1-й сорт: без клейма EPAL размером 800*1200мм.',
+          desc: [
+            'белые/целые'
+          ]
+        },
+        "first-grade-noepal"
+      )
+
+    +card-full-width('pallets-cards')
+      +pallets-cards-content(
+        {
+          src: 'assets/img/pallets/noepal-2.png',
+          alt: 'pallets'
+        },
+        {
+          subtitle: '2-й сорт: без клейма EPAL размером 800*1200мм.',
+          desc: [
+            'серые/целые'
+          ]
+        },
+        "second-grade-noepal"
+      )
+
+    +card-full-width('pallets-cards')
+      +pallets-cards-content(
+        {
+          src: 'assets/img/pallets/noepal-3.png',
+          alt: 'pallets'
+        },
+        {
+          subtitle: 'Разносортные: размером 1000*1200мм.',
+          desc: [
+            'Разносортные',
+          ]
+        },
+        "different-grade"
+      )
+
+    p.footnote * Все представленные поддоны являются бывшими в использовании и могут иметь небольшие дефекты и трещины.

@@ -1,0 +1,55 @@
+include ../../mixins/buttons.pug
+include ../../mixins/modal-window.pug
+section.section
+  .container
+    .navigating-source-path
+      .navigating-source-path__item
+        a(href="index.html" class="navigating-source-path__link") Главная &raquo;
+      .navigating-source-path__item
+        p.navigating-source-path__text Отзывы
+    h1.section__title Отзывы
+    .reviews
+      .text-small 30.06.2020 11:07
+      .subtitle-small Ксения
+      .text Всегда сдаю на авторемонтной, рядом с домом. Мне очень удобно. Все записали при мне, все посчитали. Спасибо Вам)
+    .reviews
+      .text-small 27.05.2020 13:10
+      .subtitle-small Наталья
+      .text Сырье сдали, все отлично, приняли быстро. Спасибо вам, что помогаете делать планету чище!
+    .reviews
+      .text-small 05.05.2020 9:42
+      .subtitle-small Ирина
+      .text Спасибо большое за ответ) Вы очень оперативно работаете в плане соц.сетей, это очень хорошо и важно для компании!) А еще у вас сайт красивый и удобный стал.
+
+    .reviews-button-wrap.centering
+      +button-input-tipe-a('button', 'review', 'Оставить отзыв')
+
++modal-window('reviews', null, 'modal-body--text-bg', 'modal-close--text-bg')
+  .section__title Оставить отзыв
+  form#reviews.form-review
+    input(type="hidden" name="Mirotvorets" value="Отзыв сайте mirotvorets72.ru")
+    input(type="hidden" name="form_from" value="mirotvorets72.ru")
+    input(type="hidden" name="admin_email" value="zayavka@mirotvorets72.com")
+    input(type="hidden" name="erasure" value="Форма отзыва на странице отзывы")
+    .input-wrap.input-wrap--one-elements
+      .input-container
+        input(class="input", type="text", name="user-name", placeholder="Ваше имя")
+        .error-no-selected__message
+          .error-no-selected__message-icon !
+          .error-no-selected__message-text
+    .input-container
+      textarea.textarea(name="question__text" placeholder="Текст отзыва")
+      .error-no-selected__message
+        .error-no-selected__message-icon !
+        .error-no-selected__message-text
+
+    .centering
+      +button-input-tipe-a('submit', 'send-question', 'отправить')
+    .result-query-success
+      .result-query-container__icon
+        include ../../../svg/form/success-query.svg
+      .result-query-container__message Ваш отзыв отправлен.
+    .result-query-error
+      .result-query-container__icon
+        include ../../../svg/form/error-query.svg
+      .result-query-container__message Отзыв не отправлен! Попробуйте ещё раз.

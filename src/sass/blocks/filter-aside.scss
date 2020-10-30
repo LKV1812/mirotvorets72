@@ -1,0 +1,76 @@
+@import '../variables/variables.scss';
+
+.filter-aside {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 14.0625em;
+  height: 31em;
+  padding: 1.25em 0.625em;
+  border-radius: 0.9375em;
+  box-shadow: 10px 0 50px rgba(78, 69, 59, 0.13);
+
+  @media (min-width: 992px) {
+    width: 17.1875em;
+    height: 100%;
+    padding: 1.6875em 1.25em;
+  }
+
+  &--blog {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: initial;
+    width: 100%;
+    padding-top: 0.75em;
+    margin-bottom: 1em;
+    border-radius: initial;
+    background-color: #ffffff;
+
+    @media (min-width: 576px) {
+      border-radius: 0.9375em;
+    }
+
+    @media (min-width: 768px) {
+      padding-top: 0.25em;
+      margin-bottom: 1.65em;
+    }
+
+    @media (min-width: 992px) {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: normal;
+      align-self: flex-start;
+      width: 17.1875em;
+      margin-bottom: 0;
+      padding-top: 1.6875em;
+    }
+  }
+
+  &--vacancy {
+    display: none;
+    @media (min-width: 768px) {
+      display: flex;
+    }
+  }
+}
+
+// данную обертку можно не использовать, нужна если необходимо спозиционировать скролл
+.filter-aside__button-wrap {
+  position: absolute;
+  top: 1.25em;
+  right: 0.625em;
+  bottom: 1.25em;
+  left: 0.625em;
+  display: flex;
+  flex-direction: column;
+  padding-right:  0.625em;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  @media (min-width: 992px) {
+    bottom: 1.25em;
+    left: 1.6875em;
+  }
+}

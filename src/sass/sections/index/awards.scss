@@ -1,0 +1,86 @@
+@import '../../variables/variables.scss';
+
+.awards {
+  background-image: url("../img/index/for-whom/for-whom-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.awards-slider-wrap {
+  overflow: hidden;
+}
+
+.owl-carousel.awards-carousel {
+  max-width: 100%;
+  width: initial;
+}
+
+.owl-carousel .awards-slide {
+  display: flex;
+  justify-content: center;
+  height: 200px;
+  line-height: 0;
+
+  @media (min-width: 576px) {
+    height: 250px;
+  }
+
+  @media (min-width: 768px) {
+    height: 300px;
+  }
+
+  @media (min-width: 992px) {
+    height: 320px;
+  }
+
+  @media (min-width: 1200px) {
+    height: 350px;
+  }
+
+  & > img {
+    display: block;
+    justify-content: center;
+    height: 100%;
+    width: auto;
+    cursor: pointer;
+    transition: all 0.8s;
+  }
+  & > img:hover {
+    transform: scale(1.05);
+  }
+}
+
+.awards-carousel__dots-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35px;
+
+  @media (min-width: 992px) {
+    display: none;
+  }
+
+  & .owl-dot {
+    flex-shrink: 0;
+    border: none;
+    padding: 0;
+    background-color: #ae8a7c;
+    height: 10px;
+    width: 10px;
+    border-radius: 100%;
+    cursor: pointer;
+    outline: none;
+  }
+
+  & .owl-dot + .owl-dot {
+    margin-left: 10px;
+  }
+
+  & .owl-dot.active {
+    height: 14px;
+    width: 14px;
+    background-color: #67af01;
+    box-shadow: 0 16px 50px 0 rgba(154, 90, 19, .34);
+  }
+}

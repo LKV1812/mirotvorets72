@@ -1,338 +1,361 @@
 include ../../mixins/mixins-cards.pug
 include ../../mixins/buttons.pug
-.card-buy-wrap
-  +card-buy(
-    {
-      attr: 'cardboard'
-    },
-    [
-      {src: 'assets/img/buy/cardboard-mobile.jpg', class: '', alt: 'картон'},
-      {src: 'assets/img/buy/cardboard-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'картон'},
-      {src: 'assets/img/buy/cardboard.jpg', class: 'card-buy__img--show-desktop', alt: 'картон'}
-    ],
-    {
-      title: 'картон',
-      subtitle: 'Не должен содержать:',
-      list: ['Влагу', 'Иных предметов']
-    },
-    {
+.container
+  .row.card-buy-wrap
+    .col-12.col-sm-6.col-lg-4.mb-30
+      +card-buy(
+        {
+          attr: 'cardboard'
+        },
+        [
+          {src: 'assets/img/buy/cardboard-mobile.jpg', class: '', alt: 'картон'},
+          {src: 'assets/img/buy/cardboard-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'картон'},
+          {src: 'assets/img/buy/cardboard.jpg', class: 'card-buy__img--show-desktop', alt: 'картон'}
+        ],
+        {
+          title: 'картон',
+          subtitle: 'Не должен содержать:',
+          list: ['Влагу', 'Иных предметов']
+        },
+        {
 
-      calculate: '#calculator',
-      order: '#formOrder'
-    }
-  )
-
-  +card-buy(
-    {
-      attr: 'paper'
-    },
-    [
-      {src: 'assets/img/buy/paper-mobile.jpg', class: '', alt: 'бумага'},
-      {src: 'assets/img/buy/paper-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'бумага'},
-      {src: 'assets/img/buy/paper.jpg', class: 'card-buy__img--show-desktop', alt: 'бумага'}
-    ],
-    {
-      title: 'Макулатура',
-      subtitle: 'Принимаем макулатуру разных видов:',
-      list: ['Офисная бумага (белая формата А4 )', 'Книги (корочки убирать не обязательно)', 'Газеты', 'Журналы в том числе глянцевые']
-    },
-    {
-      price: '#paper',
-      calculate: '#calculator',
-      order: '#formOrder'
-    }
-  )
-
-  +card-buy(
-    {
-      attr: 'film-pvd'
-    },
-    [
-      {src: 'assets/img/buy/film-pvd-mobile.jpg', class: '', alt: 'Пленка ПВД'},
-      {src: 'assets/img/buy/film-pvd-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'Пленка ПВД'},
-      {src: 'assets/img/buy/film-pvd.jpg', class: 'card-buy__img--show-desktop', alt: 'Пленка ПВД'}
-    ],
-    {
-      title: 'Пленка ПВД',
-      subtitle: 'ПВД (полиэтилен высокого давления):',
-      list: ['Прозрачная, пластичная, растягивается.', 'В местах разрыва остается растянутой.', 'Плотная, не шуршит.', 'При поджоге капает, не имеет резкого запаха и черного дыма.']
-    },
-    {
-      price: '#film-pvd',
-      calculate: '#calculator',
-      order: '#formOrder'
-    }
-  )
-
-  +card-buy(
-    {
-      attr: 'film-color-pvd'
-    },
-    [
-      {src: 'assets/img/buy/film-color-mobile.jpg', class: '', alt: 'Пленка ПВД цветная'},
-      {src: 'assets/img/buy/film-color-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'Пленка ПВД цветная'},
-      {src: 'assets/img/buy/film-color.jpg', class: 'card-buy__img--show-desktop', alt: 'Пленка ПВД цветная'}
-    ],
-    {
-      title: 'Пленка ПВД цветная',
-      subtitle: 'ПВД (полиэтилен высокого давления):',
-      list: ['Может иметь черный или другой насыщенный цвет, но при этом может сохранять прозрачность.', 'Пластичная, растягивается.', 'В местах разрыва остается растянутой.', 'Плотная, не шуршит.', 'При поджоге капает, не имеет резкого запаха и черного дыма.']
-    },
-    {
-      price: '#film-color-pvd',
-      calculate: '#calculator',
-      order: '#formOrder'
-    }
-  )
-
-  +card-buy(
-    {
-      attr: 'film-stretch'
-    },
-    [
-      {src: 'assets/img/buy/film-stretch-mobile.jpg', class: '', alt: 'Пленка стрейч'},
-      {src: 'assets/img/buy/film-stretch-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'Пленка стрейч'},
-      {src: 'assets/img/buy/film-stretch.jpg', class: 'card-buy__img--show-desktop', alt: 'Пленка стрейч'}
-    ],
-    {
-      title: 'Пленка стрейч',
-      subtitle: 'Стрейч (пластиковая пленка, которая растягивается)',
-      list: ['Все признаки ПВД.', 'Очень тонкая в сравнении с другими пленками.', 'Растягивается в несколько раз и хранит упругость в натянутом состоянии.', 'При поджоге капает, не имеет резкого запаха и черного дыма.']
-    },
-    {
-      price: '#film-stretch',
-      calculate: '#calculator',
-      order: '#formOrder'
-    }
-  )
-
-  +card-buy(
-    {
-      attr: 'polyethylene'
-    },
-    [
-      {src: 'assets/img/buy/pet-mobile.jpg', class: '', alt: 'ПЭТ'},
-      {src: 'assets/img/buy/pet-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'ПЭТ'},
-      {src: 'assets/img/buy/pet.jpg', class: 'card-buy__img--show-desktop', alt: 'ПЭТ'}
-    ],
-    {
-      title: 'ПЭТ',
-      subtitle: 'ПЭТ-бутылки, ПЭТ-канистры',
-      list: ['Ёмкостью от 0.25л. до 10л.']
-    },
-    {
-      price: '#polyethylene',
-      calculate: '#calculator',
-      order: '#formOrder'
-    }
-  )
-
-  +card-buy(
-    {
-      attr: 'plastic-canisters'
-    },
-    [
-      {src: 'assets/img/buy/canisters-mobile.jpg', class: '', alt: 'канистры'},
-      {src: 'assets/img/buy/canisters-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'канистры'},
-      {src: 'assets/img/buy/canisters.jpg', class: 'card-buy__img--show-desktop', alt: 'канистры'}
-    ],
-    {
-      title: 'Пластиковые канистры',
-      subtitle: 'Канистры из под автомасел, спецжидкостей и т.п.',
-      list: ['Пластиковые канистры, прозрачные и цветные.', 'Не должны содержать воду, другие жидкости.']
-    },
-    {
-      price: '#plastic-canisters',
-      calculate: '#calculator',
-      order: '#formOrder'
-    }
-  )
-
-  +card-buy(
-    {
-      attr: 'oil'
-    },
-    [
-      {src: 'assets/img/buy/oil-mobile.jpg', class: '', alt: 'масло'},
-      {src: 'assets/img/buy/oil-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'масло'},
-      {src: 'assets/img/buy/oil.jpg', class: 'card-buy__img--show-desktop', alt: 'масло'}
-    ],
-    {
-      title: 'Масло',
-      subtitle: 'Отработанное фритюрное масло',
-      list: ['Не должно содержать воду, неестественный осадок, остатков продуктов питания, животные жиры и другие предметы, не относящиеся к фритюрному маслу.']
-    },
-    {
-      price: '#oil',
-      calculate: '#calculator',
-      order: '#formOrder'
-    }
-  )
-
-  +card-buy(
-    {
-      attr: 'pallets'
-    },
-    [
-      {src: 'assets/img/buy/pallets-mobile.jpg', class: '', alt: 'поддоны'},
-      {src: 'assets/img/buy/pallets-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'поддоны'},
-      {src: 'assets/img/buy/pallets.jpg', class: 'card-buy__img--show-desktop', alt: 'поддоны'}
-    ],
-    {
-      title: 'Поддоны',
-      subtitle: 'Поддоны евростандарт  800*1200 с клеймом EPAL и без',
-      list: ['1-й сорт – белые, новые, целые', '2-й сорт – серые, целые', '3-й сорт – белые, серые, сломано до трех деталей']
-    },
-    {
-      price: '#pallets',
-      calculate: '#calculator',
-      order: '#formOrder'
-    }
-  )
-
-  +card-buy(
-    {
-      attr: 'kegs'
-    },
-    [
-      {src: 'assets/img/buy/kegs-mobile.jpg', class: '', alt: 'кеги'},
-      {src: 'assets/img/buy/kegs-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'кеги'},
-      {src: 'assets/img/buy/kegs.jpg', class: 'card-buy__img--show-desktop', alt: 'кеги'}
-    ],
-    {
-      title: 'ПЭТ-кеги',
-      subtitle: 'Пивные ПЭТ-кеги',
-      list: ['Пивные кеги, бесцветные прозрачные, цветные с сохранением прозрачности.', ]
-    },
-    {
-      price: '#kegs',
-      calculate: '#calculator',
-      order: '#formOrder'
-    }
-  )
-
-  +card-buy(
-    {
-      attr: 'glass'
-    },
-    [
-      {src: 'assets/img/buy/glass-mobile.jpg', class: '', alt: 'Стекло'},
-      {src: 'assets/img/buy/glass-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'Стекло'},
-      {src: 'assets/img/buy/glass.jpg', class: 'card-buy__img--show-desktop', alt: 'Стекло'}
-    ],
-    {
-      title: 'Стекло',
-      subtitle: 'Любое стекло, кроме  армированного и проклеенного',
-      list: ['Стеклянные бутылки, целые и битые.', 'Стеклопакеты целые и битые.', 'Автомобильные стекла, только боковые, без армирующих и тонировочных пленок']
-    },
-    {
-      price: '#glass',
-      calculate: '#calculator',
-      order: '#formOrder'
-    }
-  )
-
-  +card-buy(
-    {
-      attr: 'aluminum-cans'
-    },
-    [
-      {src: 'assets/img/buy/cans-mobile.jpg', class: '', alt: 'банки'},
-      {src: 'assets/img/buy/cans-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'банки'},
-      {src: 'assets/img/buy/cans.jpg', class: 'card-buy__img--show-desktop', alt: 'банки'}
-    ],
-    {
-      title: 'Аллюминивые банки',
-      subtitle: 'Алюминиевые банки, емкостью от 0.25л до 5л.',
-      list: ['Бесцветные и цветные.', 'Не должны содержать воду, пиво, напитки и другие жидкости.']
-    },
-    {
-      price: '#aluminum-cans',
-      calculate: '#calculator',
-      order: '#formOrder'
-    }
-  )
-
-  +card-buy(
-    {
-      attr: 'textile'
-    },
-    [
-      {src: 'assets/img/buy/textile-mobile.jpg', class: '', alt: 'Текстиль'},
-      {src: 'assets/img/buy/textile-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'Текстиль'},
-      {src: 'assets/img/buy/textile.jpg', class: 'card-buy__img--show-desktop', alt: 'Текстиль'}
-    ],
-    {
-      title: 'Текстиль',
-      subtitle: 'Текстильная продукция',
-      list: ['Одежда.', 'Постельное бельё.', 'Джинсы.']
-    },
-    {
-      price: '#',
-      calculate: '#calculator',
-      order: '#formOrder'
-    }
-  )
-
-  +card-buy(
-    {
-      attr: 'polyethylene-pipe'
-    },
-    [
-      {src: 'assets/img/buy/pipe-mobile.jpg', class: '', alt: 'трубы'},
-      {src: 'assets/img/buy/pipe-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'трубы'},
-      {src: 'assets/img/buy/pipe.jpg', class: 'card-buy__img--show-desktop', alt: 'трубы'}
-    ],
-    {
-      title: 'ПНД',
-      subtitle: 'Полиэтиленовые трубы',
-      list: ['Полиэтиленовые трубы чёрные с синими полосами.', 'Любого диаметра.']
-    },
-    {
-      price: '#',
-      calculate: '#calculator',
-      order: '#formOrder'
-    }
-  )
-
-  +card-buy(
-    {
-      attr: 'bags'
-    },
-    [
-      {src: 'assets/img/buy/bags-mobile.jpg', class: '', alt: 'Биг-бэг'},
-      {src: 'assets/img/buy/bags-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'Биг-бэг'},
-      {src: 'assets/img/buy/bags.jpg', class: 'card-buy__img--show-desktop', alt: 'Биг-бэг'}
-    ],
-    {
-      title: 'Биг-бэг',
-      subtitle: 'Биг-бэг (МКР). Мягкий контейнер',
-      list: ['Контейнер из полипропиленовой ткани.', 'грузоподъемностью от 300 кг до 3000 кг имеющий от одной до четырех петель.']
-    },
-    {
-      price: '#',
-      calculate: '#calculator',
-      order: '#formOrder'
-    }
-  )
-
-  +card-buy(
-    {
-      attr: 'chemical-containers'
-    },
-    [
-      {src: 'assets/img/buy/chemical-mobile.jpg', class: '', alt: 'пластиковые банки'},
-      {src: 'assets/img/buy/chemical-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'пластиковые банки'},
-      {src: 'assets/img/buy/chemical.jpg', class: 'card-buy__img--show-desktop', alt: 'пластиковые банки'}
-    ],
-    {
-      title: 'Тара от бытовой химии',
-      subtitle: 'Пластиковая тара',
-      list: ['Белая.', 'Прозрачная.', 'Цветная.', 'Не должна содержать остатков жидкостей, химии и т.п.']
-    },
-    {
-      price: '#',
-      calculate: '#calculator',
-      order: '#formOrder'
-    }
-  )
+          calculate: '#calculator',
+          order: '#formOrder'
+        }
+      )
+    .col-12.col-sm-6.col-lg-4.mb-30
+      +card-buy(
+        {
+          attr: 'paper'
+        },
+        [
+          {src: 'assets/img/buy/paper-mobile.jpg', class: '', alt: 'бумага'},
+          {src: 'assets/img/buy/paper-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'бумага'},
+          {src: 'assets/img/buy/paper.jpg', class: 'card-buy__img--show-desktop', alt: 'бумага'}
+        ],
+        {
+          title: 'Макулатура',
+          subtitle: 'Принимаем макулатуру разных видов:',
+          list: ['Офисная бумага (белая формата А4 )', 'Книги (корочки убирать не обязательно)', 'Газеты', 'Журналы в том числе глянцевые']
+        },
+        {
+          price: '#paper',
+          calculate: '#calculator',
+          order: '#formOrder'
+        }
+      )
+    .col-12.col-sm-6.col-lg-4.mb-30
+      +card-buy(
+        {
+          attr: 'film-pvd'
+        },
+        [
+          {src: 'assets/img/buy/film-pvd-mobile.jpg', class: '', alt: 'Пленка ПВД'},
+          {src: 'assets/img/buy/film-pvd-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'Пленка ПВД'},
+          {src: 'assets/img/buy/film-pvd.jpg', class: 'card-buy__img--show-desktop', alt: 'Пленка ПВД'}
+        ],
+        {
+          title: 'Пленка ПВД',
+          subtitle: 'ПВД (полиэтилен высокого давления):',
+          list: ['Прозрачная, пластичная, растягивается.', 'В местах разрыва остается растянутой.', 'Плотная, не шуршит.', 'При поджоге капает, не имеет резкого запаха и черного дыма.']
+        },
+        {
+          price: '#film-pvd',
+          calculate: '#calculator',
+          order: '#formOrder'
+        }
+      )
+    .col-12.col-sm-6.col-lg-4.mb-30
+      +card-buy(
+        {
+          attr: 'film-color-pvd'
+        },
+        [
+          {src: 'assets/img/buy/film-color-mobile.jpg', class: '', alt: 'Пленка ПВД цветная'},
+          {src: 'assets/img/buy/film-color-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'Пленка ПВД цветная'},
+          {src: 'assets/img/buy/film-color.jpg', class: 'card-buy__img--show-desktop', alt: 'Пленка ПВД цветная'}
+        ],
+        {
+          title: 'Пленка ПВД цветная',
+          subtitle: 'ПВД (полиэтилен высокого давления):',
+          list: ['Может иметь черный или другой насыщенный цвет, но при этом может сохранять прозрачность.', 'Пластичная, растягивается.', 'В местах разрыва остается растянутой.', 'Плотная, не шуршит.', 'При поджоге капает, не имеет резкого запаха и черного дыма.']
+        },
+        {
+          price: '#film-color-pvd',
+          calculate: '#calculator',
+          order: '#formOrder'
+        }
+      )
+    .col-12.col-sm-6.col-lg-4.mb-30
+      +card-buy(
+        {
+          attr: 'film-stretch'
+        },
+        [
+          {src: 'assets/img/buy/film-stretch-mobile.jpg', class: '', alt: 'Пленка стрейч'},
+          {src: 'assets/img/buy/film-stretch-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'Пленка стрейч'},
+          {src: 'assets/img/buy/film-stretch.jpg', class: 'card-buy__img--show-desktop', alt: 'Пленка стрейч'}
+        ],
+        {
+          title: 'Пленка стрейч',
+          subtitle: 'Стрейч (пластиковая пленка, которая растягивается)',
+          list: ['Все признаки ПВД.', 'Очень тонкая в сравнении с другими пленками.', 'Растягивается в несколько раз и хранит упругость в натянутом состоянии.', 'При поджоге капает, не имеет резкого запаха и черного дыма.']
+        },
+        {
+          price: '#film-stretch',
+          calculate: '#calculator',
+          order: '#formOrder'
+        }
+      )
+    .col-12.col-sm-6.col-lg-4.mb-30
+      +card-buy(
+        {
+          attr: 'polyethylene'
+        },
+        [
+          {src: 'assets/img/buy/pet-mobile.jpg', class: '', alt: 'ПЭТ'},
+          {src: 'assets/img/buy/pet-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'ПЭТ'},
+          {src: 'assets/img/buy/pet.jpg', class: 'card-buy__img--show-desktop', alt: 'ПЭТ'}
+        ],
+        {
+          title: 'ПЭТ',
+          subtitle: 'ПЭТ-бутылки, ПЭТ-канистры',
+          list: ['Ёмкостью от 0.25л. до 10л.']
+        },
+        {
+          price: '#polyethylene',
+          calculate: '#calculator',
+          order: '#formOrder'
+        }
+      )
+    .col-12.col-sm-6.col-lg-4.mb-30
+      +card-buy(
+        {
+          attr: 'plastic-canisters'
+        },
+        [
+          {src: 'assets/img/buy/canisters-mobile.jpg', class: '', alt: 'канистры'},
+          {src: 'assets/img/buy/canisters-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'канистры'},
+          {src: 'assets/img/buy/canisters.jpg', class: 'card-buy__img--show-desktop', alt: 'канистры'}
+        ],
+        {
+          title: 'Пластиковые канистры',
+          subtitle: 'Канистры из под автомасел, спецжидкостей и т.п.',
+          list: ['Пластиковые канистры, прозрачные и цветные.', 'Не должны содержать воду, другие жидкости.']
+        },
+        {
+          price: '#plastic-canisters',
+          calculate: '#calculator',
+          order: '#formOrder'
+        }
+      )
+    .col-12.col-sm-6.col-lg-4.mb-30
+      +card-buy(
+        {
+          attr: 'oil'
+        },
+        [
+          {src: 'assets/img/buy/oil-mobile.jpg', class: '', alt: 'масло'},
+          {src: 'assets/img/buy/oil-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'масло'},
+          {src: 'assets/img/buy/oil.jpg', class: 'card-buy__img--show-desktop', alt: 'масло'}
+        ],
+        {
+          title: 'Масло',
+          subtitle: 'Отработанное фритюрное масло',
+          list: ['Не должно содержать воду, неестественный осадок, остатков продуктов питания, животные жиры и другие предметы, не относящиеся к фритюрному маслу.']
+        },
+        {
+          price: '#oil',
+          calculate: '#calculator',
+          order: '#formOrder'
+        }
+      )
+    .col-12.col-sm-6.col-lg-4.mb-30
+      +card-buy(
+        {
+          attr: 'pallets'
+        },
+        [
+          {src: 'assets/img/buy/pallets-mobile.jpg', class: '', alt: 'поддоны'},
+          {src: 'assets/img/buy/pallets-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'поддоны'},
+          {src: 'assets/img/buy/pallets.jpg', class: 'card-buy__img--show-desktop', alt: 'поддоны'}
+        ],
+        {
+          title: 'Поддоны',
+          subtitle: 'Поддоны евростандарт  800*1200 с клеймом EPAL и без',
+          list: ['1-й сорт – белые, новые, целые', '2-й сорт – серые, целые', '3-й сорт – белые, серые, сломано до трех деталей']
+        },
+        {
+          price: '#pallets',
+          calculate: '#calculator',
+          order: '#formOrder'
+        }
+      )
+    .col-12.col-sm-6.col-lg-4.mb-30
+      +card-buy(
+        {
+          attr: 'kegs'
+        },
+        [
+          {src: 'assets/img/buy/kegs-mobile.jpg', class: '', alt: 'кеги'},
+          {src: 'assets/img/buy/kegs-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'кеги'},
+          {src: 'assets/img/buy/kegs.jpg', class: 'card-buy__img--show-desktop', alt: 'кеги'}
+        ],
+        {
+          title: 'ПЭТ-кеги',
+          subtitle: 'Пивные ПЭТ-кеги',
+          list: ['Пивные кеги, бесцветные прозрачные, цветные с сохранением прозрачности.', ]
+        },
+        {
+          price: '#kegs',
+          calculate: '#calculator',
+          order: '#formOrder'
+        }
+      )
+    .col-12.col-sm-6.col-lg-4.mb-30
+      +card-buy(
+        {
+          attr: 'glass'
+        },
+        [
+          {src: 'assets/img/buy/glass-mobile.jpg', class: '', alt: 'Стекло'},
+          {src: 'assets/img/buy/glass-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'Стекло'},
+          {src: 'assets/img/buy/glass.jpg', class: 'card-buy__img--show-desktop', alt: 'Стекло'}
+        ],
+        {
+          title: 'Стекло',
+          subtitle: 'Любое стекло, кроме  армированного и проклеенного',
+          list: ['Стеклянные бутылки, целые и битые.', 'Стеклопакеты целые и битые.', 'Автомобильные стекла, только боковые, без армирующих и тонировочных пленок']
+        },
+        {
+          price: '#glass',
+          calculate: '#calculator',
+          order: '#formOrder'
+        }
+      )
+    .col-12.col-sm-6.col-lg-4.mb-30
+      +card-buy(
+        {
+          attr: 'aluminum-cans'
+        },
+        [
+          {src: 'assets/img/buy/cans-mobile.jpg', class: '', alt: 'банки'},
+          {src: 'assets/img/buy/cans-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'банки'},
+          {src: 'assets/img/buy/cans.jpg', class: 'card-buy__img--show-desktop', alt: 'банки'}
+        ],
+        {
+          title: 'Алюминивые банки',
+          subtitle: 'Алюминиевые банки, емкостью от 0.25л до 5л.',
+          list: ['Бесцветные и цветные.', 'Не должны содержать воду, пиво, напитки и другие жидкости.']
+        },
+        {
+          price: '#aluminum-cans',
+          calculate: '#calculator',
+          order: '#formOrder'
+        }
+      )
+    .col-12.col-sm-6.col-lg-4.mb-30
+      +card-buy(
+        {
+          attr: 'textile'
+        },
+        [
+          {src: 'assets/img/buy/textile-mobile.jpg', class: '', alt: 'Текстиль'},
+          {src: 'assets/img/buy/textile-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'Текстиль'},
+          {src: 'assets/img/buy/textile.jpg', class: 'card-buy__img--show-desktop', alt: 'Текстиль'}
+        ],
+        {
+          title: 'Текстиль',
+          subtitle: 'Текстильная продукция',
+          list: ['Одежда.', 'Постельное бельё.', 'Джинсы.']
+        },
+        {
+          price: '#',
+          calculate: '#calculator',
+          order: '#formOrder'
+        }
+      )
+    .col-12.col-sm-6.col-lg-4.mb-30
+      +card-buy(
+        {
+          attr: 'polyethylene-pipe'
+        },
+        [
+          {src: 'assets/img/buy/pipe-mobile.jpg', class: '', alt: 'трубы'},
+          {src: 'assets/img/buy/pipe-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'трубы'},
+          {src: 'assets/img/buy/pipe.jpg', class: 'card-buy__img--show-desktop', alt: 'трубы'}
+        ],
+        {
+          title: 'ПНД',
+          subtitle: 'Полиэтиленовые трубы',
+          list: ['Полиэтиленовые трубы чёрные с синими полосами.', 'Любого диаметра.']
+        },
+        {
+          price: '#',
+          calculate: '#calculator',
+          order: '#formOrder'
+        }
+      )
+    .col-12.col-sm-6.col-lg-4.mb-30
+      +card-buy(
+        {
+          attr: 'bags'
+        },
+        [
+          {src: 'assets/img/buy/bags-mobile.jpg', class: '', alt: 'Биг-бэг'},
+          {src: 'assets/img/buy/bags-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'Биг-бэг'},
+          {src: 'assets/img/buy/bags.jpg', class: 'card-buy__img--show-desktop', alt: 'Биг-бэг'}
+        ],
+        {
+          title: 'Биг-бэг',
+          subtitle: 'Биг-бэг (МКР). Мягкий контейнер',
+          list: ['Контейнер из полипропиленовой ткани.', 'грузоподъемностью от 300 кг до 3000 кг имеющий от одной до четырех петель.']
+        },
+        {
+          price: '#',
+          calculate: '#calculator',
+          order: '#formOrder'
+        }
+      )
+    .col-12.col-sm-6.col-lg-4.mb-30
+      +card-buy(
+        {
+          attr: 'chemical-containers'
+        },
+        [
+          {src: 'assets/img/buy/chemical-mobile.jpg', class: '', alt: 'пластиковые банки'},
+          {src: 'assets/img/buy/chemical-tablet.jpg', class: 'card-buy__img--show-tablet', alt: 'пластиковые банки'},
+          {src: 'assets/img/buy/chemical.jpg', class: 'card-buy__img--show-desktop', alt: 'пластиковые банки'}
+        ],
+        {
+          title: 'Тара от бытовой химии',
+          subtitle: 'Пластиковая тара',
+          list: ['Белая.', 'Прозрачная.', 'Цветная.', 'Не должна содержать остатков жидкостей, химии и т.п.']
+        },
+        {
+          price: '#',
+          calculate: '#calculator',
+          order: '#formOrder'
+        }
+      )
+    .col-12.col-sm-6.col-lg-4.mb-30
+      +card-buy(
+        {
+          attr: 'bushing'
+        },
+        [
+          {src: 'assets/img/cards/bushing.jpg', class: '', alt: 'bushing'},
+          {src: 'assets/img/cards/bushing.jpg', class: 'card-buy__img--show-tablet', alt: 'bushing'},
+          {src: 'assets/img/cards/bushing.jpg', class: 'card-buy__img--show-desktop', alt: 'bushing'}
+        ],
+        {
+          title: 'Втулки',
+          subtitle: 'Длина - 520 см., толщина внутренней стенки 50 мм.',
+          list: ['Не должен содержать: влагу, иных предметов.']
+        },
+        {
+          price: '#',
+          calculate: '#calculator',
+          order: '#formOrder'
+        }
+      )

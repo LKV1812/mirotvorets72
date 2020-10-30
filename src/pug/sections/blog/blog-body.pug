@@ -1,0 +1,92 @@
+include ../../mixins/mixins-cards.pug
+include ../../mixins/content-card.pug
+include ../../mixins/buttons.pug
+section.container
+  .blog-section
+    .blog-body
+      +card-full-width('card-full-width--blog')
+        +content-blog(
+            {src:'assets/img/blog/news/news-1.jpg', alt: 'news'},
+            '12.03.2020',
+            'Мы стремимся быть ближе',
+            'Для достижения этой цели мы открыли четвертый пункт приема сырья. По адресу: г. Тюмень, ул. Щербакова, д.160, стр. 3',
+            'news_1.html',
+            'https://mirotvorets72.ru/news_1.html'
+          )
+
+      +card-full-width('card-full-width--blog')
+        +content-blog(
+            {src:'assets/img/index/news/textile.jpg', alt: 'textile'},
+            '12.03.2020',
+            'Мы начали принимать старую одежду, текстиль, постельное бельё, ветошь.',
+            'Мы неравнодушны к экологии! И для улучшения ситуации в нашем регионе, мы постоянно ищем возможности обработки новых видов сырья. Рады сообщить мы запустили прием текстильного сырья (одежда, постельное бельё и т.п.).',
+            'news_2.html',
+            'https://mirotvorets72.ru/news_2.html'
+          )
+
+      +card-full-width('card-full-width--blog')
+        +content-blog(
+            {src:'assets/img/blog/news/calculator.jpg', alt: 'calculator'},
+            '12.03.2020',
+            'Для вашего удобства',
+            'Мы всей командой постоянно работаем над улучшением сервиса для вас! Мы запустили новый сайт, на котором вы можете найти всю необходимую информацию, оставить свои отзывы и предложения, рассчитать стоимость сырья онлайн.',
+            'news_3.html',
+            'https://mirotvorets72.ru/news_3.html'
+          )
+
+      +card-full-width('card-full-width--blog')
+        +content-blog(
+            {src:'assets/img/blog/news/promo.jpg', alt: 'promo'},
+            '30.06.2020',
+            'ЭКО-Акции',
+            'ЭкоСтиль - Стиль моей жизни. Сортируй и будь в тренде! ЭКО-акция - это новшество. Данный проект помогает начать сортировать сырье прямо у себя дома. Важно заметить то, что если у вас нет возможности привезти скопленное сырье в пункты приема, мы с удовольствием приедем в Ваш двор и организуем ЭКО-акцию прямо у Вас во дворе!',
+            'news_4.html',
+            'https://mirotvorets72.ru/news_4.html'
+          )
+
+      +card-full-width('card-full-width--blog')
+        +content-blog(
+            {src:'assets/img/blog/news/site.jpg', alt: 'site'},
+            '10.08.2020',
+            'Стремимся быть ближе!',
+            'Улучшим экологию нашего региона вместе! Компания «Миротворец» запустила ряд проектов на такие темы как: ЭкоСтиль – Стиль моей жизни!; Раздельный сбор сырья у себя дома; Эко-Акции – Экомобиль во дворе вашего дома!; Эко-Десант – контейнеры для сбора макулатуры; Эко-Двор – раздельный сбор прямо во дворе;',
+            'news_5.html',
+            'https://mirotvorets72.ru/news_5.html'
+          )
+
+      +card-full-width('card-full-width--blog')
+        +content-blog(
+            {src:'assets/img/blog/news/glass.jpg', alt: 'glass'},
+            '10.08.2020',
+            'Сдать стекло',
+            'Как сдать стекло в Тюмени? Где принимают стекло? Какое стекло можно сдать? Сколько стоит стекло? На эти вопросы мы и ответим! «Какое стекло вы принимаете?»  Мы принимаем: Бутылки и банки (из под напитков, варений, солений); Стеклопакеты (целые, битые); Стекла теплицы; Боковые стекла автомобиля (лобовые и задние не принимаем); Витринные стекла.',
+            'news_6.html',
+            'https://mirotvorets72.ru/news_6.html'
+          )
+
+      +card-full-width('card-full-width--blog')
+        +content-blog(
+            {src:'assets/img/blog/news/bushing.jpg', alt: 'bushing'},
+            '10.08.2020',
+            'Принимаем картонные втулки',
+            'Мы расширяем список принимаемого сырья и теперь можно и нужно сдавать втулки! Очень важно знать! Втулки должны быть длиной 520мм., а внутренний диаметр 50мм. Должны быть сухие, чистые, недеформированные, желательно аккуратно упакованные.',
+            'news_7.html',
+            'https://mirotvorets72.ru/news_7.html'
+          )
+
+
+    //- aside.filter-aside.filter-aside--blog
+    //-   +button-filter('Экология', 'button-filter--blog')
+    //-     .count-write-theme 15
+    //-   +button-filter('Новости', 'button-filter--blog')
+    //-     .count-write-theme 16
+    //-   +button-filter('Сбор вторсырья', 'button-filter--blog')
+    //-     .count-write-theme 3
+    //-   +button-filter('Акции', 'button-filter--blog')
+    //-     .count-write-theme 996
+    //-   +button-filter('Мероприятия', 'button-filter--blog')
+    //-     .count-write-theme 88
+    //-   +button-filter('Наш город', 'button-filter--blog')
+    //-     .count-write-theme 88
+    //-   +button-filter('О жизни в компании', 'button-filter--blog')
+    //-     .count-write-theme 88
