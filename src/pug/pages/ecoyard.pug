@@ -14,7 +14,10 @@ block content
   include ../sections/ecoyard/ecoyard-head.pug
   include ../sections/ecoyard/rules.pug
   include ../sections/ecoyard/about-ecoyard.pug
+  include ../sections/ecoyard/ecoyard-map.pug
   include ../sections/ecoyard/order-ecoyard.pug
 
 block scripts
-  script(src="assets/js/containers-sale.js")
+  script(src="vendor/libs/jquery/dist/jquery.min.js")
+  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjBXKACsJqeOziI6fHNCmWPdLul--G--I" type="text/javascript")
+  script(src="assets/js/ecoyard.js")
