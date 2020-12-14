@@ -1,6 +1,26 @@
 header.head
   .head-nav-bg
     .head-nav-mobile
+      //- <ul itemscope itemtype="http://schema.org/BreadcrumbList">
+      //-   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      //-         <a itemprop="item" href="ссылка">
+      //-                 <span itemprop="name">название_1_пункта </span>
+      //-         </a>
+      //-         <meta itemprop="position" content="1" />
+      //-   </li>
+      //-   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      //-         <a itemprop="item" href="ссылка" >
+      //-               <span itemprop="name">название_2_пункта</span>
+      //-         </a>
+      //-         <meta itemprop="position" content="2" />
+      //-   </li>
+      //-   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      //-         <a itemprop="item" href="ссылка">
+      //-               <span itemprop="name">название_3_пункта</span>
+      //-         </a>
+      //-         <meta itemprop="position" content="3" />
+      //-   </li>
+      //- </ul>
       a(href="#" id="menu-toggle" class="menu-toggle")
       ul.dropdown-menu-mobile#dropdownMenuMobile
         li.dropdown-menu-mobile__list
@@ -55,51 +75,81 @@ header.head
     //- десктопная версия навигации
     .container
       .head-nav-desktop
-        ul.head-nav
-          li.head-nav__list
+        ul(class="head-nav" itemscope itemtype="http://schema.org/BreadcrumbList")
+          li(class="head-nav__list" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
             a.head-nav__link.head-nav__link-dropdown(href="#") Наши услуги
             .pop-up-submenu
-              a(href="destruction.html").pop-up-submenu__link Утилизация архивов
-              a(href="storage.html").pop-up-submenu__link Хранение архивов
-              a(href="ecobox.html").pop-up-submenu__link Установка экобоксов
-              a(href="containers-sale.html").pop-up-submenu__link Установка контейнеров
-              a(href="buy.html").pop-up-submenu__link Приём вторсырья
+              a(href="destruction.html" itemprop="item").pop-up-submenu__link
+                span(itemprop="name") Утилизация архивов
+              meta(itemprop="position" content="1")
+              a(href="storage.html" itemprop="item").pop-up-submenu__link
+                span(itemprop="name") Хранение архивов
+              meta(itemprop="position" content="1")
+              a(href="ecobox.html" itemprop="item").pop-up-submenu__link
+                span(itemprop="name") Установка экобоксов
+              meta(itemprop="position" content="1")
+              a(href="containers-sale.html" itemprop="item").pop-up-submenu__link
+                span(itemprop="name") Установка контейнеров
+              meta(itemprop="position" content="1")
+              a(href="buy.html" itemprop="item").pop-up-submenu__link
+                span(itemprop="name") Приём вторсырья
+              meta(itemprop="position" content="1")
           .head-nav__delimiter
             img(src="assets/img/nav/delimiter-small.png", alt="разделитель")
-          li.head-nav__list
-            a.head-nav__link(href="buy.html") Мы покупаем
+          li.head-nav__list(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+            a.head-nav__link(href="buy.html" itemprop="item")
+              span(itemprop="name") Мы покупаем
+            meta(itemprop="position" content="1")
           .head-nav__delimiter
             img(src="assets/img/nav/delimiter-small.png", alt="разделитель")
-          li.head-nav__list
-            a.head-nav__link(href="price.html") Цены
+          li.head-nav__list(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+            a.head-nav__link(href="price.html" itemprop="item")
+              span(itemprop="name") Цены
+            meta(itemprop="position" content="1")
           .head-nav__delimiter
             img(src="assets/img/nav/delimiter-small.png", alt="разделитель")
-          li.head-nav__list
-            a.head-nav__link(href="pallets.html") Мы продаём
+          li.head-nav__list(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+            a.head-nav__link(href="pallets.html" itemprop="item")
+              span(itemprop="name") Мы продаём
+            meta(itemprop="position" content="1")
           .head-nav__delimiter
             img(src="assets/img/nav/delimiter-small.png", alt="разделитель")
-          li.head-nav__list
-            a.head-nav__link(href="projects.html") Наши проекты
+          li.head-nav__list(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+            a.head-nav__link(href="projects.html" itemprop="item")
+              span(itemprop="name") Наши проекты
+            meta(itemprop="position" content="1")
           .head-nav__delimiter
             img(src="assets/img/nav/delimiter-small.png", alt="разделитель")
-          li.head-nav__list
+          li.head-nav__list(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
             a.head-nav__link.head-nav__link-dropdown(href="#") О компании
             .pop-up-submenu
-              a(href="vacancy.html").pop-up-submenu__link Вакансии
-              a(href="reviews.html").pop-up-submenu__link Отзывы
-              a(href="questions.html").pop-up-submenu__link Вопрос - ответ
+              a(href="vacancy.html" itemprop="item").pop-up-submenu__link
+                span(itemprop="name") Вакансии
+              meta(itemprop="position" content="1")
+              a(href="reviews.html" itemprop="item").pop-up-submenu__link
+                span(itemprop="name") Отзывы
+              meta(itemprop="position" content="1")
+              a(href="questions.html" itemprop="item").pop-up-submenu__link
+                span(itemprop="name") Вопрос - ответ
+              meta(itemprop="position" content="1")
           .head-nav__delimiter
             img(src="assets/img/nav/delimiter-small.png", alt="разделитель")
-          li.head-nav__list
-            a.head-nav__link(href="blog.html") Блог
+          li.head-nav__list(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+            a.head-nav__link(href="blog.html" itemprop="item")
+              span(itemprop="name") Блог
+            meta(itemprop="position" content="1")
           .head-nav__delimiter
             img(src="assets/img/nav/delimiter-small.png", alt="разделитель")
-          li.head-nav__list
-            a.head-nav__link(href="contacts.html") Контакты
+          li.head-nav__list(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+            a.head-nav__link(href="contacts.html" itemprop="item")
+              span(itemprop="name") Контакты
+            meta(itemprop="position" content="1")
           .head-nav__delimiter
             img(src="assets/img/nav/delimiter-small.png", alt="разделитель")
-          li.head-nav__list
-            a.head-nav__link(href="info-page-develop.html") Личный кабинет
+          li.head-nav__list(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+            a.head-nav__link(href="info-page-develop.html" itemprop="item")
+              span(itemprop="name") Личный кабинет
+            meta(itemprop="position" content="1")
         a(href="index.html" class="index-page-link")
           .sticker
             .sticker__content
