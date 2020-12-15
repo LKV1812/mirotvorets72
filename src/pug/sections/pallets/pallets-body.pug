@@ -1,7 +1,15 @@
 include ../../mixins/mixins-cards.pug
 include ../../mixins/buttons.pug
 include ../../mixins/modal-window.pug
-section.section
+include ../../mixins/background.pug
++picture-backing({
+  title: "Зеленая планета",
+  alt: "Руки держат маленькую землю",
+  srcMobile: "assets/img/slider/earth-small.png",
+  srcTablet: "assets/img/slider/earth-middle.png",
+  srcDesktop: "assets/img/slider/earth.png",
+})
+section.section.white-background
   .container
     +modal-window('palletsBasket', null, 'modal-body--text-bg', 'modal-close--pos-right')
       form(id="basketForm", class="form" action="php/form-order.php", method="post")

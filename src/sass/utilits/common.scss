@@ -326,6 +326,18 @@ body {
   overflow: hidden;
 }
 
+.white-background {
+  background-color: rgba(255,255,255,1);
+}
+
+.list-wrap {
+  margin-top: 1rem;
+  padding-left: 2.5rem;
+  & > li + li {
+    margin-top: 10px;
+  }
+}
+
 .wrap-list-custom-marker {
   margin-top: 15px;
   padding-left: 15px;

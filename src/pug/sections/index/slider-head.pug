@@ -1,5 +1,12 @@
+include ../../mixins/background.pug
 include ../../mixins/slider-item.pug
-
++picture-backing({
+  title: "Зеленая планета",
+  alt: "Руки держат маленькую землю",
+  srcMobile: "assets/img/slider/earth-small.png",
+  srcTablet: "assets/img/slider/earth-middle.png",
+  srcDesktop: "assets/img/slider/earth.png",
+})
 .slider-head
   #carouselIndexPade.owl-carousel.owl-theme
     +indexHeaderSliderFirstItem()
