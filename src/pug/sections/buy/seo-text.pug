@@ -1,3 +1,4 @@
+include ../../mixins/background.pug
 section.section.translucent-white-substrate
   .container
     .seo-text
@@ -56,3 +57,10 @@ section.section.translucent-white-substrate
         li.list-marker-color-custom
           span.text широкий ассортимент принимаемого сырья – мы работаем с макулатурой, пластиком, полиэтиленом, тканями.
       .text Стать нашим клиентом просто – свяжитесь с менеджером по телефонам #[a(class="seo-text__link" href="tel:+73452531601") +7 (3452) 531-601], #[a(class="seo-text__link" href="tel:+78006007131") 8-800-600-71-31] #[a(class="seo-text__link" href="#formOrder") или заполните онлайн-форму на сайте].
++picture-backing({
+  title: "Зеленая планета",
+  alt: "Руки держат маленькую землю",
+  srcMobile: "assets/img/slider/earth-small.png",
+  srcTablet: "assets/img/slider/earth-middle.png",
+  srcDesktop: "assets/img/slider/earth.png",
+})
