@@ -1,15 +1,13 @@
 extends ../layouts/main.pug
 
 block variables
-  - var title= "Прием вторсырья в Тюмени. Сдать макулатуру, сдать картон, сдать стекло. Миротворец Тюмень"
+  - var title= "Прием макулатуры, картона, плёнки, стекла, поддонов в Тюмени – компания Миротворец"
 
 block link
   link(rel="stylesheet", href="vendor/libs/owlcarousel2/dist/assets/owl.carousel.min.css")
   link(rel="stylesheet", href="vendor/libs/owlcarousel2/dist/assets/owl.theme.default.min.css")
-block keywords
-  meta(name="keywords" content="прием вторсырья, прием макулатуры, сдать макулатуру, сдать картон, прием картона, сдать стекло, прием стекла")
 block description
-  meta(name="description", content="Прием вторсырья в Тюмени по хорошим ценам. Компнаия Миротворец. Покупаем отходы производства и промышленные отходы по высоким ценам. Макулатура, отходы пластмасс, картон, аллюминиевые банки, поддоны, стекло, текстиль")
+  meta(name="description", content="В пункте приема вторсырья «Миротворец» вы можете сдать макулатуру, стекло, картон, плёнку, алюминиевые банки, канистры, полиэтиленовые трубы и т.д. Высокая цены выкупа. Задать все интересующие вопросы можно по телефону: +7 (3452) 531-601")
   meta(name="yandex-verification" content="109a3421710cf554")
 
 block content
@@ -23,6 +21,8 @@ block content
   include ../blocks/map.pug
   include ../sections/index/news-short.pug
   include ../sections/index/review-form.pug
+  include ../sections/index/awards.pug
+  include ../sections/index/seo-text.pug
   include ../sections/index/partners-bottom.pug
 
 block scripts

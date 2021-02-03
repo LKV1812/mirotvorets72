@@ -1,0 +1,17 @@
+extends ../layouts/main.pug
+
+block variables
+  - var title= "Продажа поддонов — купить поддоны и паллеты в Тюмени"
+
+block link
+block description
+  meta(name="description", content="Компания «Миротворец» осуществляет продажу деревянных паллетов и поддонов в Тюмени по хорошим ценам. Не знаете где купить деревянные поддоны? Мы поможем! Звоните по телефону +7 (3452) 531-601 и уточняйте все детали.")
+
+block content
+  include ../sections/lower-menu-bg.pug
+  include ../sections/pallets/pallets-body.pug
+  include ../sections/pallets/order.pug
+  include ../sections/pallets/seo-text.pug
+
+block scripts
+  script(src="assets/js/pallets.js")

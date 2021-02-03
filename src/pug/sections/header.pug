@@ -1,6 +1,26 @@
 header.head
   .head-nav-bg
     .head-nav-mobile
+      //- <ul itemscope itemtype="http://schema.org/BreadcrumbList">
+      //-   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      //-         <a itemprop="item" href="ссылка">
+      //-                 <span itemprop="name">название_1_пункта </span>
+      //-         </a>
+      //-         <meta itemprop="position" content="1" />
+      //-   </li>
+      //-   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      //-         <a itemprop="item" href="ссылка" >
+      //-               <span itemprop="name">название_2_пункта</span>
+      //-         </a>
+      //-         <meta itemprop="position" content="2" />
+      //-   </li>
+      //-   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      //-         <a itemprop="item" href="ссылка">
+      //-               <span itemprop="name">название_3_пункта</span>
+      //-         </a>
+      //-         <meta itemprop="position" content="3" />
+      //-   </li>
+      //- </ul>
       a(href="#" id="menu-toggle" class="menu-toggle")
       ul.dropdown-menu-mobile#dropdownMenuMobile
         li.dropdown-menu-mobile__list
@@ -8,31 +28,37 @@ header.head
         li.dropdown-menu-mobile__list
           a(href="#").dropdown-menu-mobile__link.dropdown-menu-mobile__link-arrow Наши услуги
           .dropdown-menu-mobile__submenu
-            a(href="destruction.html" target="_BLANK").dropdown-menu-mobile__link Утилизация архивов
-            a(href="storage.html" target="_BLANK").dropdown-menu-mobile__link Хранение архивов
-            a(href="ecobox.html" target="_BLANK").dropdown-menu-mobile__link Установка экобоксов
+            a(href="destruction.html").dropdown-menu-mobile__link Утилизация архивов
+            a(href="storage.html").dropdown-menu-mobile__link Хранение архивов
+            a(href="ecobox.html").dropdown-menu-mobile__link Установка экобоксов
             a(href="containers-sale.html").dropdown-menu-mobile__link Установка контейнеров
-            a(href="buy.html" target='_BLANK').dropdown-menu-mobile__link Приём вторсырья
+            a(href="buy.html").dropdown-menu-mobile__link Приём вторсырья
         li.dropdown-menu-mobile__list
-          a(href="buy.html" target='_BLANK').dropdown-menu-mobile__link Мы покупаем
+          a(href="buy.html").dropdown-menu-mobile__link Мы покупаем
         li.dropdown-menu-mobile__list
           a(href="price.html").dropdown-menu-mobile__link Цены
         li.dropdown-menu-mobile__list
-          a(href="projects.html" target="_BLANK").dropdown-menu-mobile__link Наши проекты
+          a(href="pallets.html").dropdown-menu-mobile__link Мы продаём
+        li.dropdown-menu-mobile__list
+          a(href="projects.html").dropdown-menu-mobile__link Наши проекты
         li.dropdown-menu-mobile__list
           a(href="#").dropdown-menu-mobile__link.dropdown-menu-mobile__link-arrow О компании
           .dropdown-menu-mobile__submenu
-            a(href="vacancy.html" target="_BLANK").dropdown-menu-mobile__link Вакансии
-            a(href="info-page-develop.html").dropdown-menu-mobile__link Партнерам
-            a(href="reviews.html" target="_BLANK").dropdown-menu-mobile__link Отзывы
+            a(href="vacancy.html").dropdown-menu-mobile__link Вакансии
+            a(href="reviews.html").dropdown-menu-mobile__link Отзывы
+            a(href="questions.html").dropdown-menu-mobile__link Вопрос - ответ
         li.dropdown-menu-mobile__list
-          a(href="blog.html" target="_BLANK").dropdown-menu-mobile__link Блог
+          a(href="blog.html").dropdown-menu-mobile__link Блог
         li.dropdown-menu-mobile__list
-          a(href="contacts.html" target="_BLANK").dropdown-menu-mobile__link Контакты
+          a(href="contacts.html").dropdown-menu-mobile__link Контакты
         li.dropdown-menu-mobile__list
+<<<<<<< HEAD
           a(href="personal-account.html" target="_BLANK").dropdown-menu-mobile__link Личный кабинет
         li.dropdown-menu-mobile__list
           a(href="questions.html" target="_BLANK").dropdown-menu-mobile__link Вопрос - ответ
+=======
+          a(href="info-page-develop.html").dropdown-menu-mobile__link Личный кабинет
+>>>>>>> master
       .lower-nav
         a(href="index.html#calculator" class="lower-nav__button") расчет стоимости
           .lower-nav__button-bg.lower-nav__button-bg--calculator
@@ -45,7 +71,7 @@ header.head
         a(href="tel:88006007131" class="lower-nav__button") 8 800 600 71 31
           .lower-nav__button-bg.lower-nav__button-bg--phone
 
-        a(href="ecobox.html" target="_BLANK" class="lower-nav__button lower-nav__button--special") эко десант
+        a(href="pallets.html" class="lower-nav__button lower-nav__button--special") поддоны
           .lower-nav__button-bg.lower-nav__button-bg--bush
     a(href="index.html" class="index-page-link")
       .sticker.sticker--mobile-show
@@ -55,51 +81,86 @@ header.head
     //- десктопная версия навигации
     .container
       .head-nav-desktop
-        ul.head-nav
-          li.head-nav__list
+        ul(class="head-nav" itemscope itemtype="http://schema.org/BreadcrumbList")
+          li(class="head-nav__list" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
             a.head-nav__link.head-nav__link-dropdown(href="#") Наши услуги
             .pop-up-submenu
-              a(href="destruction.html" target="_BLANK").pop-up-submenu__link Утилизация архивов
-              a(href="storage.html" target="_BLANK").pop-up-submenu__link Хранение архивов
-              a(href="ecobox.html" target="_BLANK").pop-up-submenu__link Установка экобоксов
-              a(href="containers-sale.html" target="_BLANK").pop-up-submenu__link Установка контейнеров
-              a(href="buy.html" target='_BLANK').pop-up-submenu__link Приём вторсырья
+              a(href="destruction.html" itemprop="item").pop-up-submenu__link
+                span(itemprop="name") Утилизация архивов
+              meta(itemprop="position" content="1")
+              a(href="storage.html" itemprop="item").pop-up-submenu__link
+                span(itemprop="name") Хранение архивов
+              meta(itemprop="position" content="1")
+              a(href="ecobox.html" itemprop="item").pop-up-submenu__link
+                span(itemprop="name") Установка экобоксов
+              meta(itemprop="position" content="1")
+              a(href="containers-sale.html" itemprop="item").pop-up-submenu__link
+                span(itemprop="name") Установка контейнеров
+              meta(itemprop="position" content="1")
+              a(href="buy.html" itemprop="item").pop-up-submenu__link
+                span(itemprop="name") Приём вторсырья
+              meta(itemprop="position" content="1")
           .head-nav__delimiter
             img(src="assets/img/nav/delimiter-small.png", alt="разделитель")
-          li.head-nav__list
-            a.head-nav__link(href="buy.html" target='_BLANK') Мы покупаем
+          li.head-nav__list(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+            a.head-nav__link(href="buy.html" itemprop="item")
+              span(itemprop="name") Мы покупаем
+            meta(itemprop="position" content="1")
           .head-nav__delimiter
             img(src="assets/img/nav/delimiter-small.png", alt="разделитель")
-          li.head-nav__list
-            a.head-nav__link(href="price.html" target="_BLANK") Цены
+          li.head-nav__list(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+            a.head-nav__link(href="price.html" itemprop="item")
+              span(itemprop="name") Цены
+            meta(itemprop="position" content="1")
           .head-nav__delimiter
             img(src="assets/img/nav/delimiter-small.png", alt="разделитель")
-          li.head-nav__list
-            a.head-nav__link(href="projects.html" target="_BLANK") Наши проекты
+          li.head-nav__list(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+            a.head-nav__link(href="pallets.html" itemprop="item")
+              span(itemprop="name") Мы продаём
+            meta(itemprop="position" content="1")
           .head-nav__delimiter
             img(src="assets/img/nav/delimiter-small.png", alt="разделитель")
-          li.head-nav__list
+          li.head-nav__list(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+            a.head-nav__link(href="projects.html" itemprop="item")
+              span(itemprop="name") Наши проекты
+            meta(itemprop="position" content="1")
+          .head-nav__delimiter
+            img(src="assets/img/nav/delimiter-small.png", alt="разделитель")
+          li.head-nav__list(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
             a.head-nav__link.head-nav__link-dropdown(href="#") О компании
             .pop-up-submenu
-              a(href="vacancy.html" target="_BLANK").pop-up-submenu__link Вакансии
-              a(href="info-page-develop.html").pop-up-submenu__link Партнерам
-              a(href="reviews.html" target="_BLANK").pop-up-submenu__link Отзывы
+              a(href="vacancy.html" itemprop="item").pop-up-submenu__link
+                span(itemprop="name") Вакансии
+              meta(itemprop="position" content="1")
+              a(href="reviews.html" itemprop="item").pop-up-submenu__link
+                span(itemprop="name") Отзывы
+              meta(itemprop="position" content="1")
+              a(href="questions.html" itemprop="item").pop-up-submenu__link
+                span(itemprop="name") Вопрос - ответ
+              meta(itemprop="position" content="1")
           .head-nav__delimiter
             img(src="assets/img/nav/delimiter-small.png", alt="разделитель")
-          li.head-nav__list
-            a.head-nav__link(href="blog.html" target="_BLANK") Блог
+          li.head-nav__list(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+            a.head-nav__link(href="blog.html" itemprop="item")
+              span(itemprop="name") Блог
+            meta(itemprop="position" content="1")
           .head-nav__delimiter
             img(src="assets/img/nav/delimiter-small.png", alt="разделитель")
-          li.head-nav__list
-            a.head-nav__link(href="contacts.html" target="_BLANK") Контакты
-          .head-nav__delimiter
-            img(src="assets/img/nav/delimiter-small.png", alt="разделитель")
+<<<<<<< HEAD
           li.head-nav__list
             a.head-nav__link(href="personal-account.html" target="_BLANK") Личный кабинет
+=======
+          li.head-nav__list(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+            a.head-nav__link(href="contacts.html" itemprop="item")
+              span(itemprop="name") Контакты
+            meta(itemprop="position" content="1")
+>>>>>>> master
           .head-nav__delimiter
             img(src="assets/img/nav/delimiter-small.png", alt="разделитель")
-          li.head-nav__list
-            a.head-nav__link(href="questions.html" target="_BLANK") Вопрос - ответ
+          li.head-nav__list(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+            a.head-nav__link(href="info-page-develop.html" itemprop="item")
+              span(itemprop="name") Личный кабинет
+            meta(itemprop="position" content="1")
         a(href="index.html" class="index-page-link")
           .sticker
             .sticker__content
@@ -114,5 +175,5 @@ header.head
           a(href="tel:88006007131" class="lower-nav__button") 8 800 600 71 31
             .lower-nav__button-bg.lower-nav__button-bg--phone
 
-          a(href="ecobox.html" target="_BLANK" class="lower-nav__button lower-nav__button--special") эко десант
+          a(href="pallets.html" class="lower-nav__button lower-nav__button--special") поддоны
             .lower-nav__button-bg.lower-nav__button-bg--bush

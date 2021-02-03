@@ -1,0 +1,73 @@
+@import '../variables/variables.scss';
+
+.photo-gallery-slider {
+  display: flex;
+  align-items: center;
+}
+
+.photo-gallery {
+  max-height: 75vh;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+
+  @media (min-width: 576px) {
+    height: 75vh;
+  }
+
+  & > img {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.2s;
+
+    @media (min-width: 576px) {
+      height: 100%;
+      width: auto;
+    }
+  }
+}
+
+.photo-gallery-btn-next,
+.photo-gallery-btn-prev {
+  display: none;
+  font-size: 80px;
+  color: $mainColorText;
+  cursor: pointer;
+
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+}
+
+.photo-gallery-btn-next {
+  padding: 0px 10px 10px 0;
+}
+
+.photo-gallery-btn-prev {
+  padding: 0px 0px 10px 10px;
+}
+
+.photo-gallery__count-photo {
+  position: absolute;
+  left: 0;
+  bottom: 14px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-family: $textType1;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: $mainColorText;
+}
+
+span[data-current-photo] {
+  margin-right: 5px;
+}
+
+span[data-length-photo] {
+  margin-left: 5px;
+}

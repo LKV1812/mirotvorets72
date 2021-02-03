@@ -1,0 +1,6 @@
+mixin picture-backing(img)
+  .picture-backing
+    .picture-backing__img-wrap
+      img(src= img.srcMobile, title= img.title, alt= img.alt)
+      img(src= img.srcTablet, title= img.title, alt= img.alt)
+      img(src= img.srcDesktop, title= img.title, alt= img.alt)

@@ -6,6 +6,9 @@
 
 Для работы в свой скрипт необходимо импортировать объект {callsModalWindow} './modules/modal-window' и петедать в него id элемента, по клику на котором происходит вызов окна и id самого окна, которое неоходимо показывать
 */
+body.no-scroll {
+  overflow: hidden;
+}
 
 .modal {
   position: fixed;
@@ -14,6 +17,8 @@
   right: 0;
   bottom: 0;
   left: 0;
+  opacity: 1;
+  z-index: 199;
   opacity: 0;
   z-index: -199;
   transition: opacity 0.3s;
@@ -33,6 +38,21 @@
 
 .modal-body {
   position: relative;
+  overflow: hidden;
+
+  &--photo-gallery {
+    max-width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    padding: 3em 1em;
+    border-radius: 1em;
+    box-shadow: 4px 8px 19px -7px rgba(89, 50, 8, .75);
+    background-color: #efeef3;
+    background-image: url('../img/index/calculator/calculator-bg-text.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
   &--text-bg {
     textarea, .input {
@@ -79,6 +99,14 @@
   transform: rotate(45deg);
   outline: none;
   cursor: pointer;
+
+  &--pos-right {
+    position: absolute;
+    top: 1.1em;
+    right: 1.1em;
+    margin: 0;
+    padding: 0;
+  }
 
   &--text-bg {
     position: absolute;

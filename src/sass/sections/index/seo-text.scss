@@ -1,0 +1,17 @@
+@import '../../variables/variables.scss';
+
+.translucent-white-substrate {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.seo-text__link {
+  color: $mainColorText;
+  font-family: $textType2;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+
+  @media(min-width: 768px) {
+    font-size: 18px;
+  }
+}

@@ -2,6 +2,7 @@
 @import 'utilits/utilits.scss';
 @import 'utilits/common.scss';
 @import 'sections/header.scss';
+@import 'blocks/backgrounds.scss';
 @import 'blocks/cards.scss';
 @import 'blocks/buttons.scss';
 @import 'blocks/form.scss';
@@ -12,6 +13,7 @@
 @import 'sections/index/for-whom.scss';
 @import 'sections/index/order.scss';
 @import 'blocks/inputs.scss';
+@import 'blocks/photo-gallery.scss';
 @import 'sections/index/calculator-section-bg.scss';
 @import 'blocks/calculator.scss';
 @import 'sections/index/about.scss';
@@ -19,7 +21,9 @@
 @import 'sections/index/news-short.scss';
 @import 'blocks/cards-short-description.scss';
 @import 'sections/index/review-form.scss';
+@import 'sections/index/awards.scss';
 @import 'sections/index/partners-bottom.scss';
+@import 'sections/index/seo-text.scss';
 @import 'sections/footer.scss';
 @import 'sections/lower-menu-bg.scss';
 @import 'sections/containers-sale/description.scss';
@@ -50,6 +54,10 @@
 @import 'sections/ecopromo/promo-address.scss';
 @import 'blocks/string-with-icon.scss';
 @import 'sections/ecopromo/order-promo.scss';
+@import 'sections/ecoyard/ecoyard-head.scss';
+@import 'sections/ecoyard/ecoyard-rules.scss';
+@import 'sections/ecoyard/about-ecoyard.scss';
+@import 'sections/ecoyard/ecoyard-map.scss';
 @import 'sections/vacancy/vacancy-head.scss';
 @import 'blocks/filter-aside.scss';
 @import 'sections/vacancy/why-we.scss';
@@ -58,7 +66,13 @@
 @import 'sections/blog/blog-head.scss';
 @import 'sections/blog/blog-body.scss';
 @import 'sections/news/news-body.scss';
+<<<<<<< HEAD
 @import 'sections/personal-account/account-head.scss';
 @import 'sections/personal-account/user.scss';
 @import 'sections/personal-account/history.scss';
 @import 'sections/personal-account/order.scss';
+=======
+@import 'sections/pallets/pallets-body.scss';
+@import 'sections/pallets/order.scss';
+@import 'blocks/basket.scss';
+>>>>>>> master

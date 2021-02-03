@@ -6,52 +6,61 @@ section.section.pb-0
         a(href="index.html" class="navigating-source-path__link") Главная &raquo;
       .navigating-source-path__item
         p.navigating-source-path__text Контакты
-    h1.section__title Контакты
-    .card-contacts-wrap
-      .card-contacts
-        .card-contacts__text-wrap
-          p.text-bold Пункты приема:
-          ul.ul-reset-margin-left
-            li.list-marker-color-custom
-              span.text г. Тюмень, 11 км. Ялуторовского тракта, стр.7
-            li.list-marker-color-custom
-              span.text г. Тюмень, ул. Тимирязева, д.9, стр.10
-            li.list-marker-color-custom
-              span.text г. Тюмень, ул. Авторемонтная, д.9, склад  №11
-            li.list-marker-color-custom
-              span.text г. Тюмень, ул. Щербакова, д.160, стр.3
-        .card-contacts__img-wrap.card-contacts__img-wrap--margin-left-auto
-          .card-contacts__img-wrap-mark
-            img(class="card-contacts__img card-contacts__img--mark", src="assets/img/contacts/mark-mobile.jpg", alt="mark")
-            img(class="card-contacts__img card-contacts__img--mark", src="assets/img/contacts/mark.png", alt="mark")
-          .card-contacts__img-wrap-stack
-            img(class="card-contacts__img", src="assets/img/contacts/stack-tablet.jpg", alt="stack", srcset="")
-            img(class="card-contacts__img", src="assets/img/contacts/stack.jpg", alt="stack", srcset="")
+    div(itemscope itemtype="http://schema.org/Organization")
+      h1.section__title Контакты компании #[span(itemprop="name") "Миротворец"]
+      div(itemprop="address" itemscope itemtype="http://schema.org/PostalAddress")
+        .card-contacts-wrap
+          .card-contacts
+            .card-contacts__text-wrap
+              p.text-bold Пункты приема:
+              ul.ul-reset-margin-left
+                li.list-marker-color-custom
+                  span(class="text") г. Тюмень, 11 км. Ялуторовского тракта, стр.7
+                li.list-marker-color-custom
+                  span(class="text") г. Тюмень, ул. Тимирязева, д.9, стр.10
+                li.list-marker-color-custom
+                  span(class="text") г. Тюмень, ул. Авторемонтная, д.9, склад  №11
+                li.list-marker-color-custom
+                  span(class="text") г. Тюмень, ул. Щербакова, д.160, стр.3
+            .card-contacts__img-wrap.card-contacts__img-wrap--margin-left-auto
+              .card-contacts__img-wrap-mark
+                img(class="card-contacts__img card-contacts__img--mark", src="assets/img/contacts/mark-mobile.jpg", alt="mark")
+                img(class="card-contacts__img card-contacts__img--mark", src="assets/img/contacts/mark.png", alt="mark")
+              .card-contacts__img-wrap-stack
+                img(class="card-contacts__img", src="assets/img/contacts/stack-tablet.jpg", alt="stack", srcset="")
+                img(class="card-contacts__img", src="assets/img/contacts/stack.jpg", alt="stack", srcset="")
 
-      .card-contacts.card-contacts--phone
-        .card-contacts__img-wrap
-          img(class="card-contacts__img", src="assets/img/contacts/phone-mobile.jpg", alt="phone")
-          img(class="card-contacts__img", src="assets/img/contacts/phone-tablet.jpg", alt="phone")
-          img(class="card-contacts__img", src="assets/img/contacts/phone.jpg", alt="phone")
-        .card-contacts__text-wrap
-          p.text-bold Телефоны диспетчера:
-          ul.ul-reset-margin-left
-            li.list-marker-color-custom
-              a(href='tel:+78006007131' class='card-contacts__link text') 8-800-600-71-31
-            li.list-marker-color-custom
-              a(href='tel:+73452531601' class='card-contacts__link text') +7 (3452) 531-601
-            li.list-marker-color-custom
-              a(href='tel:+79634555979' class='card-contacts__link text') +7-963-455-59-79
+          .card-contacts.card-contacts--phone
+            .card-contacts__img-wrap
+              img(class="card-contacts__img", src="assets/img/contacts/phone-mobile.jpg", alt="phone")
+              img(class="card-contacts__img", src="assets/img/contacts/phone-tablet.jpg", alt="phone")
+              img(class="card-contacts__img", src="assets/img/contacts/phone.jpg", alt="phone")
+            .card-contacts__text-wrap
+              p.text-bold Телефоны диспетчера:
+              ul.ul-reset-margin-left
+                li.list-marker-color-custom
+                  a(href='tel:+78006007131' class='card-contacts__link text')
+                   span(itemprop="telephone") 8-800-600-71-31
+                li.list-marker-color-custom
+                  a(href='tel:+73452531601' class='card-contacts__link text')
+                   span(itemprop="telephone") +7 (3452) 531-601
+                li.list-marker-color-custom
+                  a(href='tel:+79634555979' class='card-contacts__link text')
+                   span(itemprop="telephone") +7-963-455-59-79
 
-      .card-contacts.card-contacts--office
-        .card-contacts__img-wrap
-          img(class="card-contacts__img", src="assets/img/contacts/earth-mobile.jpg", alt="earth")
-          img(class="card-contacts__img", src="assets/img/contacts/earth-tablet.jpg", alt="earth")
-          img(class="card-contacts__img", src="assets/img/contacts/earth.jpg", alt="earth")
-        .card-contacts__text-wrap
-          p.text-bold Офис:
-          ul.ul-reset-margin-left
-            li.list-marker-color-custom
-              span(class='text') г. Тюмень, ул. Революции, д.89
-            li.list-marker-color-custom
-              span(class='text') E-mail: info@mirotvorets72.com
+          .card-contacts.card-contacts--office
+            .card-contacts__img-wrap
+              img(class="card-contacts__img", src="assets/img/contacts/earth-mobile.jpg", alt="earth")
+              img(class="card-contacts__img", src="assets/img/contacts/earth-tablet.jpg", alt="earth")
+              img(class="card-contacts__img", src="assets/img/contacts/earth.jpg", alt="earth")
+            .card-contacts__text-wrap
+              p.text-bold Офис:
+              ul.ul-reset-margin-left
+                li.list-marker-color-custom
+                  span(class='text' itemprop="addressLocality") г. Тюмень,
+                  = ' '
+                  span(class="text" itemprop="streetAddress") ул. Революции, д.89
+                li.list-marker-color-custom
+                  span(class='text') E-mail:
+                  = ' '
+                  span(class='text' itemprop="email") info@mirotvorets72.com

@@ -1,0 +1,21 @@
+extends ../layouts/main.pug
+
+block variables
+  - var title= "Установка уличных контейнеров для раздельного сбора вторсырья. Компания 'Миротворец' Тюмень"
+
+block link
+block description
+  meta(name="description", content="Уличные контейнеры для раздельного сбора стекла, макулатуры, пластика. Установка уличных контейнеров в Тюмени для раздельного сбора вторсырья. Продажа уличных контейнеров в Тюмени для раздельного сбора вторсырья. Компания 'Миротворец'. Оставить заявку на установку уличных контейнеров. Задать все интересующие вопросы можно по телефону: +7 (3452) 531-601")
+
+block content
+  include ../sections/lower-menu-bg.pug
+  include ../sections/ecoyard/ecoyard-head.pug
+  include ../sections/ecoyard/rules.pug
+  include ../sections/ecoyard/about-ecoyard.pug
+  include ../sections/ecoyard/ecoyard-map.pug
+  include ../sections/ecoyard/order-ecoyard.pug
+
+block scripts
+  script(src="vendor/libs/jquery/dist/jquery.min.js")
+  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjBXKACsJqeOziI6fHNCmWPdLul--G--I" type="text/javascript")
+  script(src="assets/js/ecoyard.js")

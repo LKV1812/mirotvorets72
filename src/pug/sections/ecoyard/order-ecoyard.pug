@@ -1,0 +1,32 @@
+include ../../mixins/buttons.pug
+section.section.ecoyard-order-bg
+  .container
+    .section__title заказать контейнер
+    form(id="orderContainer", action="php/form-order.php", method="post")
+      input(type="hidden" name="Mirotvorets" value="Контейнер экодвор mirotvorets72.ru")
+      input(type="hidden" name="form_from" value="mirotvorets72.ru")
+      input(type="hidden" name="admin_email" value="zayavka@mirotvorets72.com")
+      input(type="hidden" name="erasure" value="Заявка со страницы экодвор")
+
+      .input-wrap
+        .input-container
+          input.input(type="text", name="address", placeholder="Ваш адрес")
+          .error-no-selected__message
+            .error-no-selected__message-icon !
+            .error-no-selected__message-text
+
+        .input-container
+          input.input.tel-field(type="tel", name="phone", placeholder="Ваш телефон")
+          .error-no-selected__message
+            .error-no-selected__message-icon !
+            .error-no-selected__message-text
+
+        +button-input-tipe-a("submit", "send-order", "отправить заявку")
+      .result-query-success
+        .result-query-container__icon
+          include ../../../svg/form/success-query.svg
+        .result-query-container__message Заявка успешно отпарвлена.
+      .result-query-error
+        .result-query-container__icon
+          include ../../../svg/form/error-query.svg
+        .result-query-container__message Заявка не отправлена! Попробуйте ещё раз.

@@ -30,17 +30,16 @@ html(lang="ru")
     link(rel="stylesheet", href="vendor/libs/normalize/normalize.css")
     link(rel="stylesheet", href="vendor/libs/bootstrap/dist/css/bootstrap-grid.min.css")
     block link
-    link(rel="stylesheet", href="assets/fonts/gilroy/stylesheet.css")
-    link(rel="stylesheet", href="assets/fonts/hagin/stylesheet.css")
     link(rel="stylesheet", href="assets/css/main.css")
+    link(rel="stylesheet", href="assets/fonts/gilroy/stylesheet.css")
+    link(rel="stylesheet", href="assets/fonts/hagin/hagin.css")
     title #{title}
     block keywords
     block description
 
-    block keywords
-    block description
-
   body(class="bc")
+    include ../../html/seo/yandex-metrika.html
+
     include ../sections/header.pug
 
     block content

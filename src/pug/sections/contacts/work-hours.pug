@@ -2,7 +2,6 @@ section.section
   .container
     .section__title Режим работы
     .card-work-hours-wrap
-
       .card-work-hours
         h3.card-work-hours__title #[span.card-work-hours__title.card-work-hours__title--special офис:] г. Тюмень, ул. Революции, д.89
         .card-work-hours__content-wrap
@@ -18,58 +17,118 @@ section.section
             img(class="card-work-hours__img" src="assets/img/contacts/office.png", alt="works")
             img(class="card-work-hours__img" src="assets/img/contacts/office-desktop.png", alt="works")
 
-      .card-work-hours
-        h3.card-work-hours__title #[span.card-work-hours__title.card-work-hours__title--special пункт приёма:] г. Тюмень, 11 км. Ялуторовского тракта, стр.7
+      div(class="card-work-hours" itemscope itemtype="http://schema.org/LocalBusiness")
+        h3.card-work-hours__title
+          span(class="card-work-hours__title card-work-hours__title--special" itemprop="name") пункт приёма вторсырья на Ялуторовском тракте:
+          br
+          span г. Тюмень, 11 км. Ялуторовского тракта, стр.7
+        <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+          <meta itemprop="streetAddress" content="11 км. Ялуторовского тракта, стр.7">
+          <meta itemprop="addressLocality" content="Тюмень">
+        </span>
+        <meta itemprop="telephone" content="8-800-600-71-31">
         .card-work-hours__content-wrap
           ul.card-work-hours__text-wrap
             li.list-marker-color-custom
-              span.text-bold ПН - ПТ #[br] #[span.text c 09:00 до 18:00]
+              span.text-bold ПН - ПТ
+              br
+              time(class="text" itemprop="openingHours" datetime="Mo-Fr, 09:00−18:00") c 09:00 до 18:00
             li.list-marker-color-custom
-              span.text-bold Суббота #[br] #[span.text c 09:00 до 17:00]
+              span.text-bold Суббота
+              br
+              time(class="text" itemprop="openingHours" datetime="Sa, 09:00−17:00") c 09:00 до 17:00
             li.list-marker-color-custom
-              span.text-bold Воскресенье #[br] #[span.text Выходной]
+              span.text-bold Воскресенье
+              br
+              span.text Выходной
           .card-work-hours__img-wrap
             img(class="card-work-hours__img" src="assets/img/contacts/works.png", alt="works")
             img(class="card-work-hours__img" src="assets/img/contacts/works-desktop.png", alt="works")
+            img(class="card-work-hours__img card-work-hours__img--hide" title="Пункт приема вторсырья" itemprop="image" src="assets/img/contacts/yalutorovsky.jpg", alt="Фото въезда на трерриторию пункта приема вторсырья")
 
-      .card-work-hours
-        h3.card-work-hours__title #[span.card-work-hours__title.card-work-hours__title--special пункт приёма:] г. Тюмень, ул. Авторемонтная, д.9, склад №11
+      div(class="card-work-hours"  itemscope itemtype="http://schema.org/LocalBusiness")
+        h3.card-work-hours__title
+          span(class="card-work-hours__title card-work-hours__title--special" itemprop="name") пункт приёма вторсырья на Авторемонтной:
+          br
+          span г. Тюмень, ул. Авторемонтная, д.9, склад №11
+        <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+          <meta itemprop="streetAddress" content="ул. Авторемонтная, д.9, склад №11">
+          <meta itemprop="addressLocality" content="Тюмень">
+        </span>
+        <meta itemprop="telephone" content="8-800-600-71-31">
         .card-work-hours__content-wrap
           ul.card-work-hours__text-wrap
             li.list-marker-color-custom
-              span.text-bold ПН - ПТ #[br] #[span.text c 09:00 до 18:00]
+              span.text-bold ПН - ПТ
+              br
+              time(class="text" itemprop="openingHours" datetime="Mo-Fr, 09:00−18:00") c 09:00 до 18:00
             li.list-marker-color-custom
-              span.text-bold Суббота #[br] #[span.text c 09:00 до 17:00]
+              span.text-bold Суббота
+              br
+              time(class="text" itemprop="openingHours" datetime="Sa, 09:00−17:00") c 09:00 до 17:00
             li.list-marker-color-custom
-              span.text-bold Воскресенье #[br] #[span.text Выходной]
+              span.text-bold Воскресенье
+              br
+              span.text Выходной
           .card-work-hours__img-wrap
             img(class="card-work-hours__img" src="assets/img/contacts/works.png", alt="works")
             img(class="card-work-hours__img" src="assets/img/contacts/works-desktop.png", alt="works")
+            img(class="card-work-hours__img card-work-hours__img--hide" title="Пункт приема вторсырья" itemprop="image" src="assets/img/contacts/avtoremontnay.jpg", alt="Фото пункта приема вторсырья")
 
-      .card-work-hours
-        h3.card-work-hours__title #[span.card-work-hours__title.card-work-hours__title--special пункт приёма:] г. Тюмень, ул. Тимирязева, д.9, стр.10
+      div(class="card-work-hours"  itemscope itemtype="http://schema.org/LocalBusiness")
+        h3.card-work-hours__title
+          span(class="card-work-hours__title card-work-hours__title--special" itemprop="name") пункт приёма вторсырья на Тимирязева:
+          br
+          span г. Тюмень, ул. Тимирязева, д.9, стр.10
+        <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+          <meta itemprop="streetAddress" content="ул. Тимирязева, д.9, стр.10">
+          <meta itemprop="addressLocality" content="Тюмень">
+        </span>
+        <meta itemprop="telephone" content="8-800-600-71-31">
         .card-work-hours__content-wrap
           ul.card-work-hours__text-wrap
             li.list-marker-color-custom
-              span.text-bold ПН - ПТ #[br] #[span.text c 09:00 до 18:00]
+              span.text-bold ПН - ПТ
+              br
+              time(class="text" itemprop="openingHours" datetime="Mo-Fr, 09:00−18:00") c 09:00 до 18:00
             li.list-marker-color-custom
-              span.text-bold Суббота #[br] #[span.text c 09:00 до 17:00]
+              span.text-bold Суббота
+              br
+              time(class="text" itemprop="openingHours" datetime="Sa, 09:00−17:00") c 09:00 до 17:00
             li.list-marker-color-custom
-              span.text-bold Воскресенье #[br] #[span.text Выходной]
+              span.text-bold Воскресенье
+              br
+              span.text Выходной
           .card-work-hours__img-wrap
             img(class="card-work-hours__img" src="assets/img/contacts/works.png", alt="works")
             img(class="card-work-hours__img" src="assets/img/contacts/works-desktop.png", alt="works")
+            img(class="card-work-hours__img card-work-hours__img--hide" title="Пункт приема вторсырья" itemprop="image" src="assets/img/contacts/timiryazeva.jpg", alt="Фото въезда на трерриторию пункта приема вторсырья")
 
-      .card-work-hours
-        h3.card-work-hours__title #[span.card-work-hours__title.card-work-hours__title--special пункт приёма:] г. Тюмень, ул. Щербакова, д.160, стр.3
+      div(class="card-work-hours"  itemscope itemtype="http://schema.org/LocalBusiness")
+        h3.card-work-hours__title
+          span(class="card-work-hours__title card-work-hours__title--special" itemprop="name") пункт приёма вторсырья на Щербакова:
+          br
+          span г. Тюмень, ул. Щербакова, д.160, стр.3
+        <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+          <meta itemprop="streetAddress" content="ул. Щербакова, д.160, стр.3">
+          <meta itemprop="addressLocality" content="Тюмень">
+        </span>
+        <meta itemprop="telephone" content="8-800-600-71-31">
         .card-work-hours__content-wrap
           ul.card-work-hours__text-wrap
             li.list-marker-color-custom
-              span.text-bold ПН - ПТ #[br] #[span.text c 09:00 до 18:00]
+              span.text-bold ПН - ПТ
+              br
+              time(class="text" itemprop="openingHours" datetime="Mo-Fr, 09:00−18:00") c 09:00 до 18:00
             li.list-marker-color-custom
-              span.text-bold Суббота #[br] #[span.text c 09:00 до 17:00]
+              span.text-bold Суббота
+              br
+              time(class="text" itemprop="openingHours" datetime="Sa, 09:00−17:00") c 09:00 до 17:00
             li.list-marker-color-custom
-              span.text-bold Воскресенье #[br] #[span.text Выходной]
+              span.text-bold Воскресенье
+              br
+              span.text Выходной
           .card-work-hours__img-wrap
             img(class="card-work-hours__img" src="assets/img/contacts/works.png", alt="works")
             img(class="card-work-hours__img" src="assets/img/contacts/works-desktop.png", alt="works")
+            img(class="card-work-hours__img card-work-hours__img--hide" title="Пункт приема вторсырья" itemprop="image" src="assets/img/contacts/sherbakova.jpg", alt="Фото пункта приема вторсырья")

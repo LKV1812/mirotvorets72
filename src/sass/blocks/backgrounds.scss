@@ -1,0 +1,55 @@
+.picture-backing {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -99;
+}
+
+.picture-backing__img-wrap {
+  position: absolute;
+  right: 0;
+  top: 80px;
+  max-width: 100%;
+
+  @media(min-width: 530px) {
+    top: 100px;
+  }
+
+  @media(min-width: 690px) {
+    top: 60px;
+  }
+  @media(min-width: 1200px) {
+    top: 0;
+  }
+}
+
+.picture-backing__img-wrap > img{
+  margin-left: auto;
+  margin-right: 0;
+  width: 100%;
+
+  &:nth-child(1) {
+    display: block;
+    @media(min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &:nth-child(2) {
+    display: none;
+    @media(min-width: 768px) {
+      display: block;
+    }
+    @media(min-width: 1200px) {
+      display: none;
+    }
+  }
+  &:nth-child(3) {
+    display: none;
+    @media(min-width: 1200px) {
+      display: block;
+    }
+  }
+}

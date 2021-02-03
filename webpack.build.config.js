@@ -11,10 +11,11 @@ module.exports = {
     'question-answer': './src/js/question-answer.js',
     projects: './src/js/projects.js',
     ecopromo: './src/js/ecopromo.js',
+    ecoyard: './src/js/ecoyard.js',
     vacancy: './src/js/vacancy.js',
     reviews: './src/js/reviews.js',
     blog: './src/js/blog.js',
-    'personal-account': './src/js/personal-account.js',
+    pallets: './src/js/pallets.js',
   },
   output: {
     filename: `[name].js`,

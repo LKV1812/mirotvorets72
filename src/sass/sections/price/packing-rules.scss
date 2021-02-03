@@ -1,5 +1,10 @@
 @import '../../variables/variables.scss';
 
+.buy-wrap-relative {
+  position: relative;
+  margin-top: -5px;
+}
+
 .packing-rules-bg {
   background-image: url('../img/price/packing-rules-bg-mobile.png');
   background-repeat: no-repeat;

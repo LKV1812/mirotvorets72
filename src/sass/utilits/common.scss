@@ -53,6 +53,8 @@ body {
 }
 
 .text-bold {
+  margin: 0;
+  margin-bottom: 8px;
   color: $mainColorText;
   font-family: $textType2;
   font-size: 16px;
@@ -141,6 +143,17 @@ body {
   }
 }
 
+.subtitle {
+  margin-top: 0.65rem;
+  margin-bottom: 0.65rem;
+  font-family: $textType2;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: $mainColorText;
+  text-align: center;
+}
+
 .cards-subtitle {
   font-family: $textType2;
   font-size: 16px;
@@ -192,6 +205,14 @@ body {
       font-size: 18px;
     }
   }
+}
+
+.footnote {
+  font-family: $textType2;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #612228;
 }
 
 .adaptive-img {
@@ -308,6 +329,18 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
+}
+
+.white-background {
+  background-color: rgba(255,255,255,1);
+}
+
+.list-wrap {
+  margin-top: 1rem;
+  padding-left: 2.5rem;
+  & > li + li {
+    margin-top: 10px;
+  }
 }
 
 .wrap-list-custom-marker {

@@ -42,6 +42,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .card-work-hours__title {
@@ -74,25 +75,31 @@
 }
 
 .card-work-hours__img-wrap {
+  position: relative;
   align-self: flex-end;
 }
 
 .card-work-hours__img {
-  &:first-child {
+  &:nth-child(1) {
     display: block;
   }
 
-  &:last-child {
+  &:nth-child(2) {
     display: none;
   }
 
   @media(min-width: 440px) {
-    &:first-child {
+    &:nth-child(1) {
       display: none;
     }
 
-    &:last-child {
+    &:nth-child(2) {
       display: block;
     }
+  }
+
+  &--hide {
+    position: absolute;
+    transform: translateX(10000px);
   }
 }
